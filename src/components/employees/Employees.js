@@ -34,7 +34,7 @@ const Employees = () => {
                             <div>
                                 <img src={Group5169011} alt="English Proficiency" />
                             </div>
-                            <p className="icon-title" className="icon-title">English Proficiency</p>
+                            <p className="icon-title" >English Proficiency</p>
                             <p className="icon-content">Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
                         </div>
                         <div className="col-3">
