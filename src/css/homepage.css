@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("../fonts/FontsFree-Net-Gilroy3.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url("../fonts/FontsFree-Net-gilory.ttf");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+}
+
+.homepage {
+  /* Hompage - Desktop */
+
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+}
+
+.c-large-button {
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 25px;
+  width: 103px;
+  height: 54px;
+  /* Primary */
+
+  background: #2240cd;
+  box-shadow: 0px 6px 10px rgba(6, 102, 235, 0.16);
+  border-radius: 8px;
+}
+

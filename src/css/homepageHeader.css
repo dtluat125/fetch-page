@@ -1,0 +1,97 @@
+.hompage__header {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: stretch;
+}
+
+.homepage__header__inner {
+  padding: 100px 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Left */
+.homepage__header__left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homepage__header__h1 {
+  /* Medium length displa */
+  width: 540px;
+  height: 114px;
+  left: 165px;
+  top: 264px;
+  margin-bottom: 24px;
+  /* H1 */
+
+  font-family: "Gilroy-SemiBold";
+  font-size: 54px;
+  line-height: 60px;
+  /* or 111% */
+
+  letter-spacing: -1px;
+
+  color: #17274e;
+}
+
+.hompage__header__small-text {
+  /* Separated they live */
+
+  width: 540px;
+  height: 90px;
+  font-family: "Gilroy-Regular";
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 25px;
+  /* or 150% */
+
+  color: #a4b7c8;
+}
+
+.homepage__header__signup-button {
+  background: #273a5f;
+  box-shadow: 0px 6px 10px #d2e2ed;
+  border-radius: 8px;
+  outline: none;
+  border: 0px;
+}
+
+.homepage__header__signup-button > span {
+  width: 64px;
+  height: 20px;
+  font-family: "Gilroy-SemiBold";
+  font-size: 18px;
+  line-height: 20px;
+  /* identical to box height, or 111% */
+
+  text-align: center;
+
+  color: #ffffff;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+
+.hompage__header__image-group {
+  width: 554.22px;
+  height: 588px;
+}
+
+@media (max-width: 1380px){
+  .homepage__header__inner{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage__header__left{
+    margin-bottom: 50px;
+  }
+}
