@@ -2,41 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 $xs: 575.98px;   
 $sm: 576px;  
 $md: 768px;   
@@ -65,4 +30,171 @@ $xxl: 1400px;
     @else if $canvas == xxl {
         @media only screen and (min-width: $xxl) { @content; } 
     }
+}
+
+.cus-container {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    max-width: 540px;
+  }
+
+  @include Responsive(md) {
+    max-width: 720px;
+  }
+
+  @include Responsive(lg) {
+    max-width: 960px;
+  }
+
+  @include Responsive(xl) {
+    max-width: 1140px;
+  }
+
+  @include Responsive(xxl) {
+    max-width: 1140px;
+  }
+}
+
+.cus-container-sm {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    max-width: 540px;
+  }
+
+  @include Responsive(md) {
+    max-width: 720px;
+  }
+
+  @include Responsive(lg) {
+    max-width: 960px;
+  }
+
+  @include Responsive(xl) {
+    max-width: 1140px;
+  }
+
+  @include Responsive(xxl) {
+    max-width: 1140px;
+  }
+}
+
+.cus-container-md {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    max-width: 720px;
+  }
+
+  @include Responsive(lg) {
+    max-width: 960px;
+  }
+
+  @include Responsive(xl) {
+    max-width: 1140px;
+  }
+
+  @include Responsive(xxl) {
+    max-width: 1140px;
+  }
+}
+
+.cus-container-lg {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    width: 100%;
+  }
+
+  @include Responsive(lg) {
+    max-width: 960px;
+  }
+
+  @include Responsive(xl) {
+    max-width: 1140px;
+  }
+
+  @include Responsive(xxl) {
+    max-width: 1140px;
+  }
+}
+
+.cus-container-xl {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    width: 100%;
+  }
+
+  @include Responsive(lg) {
+    width: 100%;
+  }
+
+  @include Responsive(xl) {
+    max-width: 1140px;
+  }
+
+  @include Responsive(xxl) {
+    max-width: 1140px;
+  }
+}
+
+.cus-container-xxl {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    width: 100%;
+  }
+
+  @include Responsive(lg) {
+    width: 100%;
+  }
+
+  @include Responsive(xl) {
+    width: 100%;
+  }
+
+  @include Responsive(xxl) {
+    max-width: 1140px;
+  }
+}
+
+.cus-container-fluid {
+  width: 100%;
+}
+
+
+.cus-container, .cus-container-fluid, .cus-container-lg, .cus-container-md, .cus-container-sm, .cus-container-xl, .cus-container-xxl {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
