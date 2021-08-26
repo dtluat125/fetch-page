@@ -9,9 +9,13 @@ import HelpDetail from './help/HelpDetail';
 const Faq = () => {
     return (
         <div className="faq">
+            
             <header className="faq-header">
                 <div className="cus-container">
                     <Row justify="center" className="row-search" gutter={30}>
+                        <Col span={24}>
+                            header
+                        </Col>
                         <Col span={20}>
                             <h1>Fetch Help Center</h1>
                             <p>Be part of our growing network of satisfied partners</p>

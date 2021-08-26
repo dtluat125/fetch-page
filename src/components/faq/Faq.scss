@@ -4,9 +4,6 @@
     .cus-container {
         padding-left: var(--padding-x);
         padding-right: var(--padding-x);
-
-        padding-top: 48px;
-        padding-bottom: 93px;
     }
     .faq-header {
         background: url("../../assets/img/bgFAQ.png") no-repeat center center;
@@ -26,6 +23,7 @@
                 text-align: left;
                 color: #FFFFFF;
                 margin-bottom: 12px;
+                margin-top: 146px;
 
             }
 
@@ -76,6 +74,10 @@
 
     .faq-body {
         background-color: #F3F5F7;
+
+        .cus-container {
+            padding-top: 48px;
+        }
         
     }
 }
