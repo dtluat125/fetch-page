@@ -6,7 +6,7 @@ import imgLeft from '../../assets/img/contactColLeft.png';
 const Contact = () => {
     return (
         <div className="contact">
-            <section style={{padding: '20px'}} >header</section>
+            <section style={{padding: '20px'}} >header waiting</section>
             <section className="contact-body">
                 <div className="cus-container">
                     <Row gutter={30}>
@@ -41,7 +41,7 @@ const Contact = () => {
                     </Row>
                 </div>
             </section>
-            <section style={{padding: '20px'}} >footer</section>
+            <section style={{padding: '20px'}} >footer waiting</section>
         </div>
     )
 }
