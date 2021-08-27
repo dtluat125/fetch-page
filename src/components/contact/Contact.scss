@@ -1,0 +1,148 @@
+.contact {
+    --padding-x: 15px;
+
+    background-color: #F3F5F7;
+    .contact-body {
+        background: url("../../assets/img/bgContact.png") no-repeat;
+        // -webkit-background-size: cover;
+        // -moz-background-size: cover;
+        // -o-background-size: cover;
+        // background-size: cover;
+        background-origin: border-box;
+        background-position-x: 74px;
+        background-position-y: 28px;
+
+        .cus-container {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+            padding-top: 72px;
+        }
+
+        .col-form {
+            padding-top: 96px;
+
+            form {
+                background: #FFFFFF;
+                border: 1px solid #DEE7F0;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 8px rgba(39, 58, 95, 0.08);
+                border-radius: 8px;
+
+                padding: 32px;
+
+                h1 {
+                    margin-top: 16px;
+                    margin-bottom: 24px;
+                    font-family: Gilroy-SemiBold;
+                    font-size: 36px;
+                    line-height: 60px;
+                    letter-spacing: -0.5px;
+                    text-align: left;
+                    color: #17274E;
+                }
+
+                p {
+                    font-family: Gilroy-Regular;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    color: #A4B7C8;
+                    margin-bottom: 49px;
+                }
+
+                .form-inout-item {
+                    text-align: left;
+                    margin-bottom: 22px;
+
+                    label {
+                        font-family: Gilroy-Medium;
+                        font-size: 16px;
+                        line-height: 22px;
+                        letter-spacing: -0.25px;
+                        text-align: left;
+                        color: #001C63;
+                        margin-bottom: 8px;
+                    }
+
+                    input {
+                        width: 100%;
+                        background: #FFFFFF;
+                        border: 1px solid #D0D4EA;
+                        box-sizing: border-box;
+                        border-radius: 6px;
+                        outline: none;
+                        padding: 12px 16px;
+
+                        font-family: Gilroy-Regular;
+                        font-size: 16px;
+                        line-height: 22px;
+                        display: flex;
+                        align-items: center;
+                        color: #ABB2D9;
+
+                        &:focus {
+                            outline: 2px solid transparent;
+                            outline-offset: 2px;
+                            --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+                            --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
+                            --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+                            box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 transparent);
+                        }
+                    }
+                }
+
+                .form-footer {
+                    padding-top: 36px;
+                    display: flex;
+
+                    p {
+                        margin-bottom: 0;
+                        font-family: Gilroy-Regular;
+                        font-size: 14px;
+                        line-height: 22px;
+                        letter-spacing: 0px;
+                        text-align: left;
+                        color: #AFC0CF;
+                        margin-right: 45px;
+                    }
+
+                    input[type="submit"] {
+                        padding: 17px 32px;
+                        background: #273A5F;
+                        box-shadow: 0px 6px 10px #D2E2ED;
+                        border-radius: 8px;
+                        border: none;
+                        font-family: Gilroy-SemiBold;
+                        font-size: 18px;
+                        line-height: 20px;
+                        letter-spacing: 0px;
+                        text-align: center;
+                        color: #FFFFFF;
+
+                        &:hover {
+                            outline: 2px solid transparent;
+                            outline-offset: 2px;
+                            --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+                            --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
+                            --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+                            box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 transparent);
+                        }
+                    }
+                }
+            }
+        }
+
+        .col-img {
+            padding-bottom: 46px;
+        }
+
+        .col-img-wrap {
+            text-align: left;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
