@@ -9,20 +9,20 @@ const Contact = () => {
             <section style={{padding: '20px'}} >header waiting</section>
             <section className="contact-body">
                 <div className="cus-container">
-                    <Row gutter={30}>
-                        <Col className="col-form" span={12}>
+                    <Row gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, 0]}>
+                        <Col className="col-form" xs={24} xl={12}>
                             <form>
                                 <h1>Work globally, Stay locally</h1>
                                 <p>A career with us is like no other – experience working with a global team while staying remotely in Vietnam.</p>
-                                <div className="form-inout-item">
+                                <div className="form-inner-item">
                                     <label>Name</label>
                                     <input type="text" placeholder="usergoogle@gmail.com" />
                                 </div>
-                                <div className="form-inout-item">
+                                <div className="form-inner-item">
                                     <label>Email Address</label>
                                     <input type="text" placeholder="usergoogle@gmail.com" />
                                 </div>
-                                <div className="form-inout-item">
+                                <div className="form-inner-item">
                                     <label>Company</label>
                                     <input type="text" placeholder="usergoogle@gmail.com" />
                                 </div>
@@ -32,7 +32,7 @@ const Contact = () => {
                                 </div>
                             </form>
                         </Col>
-                        <Col className="col-img" span={12}>
+                        <Col className="col-img" xs={0} xl={12}>
                             <div className="col-img-wrap">
                                 <img src={imgLeft} alt="col left"/>
                             </div>

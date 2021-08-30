@@ -6,7 +6,7 @@ import HelpIcon from '../../../assets/img/Group 5169047.png';
 const Help = ({ disableBtn }) => {
     return (
         <div className="help">
-            <Row gutter={30} align="middle">
+            <Row gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, { xs: 21, sm: 16, md: 24, xl: 30 }]} align="middle">
                 <Col className="col-10-2">
                     <div className="icon-wrap">
                         <img src={HelpIcon} alt="icon help" />

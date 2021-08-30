@@ -4,15 +4,37 @@ import Contact from './components/contact/Contact';
 import Employees from './components/employees/Employees';
 import Faq from './components/faq/Faq';
 import NotFound from './components/404/NotFound';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Employees /> */}
-      {/* <Faq /> */}
-      {/* <Contact /> */}
-      <NotFound />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/employees">
+            <Employees />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/faq">
+            <Faq />
+          </Route>
+          <Route path="/404">
+            <NotFound />
+          </Route>
+        </Switch>
+        
+        
+        
+        
+      </div>
+    </Router>
   );
 }
 

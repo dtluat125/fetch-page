@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-
+// media queries
 $xs: 575.98px;   
 $sm: 576px;  
 $md: 768px;   
@@ -9,7 +9,14 @@ $lg: 992px;
 $xl: 1200px;  
 $xxl: 1400px;   
 
-// media queries
+// media max-width
+$max-width-xs: 351px;
+$max-width-sm: 540px;
+$max-width-md: 720px;
+$max-width-lg: 960px;
+$max-width-xl: 1140px;
+$max-width-xxl: 1140px;
+
 
 @mixin Responsive($canvas) {
     @if $canvas == xs {
@@ -34,27 +41,28 @@ $xxl: 1400px;
 
 .cus-container {
   @include Responsive(xs) {
-    width: 100%;
+    // width: 100%;
+    max-width: $max-width-xs;
   }
 
   @include Responsive(sm) {
-    max-width: 540px;
+    max-width: $max-width-sm;
   }
 
   @include Responsive(md) {
-    max-width: 720px;
+    max-width: $max-width-md;
   }
 
   @include Responsive(lg) {
-    max-width: 960px;
+    max-width: $max-width-lg;
   }
 
   @include Responsive(xl) {
-    max-width: 1140px;
+    max-width: $max-width-xl;
   }
 
   @include Responsive(xxl) {
-    max-width: 1140px;
+    max-width: $max-width-xxl;
   }
 }
 
@@ -64,23 +72,23 @@ $xxl: 1400px;
   }
 
   @include Responsive(sm) {
-    max-width: 540px;
+    max-width: $max-width-sm;
   }
 
   @include Responsive(md) {
-    max-width: 720px;
+    max-width: $max-width-md;
   }
 
   @include Responsive(lg) {
-    max-width: 960px;
+    max-width: $max-width-lg;
   }
 
   @include Responsive(xl) {
-    max-width: 1140px;
+    max-width: $max-width-xl;
   }
 
   @include Responsive(xxl) {
-    max-width: 1140px;
+    max-width: $max-width-xxl;
   }
 }
 
@@ -94,19 +102,19 @@ $xxl: 1400px;
   }
 
   @include Responsive(md) {
-    max-width: 720px;
+    max-width: $max-width-md;
   }
 
   @include Responsive(lg) {
-    max-width: 960px;
+    max-width: $max-width-lg;
   }
 
   @include Responsive(xl) {
-    max-width: 1140px;
+    max-width: $max-width-xl;
   }
 
   @include Responsive(xxl) {
-    max-width: 1140px;
+    max-width: $max-width-xxl;
   }
 }
 
@@ -124,15 +132,15 @@ $xxl: 1400px;
   }
 
   @include Responsive(lg) {
-    max-width: 960px;
+    max-width: $max-width-lg;
   }
 
   @include Responsive(xl) {
-    max-width: 1140px;
+    max-width: $max-width-xl;
   }
 
   @include Responsive(xxl) {
-    max-width: 1140px;
+    max-width: $max-width-xxl;
   }
 }
 
@@ -154,11 +162,11 @@ $xxl: 1400px;
   }
 
   @include Responsive(xl) {
-    max-width: 1140px;
+    max-width: $max-width-xl;
   }
 
   @include Responsive(xxl) {
-    max-width: 1140px;
+    max-width: $max-width-xxl;
   }
 }
 
@@ -184,7 +192,7 @@ $xxl: 1400px;
   }
 
   @include Responsive(xxl) {
-    max-width: 1140px;
+    max-width: $max-width-xxl;
   }
 }
 

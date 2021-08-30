@@ -12,11 +12,11 @@ const Faq = () => {
         <div className="faq">
             <header className="faq-header">
                 <div className="cus-container">
-                    <Row justify="center" className="row-search" gutter={30}>
+                    <Row justify="center" className="row-search" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, { xs: 21, sm: 16, md: 24, xl: 30 }]}>
                         <Col span={24}>
                             header
                         </Col>
-                        <Col span={20}>
+                        <Col xs={24} xl={20}>
                             <h1>Fetch Help Center</h1>
                             <p>Be part of our growing network of satisfied partners</p>
                             <div className="search-input-wrap">
@@ -31,10 +31,10 @@ const Faq = () => {
             </header>
             <section className="faq-body">
                 <div className="cus-container">
-                    <Row className="row-body" gutter={30} justify="center">
-                        <Col span={20}>
-                            <Help />
-                            <HelpDetail />
+                    <Row className="row-body" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, { xs: 21, sm: 16, md: 24, xl: 30 }]} justify="center">
+                        <Col xs={24} xl={20}>
+                            {/* <Help /> */}
+                            {/* <HelpDetail /> */}
                             <HelpArticle />
                         </Col>
                     </Row>

@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .help-article {
     margin-bottom: 77px;
     
@@ -9,10 +11,20 @@
     
 
     .article-wrap {
-        padding-left: calc(0.2 * (100% + 2 * var(--padding-x)));
-        padding-right: calc(0.2 * (100% + 2 * var(--padding-x)));
+        
         text-align: left;
-        padding-top: 52px;
+
+        @include Responsive(xs) {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+            padding-top: 54px;
+        }
+
+        @include Responsive(xl) {
+            padding-left: calc(0.2 * (100% + 2 * var(--padding-x)));
+            padding-right: calc(0.2 * (100% + 2 * var(--padding-x)));
+            padding-top: 52px;
+        }
 
         h3 {
             font-family: Gilroy-SemiBold;
