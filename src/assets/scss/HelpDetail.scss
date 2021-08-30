@@ -1,28 +1,6 @@
 .help-detail {
-    margin-left: calc(-2 * var(--padding-x));
-    margin-right: calc(-2 * var(--padding-x));
-
-    
-    .detail-nav {
-        text-align: left;
-        margin-bottom: 33px;
-        
-        .ant-breadcrumb-link {
-            font-family: Gilroy-Regular;
-            font-size: 16px;
-            line-height: 24px;
-            color: #17274E;
-        }
-
-        .matched-link {
-            font-family: Gilroy-Regular;
-            font-size: 16px;
-            line-height: 20px;
-            text-align: center;
-            letter-spacing: -0.25px;
-            color: #A4B7C8;
-        }
-    }
+    // margin-left: calc(-2 * var(--padding-x));
+    // margin-right: calc(-2 * var(--padding-x));
     
     .detail-wrap {
         background-color: #FFFFFF;

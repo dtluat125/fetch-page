@@ -1,16 +1,15 @@
 import React from 'react';
-import './Help.scss';
-import 'antd/dist/antd.css';
+import '../../../assets/scss/Help.scss';
 import { Row, Col } from 'antd';
 import {ReactComponent as ArrowLeft} from '../../../assets/img/arrowLeft.svg';
-
-const Help = () => {
+import HelpIcon from '../../../assets/img/Group 5169047.png';
+const Help = ({ disableBtn }) => {
     return (
         <div className="help">
             <Row gutter={30} align="middle">
                 <Col className="col-10-2">
                     <div className="icon-wrap">
-                        icon
+                        <img src={HelpIcon} alt="icon help" />
                     </div>
                 </Col>
                 <Col className="col-10-5">
@@ -19,7 +18,10 @@ const Help = () => {
                         <p>Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
                     </div>
                 </Col>
-                <Col className="col-10-3">
+                <Col 
+                    className="col-10-3" 
+                    style={disableBtn && {display: 'none'}}
+                >
                     <div className="btn-wrap">
                         <button>
                             65 Articles

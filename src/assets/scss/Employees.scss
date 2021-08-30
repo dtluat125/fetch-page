@@ -1,15 +1,16 @@
 @import '../../App.scss';
 
 .employees {
-    .container {
-        @include Responsive(xxl) {
-            max-width: 1134px;
-        }
+    --padding-x: 15px;
+
+    .cus-container {
+        padding-left: var(--padding-x);
+        padding-right: var(--padding-x);
     }
     .employees-header {
         background-color: #EEF6FA;
         
-        .container {
+        .cus-container {
             height: 785px;
             background: url("../../assets/img/mask 12.png");
             background-repeat: no-repeat;
@@ -86,8 +87,11 @@
     }
 
     .row-icon-3 {
+        --max-icon-size: 171px;
         justify-content: space-between;
         margin-bottom: 109px;
+        position: relative;
+
         .icon-title {
             font-family: Gilroy-SemiBold;
             font-size: 20px;
@@ -106,18 +110,33 @@
             text-align: center;
             color: #A4B7C8;
         }
+
+        .wrap-icon {
+            img {
+                max-width: var(--max-icon-size);
+            }
+        }
+
+        .horizontal-line {
+            height: 5px;
+            background-color:#D2E2F0;
+            position: absolute;
+            left: calc(100%/6);
+            right: calc(100%/6);
+            top: calc(var(--max-icon-size)/2);
+            z-index: -1;
+        }
     }
 
     .employees-usp {
         .row-top {
 
             .usp-col-top-left {
-                background-color: #F1F3F7;
 
                 .col-6-wrap {
-                    max-width: 567px;
+                    max-width: 570px;
                     margin-left: auto;
-                    padding: 0 12px;
+                    padding: 0 var(--padding-x);
 
                     h1 {
                         font-family: Gilroy-SemiBold;
@@ -156,14 +175,23 @@
                         }
 
                         .check-icon-wrap {
-                            padding: 10px;
-                            margin-right: 24px;
+                            padding-right: 24px;
 
-                            .check-icon {
-                                display: block;
-                                width: 15px;
-                                height: 11px;
+                            span {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 32px;
+                                height: 32px;
+                                background: #EF7558;
+                                border-radius: 50%;
+
+                                & > svg {
+                                    width: 15px;
+                                    height: 11px;
+                                }
                             }
+
                         }
 
                     }
@@ -174,13 +202,13 @@
                 background-color: #F1F3F7;
 
                 .col-6-wrap {
-                    max-width: 567px;
+                    max-width: 570px;
                     margin-right: auto;
-                    padding: 0 12px;
+                    padding: 0 var(--padding-x);
 
                     img {
                         display: block;
-                        margin-left: auto;
+                        margin-left: 20px;
                         margin-top: 89px;
                         margin-bottom: 81px;
                     }
@@ -191,23 +219,32 @@
         .row-bottom {
             .usp-col-bt-left {
                 background-color: #F1F2F6;
-                padding: 0 12px;
 
-                img {
-                    margin-top: 123px;
-                    margin-bottom: 137px;
+                .col-6-wrap {
+                    padding: 0 var(--padding-x);
+                    max-width: 570px;
+                    margin-left: auto;
+
+                    img {
+                        max-width: 540px;
+                        display: block;
+                        margin-top: 123px;
+                        margin-bottom: 137px;
+                        margin-left: -20px;
+                    }
                 }
+
             }
 
             .usp-col-bt-right {
-                padding: 0 12px;
+                padding: 0 var(--padding-x);
 
                 .row-cus {
-                    max-width: 567px;
+                    max-width: 570px;
                     margin-right: auto;
 
                     .col-10-wrap {
-                        margin-left: -24px;
+                        margin-left: calc(-2 *var(--padding-x));
 
                         h1 {
                             font-family: Gilroy-SemiBold;
@@ -220,13 +257,14 @@
                             margin-bottom: 27px;
                         }
         
-                        p {
+                        .describe {
                             font-family: Gilroy-Regular;
                             font-size: 16px;
                             line-height: 24px;
                             color: #A4B7C8;
                             text-align: left;
                             margin-bottom: 39px;
+                            max-width: 400px;
                         }
 
                         ul {
@@ -242,18 +280,18 @@
                                 span {
                                     width: 32px;
                                     height: 32px;
-                                    background: #FFC01E;
+                                    background: #EF7558;
                                     border-radius: 50%;
                                     border: none;
                                     margin-right: 16px;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
-                                }
 
-                                img {
-                                    width: 15px;
-                                    height: 11px;
+                                    & > svg {
+                                        width: 15px;
+                                        height: 11px;
+                                    }
                                 }
 
                                 p {
@@ -277,8 +315,8 @@
     .employees-member {
         
 
-        .container {
-            height: 1965px;
+        .cus-container {
+            height: calc(1965px - 87px);
             background: url("../../assets/img/memberBg1.png");
             background-repeat: no-repeat;
             background-origin: content-box;
@@ -288,7 +326,7 @@
         .first-row {
             
 
-            .col-6 {
+            .first-row-col-center {
                 h1 {
                     font-family: Gilroy-Light;
                     font-size: 144px;
@@ -324,13 +362,13 @@
         }
 
         .second-row {
-            .col-6:nth-child(1) {
+            .second-row-col-half:nth-child(1) {
                 .cmt-wrap {
                     margin-top: 152px;
                 }
             }
 
-            .col-6:nth-child(2) {
+            .second-row-col-half:nth-child(2) {
                 .cmt-wrap {
                     margin-top: 538px;
                 }
@@ -430,7 +468,7 @@
     .employees-join {
         background-color: #F5F5F5;
 
-        .container {
+        .cus-container {
             padding-top: 49px;
             padding-bottom: 49px;
         }

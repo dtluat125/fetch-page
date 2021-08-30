@@ -1,71 +1,75 @@
 import React from 'react';
-import './Employees.scss';
+import '../../assets/scss/Employees.scss';
 import Group5169011 from '../../assets/img/Group 5169011.png';
 import Group5169010 from '../../assets/img/Group 5169010.png';
 import Group5169009 from '../../assets/img/Group 5169009.png';
 import FrameUsp from '../../assets/img/FrameUsp.png';
-import tick15 from '../../assets/img/tick15.svg';
-import uspBLbanner from '../../assets/img/b37b150acf507dc5917ea93a18f01019 1.png'
+import {ReactComponent as Tick15 } from '../../assets/img/tick15.svg';
+import uspBLbanner from '../../assets/img/Group 5169033.png'
 import avt1 from '../../assets/img/avt1.png';
 import avt2 from '../../assets/img/avt2.png';
+import { Row, Col } from 'antd';
+
 
 const Employees = () => {
     return (
         <div className="employees">
             <section className="employees-header">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-6 reach-further">
+                <div className="cus-container">
+                    <Row gutter={30}>
+                        <Col span={12} className="reach-further">
                             <h1>Reach further with fetch</h1>
                             <p>No longer is hiring and managing offshore staff daunting. With Fetch, you get to build your remote dream team effortlessly while we handle the paperwork!</p>
                             <button className="btn-join-our-team">Join Our Team</button>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                 </div>
             </section>
             <section className="employees-how-it-work">
-                <div className="container">
+                <div className="cus-container">
                     <div className="employees-how-it-work-header">
                         <h1>How it works</h1>
                         <p>Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market</p>
                     </div>
-                    <div className="row row-icon-3">
-                        <div className="col-3">
-                            <div>
+                    <Row className="row-icon-3" gutter={30}>
+                        <Col span={8}>
+                            <div className="wrap-icon">
                                 <img src={Group5169011} alt="English Proficiency" />
                             </div>
                             <p className="icon-title">English Proficiency</p>
                             <p className="icon-content">Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
-                        </div>
-                        <div className="col-3">
-                            <div>
+                        </Col>
+                        <Col span={8}>
+                            <div className="wrap-icon">
                                 <img src={Group5169010} alt="Coding Challenge" />
                             </div>
                             <p className="icon-title">Coding Challenge</p>
                             <p className="icon-content">Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
                         
-                        </div>
-                        <div className="col-3">
-                            <div>
+                        </Col>
+                        <Col span={8}>
+                            <div className="wrap-icon">
                                 <img src={Group5169009} alt="Coding Challenge" />
                             </div>
                             <p className="icon-title">Technical Interview</p>
                             <p className="icon-content">Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
                         
-                        </div>
-                    </div>
+                        </Col>
+                        <div className="horizontal-line"></div>
+                    </Row>
                 </div>
             </section>
             <section className="employees-usp">
-                <div className="container-fluid px-0">
-                    <div className="row g-0 row-top">
-                        <div className="col-6 usp-col-top-left">
+                <div className="cus-container-fluid">
+                    <Row className="row-top" gutter={0}>
+                        <Col className="usp-col-top-left" span={12}>
                             <div className="col-6-wrap">
                                 <h1>Global Exposure working with foreign companies</h1>
                                 <div className="achieve-item">
                                     <div className="check-icon-wrap">
-                                        <img className="check-icon" src={tick15} alt="tick-icon"/>
-                                    
+                                        <span>
+                                            <Tick15 />
+                                        </span>
                                     </div>
                                     <div>
                                         <h3>We’re Experienced</h3>
@@ -74,7 +78,9 @@ const Employees = () => {
                                 </div>
                                 <div className="achieve-item">
                                     <div className="check-icon-wrap">
-                                        <img className="check-icon" src={tick15} alt="tick-icon"/>
+                                        <span>
+                                            <Tick15 />
+                                        </span>
                                     </div>
                                     <div>
                                         <h3>We’re Experienced</h3>
@@ -82,64 +88,63 @@ const Employees = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-6 usp-col-top-right">
+                        </Col>
+                        <Col className="usp-col-top-right" span={12} >
                             <div className="col-6-wrap">
                                 <img src={FrameUsp} alt="FrameUsp" />
                             </div>
-                        </div>
-                    </div>
-                    <div className="row g-0 row-bottom">
-                        <div className="col-6 usp-col-bt-left">
+                        </Col>
+                    </Row>
+                    <Row className="row-bottom" gutter={0}>
+                        <Col className="usp-col-bt-left" span={12} >
                             <div className="col-6-wrap">
                                 <img src={uspBLbanner} alt="" />
                             </div>
-                        </div>
-                        <div className="col-6 usp-col-bt-right">
-                            <div className="row row-cus">
-                                <div className="col-2"></div>
-                                <div className="col-10">
+                        </Col>
+                        <Col className="usp-col-bt-right" span={12} >
+                            <Row className="row-cus" gutter={30}>
+                                <Col span={20} offset={4}>
                                     <div className="col-10-wrap">
                                         <h1>Fetch and it’s amazing benefits and perks</h1>
-                                        <p>Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
+                                        <p className="describe">Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
                                         <ul>
                                             <li>
                                                 <span>
-                                                    <img src={tick15} alt="tick-bg" />
+                                                    <Tick15 />
                                                 </span>
                                                 <p>13 Month Bonus</p>
                                             </li>
                                             <li>
                                                 <span>
-                                                    <img src={tick15} alt="tick-bg" />
+                                                    <Tick15 />
                                                 </span>
                                                 <p>Monthly company retreat</p>
                                             </li>
                                             <li>
                                                 <span>
-                                                    <img src={tick15} alt="tick-bg" />
+                                                    <Tick15 />
                                                 </span>
                                                 <p>Daily lunches provided</p>
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
                 </div>
             </section>
             <section className="employees-member">
-                <div className="container">
-                    <div className="row justify-content-center first-row">
-                        <div className="col-6">
+                <div className="cus-container">
+                    <Row className="first-row" justify="center" gutter={30}>
+                        <Col className="first-row-col-center" span={12}>
                             <h1>500+</h1>
                             <h2>Members of the Fetch family</h2>
                             <p>No longer is hiring and managing offshore staff daunting. With Fetch, you get to build your remote dream team effortlessly while we handle the paperwork!</p>
-                        </div>
-                    </div>
-                    <div className="row second-row">
-                        <div className="col-6">
+                        </Col>
+                    </Row>
+                    <Row className="second-row" gutter={30}>
+                        <Col className="second-row-col-half" span={12}>
                             <div className="cmt-wrap">
                                 <img src={avt1} alt="avt"/>
                                 <div className="cmt">
@@ -150,8 +155,8 @@ const Employees = () => {
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-6">
+                        </Col>
+                        <Col className="second-row-col-half" span={12}>
                             <div className="cmt-wrap">
                                 <img src={avt2} alt="avt"/>
                                 <div className="cmt">
@@ -162,10 +167,10 @@ const Employees = () => {
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center third-row">
-                        <div className="col-10">
+                        </Col>
+                    </Row>
+                    <Row className="third-row" gutter={30} justify="center">
+                        <Col className="col-10" span={20} >
                             <div className="view-role-wrap">
                                 <div className="wrap-text">
                                     <h2>At fetch, we are family</h2>
@@ -176,23 +181,23 @@ const Employees = () => {
                                 </div>
 
                             </div>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                 </div>
             </section>
             <section className="employees-join">
-                <div className="container">
-                    <div className="row justify-content-between">
-                        <div className="col-10 col-text">
+                <div className="cus-container">
+                    <Row justify="center" gutter={30}>
+                        <Col className="col-text" span={20}>
                             <h2>Join Our Team Now!</h2>
                             <p>Be part of our growing network of satisfied partners</p>
-                        </div>
-                        <div className="col-2 col-btn">
+                        </Col>
+                        <Col className="col-btn" span={4}>
                             <div className="btn-wrap">
                                 <button>Join Our Team</button>
                             </div>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
 
                 </div>
             </section>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Contact.scss';
+import '../../assets/scss/Contact.scss';
 import { Row, Col } from 'antd';
 import imgLeft from '../../assets/img/contactColLeft.png';
 

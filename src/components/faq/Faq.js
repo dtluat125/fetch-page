@@ -1,15 +1,15 @@
 import React from 'react';
-import './Faq.scss';
-import 'antd/dist/antd.css';
+import '../../assets/scss/Faq.scss';
 import { Row, Col } from 'antd';
 import {ReactComponent as SearchIcon} from '../../assets/img/icon-search.svg';
 import Help from './help/Help';
 import HelpDetail from './help/HelpDetail';
+import HelpArticle from './help/HelpArticle';
+
 
 const Faq = () => {
     return (
         <div className="faq">
-            
             <header className="faq-header">
                 <div className="cus-container">
                     <Row justify="center" className="row-search" gutter={30}>
@@ -35,10 +35,12 @@ const Faq = () => {
                         <Col span={20}>
                             <Help />
                             <HelpDetail />
+                            <HelpArticle />
                         </Col>
                     </Row>
                 </div>
             </section>
+            <section>Footer waiting</section>
             
         </div>
     )

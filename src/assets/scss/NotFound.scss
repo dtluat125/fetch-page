@@ -1,0 +1,57 @@
+.not-found {
+    --padding-x: 15px;
+
+    .not-found-body {
+        background: url("../../assets/img/404.png") no-repeat;
+        background-origin: border-box;
+        min-height: 740px;
+
+        .cus-container {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+            padding-top: 550px;
+
+        }
+
+        
+        .not-found-body-row {
+            h6 {
+                font-family: Gilroy-Regular;
+                font-size: 19px;
+                line-height: 145%;
+                letter-spacing: 0px;
+                text-align: center;
+                color: #17274E;
+                margin-bottom: 16px;
+            }
+
+            .btn-direct {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 17px 25px;
+
+                    border: 1px solid #FFBE16;
+                    box-sizing: border-box;
+                    border-radius: 8px;
+                    background-color: transparent;
+
+                    font-family: Gilroy-Medium;
+                    font-size: 20px;
+                    line-height: 20px;
+                    letter-spacing: 0px;
+                    text-align: center;
+                    color: #FFBE16;
+                    margin: 0 11px;
+                }
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,90 @@
+.help-article {
+    margin-bottom: 77px;
+    
+    .help-article-inner {
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(39, 58, 95, 0.08);
+        border-radius: 8px;
+    }
+    
+
+    .article-wrap {
+        padding-left: calc(0.2 * (100% + 2 * var(--padding-x)));
+        padding-right: calc(0.2 * (100% + 2 * var(--padding-x)));
+        text-align: left;
+        padding-top: 52px;
+
+        h3 {
+            font-family: Gilroy-SemiBold;
+            font-size: 36px;
+            line-height: 45px;
+            letter-spacing: -1px;
+            text-align: left;
+            color: #17274E;
+        }
+
+        p {
+            font-family: Gilroy-Regular;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #A4B7C8;
+            margin-bottom: 54px;
+        }
+    }
+
+    .article-body {
+        margin-bottom: 19px;
+
+        & > p,ul {
+            font-family: Gilroy-Regular;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #17274E;
+            
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-bottom: 0;
+        }
+    }
+
+    .evaluate {
+        padding-left: var(--padding-x);
+        padding-right: var(--padding-x);
+        padding-bottom: var(--padding-x);
+
+        .evaluate-inner {
+            background-color: #F1F3F5;
+            padding-top: 20px;
+
+            p {
+                font-family: Gilroy-Regular;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #8C8C8D;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .icon-wrap {
+                padding-bottom: 20px;
+                span {
+                    display: inline-block;
+                    width: fit-content;
+                    height: fit-content;
+                    margin: 0px 12px;
+                }
+            }
+        }
+    }
+}
