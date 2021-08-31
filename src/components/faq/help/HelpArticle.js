@@ -3,11 +3,9 @@ import '../../../assets/scss/HelpArticle.scss';
 import { ReactComponent as SmileIcon } from '../../../assets/img/smile-solid.svg'
 import { ReactComponent as MehIcon } from '../../../assets/img/meh-solid.svg'
 import { ReactComponent as FrownIcon } from '../../../assets/img/frown-solid.svg'
-import HelpNav from './HelpNav';
 const HelpArticle = () => {
     return (
         <div className="help-article">
-            <HelpNav />
             <div className="help-article-inner">
                 <div className="article-wrap">
                     <div className="article-header">

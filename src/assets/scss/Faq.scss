@@ -1,10 +1,13 @@
 @import '../../App.scss';
 
 .faq {
+
     @include Responsive(xs) {
         --padding-x: 10.5px;
     }
-    
+    @include Responsive(sm) {
+        --padding-x: 12px;
+    }
     @include Responsive(xl) {
         --padding-x: 15px;
     }
@@ -13,6 +16,7 @@
         padding-left: var(--padding-x);
         padding-right: var(--padding-x);
     }
+
     .faq-header {
         background: url("../../assets/img/bgFAQ.png") no-repeat center center;
         -webkit-background-size: cover;
@@ -34,7 +38,13 @@
                     margin-bottom: 16px;
                     line-height: 45px;
                     letter-spacing: -1px;
+                }
 
+                @include Responsive(sm) {
+                    margin-top: 128px;
+                    margin-bottom: 16px;
+                    line-height: 45px;
+                    letter-spacing: -1px;
                 }
 
                 @include Responsive(xl) {
@@ -58,6 +68,11 @@
                     font-size: 19px;
 
                 }
+                @include Responsive(sm) {
+                    margin-bottom: 16px;
+                    font-size: 19px;
+
+                }
 
                 @include Responsive(xl) {
                     margin-bottom: 32px;
@@ -76,6 +91,10 @@
                 padding: 20px 16px;
 
                 @include Responsive(xs) {
+                    height: 64px;
+                    margin-bottom: 128px;
+                }
+                @include Responsive(sm) {
                     height: 64px;
                     margin-bottom: 128px;
                 }

@@ -2,6 +2,7 @@
 
 .employees {
     @include Responsive(xs) { --padding-x: 10.5px; }
+    @include Responsive(sm) { --padding-x: 12px; }
     @include Responsive(xl) { --padding-x: 15px; }
 
     .cus-container {
@@ -19,6 +20,11 @@
 
             @include Responsive(xs) {
                 background-size: 100%;
+            }
+
+            @include Responsive(sm) {
+                background-size: cover;
+                background-position-x: 50px;
             }
 
             @include Responsive(xl) {
@@ -42,6 +48,18 @@
                     margin-bottom: 16px;
                 }
 
+                @include Responsive(sm) {
+                    font-size: 36px;
+                    line-height: 45px;
+                    margin-bottom: 16px;
+                }
+
+                @include Responsive(lg) {
+                    font-size: 48;
+                    line-height: 45px;
+                    margin-bottom: 16px;
+                }
+
                 @include Responsive(xl) {
                     font-size: 54px;
                     line-height: 60px;
@@ -58,6 +76,12 @@
                 @include Responsive(xs) {
                     font-size: 19px;
                     line-height: 28px;
+                    margin-bottom: 24px;
+                }
+
+                @include Responsive(sm) {
+                    font-size: 20px;
+                    line-height: 30px;
                     margin-bottom: 24px;
                 }
 
@@ -118,6 +142,29 @@
 
             }
 
+            @include Responsive(sm) {
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 56px;
+                max-width: 375px;
+
+            }
+
+            @include Responsive(md) {
+                max-width: initial;
+                font-size: 24px;
+                line-height: 24px;
+                margin-bottom: 56px;
+
+            }
+
+            @include Responsive(lg) {
+                font-size: 36px;
+                line-height: 36px;
+                margin-bottom: 56px;
+
+            }
+
             @include Responsive(xl) {
                 font-size: 42px;
                 line-height: 48px;
@@ -130,6 +177,18 @@
     .row-icon-3 {
         @include Responsive(xs) { 
             --max-icon-size: 80px; 
+        }
+
+        @include Responsive(sm) { 
+            --max-icon-size: 84px; 
+        }
+
+        @include Responsive(md) { 
+            --max-icon-size: 92px; 
+        }
+
+        @include Responsive(lg) { 
+            --max-icon-size: 100px; 
         }
 
         @include Responsive(xl) { 
@@ -175,6 +234,8 @@
             z-index: -1;
 
             @include Responsive(xs) { display: none; }
+            @include Responsive(sm) { display: none; }
+            @include Responsive(md) { display: block; }
         }
     }
 
@@ -184,14 +245,39 @@
                 flex-wrap: wrap-reverse;
             }
 
+            @include Responsive(sm) {
+                flex-wrap: wrap-reverse;
+            }
+
             .usp-col-top-left {
+                display: flex;
+                align-items: center;
+
                 .col-6-wrap {
                     padding: 0 var(--padding-x);
+                    width: 100%;
 
                     @include Responsive(xs) {
                         max-width: $max-width-xs;
                         margin-left: auto;
                         margin-right: auto;
+                    }
+
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-left: auto;
+                        margin-right: initial;
+                    }
+
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
+                        margin-left: auto;
                     }
 
                     @include Responsive(xl) {
@@ -213,8 +299,22 @@
                             margin-top: 16px;
                         }
 
+                        @include Responsive(sm) {
+                            font-size: 24px;
+                            line-height: 30px;
+                            letter-spacing: -0.25px;
+                            margin-top: 16px;
+                        }
+
+                        @include Responsive(md) {
+                            font-size: 26px;
+                            line-height: 30px;
+                            letter-spacing: -0.25px;
+                            margin-top: 0;
+                        }
+
                         @include Responsive(xl) {
-                            margin-top: 181px;
+                            // margin-top: 181px;
                             font-size: 42px;
                             line-height: 50px;
                             letter-spacing: -1px;
@@ -274,10 +374,28 @@
 
                 .col-6-wrap {
                     padding: 0 var(--padding-x);
+                    width: 100%;
 
                     @include Responsive(xs) {
                         max-width: $max-width-xs;
                         margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-right: auto;
+                        margin-left: initial;
+                    }
+
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
                         margin-right: auto;
                     }
 
@@ -288,10 +406,16 @@
 
                     img {
                         display: block;
-                        
-                        @include Responsive(xs) {
-                            max-width: 100%;
-                            margin-top: 71px;
+                        max-width: 100%;
+
+                        @include Responsive(md) {
+                            margin-top: 50px;
+                            margin-bottom: 50px;
+                        }
+
+                        @include Responsive(lg) {
+                            margin-top: 70px;
+                            margin-bottom: 70px;
                         }
 
                         @include Responsive(xl) {
@@ -310,11 +434,29 @@
 
                 .col-6-wrap {
                     padding: 0 var(--padding-x);
-                    
+                    width: 100%;
+
                     @include Responsive(xs) {
                         max-width: $max-width-xs;
                         margin-left: auto;
                         margin-right: auto;
+                    }
+
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-right: initial;
+                        margin-left: auto;
+                    }
+
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
+                        margin-left: auto;
                     }
 
                     @include Responsive(xl) {
@@ -323,12 +465,17 @@
                     }
 
                     img {
-                        
+                        max-width: 100%;
                         display: block;
-                        
-                        @include Responsive(xs) {
-                            max-width: 100%;
-                            margin-top: 71px;
+
+                        @include Responsive(md) {
+                            margin-top: 50px;
+                            margin-bottom: 50px;
+                        }
+
+                        @include Responsive(lg) {
+                            margin-top: 70px;
+                            margin-bottom: 70px;
                         }
 
                         @include Responsive(xl) {
@@ -343,21 +490,68 @@
             }
 
             .usp-col-bt-right {
-                padding: 0 var(--padding-x);
+                display: flex;
+                align-items: center;
+
+                .col-6-wrap {
+                    padding: 0 var(--padding-x);
+                    width: 100%;
+
+                    @include Responsive(xs) {
+                        max-width: $max-width-xs;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-left: initial;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(xl) {
+                        max-width: $max-width-xl/2;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(xxl) {
+                        max-width: $max-width-xxl/2;
+                        margin-right: auto;
+                    }
+                }
 
                 .row-cus {
-                    max-width: 570px;
-                    margin-right: auto;
-
                     .col-10-cus {
                         @include Responsive(xs) {
                             margin-left: auto;
                             margin-right: auto;
                         }
+
+                        @include Responsive(sm) {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        @include Responsive(md) {
+                            margin-left: auto;
+                            margin-right: initial;
+                        }
+
                     }
 
                     .col-10-wrap {
-                        @include Responsive(xl) {
+                        @include Responsive(md) {
                             margin-left: calc(-2 *var(--padding-x));
                         }
 
@@ -376,13 +570,28 @@
                                 letter-spacing: -0.25px;
                                 margin-top: 16px;
                             }
-    
+
+                            @include Responsive(sm) {
+                                font-size: 24px;
+                                line-height: 30px;
+                                letter-spacing: -0.25px;
+                                margin-top: 16px;
+                            }
+
+                            @include Responsive(md) {
+                                font-size: 26px;
+                                line-height: 30px;
+                                letter-spacing: -0.25px;
+                                margin-top: 0;
+                            }
+
                             @include Responsive(xl) {
-                                margin-top: 195px;
+                                // margin-top: 195px;
                                 font-size: 42px;
                                 line-height: 50px;
                                 letter-spacing: -1px;
                             }
+
                         }
         
                         .describe {
@@ -404,12 +613,6 @@
                                 display: flex;
                                 align-items: center;
                                 margin-bottom: 21px;
-
-                                @include Responsive(xs) {
-                                    &:last-child {
-                                        margin-bottom: 40px;
-                                    }
-                                }
 
                                 span {
                                     width: 32px;
@@ -435,6 +638,7 @@
                                     line-height: 20px;
                                     letter-spacing: -0.25px;
                                     color: #17274E;
+                                    text-align: left;
                                 }
                             }
                         }
@@ -448,10 +652,14 @@
 
     .employees-member {
         
-
         .cus-container {
             
             @include Responsive(xs) {
+                background-color: #FDFEFE;
+                padding-top: 58px;
+            }
+
+            @include Responsive(sm) {
                 background-color: #FDFEFE;
                 padding-top: 58px;
             }
@@ -479,6 +687,12 @@
                         line-height: 95px;
                         margin-bottom: 20px;
                     }
+
+                    @include Responsive(sm) {
+                        font-size: 96px;
+                        line-height: 95px;
+                        margin-bottom: 20px;
+                    }
         
                     @include Responsive(xl) {
                         font-size: 144px;
@@ -494,6 +708,14 @@
                     color: #273A5F;
 
                     @include Responsive(xs) {
+                        font-size: 22px;
+                        line-height: 30px;
+                        letter-spacing: -0.25px;
+                        margin-bottom: 14px;
+
+                    }
+
+                    @include Responsive(sm) {
                         font-size: 22px;
                         line-height: 30px;
                         letter-spacing: -0.25px;
@@ -523,16 +745,22 @@
                         line-height: 28px;
                         margin-bottom: 58px;
                     }
-        
-                    @include Responsive(xl) {
+
+                    @include Responsive(sm) {
                         font-size: 20px;
                         line-height: 30px;
+                        margin-bottom: 58px;
+                    }
+
+                    @include Responsive(xl) {
+                        margin-bottom: initial;
                     }
                 }
             }
         }
 
         .second-row {
+            
             .second-row-col-half:nth-child(1) {
                 .cmt-wrap {
                     @include Responsive(xl) {
@@ -546,7 +774,24 @@
                     @include Responsive(xs) {
                         margin-top: 67px;
                     }
+                    @include Responsive(sm) {
+                        margin-top: 67px;
+                    }
+
+                    @include Responsive(md) {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 0;
+
+                        .cmt {
+                            flex: 1;
+                        }
+                    }
+
                     @include Responsive(xl) {
+                        height: initial;
+                        display: block;
                         margin-top: 538px;
                     }
                 }
@@ -572,6 +817,7 @@
                 text-align: left;
 
                 @include Responsive(xs) { padding: 24px;}
+                @include Responsive(sm) { padding: 24px;}
                 @include Responsive(xl) { padding: 48px;}
 
                 p {
@@ -580,7 +826,12 @@
                     letter-spacing: 0px;
 
                     @include Responsive(xs) {
-                        font-family: Gilroy-Regular;
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-bottom: 24px;
+                    }
+
+                    @include Responsive(sm) {
                         font-size: 16px;
                         line-height: 24px;
                         margin-bottom: 24px;
@@ -605,6 +856,13 @@
 
                     }
 
+                    @include Responsive(sm) {
+                        font-size: 15px;
+                        line-height: 23px;
+                        letter-spacing: 0.07717770338058472px;
+
+                    }
+
                     @include Responsive(xl) {
                         font-size: 20px;
                         line-height: 30px;
@@ -616,8 +874,15 @@
 
         .third-row {
             @include Responsive(xs) { 
-                margin-top: 169px;
+                margin-top: 58px;
+                margin-bottom: 169px;
             }
+
+            @include Responsive(sm) { 
+                margin-top: 58px;
+                margin-bottom: 169px;
+            }
+
             @include Responsive(xl) { 
                 margin-top: 66px; 
             }
@@ -629,7 +894,8 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
                 
-                @include Responsive(xs) { padding: 56px 26px; }
+                @include Responsive(xs) { padding: 24px; }
+                @include Responsive(sm) { padding: 24px; }
                 @include Responsive(xl) { padding: 45px 42px; }
 
                 .wrap-text {
@@ -639,7 +905,15 @@
                         max-width: 100%;
                         text-align: center;
                     }
-                    @include Responsive(xl) {
+
+                    @include Responsive(sm) { 
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        text-align: center;
+                    }
+
+                    @include Responsive(md) {
+                        flex: 1;
                         max-width: 540px;
                         text-align: left;
                     }
@@ -654,6 +928,24 @@
                             line-height: 45px;
                             margin-bottom: 24px;
                         }
+                        @include Responsive(sm) {
+                            font-size: 36px;
+                            line-height: 45px;
+                            margin-bottom: 24px;
+                        }
+
+                        @include Responsive(md) {
+                            font-size: 30px;
+                            line-height: 36px;
+                            margin-bottom: 24px;
+                        }
+
+                        @include Responsive(lg) {
+                            font-size: 36px;
+                            line-height: 45px;
+                            margin-bottom: 24px;
+                        }
+
                         @include Responsive(xl) {
                             font-size: 42px;
                             line-height: 50px;
@@ -670,10 +962,17 @@
                         @include Responsive(xs) {
                             font-size: 19px;
                             line-height: 28px;
-
                         }
-                        @include Responsive(xl) {
-                            font-size: 20px;
+                        @include Responsive(sm) {
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                        @include Responsive(md) {
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                        @include Responsive(lg) {
+                            font-size: 20;
                             line-height: 30px;
                         }
                     }
@@ -689,7 +988,15 @@
                         justify-content: center;
                         margin-top: 32px;
                     }
-                    @include Responsive(xl) {
+
+                    @include Responsive(sm) { 
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        justify-content: center;
+                        margin-top: 32px;
+                    }
+
+                    @include Responsive(md) {
                         max-width: 130px;
                     }
 
@@ -722,7 +1029,19 @@
         }
 
         .col-text {
-            text-align: left;
+            @include Responsive(xs) {
+                text-align: center;
+            }
+
+            @include Responsive(sm) {
+                text-align: center;
+            }
+
+            @include Responsive(md) {
+                text-align: left;
+            }
+            
+
             h2 {
                 font-family: Gilroy-SemiBold;
                 font-size: 36px;

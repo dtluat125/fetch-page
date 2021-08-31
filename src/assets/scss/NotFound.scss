@@ -6,6 +6,12 @@
         --padding-top: 91px;
         --padding-bottom: 94px;
     }
+
+    @include Responsive(sm) {
+        --padding-x: 12px;
+        --padding-top: 91px;
+        --padding-bottom: 94px;
+    }
     
     @include Responsive(xl) {
         --padding-x: 15px;
@@ -52,6 +58,7 @@
         .not-found-body-row-img {
 
             @include Responsive(xs) { margin-bottom: 57px;};
+            @include Responsive(sm) { margin-bottom: 57px;};
             @include Responsive(xl) { margin-bottom: 65px;};
 
             .img-inner {
@@ -64,42 +71,65 @@
                 .fetch {
                     max-width: 55.09px;
                     max-height: 32.87px;
+                    width: 100%;
+                    height: 100%;
 
-                    @include Responsive(xl) {
-                        max-width: 100%;
-                        max-height: 100%;
+                    @include Responsive(lg) {
+                        max-width: 96px;
+                        max-height: 57px;
                     }
                 }
 
                 .fetch-yellow {
                     position: absolute;
                     @include Responsive(xs) {
-                        top: calc(100% - var(--padding-x));
-                        right: 0;
-                        transform: translateX(calc(-1 * var(--padding-x)));
+                        top: calc(100% - 6px);
+                        right: 6px;
                     }
-
-                    @include Responsive(xl) {
-                        top: calc(100% - var(--padding-x));
+                    @include Responsive(sm) {
+                        top: calc(100% - 10px);
+                        right: 10px;
+                    }
+                    @include Responsive(md) {
+                        top: calc(100% - 10px);
                         left: 0;
-                        transform: translateX(calc(-100% + var(--padding-x)));
+                        transform: translateX(calc(-100% + 10px))
+                    }
+                    @include Responsive(lg) {
+                        top: calc(100% - 12px);
+                        left: 0;
+                        transform: translateX(calc(-100% + 14px))
+                    }
+                    @include Responsive(xl) {
+                        top: calc(100% - 13px);
+                        left: 0;
+                        transform: translateX(calc(-100% + 19px))
 
                     }
                 }
                 .fetch-red {
                     position: absolute;
                     @include Responsive(xs) {
-                        top: calc(100% - var(--padding-x));
-                        left: 0;
-                        transform: translateX(calc(1 * var(--padding-x)));
+                        top: calc(100% - 8px);
+                        left: 6px;
 
+                    }
+                    @include Responsive(sm) {
+                        top: calc(100% - 10px);
+                        left: 10px;
+                    }
+                    @include Responsive(md) {
+                        top: 10px;
+                        left: calc(100% - 10px);
+                    }
+                    @include Responsive(lg) {
+                        top: 12px;
+                        left: calc(100% - 14px);
                     }
                     
                     @include Responsive(xl) {
-                        top: var(--padding-x);
-                        right: 0;
-                        transform: translateX(calc(100% - var(--padding-x)));
-                        
+                        top: 12px;
+                        left: calc(100% - 16px);
                     }
                 }
 
@@ -119,6 +149,11 @@
                 letter-spacing: 0px;
 
                 @include Responsive(xs) {
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 24px;
+                }
+                @include Responsive(sm) {
                     font-size: 16px;
                     line-height: 24px;
                     margin-bottom: 24px;

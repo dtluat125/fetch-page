@@ -14,8 +14,8 @@ const NotFound = () => {
                     <div className="text-wrap">
                         <h1>It’s a</h1>
                     </div>
-                    <Row className="not-found-body-row-img" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, {xs: 0, sm: 0}]} justify="center">
-                        <Col xs={24} xxl={16}>
+                    <Row className="not-found-body-row-img" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]} justify="center">
+                        <Col xs={24} sm={24} md={16}>
                             <div className="img-wrap">
                                 <div className="img-inner">
                                     <img className="img-404" src={img4042} alt="404" />
@@ -26,7 +26,7 @@ const NotFound = () => {
                         </Col>
                     </Row>
                     <Row className="not-found-body-row" gutter={30} justify="center">
-                        <Col xs={24} xxl={12}>
+                        <Col xs={24} sm={24} md={12}>
                             <h6>Oh no! The page you’re looking for is currently unavailable. Please try again later.</h6>
                             <div className="btn-direct">
                                 <button>Go Back</button>

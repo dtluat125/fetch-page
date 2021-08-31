@@ -20,6 +20,18 @@
             padding-top: 54px;
         }
 
+        @include Responsive(sm) {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+            padding-top: 54px;
+        }
+
+        @include Responsive(lg) {
+            padding-left: calc(0.1 * (100% + 2 * var(--padding-x)));
+            padding-right: calc(0.1 * (100% + 2 * var(--padding-x)));
+            padding-top: 52px;
+        }
+
         @include Responsive(xl) {
             padding-left: calc(0.2 * (100% + 2 * var(--padding-x)));
             padding-right: calc(0.2 * (100% + 2 * var(--padding-x)));

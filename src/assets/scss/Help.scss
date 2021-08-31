@@ -21,7 +21,12 @@
             max-width: 100%;
         }
 
-        @include Responsive(xl) {
+        @include Responsive(sm) {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+
+        @include Responsive(md) {
             flex: 0 0 20%;
             max-width: 20%;
         }
@@ -35,8 +40,11 @@
             flex: 0 0 100%;
             max-width: 100%;
         }
+        @include Responsive(sm) {
+            flex:1;
+        }
 
-        @include Responsive(xl) {
+        @include Responsive(md) {
             flex: 0 0 50%;
             max-width: 50%;
         }
@@ -51,8 +59,11 @@
             flex: 0 0 100%;
             max-width: 100%;
         }
-
-        @include Responsive(xl) {
+        @include Responsive(sm) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @include Responsive(md) {
             flex: 0 0 30%;
             max-width: 30%;
         }
@@ -80,8 +91,13 @@
             padding-left: var(--padding-x);
             padding-right: var(--padding-x);
         }
-
-        @include Responsive(xl) {
+        @include Responsive(sm) {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+        }
+        @include Responsive(md) {
+            padding-left: 0;
+            padding-right: 0;
             margin-left: calc(-2 * var(--padding-x));
             margin-right: calc(-2 * var(--padding-x));
         }

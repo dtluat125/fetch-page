@@ -3,6 +3,7 @@
 .contact {
     
     @include Responsive(xs) { --padding-x: 10.5px; }
+    @include Responsive(sm) { --padding-x: 12px; }
     @include Responsive(xl) { --padding-x: 15px; }
 
     background-color: #F3F5F7;
@@ -25,13 +26,22 @@
                 padding-bottom: 70px;
             }
 
-            @include Responsive(xl) {
+            @include Responsive(sm) {
+                padding-top: 72px;
+                padding-bottom: 70px;
+            }
+
+            @include Responsive(md) {
                 padding-top: 72px;
             }
         }
 
         .col-form {
             @include Responsive(xs) {
+                padding-top: 0;
+            }
+
+            @include Responsive(sm) {
                 padding-top: 0;
             }
 
@@ -50,6 +60,10 @@
                 @include Responsive(xs) {
                     padding: 16px;
                 }
+
+                @include Responsive(sm) {
+                    padding: 16px;
+                }
     
                 @include Responsive(xl) {
                     padding: 32px;
@@ -57,19 +71,38 @@
 
                 h1 {
                     font-family: Gilroy-SemiBold;
-                    font-size: 36px;
                     text-align: left;
                     color: #17274E;
 
                     @include Responsive(xs) {
+                        font-size: 36px;
                         margin-top: 39px;
                         line-height: 45px;
                         letter-spacing: -1px;
                         margin-bottom: 41px;
 
                     }
+
+                    @include Responsive(sm) {
+                        font-size: 36px;
+                        margin-top: 39px;
+                        line-height: 45px;
+                        letter-spacing: -1px;
+                        margin-bottom: 41px;
+
+                    }
+
+                    @include Responsive(md) {
+                        font-size: 24px;
+                        margin-top: 39px;
+                        line-height: 45px;
+                        letter-spacing: -1px;
+                        margin-bottom: 30px;
+
+                    }
         
                     @include Responsive(xl) {
+                        font-size: 36px;
                         margin-top: 16px;
                         line-height: 60px;
                         letter-spacing: -0.5px;
@@ -88,7 +121,10 @@
 
                     @include Responsive(xs) {
                         margin-bottom: 47px;
+                    }
 
+                    @include Responsive(sm) {
+                        margin-bottom: 47px;
                     }
         
                     @include Responsive(xl) {
@@ -149,6 +185,22 @@
                         row-gap: 25px;
 
                     }
+
+                    @include Responsive(sm) {
+                        padding-top: 11px;
+                        flex-wrap: wrap-reverse;
+                        justify-content: center;
+                        row-gap: 25px;
+
+                    }
+
+                    @include Responsive(md) {
+                        padding-top: 11px;
+                        flex-wrap: wrap-reverse;
+                        justify-content: center;
+                        row-gap: 25px;
+
+                    }
         
                     @include Responsive(xl) {
                         padding-top: 36px;
@@ -166,10 +218,16 @@
                             flex: 0 0 100%;
                             max-width: 100%;
                             text-align: center;
-    
+                        }
+
+                        @include Responsive(sm) {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                            text-align: center;
                         }
 
                         @include Responsive(xl) {
+                            flex: 1;
                             margin-right: 45px;
                             text-align: left;
                         }
@@ -188,14 +246,7 @@
                         letter-spacing: 0px;
                         text-align: center;
                         color: #FFFFFF;
-
-                        @include Responsive(xs) {
-                            flex: 0 0 100%;
-                            max-width: 123px;
-    
-                        }
-
-
+                        max-width: 123px;
 
                         &:hover {
                             outline: 2px solid transparent;

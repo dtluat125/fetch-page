@@ -1,20 +1,22 @@
 .help-nav {
     text-align: left;
     margin-bottom: 33px;
-    
-    .ant-breadcrumb-link {
-        font-family: Gilroy-Regular;
+
+    .bc-root,.bc-child-one {
+        font-family: Gilroy-SemiBold;
         font-size: 16px;
         line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
         color: #17274E;
     }
 
-    .matched-link {
+    .bc-child {
         font-family: Gilroy-Regular;
         font-size: 16px;
         line-height: 20px;
-        text-align: center;
         letter-spacing: -0.25px;
-        color: #A4B7C8;
+        text-align: center;
+        color: #A4B7C8 !important;
     }
 }
