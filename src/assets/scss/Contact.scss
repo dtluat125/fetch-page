@@ -6,7 +6,7 @@
     @include Responsive(sm) { --padding-x: 12px; }
     @include Responsive(xl) { --padding-x: 15px; }
 
-    background-color: #F3F5F7;
+    // background-color: #F3F5F7;
     .contact-body {
         background-image: url("../../assets/img/bgContact.png");
         background-repeat: no-repeat;

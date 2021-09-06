@@ -1,5 +1,5 @@
 import React from 'react';
-import Help from './Help';
+import HelpList from './HelpList';
 import '../../../assets/scss/HelpDetail.scss';
 import HelpNav from './HelpNav';
 import { Switch, useRouteMatch, Route } from 'react-router';
@@ -18,7 +18,7 @@ const HelpDetail = () => {
                     <HelpArticle />
                 </Route>
                 <Route path="/faq/:level1" >
-                    <Help disableBtn />
+                    <HelpList disableBtn />
                 </Route>
             </Switch>
             

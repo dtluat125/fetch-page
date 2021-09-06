@@ -4,11 +4,13 @@ import '../../assets/scss/NotFound.scss';
 import img4042 from '../../assets/img/404-2.png';
 import FetchYellow from '../../assets/img/FetchYellow.png';
 import FetchRed from '../../assets/img/FetchRed.png';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const NotFound = () => {
     return (
         <div className="not-found">
-            <section>header waiting</section>
+            <section><Header /></section>
             <section className="not-found-body">
                 <div className="cus-container">
                     <div className="text-wrap">
@@ -36,7 +38,7 @@ const NotFound = () => {
                     </Row>
                 </div>
             </section>
-            <section>footer waiting</section>
+            <section><Footer /></section>
             
         </div>
     )

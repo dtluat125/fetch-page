@@ -52,7 +52,7 @@ function App() {
           <Route path="/faq">
             <Faq />
           </Route>
-          <Route path="/404">
+          <Route path="*">
             <NotFound />
           </Route>
           <Route exact path="/">

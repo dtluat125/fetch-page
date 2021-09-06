@@ -134,20 +134,24 @@ function Header() {
                     text="Reports and downloads too"
                     icon={MarketReport}
                   />
-                  <DropdownItem
-                    title="FAQs"
-                    text="Questions & Answers"
-                    icon={FAQs}
-                  />
+                  <Link to="/faq">
+                    <DropdownItem
+                      title="FAQs"
+                      text="Questions & Answers"
+                      icon={FAQs}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="header__contact-button-container">
-              <div role="button" className="header__contact-button">
-                <span className="header__contact-button__content">
-                  Contact Us
-                </span>
-              </div>
+              <Link to="/contact">
+                <div role="button" className="header__contact-button">
+                  <span className="header__contact-button__content">
+                    Contact Us
+                  </span>
+                </div>
+              </Link>
             </div>
           </div>
           {collapse &&

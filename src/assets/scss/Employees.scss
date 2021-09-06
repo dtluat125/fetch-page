@@ -220,7 +220,12 @@
 
         .wrap-icon {
             img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
                 max-width: var(--max-icon-size);
+                vertical-align: middle;
+                border-style: none;
             }
         }
 
@@ -653,6 +658,7 @@
     .employees-member {
         
         .cus-container {
+            padding-bottom: 169px;
             
             @include Responsive(xs) {
                 background-color: #FDFEFE;
@@ -665,11 +671,12 @@
             }
 
             @include Responsive(xl) {
-                height: calc(1965px - 87px);
+                // height: calc(1965px - 87px);
                 background: url("../../assets/img/memberBg1.png");
                 background-repeat: no-repeat;
                 background-origin: content-box;
                 padding-top: 87px;
+                
             }
         }
 
@@ -875,12 +882,12 @@
         .third-row {
             @include Responsive(xs) { 
                 margin-top: 58px;
-                margin-bottom: 169px;
+                // margin-bottom: 169px;
             }
 
             @include Responsive(sm) { 
                 margin-top: 58px;
-                margin-bottom: 169px;
+                // margin-bottom: 169px;
             }
 
             @include Responsive(xl) { 
