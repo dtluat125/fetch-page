@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import logoFaq from '../../assets/img/logoFaq.png';
 
+
 const Faq = () => {
     return (
         <div className="faq">
@@ -43,8 +44,7 @@ const Faq = () => {
                     </Row>
                 </div>
             </section>
-            <Footer />
-            
+            <Footer/>
         </div>
     )
 }
