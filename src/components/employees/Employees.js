@@ -9,11 +9,14 @@ import uspBLbanner from '../../assets/img/Group 5169033.png'
 import avt1 from '../../assets/img/avt1.png';
 import avt2 from '../../assets/img/avt2.png';
 import { Row, Col } from 'antd';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 const Employees = () => {
     return (
         <div className="employees">
+            <Header/>
             <section className="employees-header">
                 <div className="cus-container">
                     <Row gutter={[{xs: 21, sm: 24, xl:30}, 0]}>
@@ -206,6 +209,7 @@ const Employees = () => {
                 </div>
             </section>
             <section style={{marginTop: '80px'}}>footer</section>
+            <Footer/>
         </div>
     )
 }

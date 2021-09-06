@@ -2,11 +2,13 @@ import React from 'react';
 import '../../assets/scss/Contact.scss';
 import { Row, Col } from 'antd';
 import imgLeft from '../../assets/img/contactColLeft.png';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Contact = () => {
     return (
         <div className="contact">
-            <section style={{padding: '20px'}} >header waiting</section>
+            <Header/>
             <section className="contact-body">
                 <div className="cus-container">
                     <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
@@ -41,7 +43,7 @@ const Contact = () => {
                     </Row>
                 </div>
             </section>
-            <section style={{padding: '20px'}} >footer waiting</section>
+            <Footer/>
         </div>
     )
 }

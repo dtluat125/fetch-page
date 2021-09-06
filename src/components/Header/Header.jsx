@@ -36,112 +36,118 @@ function Header() {
     setShowContent(false);
   };
   return (
-   
-      <div className="header">
+    <div className="header">
+      <div
+        className="header__inner"
+        style={!showContent ? { height: 100 } : {}}
+      >
+        <Link to="/">
+          <div className="group-5169054 header__logo">
+            <img src={logo} alt="" />
+          </div>
+        </Link>
         <div
-          className="header__inner"
-          style={!showContent ? { height: 100 } : {}}
+          className={
+            collapse && !showContent
+              ? "header__left collapse"
+              : collapse && showContent
+              ? "header__left collapse show"
+              : "header__left"
+          }
         >
-          <Link to="/">
-            <div className="group-5169054 header__logo">
-              <img src={logo} alt="" />
+          <div className="header__menu-group">
+            <div className="header__menu-first-group">
+              <Link to="/company">
+                <MenuItem title="For Companies" />
+              </Link>
+              <Link to="/employees">
+                <MenuItem title="For Jobseekers" />
+              </Link>
             </div>
-          </Link>
-          <div
-            className={
-              collapse && !showContent
-                ? "header__left collapse"
-                : collapse && showContent
-                ? "header__left collapse show"
-                : "header__left"
-            }
-          >
-            <div className="header__menu-group">
-              <div className="header__menu-first-group">
-                <Link to="/company">
-                  <MenuItem title="For Companies" />
-                </Link>
-                <Link to="/jobseeker">
-                  <MenuItem title="For Jobseekers" />
-                </Link>
-              </div>
 
-              <div className="dropdown">
-                <MenuItem
-                  title="Services"
-                  dropdownToggle={true}
-                  icon={dropdownIcon}
-                  id="services"
-                />
-                <div
-                  className="dropdown-menu header__dropdown-menu"
-                  aria-labelledby="services"
-                >
-                  <div className="upperArrow"></div>
-                  <Link to="/services/1">
-                    <DropdownItem
-                      title="Talent Acquisition"
-                      text="Procure talents from Vietnam
+            <div className="dropdown">
+              <MenuItem
+                title="Services"
+                dropdownToggle={true}
+                icon={dropdownIcon}
+                id="services"
+              />
+              <div
+                className="dropdown-menu header__dropdown-menu"
+                aria-labelledby="services"
+              >
+                <div className="upperArrow"></div>
+                <Link to="/services/1">
+                  <DropdownItem
+                    title="Talent Acquisition"
+                    text="Procure talents from Vietnam
                   "
-                      icon={TalentAcquisition}
-                    />
-                  </Link>
-                  <Link to="/services/2">
-                    <DropdownItem
-                      title="Services management"
-                      text="Employee directives and administration
+                    icon={TalentAcquisition}
+                  />
+                </Link>
+                <Link to="/services/2">
+                  <DropdownItem
+                    title="Services management"
+                    text="Employee directives and administration
                   "
-                      icon={ServiceManagement}
-                    />
-                  </Link>
-                  <Link to="/services/3">
-                    <DropdownItem
-                      title="Payroll and compliances"
-                      text="Streamlined contracting and payroll process
+                    icon={ServiceManagement}
+                  />
+                </Link>
+                <Link to="/services/3">
+                  <DropdownItem
+                    title="Payroll and compliances"
+                    text="Streamlined contracting and payroll process
                   "
-                      icon={Payroll}
-                    />
-                  </Link>
-                  <Link to="/services/4">
-                    <DropdownItem
-                      title="Full-suite project consultancy"
-                      text="Comprehensive projects management
+                    icon={Payroll}
+                  />
+                </Link>
+                <Link to="/services/4">
+                  <DropdownItem
+                    title="Full-suite project consultancy"
+                    text="Comprehensive projects management
                   "
-                      icon={FullSuite}
-                    />
-                  </Link>
-                </div>
+                    icon={FullSuite}
+                  />
+                </Link>
               </div>
-              <div className="dropdown">
-                <MenuItem
-                  title="Resources"
-                  dropdownToggle={true}
-                  icon={dropdownIcon}
-                  id="resources"
-                />
-                <div
-                  className="dropdown-menu header__dropdown-menu"
-                  aria-labelledby="resources"
-                >
-                  <div className="upperArrow"></div>
+            </div>
+            <div className="dropdown">
+              <MenuItem
+                title="Resources"
+                dropdownToggle={true}
+                icon={dropdownIcon}
+                id="resources"
+              />
+              <div
+                className="dropdown-menu header__dropdown-menu"
+                aria-labelledby="resources"
+              >
+                <div className="upperArrow"></div>
+                <Link to="/404">
                   <DropdownItem
                     title="Our story"
                     text="Learn more about us"
                     icon={OurStory}
                   />
+                </Link>
+                <Link to="/404">
                   <DropdownItem
                     title="Market Report"
                     text="Reports and downloads too"
                     icon={MarketReport}
                   />
+                </Link>
+                <Link to="/faq">
                   <DropdownItem
                     title="FAQs"
                     text="Questions & Answers"
                     icon={FAQs}
                   />
-                </div>
+                </Link>
               </div>
             </div>
+          </div>
+          <Link to="/contact">
             <div className="header__contact-button-container">
               <div role="button" className="header__contact-button">
                 <span className="header__contact-button__content">
@@ -149,20 +155,20 @@ function Header() {
                 </span>
               </div>
             </div>
-          </div>
-          {collapse &&
-            (showContent ? (
-              <div className="navbar-toggler" role="button" onClick={closeNav}>
-                <img src={NavbarClose} />
-              </div>
-            ) : (
-              <div className="navbar-toggler" role="button" onClick={openNav}>
-                <img src={NavbarOpen} />
-              </div>
-            ))}
+          </Link>
         </div>
+        {collapse &&
+          (showContent ? (
+            <div className="navbar-toggler" role="button" onClick={closeNav}>
+              <img src={NavbarClose} />
+            </div>
+          ) : (
+            <div className="navbar-toggler" role="button" onClick={openNav}>
+              <img src={NavbarOpen} />
+            </div>
+          ))}
       </div>
-    
+    </div>
   );
 }
 

@@ -5,11 +5,14 @@ import {ReactComponent as SearchIcon} from '../../assets/img/icon-search.svg';
 import Help from './help/Help';
 import HelpDetail from './help/HelpDetail';
 import { Switch, Route } from 'react-router-dom';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 const Faq = () => {
     return (
         <div className="faq">
+            <Header/>
             <header className="faq-header">
                 <div className="cus-container">
                     <Row justify="center" className="row-search" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, { xs: 21, sm: 16, md: 24, xl: 30 }]}>
@@ -43,7 +46,7 @@ const Faq = () => {
                     </Row>
                 </div>
             </section>
-            <section>Footer waiting</section>
+            <Footer/>
             
         </div>
     )
