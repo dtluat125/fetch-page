@@ -1,0 +1,200 @@
+@import '../../App.scss';
+
+.not-found {
+    @include Responsive(xs) {
+        --padding-x: 10.5px;
+        --padding-top: 91px;
+        --padding-bottom: 94px;
+    }
+
+    @include Responsive(sm) {
+        --padding-x: 12px;
+        --padding-top: 91px;
+        --padding-bottom: 94px;
+    }
+    
+    @include Responsive(xl) {
+        --padding-x: 15px;
+        --padding-top: 117px;
+        --padding-bottom: 74px;
+    }
+
+    .not-found-body {
+        background-image: url("../../assets/img/404-1.png");
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        width: 100%;
+        background-size: cover;
+
+        .cus-container {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+            padding-top: var(--padding-top);
+            padding-bottom: var(--padding-bottom);
+
+        }
+
+        .text-wrap {
+            h1 {
+                width: 112px;
+                font-family: Gilroy-SemiBold;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 46px;
+                line-height: 52px;
+                letter-spacing: -0.860151469707489px;
+                margin-bottom: 4.22px;
+                color: #D1E3EE;
+
+                @include Responsive(xl) {
+                    font-size: 54px;
+                    line-height: 60px;
+                    letter-spacing: -1px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .not-found-body-row-img {
+
+            @include Responsive(xs) { margin-bottom: 57px;};
+            @include Responsive(sm) { margin-bottom: 57px;};
+            @include Responsive(xl) { margin-bottom: 65px;};
+
+            .img-inner {
+                max-width: calc(100% + 2*var(--padding-x));
+                margin: auto;
+                position: relative;
+                margin-left: calc(-1*var(--padding-x));
+                margin-right: calc(-1*var(--padding-x));
+
+                .fetch {
+                    max-width: 55.09px;
+                    max-height: 32.87px;
+                    width: 100%;
+                    height: 100%;
+
+                    @include Responsive(lg) {
+                        max-width: 96px;
+                        max-height: 57px;
+                    }
+                }
+
+                .fetch-yellow {
+                    position: absolute;
+                    @include Responsive(xs) {
+                        top: calc(100% - 6px);
+                        right: 6px;
+                    }
+                    @include Responsive(sm) {
+                        top: calc(100% - 10px);
+                        right: 10px;
+                    }
+                    @include Responsive(md) {
+                        top: calc(100% - 10px);
+                        left: 0;
+                        transform: translateX(calc(-100% + 10px))
+                    }
+                    @include Responsive(lg) {
+                        top: calc(100% - 12px);
+                        left: 0;
+                        transform: translateX(calc(-100% + 14px))
+                    }
+                    @include Responsive(xl) {
+                        top: calc(100% - 13px);
+                        left: 0;
+                        transform: translateX(calc(-100% + 19px))
+
+                    }
+                }
+                .fetch-red {
+                    position: absolute;
+                    @include Responsive(xs) {
+                        top: calc(100% - 8px);
+                        left: 6px;
+
+                    }
+                    @include Responsive(sm) {
+                        top: calc(100% - 10px);
+                        left: 10px;
+                    }
+                    @include Responsive(md) {
+                        top: 10px;
+                        left: calc(100% - 10px);
+                    }
+                    @include Responsive(lg) {
+                        top: 12px;
+                        left: calc(100% - 14px);
+                    }
+                    
+                    @include Responsive(xl) {
+                        top: 12px;
+                        left: calc(100% - 16px);
+                    }
+                }
+
+                .img-404 {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        
+        .not-found-body-row {
+            h6 {
+                font-family: Gilroy-Regular;
+                color: #17274E;
+                text-align: center;
+                letter-spacing: 0px;
+
+                @include Responsive(xs) {
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 24px;
+                }
+                @include Responsive(sm) {
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 24px;
+                }
+
+                @include Responsive(xl) {
+                    font-size: 19px;
+                    line-height: 28px;
+                    margin-bottom: 16px;
+                    
+
+                }
+            }
+
+            .btn-direct {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 17px 25px;
+
+                    border: 1px solid #FFBE16;
+                    box-sizing: border-box;
+                    border-radius: 8px;
+                    background-color: transparent;
+
+                    font-family: Gilroy-Medium;
+                    font-size: 20px;
+                    line-height: 20px;
+                    letter-spacing: 0px;
+                    text-align: center;
+                    color: #FFBE16;
+                    margin: 0 11px;
+                }
+            }
+        }
+
+        
+    }
+}

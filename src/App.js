@@ -4,6 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import Company from "./components/Company/Company";
 import Service from "./components/Services/Service";
+import './App.scss';
+import 'antd/dist/antd.css';
+import Contact from './components/contact/Contact';
+import Employees from './components/employees/Employees';
+import Faq from './components/faq/Faq';
+import NotFound from './components/404/NotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
@@ -37,9 +43,22 @@ function App() {
               subTitle="Enjoy carefully curated management for your project from start to finish."
             />
           </Route>
+          <Route path="/employees">
+            <Employees />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/faq">
+            <Faq />
+          </Route>
+          <Route path="/404">
+            <NotFound />
+          </Route>
           <Route exact path="/">
             <Homepage />
           </Route>
+
         </Switch>
       </div>
     </Router>

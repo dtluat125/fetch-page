@@ -1,0 +1,1086 @@
+@import '../../App.scss';
+
+.employees {
+    @include Responsive(xs) { --padding-x: 10.5px; }
+    @include Responsive(sm) { --padding-x: 12px; }
+    @include Responsive(xl) { --padding-x: 15px; }
+
+    .cus-container {
+        padding-left: var(--padding-x);
+        padding-right: var(--padding-x);
+    }
+    .employees-header {
+        background-color: #EEF6FA;
+        
+        .cus-container {
+            height: 785px;
+            background: url("../../assets/img/mask 12.png");
+            background-repeat: no-repeat;
+            background-origin: content-box;
+
+            @include Responsive(xs) {
+                background-size: 100%;
+            }
+
+            @include Responsive(sm) {
+                background-size: cover;
+                background-position-x: 50px;
+            }
+
+            @include Responsive(xl) {
+                background-position-x: 50px;
+            }
+        }
+
+        .reach-further {
+            margin-top: 264px;
+            text-align: left;
+
+            h1 {
+                font-family: Gilroy-SemiBold;
+                letter-spacing: -1px;
+                color: #17274E;
+                max-width: 392px;
+
+                @include Responsive(xs) {
+                    font-size: 36px;
+                    line-height: 45px;
+                    margin-bottom: 16px;
+                }
+
+                @include Responsive(sm) {
+                    font-size: 36px;
+                    line-height: 45px;
+                    margin-bottom: 16px;
+                }
+
+                @include Responsive(lg) {
+                    font-size: 48;
+                    line-height: 45px;
+                    margin-bottom: 16px;
+                }
+
+                @include Responsive(xl) {
+                    font-size: 54px;
+                    line-height: 60px;
+                    margin-bottom: 24px;
+                }
+            }
+
+            p {
+                max-width: 540px;
+                font-family: Gilroy-Regular;
+                color: #A4B7C8;
+                letter-spacing: 0px;
+
+                @include Responsive(xs) {
+                    font-size: 19px;
+                    line-height: 28px;
+                    margin-bottom: 24px;
+                }
+
+                @include Responsive(sm) {
+                    font-size: 20px;
+                    line-height: 30px;
+                    margin-bottom: 24px;
+                }
+
+                @include Responsive(xl) {
+                    font-size: 20px;
+                    line-height: 30px;
+                    margin-bottom: 16px;
+                }
+
+            }
+
+            .btn-join-our-team {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 160px;
+                height: 54px;
+                background: #273A5F;
+                box-shadow: 0px 6px 10px #D2E2ED;
+                border-radius: 8px;
+                border: none;
+
+                font-family: Gilroy-SemiBold;
+                font-size: 18px;
+                line-height: 20px;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .employees-how-it-work {
+
+        h1 {
+            font-family: Gilroy-SemiBold;
+            font-size: 42px;
+            line-height: 50px;
+            text-align: center;
+            letter-spacing: -1px;
+            color: #17274E;
+            padding-top: 96px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-family: Gilroy-Regular;
+            letter-spacing: 0px;
+            color: #A4B7C8;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            @include Responsive(xs) {
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 56px;
+
+            }
+
+            @include Responsive(sm) {
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 56px;
+                max-width: 375px;
+
+            }
+
+            @include Responsive(md) {
+                max-width: initial;
+                font-size: 24px;
+                line-height: 24px;
+                margin-bottom: 56px;
+
+            }
+
+            @include Responsive(lg) {
+                font-size: 36px;
+                line-height: 36px;
+                margin-bottom: 56px;
+
+            }
+
+            @include Responsive(xl) {
+                font-size: 42px;
+                line-height: 48px;
+                margin-bottom: 100px;
+
+            }
+        }
+    }
+
+    .row-icon-3 {
+        @include Responsive(xs) { 
+            --max-icon-size: 80px; 
+        }
+
+        @include Responsive(sm) { 
+            --max-icon-size: 84px; 
+        }
+
+        @include Responsive(md) { 
+            --max-icon-size: 92px; 
+        }
+
+        @include Responsive(lg) { 
+            --max-icon-size: 100px; 
+        }
+
+        @include Responsive(xl) { 
+            --max-icon-size: 171px;
+            margin-bottom: 109px;
+        }
+
+        justify-content: space-between;
+        position: relative;
+
+        .icon-title {
+            font-family: Gilroy-SemiBold;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: center;
+            letter-spacing: -0.25px;
+            color: #17274E;
+            margin-top: 41px;
+            margin-bottom: 15px;
+        }
+
+        .icon-content {
+            font-family: Gilroy-Regular;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: #A4B7C8;
+        }
+
+        .wrap-icon {
+            img {
+                max-width: var(--max-icon-size);
+            }
+        }
+
+        .horizontal-line {
+            height: 5px;
+            background-color:#D2E2F0;
+            position: absolute;
+            left: calc(100%/6);
+            right: calc(100%/6);
+            top: calc(var(--max-icon-size)/2);
+            z-index: -1;
+
+            @include Responsive(xs) { display: none; }
+            @include Responsive(sm) { display: none; }
+            @include Responsive(md) { display: block; }
+        }
+    }
+
+    .employees-usp {
+        .row-top {
+            @include Responsive(xs) {
+                flex-wrap: wrap-reverse;
+            }
+
+            @include Responsive(sm) {
+                flex-wrap: wrap-reverse;
+            }
+
+            .usp-col-top-left {
+                display: flex;
+                align-items: center;
+
+                .col-6-wrap {
+                    padding: 0 var(--padding-x);
+                    width: 100%;
+
+                    @include Responsive(xs) {
+                        max-width: $max-width-xs;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-left: auto;
+                        margin-right: initial;
+                    }
+
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
+                        margin-left: auto;
+                    }
+
+                    @include Responsive(xl) {
+                        max-width: $max-width-xl/2;
+                        margin-left: auto;
+                    }
+
+                    h1 {
+                        font-family: Gilroy-SemiBold;
+                        color: #17274E;
+                        margin-bottom: 40px;
+                        text-align: left;
+                        max-width: 494px;
+
+                        @include Responsive(xs) {
+                            font-size: 22px;
+                            line-height: 30px;
+                            letter-spacing: -0.25px;
+                            margin-top: 16px;
+                        }
+
+                        @include Responsive(sm) {
+                            font-size: 24px;
+                            line-height: 30px;
+                            letter-spacing: -0.25px;
+                            margin-top: 16px;
+                        }
+
+                        @include Responsive(md) {
+                            font-size: 26px;
+                            line-height: 30px;
+                            letter-spacing: -0.25px;
+                            margin-top: 0;
+                        }
+
+                        @include Responsive(xl) {
+                            // margin-top: 181px;
+                            font-size: 42px;
+                            line-height: 50px;
+                            letter-spacing: -1px;
+                        }
+                    }
+
+                    .achieve-item {
+                        display: flex;
+                        max-width: 456px;
+
+                        h3 {
+                            font-family: Gilroy-SemiBold;
+                            font-size: 20px;
+                            line-height: 20px;
+                            letter-spacing: -0.25px;
+                            color: #17274E;
+                            text-align: left;
+                            margin-bottom: 15px;
+
+                        }
+
+                        p {
+                            font-family: Gilroy-Regular;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: #A4B7C8;
+                            text-align: left;
+                            margin-bottom: 40px;
+                        }
+
+                        .check-icon-wrap {
+                            padding-right: 24px;
+
+                            span {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 32px;
+                                height: 32px;
+                                background: #EF7558;
+                                border-radius: 50%;
+
+                                & > svg {
+                                    width: 15px;
+                                    height: 11px;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+            .usp-col-top-right {
+                background-color: #F1F3F7;
+
+                .col-6-wrap {
+                    padding: 0 var(--padding-x);
+                    width: 100%;
+
+                    @include Responsive(xs) {
+                        max-width: $max-width-xs;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-right: auto;
+                        margin-left: initial;
+                    }
+
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(xl) {
+                        max-width: $max-width-xl/2;
+                        margin-right: auto;
+                    }
+
+                    img {
+                        display: block;
+                        max-width: 100%;
+
+                        @include Responsive(md) {
+                            margin-top: 50px;
+                            margin-bottom: 50px;
+                        }
+
+                        @include Responsive(lg) {
+                            margin-top: 70px;
+                            margin-bottom: 70px;
+                        }
+
+                        @include Responsive(xl) {
+                            margin-left: 20px;
+                            margin-top: 89px;
+                            margin-bottom: 81px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .row-bottom {
+            .usp-col-bt-left {
+                background-color: #F1F2F6;
+
+                .col-6-wrap {
+                    padding: 0 var(--padding-x);
+                    width: 100%;
+
+                    @include Responsive(xs) {
+                        max-width: $max-width-xs;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-right: initial;
+                        margin-left: auto;
+                    }
+
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
+                        margin-left: auto;
+                    }
+
+                    @include Responsive(xl) {
+                        max-width: $max-width-xl/2;
+                        margin-left: auto;
+                    }
+
+                    img {
+                        max-width: 100%;
+                        display: block;
+
+                        @include Responsive(md) {
+                            margin-top: 50px;
+                            margin-bottom: 50px;
+                        }
+
+                        @include Responsive(lg) {
+                            margin-top: 70px;
+                            margin-bottom: 70px;
+                        }
+
+                        @include Responsive(xl) {
+                            max-width: 540px;
+                            margin-top: 123px;
+                            margin-bottom: 137px;
+                            margin-left: -20px;
+                        }
+                    }
+                }
+
+            }
+
+            .usp-col-bt-right {
+                display: flex;
+                align-items: center;
+
+                .col-6-wrap {
+                    padding: 0 var(--padding-x);
+                    width: 100%;
+
+                    @include Responsive(xs) {
+                        max-width: $max-width-xs;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(sm) {
+                        max-width: $max-width-sm;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    
+                    @include Responsive(md) {
+                        max-width: $max-width-md/2;
+                        margin-left: initial;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(lg) {
+                        max-width: $max-width-lg/2;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(xl) {
+                        max-width: $max-width-xl/2;
+                        margin-right: auto;
+                    }
+    
+                    @include Responsive(xxl) {
+                        max-width: $max-width-xxl/2;
+                        margin-right: auto;
+                    }
+                }
+
+                .row-cus {
+                    .col-10-cus {
+                        @include Responsive(xs) {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        @include Responsive(sm) {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        @include Responsive(md) {
+                            margin-left: auto;
+                            margin-right: initial;
+                        }
+
+                    }
+
+                    .col-10-wrap {
+                        @include Responsive(md) {
+                            margin-left: calc(-2 *var(--padding-x));
+                        }
+
+                        h1 {
+                            font-family: Gilroy-SemiBold;
+                            font-size: 42px;
+                            line-height: 50px;
+                            letter-spacing: -1px;
+                            color: #17274E;
+                            text-align: left;
+                            margin-bottom: 27px;
+
+                            @include Responsive(xs) {
+                                font-size: 22px;
+                                line-height: 30px;
+                                letter-spacing: -0.25px;
+                                margin-top: 16px;
+                            }
+
+                            @include Responsive(sm) {
+                                font-size: 24px;
+                                line-height: 30px;
+                                letter-spacing: -0.25px;
+                                margin-top: 16px;
+                            }
+
+                            @include Responsive(md) {
+                                font-size: 26px;
+                                line-height: 30px;
+                                letter-spacing: -0.25px;
+                                margin-top: 0;
+                            }
+
+                            @include Responsive(xl) {
+                                // margin-top: 195px;
+                                font-size: 42px;
+                                line-height: 50px;
+                                letter-spacing: -1px;
+                            }
+
+                        }
+        
+                        .describe {
+                            font-family: Gilroy-Regular;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: #A4B7C8;
+                            text-align: left;
+                            margin-bottom: 39px;
+                            max-width: 400px;
+                        }
+
+                        ul {
+                            list-style-type: none;
+                            padding-left: 0;
+                            margin-bottom: 0;
+
+                            li {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 21px;
+
+                                span {
+                                    width: 32px;
+                                    height: 32px;
+                                    background: #EF7558;
+                                    border-radius: 50%;
+                                    border: none;
+                                    margin-right: 16px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    & > svg {
+                                        width: 15px;
+                                        height: 11px;
+                                    }
+                                }
+
+                                p {
+                                    margin-bottom: 0;
+                                    font-family: Gilroy-SemiBold;
+                                    font-size: 20px;
+                                    line-height: 20px;
+                                    letter-spacing: -0.25px;
+                                    color: #17274E;
+                                    text-align: left;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+
+    .employees-member {
+        
+        .cus-container {
+            
+            @include Responsive(xs) {
+                background-color: #FDFEFE;
+                padding-top: 58px;
+            }
+
+            @include Responsive(sm) {
+                background-color: #FDFEFE;
+                padding-top: 58px;
+            }
+
+            @include Responsive(xl) {
+                height: calc(1965px - 87px);
+                background: url("../../assets/img/memberBg1.png");
+                background-repeat: no-repeat;
+                background-origin: content-box;
+                padding-top: 87px;
+            }
+        }
+
+        .first-row {
+            
+            .first-row-col-center {
+                h1 {
+                    font-family: Gilroy-Light;
+                    text-align: center;
+                    letter-spacing: -1px;
+                    color: #273A5F;
+                    
+                    @include Responsive(xs) {
+                        font-size: 96px;
+                        line-height: 95px;
+                        margin-bottom: 20px;
+                    }
+
+                    @include Responsive(sm) {
+                        font-size: 96px;
+                        line-height: 95px;
+                        margin-bottom: 20px;
+                    }
+        
+                    @include Responsive(xl) {
+                        font-size: 144px;
+                        line-height: 95px;
+                        margin-bottom: 49px;
+                        margin-top: 14px;
+                    }
+                }
+
+                h2 {
+                    font-family: Gilroy-SemiBold;
+                    text-align: center;
+                    color: #273A5F;
+
+                    @include Responsive(xs) {
+                        font-size: 22px;
+                        line-height: 30px;
+                        letter-spacing: -0.25px;
+                        margin-bottom: 14px;
+
+                    }
+
+                    @include Responsive(sm) {
+                        font-size: 22px;
+                        line-height: 30px;
+                        letter-spacing: -0.25px;
+                        margin-bottom: 14px;
+
+                    }
+        
+                    @include Responsive(xl) {
+                        font-size: 36px;
+                        line-height: 50px;
+                        margin-bottom: 8px;
+                        letter-spacing: -1px;
+                    }
+                }
+
+                p {
+                    font-family: Gilroy-Regular;
+                    text-align: center;
+                    color: #A4B7C8;
+                    max-width: 528px;
+                    letter-spacing: 0px;
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    @include Responsive(xs) {
+                        font-size: 19px;
+                        line-height: 28px;
+                        margin-bottom: 58px;
+                    }
+
+                    @include Responsive(sm) {
+                        font-size: 20px;
+                        line-height: 30px;
+                        margin-bottom: 58px;
+                    }
+
+                    @include Responsive(xl) {
+                        margin-bottom: initial;
+                    }
+                }
+            }
+        }
+
+        .second-row {
+            
+            .second-row-col-half:nth-child(1) {
+                .cmt-wrap {
+                    @include Responsive(xl) {
+                        margin-top: 152px;
+                    }
+                }
+            }
+
+            .second-row-col-half:nth-child(2) {
+                .cmt-wrap {
+                    @include Responsive(xs) {
+                        margin-top: 67px;
+                    }
+                    @include Responsive(sm) {
+                        margin-top: 67px;
+                    }
+
+                    @include Responsive(md) {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 0;
+
+                        .cmt {
+                            flex: 1;
+                        }
+                    }
+
+                    @include Responsive(xl) {
+                        height: initial;
+                        display: block;
+                        margin-top: 538px;
+                    }
+                }
+            }
+
+            .cmt-wrap {
+                max-width: 540px;
+                margin-left: auto;
+                margin-right: auto;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .cmt {
+                background: #FFFFFF;
+                border: 1px solid #EEEEEE;
+                box-sizing: border-box;
+                box-shadow: 0px 18px 25px rgba(0, 0, 0, 0.03);
+                border-bottom-left-radius: 18px;
+                border-bottom-right-radius: 18px;
+                text-align: left;
+
+                @include Responsive(xs) { padding: 24px;}
+                @include Responsive(sm) { padding: 24px;}
+                @include Responsive(xl) { padding: 48px;}
+
+                p {
+                    font-family: Gilroy-Regular;
+                    color: #000000;
+                    letter-spacing: 0px;
+
+                    @include Responsive(xs) {
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-bottom: 24px;
+                    }
+
+                    @include Responsive(sm) {
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-bottom: 24px;
+                    }
+
+                    @include Responsive(xl) {
+                        font-size: 24px;
+                        line-height: 36px;
+                        margin-bottom: 26px;
+                    }
+                }
+
+                .signal {
+                    font-family: Gilroy-Medium;
+                    color: #000000;
+                    margin-bottom: 0;
+
+                    @include Responsive(xs) {
+                        font-size: 15px;
+                        line-height: 23px;
+                        letter-spacing: 0.07717770338058472px;
+
+                    }
+
+                    @include Responsive(sm) {
+                        font-size: 15px;
+                        line-height: 23px;
+                        letter-spacing: 0.07717770338058472px;
+
+                    }
+
+                    @include Responsive(xl) {
+                        font-size: 20px;
+                        line-height: 30px;
+                        letter-spacing: 0.1px;
+                    }
+                }
+            }
+        }
+
+        .third-row {
+            @include Responsive(xs) { 
+                margin-top: 58px;
+                margin-bottom: 169px;
+            }
+
+            @include Responsive(sm) { 
+                margin-top: 58px;
+                margin-bottom: 169px;
+            }
+
+            @include Responsive(xl) { 
+                margin-top: 66px; 
+            }
+
+            .view-role-wrap {
+                background: #273A5F;
+                border-radius: 21px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                
+                @include Responsive(xs) { padding: 24px; }
+                @include Responsive(sm) { padding: 24px; }
+                @include Responsive(xl) { padding: 45px 42px; }
+
+                .wrap-text {
+                    
+                    @include Responsive(xs) { 
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        text-align: center;
+                    }
+
+                    @include Responsive(sm) { 
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        text-align: center;
+                    }
+
+                    @include Responsive(md) {
+                        flex: 1;
+                        max-width: 540px;
+                        text-align: left;
+                    }
+
+                    h2 {
+                        font-family: Gilroy-SemiBold;
+                        letter-spacing: -1px;
+                        color: #FFFFFF;
+
+                        @include Responsive(xs) {
+                            font-size: 36px;
+                            line-height: 45px;
+                            margin-bottom: 24px;
+                        }
+                        @include Responsive(sm) {
+                            font-size: 36px;
+                            line-height: 45px;
+                            margin-bottom: 24px;
+                        }
+
+                        @include Responsive(md) {
+                            font-size: 30px;
+                            line-height: 36px;
+                            margin-bottom: 24px;
+                        }
+
+                        @include Responsive(lg) {
+                            font-size: 36px;
+                            line-height: 45px;
+                            margin-bottom: 24px;
+                        }
+
+                        @include Responsive(xl) {
+                            font-size: 42px;
+                            line-height: 50px;
+                            margin-bottom: 28px;
+                        }
+                    }
+    
+                    p {
+                        font-family: Gilroy-Regular;
+                        color: #FFFFFF;
+                        margin-bottom: 0;
+                        letter-spacing: 0;
+
+                        @include Responsive(xs) {
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                        @include Responsive(sm) {
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                        @include Responsive(md) {
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                        @include Responsive(lg) {
+                            font-size: 20;
+                            line-height: 30px;
+                        }
+                    }
+                }
+
+                .wrap-btn {
+                    display: flex;
+                    align-items: flex-end;
+                    
+                    @include Responsive(xs) { 
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        justify-content: center;
+                        margin-top: 32px;
+                    }
+
+                    @include Responsive(sm) { 
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        justify-content: center;
+                        margin-top: 32px;
+                    }
+
+                    @include Responsive(md) {
+                        max-width: 130px;
+                    }
+
+                    button {
+                        background-color: transparent;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 17px 25px;
+                        height: 54px;
+                        border: 1px solid rgba(255, 255, 255, 0.44);
+                        box-sizing: border-box;
+                        border-radius: 8px;
+                        font-family: Gilroy-SemiBold;
+                        color: #FFFFFF;
+                    }
+                }
+
+            }
+            
+        }
+    }
+
+    .employees-join {
+        background-color: #F5F5F5;
+
+        .cus-container {
+            padding-top: 49px;
+            padding-bottom: 49px;
+        }
+
+        .col-text {
+            @include Responsive(xs) {
+                text-align: center;
+            }
+
+            @include Responsive(sm) {
+                text-align: center;
+            }
+
+            @include Responsive(md) {
+                text-align: left;
+            }
+            
+
+            h2 {
+                font-family: Gilroy-SemiBold;
+                font-size: 36px;
+                line-height: 60px;
+                letter-spacing: -1px;
+                color: #273A5F; 
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-family: Gilroy-Regular;
+                font-size: 20px;
+                line-height: 28px;
+                color: #AFC0CF;
+                margin-bottom: 0;
+            }
+        }
+
+        .col-btn {
+            .btn-wrap {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                height: 100%;
+
+                button {
+                    background-color: #273A5F;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 17px 25px;
+                    height: 54px;
+                    border: none;
+                    box-sizing: border-box;
+                    border-radius: 8px;
+                    font-family: Gilroy-SemiBold;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

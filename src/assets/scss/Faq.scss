@@ -1,0 +1,139 @@
+@import '../../App.scss';
+
+.faq {
+
+    @include Responsive(xs) {
+        --padding-x: 10.5px;
+    }
+    @include Responsive(sm) {
+        --padding-x: 12px;
+    }
+    @include Responsive(xl) {
+        --padding-x: 15px;
+    }
+    
+    .cus-container {
+        padding-left: var(--padding-x);
+        padding-right: var(--padding-x);
+    }
+
+    .faq-header {
+        background: url("../../assets/img/bgFAQ.png") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+
+        .row-search {
+
+            h1 {
+                font-family: Gilroy-SemiBold;
+                font-size: 36px;
+                text-align: left;
+                color: #FFFFFF;
+
+                @include Responsive(xs) {
+                    margin-top: 128px;
+                    margin-bottom: 16px;
+                    line-height: 45px;
+                    letter-spacing: -1px;
+                }
+
+                @include Responsive(sm) {
+                    margin-top: 128px;
+                    margin-bottom: 16px;
+                    line-height: 45px;
+                    letter-spacing: -1px;
+                }
+
+                @include Responsive(xl) {
+                    margin-top: 146px;
+                    margin-bottom: 12px;
+                    line-height: 60px;
+                    letter-spacing: -0.5px;
+                }
+
+            }
+
+            p {
+                font-family: Gilroy-Regular;
+                line-height: 28px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #AFC0CF;
+                
+                @include Responsive(xs) {
+                    margin-bottom: 16px;
+                    font-size: 19px;
+
+                }
+                @include Responsive(sm) {
+                    margin-bottom: 16px;
+                    font-size: 19px;
+
+                }
+
+                @include Responsive(xl) {
+                    margin-bottom: 32px;
+                    font-size: 20px;
+                }
+
+
+            }
+
+            .search-input-wrap {
+                display: flex;
+                align-items: center;
+                background-color: #FFFFFF;
+                border-radius: 8px;
+                border: none;
+                padding: 20px 16px;
+
+                @include Responsive(xs) {
+                    height: 64px;
+                    margin-bottom: 128px;
+                }
+                @include Responsive(sm) {
+                    height: 64px;
+                    margin-bottom: 128px;
+                }
+
+                @include Responsive(xl) {
+                    height: 80px;
+                    margin-bottom: 98px;
+                }
+
+                .icon-wrap {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    height: 100%;   
+                    font-family: Gilroy-Regular;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #273A5F;
+                    padding: 0 15px;
+
+                }
+            }
+        }
+    }
+
+    .faq-body {
+        background-color: #F3F5F7;
+
+        .cus-container {
+            padding-top: 48px;
+        }
+        
+    }
+}

@@ -1,0 +1,154 @@
+@import '../../App.scss';
+
+.help {
+
+    border: 2px solid transparent;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 32px;
+
+    &:hover {
+        border-color:#D2E2ED;
+        box-shadow: 0px 12px 10px rgba(39, 58, 95, 0.2);
+    }
+    .col-10-2 {
+        display: block;
+
+        @include Responsive(xs) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        @include Responsive(sm) {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+
+        @include Responsive(md) {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+    }
+
+    .col-10-5 {
+        display: block;
+        
+
+        @include Responsive(xs) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @include Responsive(sm) {
+            flex:1;
+        }
+
+        @include Responsive(md) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    .col-10-3 {
+        display: block;
+        
+        align-self: flex-start;
+
+        @include Responsive(xs) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @include Responsive(sm) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @include Responsive(md) {
+            flex: 0 0 30%;
+            max-width: 30%;
+        }
+    }
+
+    .icon-wrap {
+        width: 74px;
+        height: 74px;
+        margin-left: auto;
+        margin-right: auto;
+        // background: #EEF3F8;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .content-wrap {
+        @include Responsive(xs) {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+        }
+        @include Responsive(sm) {
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
+        }
+        @include Responsive(md) {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: calc(-2 * var(--padding-x));
+            margin-right: calc(-2 * var(--padding-x));
+        }
+
+        h3 {
+            font-family: Gilroy-SemiBold;
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: -0.25px;
+            text-align: left;
+            color: #17274E;
+            margin-bottom: 16px;
+
+        }
+
+        p {
+            font-family: Gilroy-Regular;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #A4B7C8;
+            margin-bottom: 0;
+
+        }
+    }
+
+    .btn-wrap {
+
+        button {
+            margin-left: auto;
+            margin-right: auto;
+            height: 37px;
+            padding: 0 16px;
+            background: #EEF6FA;
+            border-radius: 18.5px;
+            border: none;
+            outline: none;
+            font-family: Gilroy-Regular;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.25px;
+            color: #A4B7C8;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                margin-left: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.help-nav {
+    text-align: left;
+    margin-bottom: 33px;
+
+    .bc-root,.bc-child-one {
+        font-family: Gilroy-SemiBold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #17274E;
+    }
+
+    .bc-child {
+        font-family: Gilroy-Regular;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.25px;
+        text-align: center;
+        color: #A4B7C8 !important;
+    }
+}

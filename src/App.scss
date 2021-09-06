@@ -1,0 +1,208 @@
+.App {
+  text-align: center;
+}
+// media queries
+$xs: 575.98px;   
+$sm: 576px;  
+$md: 768px;   
+$lg: 992px;     
+$xl: 1200px;  
+$xxl: 1400px;   
+
+// media max-width
+$max-width-xs: 351px;
+$max-width-sm: 540px;
+$max-width-md: 720px;
+$max-width-lg: 960px;
+$max-width-xl: 1140px;
+$max-width-xxl: 1140px;
+
+
+@mixin Responsive($canvas) {
+    @if $canvas == xs {
+        @media only screen and (max-width: $xs) { @content; } 
+    }
+    @else if $canvas == sm {
+        @media only screen and (min-width: $sm) { @content; } 
+    }
+    @else if $canvas == md {
+        @media only screen and (min-width: $md) { @content; } 
+    }
+    @else if $canvas == lg {
+        @media only screen and (min-width: $lg) { @content; } 
+    }
+    @else if $canvas == xl {
+        @media only screen and (min-width: $xl) { @content; } 
+    }
+    @else if $canvas == xxl {
+        @media only screen and (min-width: $xxl) { @content; } 
+    }
+}
+
+.cus-container {
+  @include Responsive(xs) {
+    // width: 100%;
+    max-width: $max-width-xs;
+  }
+
+  @include Responsive(sm) {
+    max-width: $max-width-sm;
+  }
+
+  @include Responsive(md) {
+    max-width: $max-width-md;
+  }
+
+  @include Responsive(lg) {
+    max-width: $max-width-lg;
+  }
+
+  @include Responsive(xl) {
+    max-width: $max-width-xl;
+  }
+
+  @include Responsive(xxl) {
+    max-width: $max-width-xxl;
+  }
+}
+
+.cus-container-sm {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    max-width: $max-width-sm;
+  }
+
+  @include Responsive(md) {
+    max-width: $max-width-md;
+  }
+
+  @include Responsive(lg) {
+    max-width: $max-width-lg;
+  }
+
+  @include Responsive(xl) {
+    max-width: $max-width-xl;
+  }
+
+  @include Responsive(xxl) {
+    max-width: $max-width-xxl;
+  }
+}
+
+.cus-container-md {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    max-width: $max-width-md;
+  }
+
+  @include Responsive(lg) {
+    max-width: $max-width-lg;
+  }
+
+  @include Responsive(xl) {
+    max-width: $max-width-xl;
+  }
+
+  @include Responsive(xxl) {
+    max-width: $max-width-xxl;
+  }
+}
+
+.cus-container-lg {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    width: 100%;
+  }
+
+  @include Responsive(lg) {
+    max-width: $max-width-lg;
+  }
+
+  @include Responsive(xl) {
+    max-width: $max-width-xl;
+  }
+
+  @include Responsive(xxl) {
+    max-width: $max-width-xxl;
+  }
+}
+
+.cus-container-xl {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    width: 100%;
+  }
+
+  @include Responsive(lg) {
+    width: 100%;
+  }
+
+  @include Responsive(xl) {
+    max-width: $max-width-xl;
+  }
+
+  @include Responsive(xxl) {
+    max-width: $max-width-xxl;
+  }
+}
+
+.cus-container-xxl {
+  @include Responsive(xs) {
+    width: 100%;
+  }
+
+  @include Responsive(sm) {
+    width: 100%;
+  }
+
+  @include Responsive(md) {
+    width: 100%;
+  }
+
+  @include Responsive(lg) {
+    width: 100%;
+  }
+
+  @include Responsive(xl) {
+    width: 100%;
+  }
+
+  @include Responsive(xxl) {
+    max-width: $max-width-xxl;
+  }
+}
+
+.cus-container-fluid {
+  width: 100%;
+}
+
+
+.cus-container, .cus-container-fluid, .cus-container-lg, .cus-container-md, .cus-container-sm, .cus-container-xl, .cus-container-xxl {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
