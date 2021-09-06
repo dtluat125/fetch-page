@@ -7,11 +7,12 @@ import HelpDetail from './help/HelpDetail';
 import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import logoFaq from '../../assets/img/logoFaq.png';
 
 const Faq = () => {
     return (
         <div className="faq">
-            <section className="faq-header"><Header /></section>
+            <section className="faq-header"><Header logoProp={logoFaq}/></section>
             <section className="faq-search">
                 <div className="cus-container">
                     <Row justify="center" className="row-search" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, { xs: 21, sm: 16, md: 24, xl: 30 }]}>

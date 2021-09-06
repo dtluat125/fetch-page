@@ -109,6 +109,17 @@
                 font-size: 18px;
                 line-height: 20px;
                 color: #FFFFFF;
+                opacity: 1;
+
+                &:hover {
+                    // outline: 2px solid transparent;
+                    // outline-offset: 2px;
+                    // --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+                    // --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
+                    // --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+                    // box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 transparent);
+                    opacity: 0.9;
+                }
             }
         }
     }
@@ -1019,6 +1030,10 @@
                         border-radius: 8px;
                         font-family: Gilroy-SemiBold;
                         color: #FFFFFF;
+
+                        &:hover {
+                            border-color: rgba(255, 255, 255, 0.8);
+                        }
                     }
                 }
 
@@ -1086,6 +1101,10 @@
                     border-radius: 8px;
                     font-family: Gilroy-SemiBold;
                     color: #FFFFFF;
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
                 }
             }
         }

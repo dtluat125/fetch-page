@@ -15,7 +15,8 @@ import Payroll from "../../assets/img/Payroll.png";
 import FullSuite from "../../assets/img/FullSuite.png";
 import UpperArrow from "../../assets/img/UpperArrow.png";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-function Header() {
+
+function Header({ logoProp }) {
   const [collapse, setCollapse] = useState(false);
   const [showContent, setShowContent] = useState(false);
   useEffect(() => {
@@ -44,7 +45,7 @@ function Header() {
         >
           <Link to="/">
             <div className="group-5169054 header__logo">
-              <img src={logo} alt="" />
+              <img src={logoProp ? logoProp : logo} alt="" />
             </div>
           </Link>
           <div
