@@ -1,0 +1,97 @@
+.row {
+  margin: 0 !important;
+}
+
+.usp-container {
+  padding: 100px 10%;
+}
+
+.usp-container__inner {
+  align-items: center;
+}
+
+.usp__theme {
+  width: 100%;
+}
+
+.usp__theme img {
+  width: 100%;
+  max-width: 540;
+}
+/* Left */
+.usp__left {
+  padding-right: 6% !important;
+}
+
+.usp__title {
+  margin-top: 30px;
+  font-family: "Gilroy-SemiBold";
+  font-size: 42px;
+  line-height: 50px;
+  /* or 119% */
+
+  letter-spacing: -1px;
+
+  color: #17274e;
+  margin-bottom: 40px;
+}
+
+.usp__text-group {
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.usp__content__title {
+  font-family: "Gilroy-SemiBold";
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+
+  letter-spacing: -0.25px;
+
+  color: #17274e;
+  margin-bottom: 15px;
+}
+
+.usp__content__small-text {
+  font-family: "Gilroy-Regular";
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+
+  color: #a4b7c8;
+}
+/* Check Icon */
+.check-icon {
+  width: 32px !important;
+  height: 32px;
+  background: #eef6fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  box-sizing: border-box;
+}
+
+.check-icon img {
+  width: 15px;
+  height: 11px;
+}
+/* USP 2 */
+.usp2__left {
+  padding: 100px 5% !important;
+  background: #f1f3f7;
+}
+
+.usp2__right {
+  padding-left: 10%!important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 10%!important;
+}
+
+.check-icon--yellow {
+  background: #ffc01e;
+}

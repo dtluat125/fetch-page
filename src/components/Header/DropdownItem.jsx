@@ -2,7 +2,7 @@ import React from "react";
 
 function DropdownItem({ icon, title, text }) {
   return (
-    <div className="header__dropdown-item">
+    <div className="header__dropdown-item" role="button">
       <div className="header__dropdown-item__inner">
         <div className="header__dropdown-item__icon-container">
           <div

@@ -1,0 +1,39 @@
+.c-page-header {
+}
+
+.service-header {
+  background: #ffbe16;
+}
+
+/* Service right */
+.c-theme-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-theme-holder img {
+  max-width: 100%;
+}
+
+/* Service left */
+
+
+.c-h6-subtitle {
+  font-family: "Gilroy-Regular";
+  font-size: 19px;
+  line-height: 145%;
+  /* or 28px */
+
+  color: #17274e;
+  margin-bottom: 25px;
+}
+
+.service-header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-header-text-group {
+}

@@ -1,0 +1,74 @@
+.company-header-container {
+  padding-top: 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y:top;
+  background-position-x: center;
+  background-color: #f3f5f7;
+  overflow-x: hidden;
+}
+
+.company-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.company-header__content-title {
+  font-family: "Gilroy-SemiBold";
+  font-size: 54px;
+  line-height: 60px;
+  /* or 111% */
+
+  text-align: center;
+  letter-spacing: -1px;
+
+  color: #17274e;
+}
+
+.company-header__content-small-text {
+  font-family: "Gilroy-Regular";
+  font-size: 20px;
+  line-height: 30px;
+  /* or 150% */
+
+  text-align: center;
+
+  color: #a4b7c8;
+  width: 80%;
+}
+
+.sign-up-button {
+  background: #273a5f;
+  box-shadow: 0px 6px 10px #d2e2ed;
+  border-radius: 8px;
+  border: 0px;
+  margin-top: 35px;
+  margin-bottom: 75px;
+}
+
+.sign-up-button span {
+  font-family: "Gilroy-SemiBold";
+  font-size: 18px;
+  line-height: 20px;
+  /* identical to box height, or 111% */
+
+  text-align: center;
+
+  color: #ffffff;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}

@@ -1,0 +1,243 @@
+.header {
+  /* Header-Desktop */
+  width: 100%;
+  /* White */
+  background: #ffffff;
+}
+
+.header__inner {
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__left {
+  display: flex;
+  flex: 0 1;
+}
+
+.group-5169054 {
+  width: 126px;
+  position: relative;
+  flex: 0 1;
+  height: 54px;
+  align-items: center;
+  z-index: 3;
+}
+
+.group-5169054 > img {
+  /* Group */
+}
+
+.header__contact-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 25px;
+
+  width: 137px;
+  height: 54px;
+
+  background: #ffbe16;
+  box-shadow: 0px 6px 10px #d2e2ed;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header__contact-button__content {
+  /* The quick brown fox jumps over the lazy dog */
+
+  width: 93px;
+  height: 20px;
+
+  font-family: "Gilroy-SemiBold";
+  font-size: 18px;
+  line-height: 20px;
+  /* identical to box height, or 111% */
+
+  text-align: center;
+
+  color: #ffffff;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+
+/* Menu item */
+.header__menu-group {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-first-group {
+  display: flex;
+}
+
+.menu-item {
+  /* P */
+  display: inline-block;
+  font-family: "Gilroy-Regular";
+  font-size: 16px;
+  line-height: 150%;
+  white-space: nowrap;
+  margin-right: 30px;
+  /* or 24px */
+
+  display: flex;
+  align-items: center;
+
+  /* Grey-04 */
+
+  color: #a4b7c8;
+}
+
+.menu-item:hover {
+  color: #3E5476;
+  /* font-family: "Gilroy-SemiBold"; */
+}
+
+.menu-icon {
+  /* Vector 15 */
+  margin-left: 5px;
+  width: 10px;
+  height: 5px;
+
+  /* Grey-03 */
+}
+.navbar-toggler {
+  position: absolute;
+  right: 100px;
+  width: 21px;
+  height: 14px;
+}
+
+.collapse:not(.show) {
+  display: inherit !important;
+}
+
+.header__left.collapse {
+  transform: translateY(-100px);
+  opacity: 0;
+  /* transition: 0.3s ease all; */
+  width: 100%;
+}
+
+.header__left.show {
+  transform: translateY(0);
+  opacity: 1;
+  position: inherit;
+}
+
+/* Dropdown Menu */
+.dropdown-menu.show {
+  filter: drop-shadow(0px 6px 12px rgba(19, 42, 151, 0.1));
+  background: #ffffff;
+  border: 1px solid #d2e2ed;
+  box-sizing: border-box;
+  border-radius: 8px;
+  max-width: 500px;
+  transform: translate(-140px, 62px) !important;
+  position: relative;
+}
+
+.header__dropdown-item {
+  position: relative;
+  z-index: 11;
+}
+
+.header__dropdown-item__inner {
+  padding: 20px 15px;
+  display: inline-flex;
+  
+}
+
+.header__dropdown-item__inner:hover {
+  background-color: #1264a3;
+  color: #fff!important;
+  box-shadow: 0 1px 3px rgb(122 87 87 / 8%);
+}
+
+.header__dropdown-item__icon {
+  width: 22px;
+  height: 28px;
+  background-size: cover;
+  background-position: center;
+  margin: 5px 15px;
+}
+
+.upperArrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: calc(50% - 17px);
+  top: -10px;
+  background: #fff;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  border-top: 1px solid #d2e2ed;
+  border-right: 1px solid #d2e2ed;
+  z-index: 10;
+  box-shadow: (0px 6px 12px rgba(19, 42, 151, 0.1));
+}
+
+.header__dropdown-item__title {
+  font-family: "Gilroy-SemiBold";
+  font-size: 18px;
+  line-height: 24px;
+  /* or 133% */
+
+  letter-spacing: -0.25px;
+
+  color: #17274e;
+}
+
+.header__dropdown-item__text {
+  font-family: "Gilroy-Regular";
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+  display: inline-block;
+  color: #a4b7c8;
+  width: 246px;
+}
+
+@media (max-width: 1000px) {
+  .header__inner {
+    flex-direction: column;
+  }
+
+  .header__menu-group {
+    margin-bottom: 40px;
+    justify-content: space-between;
+  }
+
+  .header__menu-first-group .menu-item {
+    margin-right: 80px;
+  }
+  .header__left {
+    width: 100%;
+    margin-top: 50px;
+    flex-direction: column;
+  }
+
+  .header__contact-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .header__contact-button {
+    align-items: center;
+    width: 50%;
+  }
+}
+
+@media (max-width: 638px) {
+  .header__menu-group {
+    flex-direction: column;
+  }
+}

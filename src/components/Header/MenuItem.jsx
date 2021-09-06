@@ -11,7 +11,7 @@ function MenuItem({
 }) {
   return (
     <div
-      role={dropdownToggle && "button"}
+      role={"button"}
       id={id}
       className={dropdownToggle ? "menu-item" : "menu-item"}
       data-bs-toggle={dropdownToggle && "dropdown"}

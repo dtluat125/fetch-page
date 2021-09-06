@@ -1,0 +1,50 @@
+.c-h5-text {
+  font-family: "Gilroy-SemiBold";
+  font-size: 22px;
+  line-height: 135%;
+  /* or 30px */
+
+  letter-spacing: -0.25px;
+
+  color: #17274e;
+}
+
+.c-h4-title {
+  font-family: "Gilroy-SemiBold";
+  font-size: 32px;
+  line-height: 135%;
+  /* or 43px */
+
+  letter-spacing: -0.5px;
+
+  color: #17274e;
+  margin-bottom: 24px;
+}
+
+.c-h1-title {
+  font-family: "Gilroy-SemiBold";
+  font-size: 54px;
+  line-height: 60px;
+  /* or 111% */
+
+  letter-spacing: -1px;
+
+  color: #17274e;
+  margin-bottom: 16px;
+}
+
+.c-p-subtitle {
+  /* P */
+
+  font-family: "Gilroy-Regular";
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+a {
+  text-decoration: none!important;
+}

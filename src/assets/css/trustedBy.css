@@ -1,0 +1,61 @@
+.company-trusted-by__inner {
+  padding-top: 100px;
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-trusted-by__text {
+  width: 30%;
+}
+
+.company-trusted-by__title {
+  font-family: "Gilroy-SemiBold";
+  font-size: 42px;
+  line-height: 50px;
+  /* or 119% */
+
+  text-align: center;
+  letter-spacing: -1px;
+
+  color: #17274e;
+  margin-bottom: 23px;
+}
+.company-trusted-by__small-text {
+  font-family: "Gilroy-Regular";
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+
+  text-align: center;
+
+  color: #a4b7c8;
+  margin-bottom: 35px;
+}
+
+.company-trusted-by__brands {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-card {
+  border-radius: 10px;
+  background-size: 100%;
+
+  width: 160px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.brand-card--gray {
+  background-color: #f5f5f5;
+}
+
+.brand-card--white {
+  background-color: #ffffff;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+}
