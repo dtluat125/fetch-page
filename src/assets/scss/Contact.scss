@@ -1,20 +1,21 @@
 @import "../../App.scss";
 
 .contact {
-    
+    background-color: #F3F5F7;
     @include Responsive(xs) { --padding-x: 10.5px; }
     @include Responsive(sm) { --padding-x: 12px; }
     @include Responsive(xl) { --padding-x: 15px; }
 
-    background-color: #F3F5F7;
+    // background-color: #F3F5F7;
     .contact-body {
-        background-image: url("../../assets/img/bgContact.png");
-        background-repeat: no-repeat;
-        background-origin: border-box;
-        background-position-x: 74px;
-        background-position-y: 28px;
-        width: 100%;
-        background-size: cover;
+
+        @include Responsive(md) {
+            background-image: url("../../assets/img/contactBG1.png");
+            background-repeat: no-repeat;
+            background-origin: border-box;
+            width: 100%;
+            background-size: cover;
+        }
 
         .cus-container {
             padding-left: var(--padding-x);
@@ -23,12 +24,12 @@
 
             @include Responsive(xs) {
                 padding-top: 72px;
-                padding-bottom: 70px;
+                padding-bottom: 163px;
             }
 
             @include Responsive(sm) {
                 padding-top: 72px;
-                padding-bottom: 70px;
+                padding-bottom: 163px;
             }
 
             @include Responsive(md) {
@@ -72,7 +73,7 @@
                 h1 {
                     font-family: Gilroy-SemiBold;
                     text-align: left;
-                    color: #17274E;
+                    color: #273A5F;
 
                     @include Responsive(xs) {
                         font-size: 36px;
@@ -101,12 +102,12 @@
 
                     }
         
-                    @include Responsive(xl) {
+                    @include Responsive(lg) {
                         font-size: 36px;
-                        margin-top: 16px;
+                        margin-top: 6px;
                         line-height: 60px;
                         letter-spacing: -0.5px;
-                        margin-bottom: 24px;
+                        margin-bottom: 14px;
                     }
                 }
 
@@ -116,7 +117,7 @@
                     line-height: 24px;
                     letter-spacing: 0px;
                     text-align: left;
-                    color: #A4B7C8;
+                    color: #273A5F;
                     
 
                     @include Responsive(xs) {
@@ -128,7 +129,7 @@
                     }
         
                     @include Responsive(xl) {
-                        margin-bottom: 49px;
+                        margin-bottom: 57px;
                     }
 
 
@@ -137,6 +138,41 @@
                 .form-inner-item {
                     text-align: left;
                     margin-bottom: 22px;
+
+                    .select-purpose {
+                        width: 100%;
+
+                        .ant-select-selector {
+                            padding: 12px 16px;
+                            height: 100%;
+                            background: #FFFFFF;
+                            border: 1px solid #D0D4EA;
+                            box-sizing: border-box;
+                            border-radius: 6px;
+                            outline: none;
+                            
+    
+                            font-family: Gilroy-Regular;
+                            font-size: 16px;
+                            line-height: 22px;
+                            display: flex;
+                            align-items: center;
+                            color: #273A5F;
+    
+                            &::placeholder {
+                                color: #ABB2D9;
+                            }
+    
+                            &:focus {
+                                outline: 2px solid transparent;
+                                outline-offset: 2px;
+                                --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+                                --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
+                                --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+                                box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 transparent);
+                            }
+                        }
+                    }
 
                     label {
                         font-family: Gilroy-Medium;
@@ -162,7 +198,11 @@
                         line-height: 22px;
                         display: flex;
                         align-items: center;
-                        color: #ABB2D9;
+                        color: #273A5F;
+
+                        &::placeholder {
+                            color: #ABB2D9;
+                        }
 
                         &:focus {
                             outline: 2px solid transparent;

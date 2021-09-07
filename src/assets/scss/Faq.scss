@@ -1,6 +1,7 @@
 @import '../../App.scss';
 
 .faq {
+    width: 100%;
 
     @include Responsive(xs) {
         --padding-x: 10.5px;
@@ -17,8 +18,33 @@
         padding-right: var(--padding-x);
     }
 
-    .faq-header {
-        background: url("../../assets/img/bgFAQ.png") no-repeat center center;
+    .faq-header > div {
+        background-color: #FFBE16;
+
+        .header__menu-first-group {
+            div {
+                color: #FFFFFF;
+            }
+        }
+
+        .dropdown {
+            .menu-item {
+                color: #FFFFFF;
+            }
+        }
+
+        .header__contact-button {
+            box-shadow: none;
+            background-color: #FFFFFF;
+            
+            & > span {
+                color: #FFBE16;
+            }
+        }
+    }
+
+    .faq-search {
+        background: url("../../assets/img/bgHeaderFaq.png") no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -31,7 +57,7 @@
                 font-family: Gilroy-SemiBold;
                 font-size: 36px;
                 text-align: left;
-                color: #FFFFFF;
+                color: #273A5F;
 
                 @include Responsive(xs) {
                     margin-top: 128px;
@@ -61,7 +87,7 @@
                 line-height: 28px;
                 letter-spacing: 0px;
                 text-align: left;
-                color: #AFC0CF;
+                color: #273A5F;
                 
                 @include Responsive(xs) {
                     margin-bottom: 16px;
@@ -132,7 +158,7 @@
         background-color: #F3F5F7;
 
         .cus-container {
-            padding-top: 48px;
+            padding-top: 30px;
         }
         
     }

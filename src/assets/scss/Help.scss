@@ -9,6 +9,8 @@
     padding-bottom: 40px;
     margin-bottom: 32px;
 
+    &:last-child { margin-bottom: 67px; }
+
     &:hover {
         border-color:#D2E2ED;
         box-shadow: 0px 12px 10px rgba(39, 58, 95, 0.2);
