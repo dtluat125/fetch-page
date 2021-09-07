@@ -1,13 +1,14 @@
 import React from 'react';
 import Help from './Help';
 
-const HelpList = ({ disableBtn }) => {
+
+
+const HelpList = ({ disableBtn, data }) => {
     return (
         <React.Fragment>
-            <Help disableBtn={disableBtn}/>
-            <Help disableBtn={disableBtn}/>
-            <Help disableBtn={disableBtn}/>
-            <Help disableBtn={disableBtn}/>
+            {data?.map(helpOpt => (
+                <Help key={helpOpt.id} data={helpOpt} disableBtn={disableBtn}/>
+            ))}
         </React.Fragment>
     )
 }

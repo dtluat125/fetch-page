@@ -102,6 +102,8 @@
 
             .icon-wrap {
                 padding-bottom: 20px;
+                display: flex;
+                justify-content: center;
                 span {
                     display: inline-block;
                     width: fit-content;
