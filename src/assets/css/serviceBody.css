@@ -61,6 +61,9 @@
   
 }
 
+.a-wrapper{
+  max-width: calc(100% - 30px);
+}
 .sidebar-option-container:hover .a-wrapper,
 .sidebar-option-container.active .a-wrapper {
     transform: translateX(30px);
