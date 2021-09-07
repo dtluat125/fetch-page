@@ -70,7 +70,7 @@ function ServiceBody(props) {
           <div className="service-body__left col-md-4">
             <div className="sidebar">
               <div className="sidebar-content">
-                <div className="sidebar-title c-h5-text">{props.title}</div>
+                <div className="sidebar-title c-h5-title">{props.title}</div>
                 <div className="sidebar-options">
                   {featuresTitle.map((featureTitle, index) => (
                     <a

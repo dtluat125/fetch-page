@@ -5,6 +5,7 @@
 .trusted-cus__inner {
   display: flex;
   flex-direction: column;
+  
 }
 
 .trusted-cus__top {
@@ -89,6 +90,7 @@
 /* cus logo */
 .cus-logo-holder {
   width: 160px;
+  min-width: 160px;
   height: 90px;
   background: #f5f8fa;
   border-radius: 10px;
@@ -96,11 +98,11 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 .trusted-cus__bottom {
   margin-top: 35px;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: flex-start;
 }

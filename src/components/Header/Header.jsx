@@ -18,11 +18,18 @@ import { Link, BrowserRouter as Router } from "react-router-dom";
 function Header() {
   const [collapse, setCollapse] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const [collapseDropdown, setCollapseDropdown] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const changeNav = () => {
       const windowWidth = window.innerWidth;
+
       if (windowWidth < 1000) setCollapse(true);
       else setCollapse(false);
+      if (windowWidth < 720) setCollapseDropdown(true);
+      else setCollapseDropdown(false);
+      if (windowWidth < 400) setIsMobile(true);
+      else setIsMobile(false);
     };
     changeNav();
     window.addEventListener("resize", changeNav);
@@ -35,11 +42,14 @@ function Header() {
   const closeNav = () => {
     setShowContent(false);
   };
+  // Mobile handler
   return (
     <div className="header">
       <div
         className="header__inner"
-        style={!showContent ? { height: 100 } : {}}
+        style={
+          !showContent ? { height: 100 } : isMobile ? { height: "100vh" } : {}
+        }
       >
         <Link to="/">
           <div className="group-5169054 header__logo">
@@ -67,46 +77,60 @@ function Header() {
 
             <div className="dropdown">
               <MenuItem
+                isMobile = {isMobile}
                 title="Services"
-                dropdownToggle={true}
+                dropdownToggle={!collapseDropdown}
+                dropdownCollapse={collapseDropdown}
                 icon={dropdownIcon}
                 id="services"
+                target={collapseDropdown && "servicesMenu"}
               />
               <div
-                className="dropdown-menu header__dropdown-menu"
+                className={
+                  collapseDropdown
+                    ? isMobile
+                      ? "header__dropdown-menu "
+                      : "header__dropdown-menu collapse "
+                    : "dropdown-menu header__dropdown-menu"
+                }
+                id="servicesMenu"
                 aria-labelledby="services"
               >
-                <div className="upperArrow"></div>
+                {!collapseDropdown && <div className="upperArrow"></div>}
                 <Link to="/services/1">
                   <DropdownItem
                     title="Talent Acquisition"
-                    text="Procure talents from Vietnam
-                  "
-                    icon={TalentAcquisition}
+                    text={!collapseDropdown && "Procure talents from Vietnam"}
+                    icon={!collapseDropdown && TalentAcquisition}
                   />
                 </Link>
                 <Link to="/services/2">
                   <DropdownItem
                     title="Services management"
-                    text="Employee directives and administration
-                  "
-                    icon={ServiceManagement}
+                    text={
+                      !collapseDropdown &&
+                      "Employee directives and administration"
+                    }
+                    icon={!collapseDropdown && ServiceManagement}
                   />
                 </Link>
                 <Link to="/services/3">
                   <DropdownItem
                     title="Payroll and compliances"
-                    text="Streamlined contracting and payroll process
-                  "
-                    icon={Payroll}
+                    text={
+                      !collapseDropdown &&
+                      "Streamlined contracting and payroll process"
+                    }
+                    icon={!collapseDropdown && Payroll}
                   />
                 </Link>
                 <Link to="/services/4">
                   <DropdownItem
                     title="Full-suite project consultancy"
-                    text="Comprehensive projects management
-                  "
-                    icon={FullSuite}
+                    text={
+                      !collapseDropdown && "Comprehensive projects management"
+                    }
+                    icon={!collapseDropdown && FullSuite}
                   />
                 </Link>
               </div>
@@ -114,34 +138,44 @@ function Header() {
             <div className="dropdown">
               <MenuItem
                 title="Resources"
-                dropdownToggle={true}
+                dropdownToggle={!collapseDropdown}
+                dropdownCollapse={collapseDropdown}
                 icon={dropdownIcon}
+                target={collapseDropdown && "resourcesMenu"}
                 id="resources"
+                isMobile = {isMobile}
               />
               <div
-                className="dropdown-menu header__dropdown-menu"
+                id="resourcesMenu"
+                className={
+                  collapseDropdown
+                    ? isMobile
+                      ? "header__dropdown-menu "
+                      : "header__dropdown-menu collapse "
+                    : "dropdown-menu header__dropdown-menu"
+                }
                 aria-labelledby="resources"
               >
-                <div className="upperArrow"></div>
+                {!collapseDropdown && <div className="upperArrow"></div>}
                 <Link to="/404">
                   <DropdownItem
                     title="Our story"
-                    text="Learn more about us"
-                    icon={OurStory}
+                    text={!collapseDropdown && "Learn more about us"}
+                    icon={!collapseDropdown && OurStory}
                   />
                 </Link>
                 <Link to="/404">
                   <DropdownItem
                     title="Market Report"
-                    text="Reports and downloads too"
-                    icon={MarketReport}
+                    text={!collapseDropdown && "Reports and downloads too"}
+                    icon={!collapseDropdown && MarketReport}
                   />
                 </Link>
                 <Link to="/faq">
                   <DropdownItem
                     title="FAQs"
-                    text="Questions & Answers"
-                    icon={FAQs}
+                    text={!collapseDropdown && "Questions & Answers"}
+                    icon={!collapseDropdown && FAQs}
                   />
                 </Link>
               </div>

@@ -4,22 +4,32 @@ import Map from "../../../assets/img/Map.png";
 import Vietnam from "../../../assets/img/Vietnam.png";
 import Card from "./Card";
 import InterviewPic from "../../../assets/img/InterviewPic.png";
+import Star from "../../../assets/img/Star.png";
+
 function Talents() {
   return (
     <div className="talents-container">
       <div className="talents__inner">
         <div className="talents__map">
           <div className="talents__map__content">
-            <div className="talents__map__content__title">
-              Choose from our <br /> multi-dynamic pool of talents
+            <div className="star-holder">
+              <img src={Star} alt="" />
             </div>
-            <div className="talents__map__content__text">
+            <div className="c-h1-title talents__map__content__title">
+              Get the best talents in Vietnam with us
+            </div>
+            <div className="c-h6-title talents__map__content__text">
               Whether you're looking for a software developer, tester or
-              designer from Vietnam, we got you covered to a T. Expect:
+              designer, we got you covered.
             </div>
+            <div className="c-large-button" role="button" >Find out more</div>
           </div>
-          <div className="talents__map-holder">
-            <img src={Map} className="map-img"></img>
+
+          <div
+            className="talents__map-holder"
+            style={{ backgroundImage: `url(${Map})` }}
+          >
+            <img src={Vietnam} className="map-img"></img>
           </div>
         </div>
 
@@ -42,19 +52,7 @@ function Talents() {
             />
           </div>
         </div>
-        <div className="talents__trusted">
-          <div className="talents__trusted__inner">
-            <div className="trusted-cus__content">
-              <div className="trusted-by-many text--white">Trusted by many</div>
-              <div class="trusted-cus__small-text text--white">
-                Be part of our growing network of satisfied partners
-              </div>
-            </div>
-            <button class="c-large-button trusted-cus__view-more-button button--red">
-              <span className="text--white">Visit</span>
-            </button>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
