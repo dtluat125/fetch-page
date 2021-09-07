@@ -5,7 +5,7 @@ import {ReactComponent as ArrowLeft} from '../../../assets/img/arrowLeft.svg';
 import HelpIcon from '../../../assets/img/Group 5169047.png';
 import { Link, useRouteMatch } from 'react-router-dom';
 
-const Help = ({ disableBtn }) => {
+const Help = ({ disableBtn, data }) => {
     const {url} = useRouteMatch();
 
     return (
@@ -18,10 +18,10 @@ const Help = ({ disableBtn }) => {
                 </Col>
                 <Col className="col-10-5">
                     <div className="content-wrap">
-                        <Link to={`${url}/Introduction to Fetch Technology`}>
-                            <h3>Introduction to Fetch Technology</h3>
+                        <Link to={`${url}/${data?.title}`}>
+                            <h3>{data?.title}</h3>
                         </Link>
-                        <p>Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market.</p>
+                        <p>{data?.description}</p>
                     </div>
                 </Col>
                 <Col 
@@ -29,7 +29,7 @@ const Help = ({ disableBtn }) => {
                     style={disableBtn && {display: 'none'}}
                 >
                     <div className="btn-wrap">
-                        <Link to={`${url}/Introduction to Fetch Technology`}>
+                        <Link to={`${url}/${data?.title}`}>
                             <button>
                                 65 Articles
                                 <span>

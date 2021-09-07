@@ -10,6 +10,7 @@ const HelpNav = withRouter(props => {
     const pathSnippets = location.pathname.split('/').filter(i => i);
     const [oneBread, setBread] = useState(true);
 
+
     useEffect(() => {
         if(window.innerWidth < 768) setBread(true);
         else if(window.innerWidth >= 768) setBread(false);
@@ -48,7 +49,7 @@ const HelpNav = withRouter(props => {
                             style={{display: 'inline-flex', alignItems: 'center'}}
                         >
                             <ArrowRight style={{ height: '14px', width: '10px', marginRight: '8px'}} />
-                            {pathSnippets[pathSnippets.length - 2]}
+                            {pathSnippets.length === 2 ? "All Collections" : pathSnippets[pathSnippets.length - 2]}
                         </Link>
                     </Breadcrumb.Item>
                 </Breadcrumb>
