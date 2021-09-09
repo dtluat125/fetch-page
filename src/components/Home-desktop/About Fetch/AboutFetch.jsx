@@ -20,7 +20,7 @@ function AboutFetch() {
   useEffect(() => {
     const activeDot = document.querySelector("#c" + current);
     activeDot?.classList.add("active");
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 4; i++) {
       if (current != i) {
         document.querySelector("#c" + i).classList.remove("active");
       }

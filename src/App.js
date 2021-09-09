@@ -4,20 +4,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import Company from "./components/Company/Company";
 import Service from "./components/Services/Service";
-import './App.scss';
-import 'antd/dist/antd.css';
-import Contact from './components/contact/Contact';
-import Employees from './components/employees/Employees';
-import Faq from './components/faq/Faq';
-import NotFound from './components/404/NotFound';
-import Salary from './components/Services/salary/Salary';
+import "./App.scss";
+import "antd/dist/antd.css";
+import Contact from "./components/contact/Contact";
+import Employees from "./components/employees/Employees";
+import Faq from "./components/faq/Faq";
+import NotFound from "./components/404/NotFound";
+import Salary from "./components/Services/salary/Salary";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 function App() {
   return (
     <Router>
       <div className="app-container">
         <Switch>
+          <Route exact path="/">
+            <Homepage />
+          </Route>
           <Route path="/company">
             <Company />
           </Route>
@@ -56,10 +59,6 @@ function App() {
           </Route>
           <Route path="/faq">
             <Faq />
-          </Route>
-          
-          <Route exact path="/">
-            <Homepage />
           </Route>
           <Route path="*">
             <NotFound />
