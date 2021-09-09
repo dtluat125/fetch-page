@@ -10,7 +10,7 @@ function AboutFetch() {
     let step = num == 0 ? 0 : num ? num : 1;
     const slide = document.querySelector("#cc");
     const slideWidth = slide.clientWidth;
-    setPosition(position + step * (slideWidth + 50));
+    setPosition(position + step * (slideWidth + 120));
   };
   const switchSlide = (num) => {
     moveLeft(current - num);
