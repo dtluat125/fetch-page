@@ -5,12 +5,15 @@
   /* or 30px */
 
   letter-spacing: -0.25px;
+  color: #17274E;
 }
 
 .c-h6-title {
   font-family: "Gilroy-Regular";
   font-size: 19px;
   line-height: 145%;
+  color: #A4B7C8;
+
 }
 
 .c-h4-title {
@@ -32,6 +35,7 @@
 
   letter-spacing: -1px;
   margin-bottom: 16px;
+  color: #17274E;
 }
 
 .c-h2-title {
@@ -62,6 +66,8 @@
   line-height: 150%;
   /* or 24px */
   margin-bottom: 24px;
+  color: #A4B7C8;
+
 }
 
 a {
@@ -81,6 +87,14 @@ a {
   .c-h1-title {
     font-size: 48px !important;
     line-height: 115% !important;
+    /* or 55px */
+  }
+}
+
+@media (max-width: 768px){
+  .c-h1-title {
+    font-size: 36px!important;
+  line-height: 125%!important;
     /* or 55px */
   }
 }

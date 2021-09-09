@@ -11,6 +11,7 @@ import Employees from './components/employees/Employees';
 import Faq from './components/faq/Faq';
 import NotFound from './components/404/NotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import 'antd/dist/antd.css';
 function App() {
   return (
     <Router>
@@ -52,13 +53,13 @@ function App() {
           <Route path="/faq">
             <Faq />
           </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
+          
           <Route exact path="/">
             <Homepage />
           </Route>
-
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </div>
     </Router>

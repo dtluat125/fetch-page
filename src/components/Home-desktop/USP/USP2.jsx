@@ -2,7 +2,7 @@ import React from "react";
 import "../../../assets/css/usp.css";
 import Usp2Theme from "../../../assets/img/Usp2Theme.png";
 import CheckIcon from "../../../assets/img/CheckIcon.png";
-function USP2({ title, theme, company }) {
+function USP2({ title, theme, company, backgroundColor }) {
   return (
     <div className="usp2-container">
       <div className="usp2-container__inner row">

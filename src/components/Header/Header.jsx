@@ -20,7 +20,8 @@ function Header({ logoProp }) {
   const [collapse, setCollapse] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [collapseDropdown, setCollapseDropdown] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
+  const [inMobile, setInMobile] = useState(false)
   useEffect(() => {
     const changeNav = () => {
       const windowWidth = window.innerWidth;
@@ -29,8 +30,8 @@ function Header({ logoProp }) {
       else setCollapse(false);
       if (windowWidth < 720) setCollapseDropdown(true);
       else setCollapseDropdown(false);
-      if (windowWidth < 400) setIsMobile(true);
-      else setIsMobile(false);
+      if(windowWidth<400) setInMobile(true);
+      else setInMobile(false)
     };
     changeNav();
     window.addEventListener("resize", changeNav);
@@ -49,7 +50,7 @@ function Header({ logoProp }) {
       <div
         className="header__inner"
         style={
-          !showContent ? { height: 100 } : isMobile ? { height: "100vh" } : {}
+          !showContent ? { height: 100 } : inMobile ? { height: "100vh" } : {}
         }
       >
         <Link to="/">
@@ -78,7 +79,7 @@ function Header({ logoProp }) {
 
             <div className="dropdown">
               <MenuItem
-                isMobile = {isMobile}
+                isMobile={isMobile}
                 title="Services"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
@@ -144,7 +145,7 @@ function Header({ logoProp }) {
                 icon={dropdownIcon}
                 target={collapseDropdown && "resourcesMenu"}
                 id="resources"
-                isMobile = {isMobile}
+                isMobile={isMobile}
               />
               <div
                 id="resourcesMenu"
@@ -182,17 +183,16 @@ function Header({ logoProp }) {
               </div>
             </div>
           </div>
-          <Link to="/contact">
-            <div className="header__contact-button-container">
-              <Link to="/contact">
-                <div role="button" className="header__contact-button">
-                  <span className="header__contact-button__content">
-                    Contact Us
-                  </span>
-                </div>
-              </Link>
-            </div>
-          </Link>
+
+          <div className="header__contact-button-container">
+            <Link to="/contact">
+              <div role="button" className="header__contact-button">
+                <span className="header__contact-button__content">
+                  Contact Us
+                </span>
+              </div>
+            </Link>
+          </div>
         </div>
         {collapse &&
           (showContent ? (

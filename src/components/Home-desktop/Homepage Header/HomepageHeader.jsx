@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../assets/css/homepageHeader.css";
+import "../../../assets/css/homepageHeader.scss";
 import TextField from "./TextField";
 import imageGroup from "../../../assets/img/Group 5169003.png";
 

@@ -37,10 +37,6 @@
   justify-content: center;
   align-items: center;
   padding: 17px 25px;
-
-  width: 137px;
-  height: 54px;
-
   background: #ffbe16;
   box-shadow: 0px 6px 10px #d2e2ed;
   border-radius: 8px;
@@ -49,10 +45,6 @@
 
 .header__contact-button__content {
   /* The quick brown fox jumps over the lazy dog */
-
-  width: 93px;
-  height: 20px;
-
   font-family: "Gilroy-SemiBold";
   font-size: 18px;
   line-height: 20px;
@@ -133,6 +125,7 @@
   transform: translateY(0);
   opacity: 1;
   position: inherit;
+  z-index: 10;
 }
 
 /* Dropdown Menu */
@@ -208,6 +201,12 @@
   width: 246px;
 }
 
+
+.header__contact-button-container {
+  align-items: center;
+  width: 100%;
+}
+
 @media (max-width: 1000px) {
   .header__inner {
     flex-direction: column;
@@ -230,14 +229,10 @@
     flex-direction: column;
   }
 
-  .header__contact-button-container {
+  .header__contact-button-container > a {
     width: 100%;
     display: flex;
     justify-content: center;
-  }
-  .header__contact-button {
-    align-items: center;
-    width: 50%;
   }
 }
 
@@ -311,8 +306,9 @@
 @media (max-width: 540px) {
   .header__contact-button {
     width: 100%;
+    display: flex;
   }
-}
+} 
 @media (max-width: 400px) {
   .header__left.show {
     width: 100%;

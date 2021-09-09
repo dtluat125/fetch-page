@@ -80,7 +80,7 @@
 /* USP 2 */
 .usp2__left {
   padding: 100px 5% !important;
-  background: #f1f3f7;
+  background: #F9FBFE;
 }
 
 .usp2__right {
@@ -89,6 +89,7 @@
   flex-direction: column;
   justify-content: center;
   padding-right: 10% !important;
+  background: #F9FBFE
 }
 
 .check-icon--yellow {

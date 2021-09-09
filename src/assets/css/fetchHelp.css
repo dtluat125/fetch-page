@@ -1,5 +1,5 @@
 .fetch-help {
-  padding: 50px 10%;
+  padding: 50px 0;
 }
 .fetch-help__theme {
   background-repeat: no-repeat;
@@ -18,6 +18,7 @@
   border-radius: 15px;
   padding: 0px 5%;
   padding-bottom: 0;
+  margin: 0 5% !important;
 }
 
 .fetch-help__inner {
@@ -62,8 +63,8 @@
   box-shadow: 0px 18px 29px rgba(164, 183, 200, 0.16);
   border-radius: 19px;
   height: calc(100%);
-  width: 90%;
-  transform: translateY(-20%);
+  width: 100%;
+  transform: translateY(20%);
 }
 
 .subtitle-text {
@@ -113,9 +114,43 @@
   letter-spacing: -0.5px;
 
   color: #17274e;
-  width: 30%;
   margin-bottom: 50px;
 }
+
+.fetch-help__collapse-toggle {
+  font-family: Gilroy-SemiBold;
+  font-size: 20px;
+  line-height: 20px;
+  /* or 100% */
+
+  letter-spacing: -0.25px;
+
+  /* Grey-03 */
+
+  color: #3e5476;
+
+  padding-top: 24px;
+  margin-bottom: 30px;
+}
+
+.fetch-help__collapse-toggle.collapsed > img{
+  transform: rotate(180deg);
+}
+
+.c-divide-line {
+  border-top: 1px solid #a4b7c8;
+  margin: 0 -25px;
+}
+
+.fetch-help__checked-group .col-md-6 {
+  padding: 0;
+  padding-right: 10%;
+}
+
+.fetch-help__checked-group {
+  flex-direction: row-reverse !important;
+}
+
 /* Available */
 .trusted-cus__sign-up-button {
   border: 0px;
@@ -151,20 +186,59 @@
   margin-top: 30px;
 }
 
-@media (max-width: 1150px) {
-  .fetch-help__title {
-    width: 80%;
-  }
+/* How we tackle */
+.how-we-tackle {
+  background: #091738;
+  border-radius: 14px;
+  padding: 47px 33px 32px 10%;
+}
+
+.how-we-tackle div {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+@media (max-width: 1140px) {
   .fetch-help__theme {
     padding-top: 60px;
   }
-  .fetch-help__theme__rec{
-    transform: none;
-    margin: 40px 0;
-    height: 80%;
+}
+
+@media (max-width: 768px) {
+  .fetch-help__theme {
+    margin: 0 !important;
+    z-index: 10;
+  }
+
+  .fetch-help__theme__rec {
+    transform: translateY(40%) !important;
+  }
+
+  .fetch-help__theme {
+    transform: translateY(-20%);
+  }
+  .fetch-help__theme__rec__big-num {
+    font-family: Gilroy-Light;
+    font-size: 96px;
+    line-height: 95px;
+    /* or 99% */
+
+    letter-spacing: -1px;
+  }
+
+  .fetch-help__checked-group .col-md-6 {
+    padding: 0 20px;
+    margin: 0 -5%;
+    width: 100vw;
+  }
+  .c-break-line {
+  }
+  .fetch-help{
+    padding-bottom: 0;
+  }
+  .fetch-help__inner{
+    padding-bottom: 20px;
   }
 }
 
-@media (max-width: 540px){
-
+@media (max-width: 540px) {
 }
