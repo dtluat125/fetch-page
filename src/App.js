@@ -48,9 +48,9 @@ function App() {
           <Route path="/services/salary">
             <Salary />
           </Route>
-          <Route path="/employees">
+          {/* <Route path="/employees">
             <Employees />
-          </Route>
+          </Route> */}
           <Route path="/contact">
             <Contact />
           </Route>
@@ -58,7 +58,7 @@ function App() {
             <Faq />
           </Route>
           
-          <Route exact path="/">
+          <Route exact path="/aa">
             <Homepage />
           </Route>
           <Route path="*">
