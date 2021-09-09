@@ -10,10 +10,14 @@ function Feedbacks() {
           <img src={FloatTheme} alt="" />
         </div>
         <div className="float-group__content">
-          <div className="c-h3-title float-group__title">
+          <div className="c-h3-title c-h3-title--maintain float-group__title">
             In search of a career instead?
           </div>
-          <div className="c-h6-title float-group__subtitle">
+          <div
+            className="c-h6-title float-group__subtitle"
+            style={{ color: "#091738",
+          marginTop: 16 }}
+          >
             We are always looking to expand the Fetch team.
           </div>
         </div>
@@ -23,7 +27,7 @@ function Feedbacks() {
       </div>
       <div className="feedbacks__inner">
         <div className="text-group feedbacks__text-group">
-          <div className="c-h3-title text-group__title feedbacks__title">
+          <div className="c-h3-title c-h3-title--maintain text-group__title feedbacks__title">
             Client reviews and testimony
           </div>
           <div className=" c-h6-title text-group__small-text feedbacks__small-text">

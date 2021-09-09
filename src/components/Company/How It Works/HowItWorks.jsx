@@ -12,14 +12,14 @@ import { Link } from "react-router-dom";
 function HowItWorks() {
   return (
     <div className="how-it-works">
-      <div className="how-it-works__inner">
-        <Col sm={24} lg={16} xl={16} className="ant-col how-it-works__text ">
+      <div className="how-it-works__inner ">
+        <Col sm={24} lg={16} xl={16} className="ant-col c-cus-container">
           <div className="company-pic1 ant-row ant-row-center">
             <img src={CompanyPic1} alt="" />
           </div>
           <div className="how-it-works__title-group">
             <div
-              className="c-h3-title "
+              className="c-h3-title c-h3-title--maintain"
               style={{ textAlign: "center", marginBottom: 14 }}
             >
               We offer customised packages to each client

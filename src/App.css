@@ -5,15 +5,14 @@
   /* or 30px */
 
   letter-spacing: -0.25px;
-  color: #17274E;
+  color: #17274e;
 }
 
 .c-h6-title {
   font-family: "Gilroy-Regular";
   font-size: 19px;
   line-height: 145%;
-  color: #A4B7C8;
-
+  color: #a4b7c8;
 }
 
 .c-h4-title {
@@ -35,7 +34,7 @@
 
   letter-spacing: -1px;
   margin-bottom: 16px;
-  color: #17274E;
+  color: #17274e;
 }
 
 .c-h2-title {
@@ -66,8 +65,7 @@
   line-height: 150%;
   /* or 24px */
   margin-bottom: 24px;
-  color: #A4B7C8;
-
+  color: #a4b7c8;
 }
 
 a {
@@ -91,10 +89,61 @@ a {
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
+  /* .c-h1-title {
+    font-size: 36px !important;
+    line-height: 125% !important;
+
+  } */
+
+  .c-cus-container {
+    padding: 50px 0 !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .c-h3-title {
+    font-size: 22px !important;
+    line-height: 135% !important;
+    /* or 30px */
+
+    letter-spacing: -0.25px;
+  }
+  .c-h3-title--maintain {
+    font-size: 36px !important;
+    line-height: 125% !important;
+  }
+
+  .c-h2-title {
+    font-size: 36px !important;
+    line-height: 125% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .c-h2-title {
+    font-size: 22px !important;
+    line-height: 135% !important;
+    /* or 30px */
+
+    letter-spacing: -0.25px;
+  }
+
+  .c-h5-title {
+    font-family: "Gilroy-Regular" !important;
+    font-size: 19px !important;
+    line-height: 145% !important;
+    color: #a4b7c8;
+  }
+
+  .c-h5-title--maintain {
+    font-size: 22px!important;
+    font-family: "Gilroy-SemiBold"!important;
+    line-height: 135%!important;
+    color: #a4b7c8;
+  }
+
   .c-h1-title {
-    font-size: 36px!important;
-  line-height: 125%!important;
-    /* or 55px */
+    font-size: 32px !important;
+    line-height: 135% !important;
   }
 }

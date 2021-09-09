@@ -4,14 +4,14 @@ import "../../../assets/css/usp.css";
 import CheckIcon from "../../../assets/img/CheckIcon.png";
 function USP1(props) {
   return (
-    <div className="usp-container">
+    <div className="c-cus-container usp-container">
       <div className="usp-container__inner row">
         <div className="col-md-6 usp__left">
           <div className="c-h2-title usp__title">{props.uspTitle}</div>
           <div className="usp__content">
             <div className="usp__text-group">
               <div className="check-icon__container">
-                <div className="check-icon check-icon--yellow">
+                <div className="check-icon check-icon--yellow"> 
                   <img src={CheckIcon} alt="" />
                 </div>
               </div>

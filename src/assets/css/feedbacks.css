@@ -51,31 +51,29 @@
   border-radius: 50%;
   background-position: center;
   background-size: contain;
-  margin-right: 50px;
   flex-shrink: 0;
-  margin-bottom: 40px;
 }
 
 .slide__photo-container {
   display: flex;
   justify-content: center;
   flex-shrink: 0;
+  margin-bottom: 40px;
 }
 
 .slide__content {
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: flex-start;
 }
 
 .slide__main-content {
   margin-bottom: 30px;
-  font-family: Helvetica Neue;
+  font-family: Gilroy-Regular;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 15px;
+  line-height: 23px;
   /* or 133% */
 
   letter-spacing: 0.1px;
@@ -87,35 +85,32 @@
 
 .slide__info {
   display: flex;
+  flex-direction: column;
 }
 
 .slide__info-name {
   margin-right: 20px;
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
-  /* or 156% */
+  font-family: Gilroy-Medium;
+  font-size: 15.4355px;
+  line-height: 23px;
+  /* or 150% */
 
+  letter-spacing: 0.0771777px;
   /* Dark – #000000 */
 
   color: #000000;
 }
 
 .slide__info-description {
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  /* or 143% */
+  font-family: Gilroy-Medium;
+  font-size: 15.4355px;
+  line-height: 23px;
+  /* or 150% */
 
+  letter-spacing: 0.0771777px;
   /* Dark – #000000 */
 
   color: #000000;
-  display: flex;
-  align-items: center;
 }
 
 /* Slide track */
@@ -128,7 +123,7 @@
 
 .slide-track__inner {
   width: calc(400%);
-  margin-left: 10%;
+  margin-left: calc(10% - 25px);
   display: flex;
   transition: all 0.3s ease;
 }
@@ -185,5 +180,78 @@
   text-align: center;
 
   color: #ffffff;
+}
+/* Switch Dots */
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #a4b7c8;
+  margin-right: 14px;
+}
 
+.dot.dot--dark{
+  background-color: #17274e;
+}
+
+.dot.active {
+  background-color: #17274e;
+}
+
+.dot.dot--dark.active {
+  background-color: #a4b7c8;
+}
+
+.switch-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+@media (max-width: 992px) {
+  .float-group__theme img {
+    display: none;
+  }
+
+  .float-group__theme {
+    background-image: url(../img/RoundSearchIcon.png);
+    background-position: center;
+    background-size: cover;
+    width: 68px;
+    height: 68px;
+    transform: none;
+  }
+  .c-float-group {
+    transform: none;
+    flex-direction: column;
+    padding: 40px 13px;
+    row-gap: 24px;
+    margin: 16px 25px 65px;
+  }
+
+  .c-float-group div {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide__inner {
+    width: 90%;
+  }
+
+  .slide-track__inner {
+    margin: 0 0px;
+  }
+
+  .slide-track-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .left-arrow {
+    display: none;
+  }
+
+  .right-arrow {
+    display: none;
+  }
 }

@@ -140,6 +140,11 @@
   font-family: Gilroy-SemiBold;
 }
 @media (max-width: 768px) {
+
+  .how-it-works__inner{
+    padding-top: 0;
+  }
+
   .how-it-works__features {
     padding-left: 0;
     padding-right: 0;
@@ -147,6 +152,7 @@
   .how-it-works__features__inner {
     padding-left: 10% !important;
     padding-right: 10% !important;
+    margin: 0 -20px!important;
   }
 
   .how-it-works__feature__title {

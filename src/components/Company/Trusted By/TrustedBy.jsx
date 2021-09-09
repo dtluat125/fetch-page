@@ -3,13 +3,13 @@ import Cus1 from "../../../assets/img/Cus1.png";
 import Cus2 from "../../../assets/img/Cus1.png";
 import Cus3 from "../../../assets/img/Cus1.png";
 import "../../../assets/css/trustedBy.css";
-import { Col } from "antd";
+import { Col } from "antd"; 
 function TrustedBy() {
   return (
     <div className="conpany-trusted-by">
       <div className="company-trusted-by__inner">
         <Col xs={24} sm={24} md={16} lg = {8} className="company-trusted-by__text">
-          <div className="company-trusted-by__title c-h3-title">
+          <div className="company-trusted-by__title c-h3-title c-h3-title--maintain" style={{fontSize: 37}}>
             Trusted by many
           </div>
           <div className="company-trusted-by__small-text c-h6-title">

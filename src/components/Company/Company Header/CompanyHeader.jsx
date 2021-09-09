@@ -5,9 +5,8 @@ function CompanyHeader() {
   return (
     <div
       className="company-header-container"
-      style={{ backgroundImage: `url(${CompanyHeaderBackground})` }}
     >
-      
+      <img src={CompanyHeaderBackground} alt="" />
     </div>
   );
 }

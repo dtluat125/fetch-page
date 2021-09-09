@@ -12,6 +12,7 @@ import Usp1Theme from "./../../assets/img/Usp1Theme.png";
 import Usp2Theme from "./../../assets/img/Usp2Theme.png";
 import Usp3Theme from "./../../assets/img/Usp3Theme.png";
 import Footer from "../Footer/Footer";
+import RedTheme from "../RedTheme";
 function Homepage() {
   return (
     <div className="homepage">
@@ -49,7 +50,7 @@ function Homepage() {
       <Talents />
       <Feedbacks />
       <AboutFetch />
-      <TrustedCus signUp={true} />
+      <RedTheme title="Find the perfect fit with Fetch" subtitle="Find the perfect fit with Fetch" buttonText="Sign Up"/>
       <Footer />
     </div>
   );

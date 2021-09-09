@@ -12,6 +12,8 @@
 
 .usp__theme {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .usp__theme img {
@@ -79,16 +81,16 @@
 }
 /* USP 2 */
 .usp2__left {
-  padding: 100px 5% !important;
+  padding: 100px 5%;
   background: #F9FBFE;
 }
 
 .usp2__right {
-  padding-left: 10% !important;
+  padding-left: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 10% !important;
+  padding-right: 10%;
   background: #F9FBFE
 }
 

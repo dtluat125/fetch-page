@@ -35,7 +35,7 @@ function FetchHelp() {
         <div className="fetch-help__theme__right col-md-6">
           <div className="fetch-help__theme__rec">
             <div className="fetch-help__theme__rec__big-num c-text">80%</div>
-            <div className="subtitle-text fetch-help__theme__rec-subtitle c-text">
+            <div className="fetch-help__theme__rec-subtitle c-text c-h5-title">
               saved in expenses
             </div>
             <div className="subtitle-text--small fetch-help__theme__rec-subtitle--small c-text">

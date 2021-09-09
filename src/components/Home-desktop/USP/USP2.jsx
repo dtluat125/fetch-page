@@ -6,13 +6,13 @@ function USP2({ title, theme, company, backgroundColor }) {
   return (
     <div className="usp2-container">
       <div className="usp2-container__inner row">
-        <div className="col-md-6 usp2__left">
+        <div className="col-md-6 usp2__left c-cus-container">
           <div className="usp__theme">
             <img src={title ? theme : Usp2Theme} alt="" />
           </div>
         </div>
-        <div className="col-md-6 usp2__right">
-          <div className="usp__title">
+        <div className="col-md-6 usp2__right c-cus-container">
+          <div className="usp__title  c-h3-title">
             {title ? title : "Fetch helps businesses run more efficiently"}
           </div>
           {company ? (

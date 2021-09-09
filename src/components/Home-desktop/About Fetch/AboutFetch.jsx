@@ -11,7 +11,7 @@ function AboutFetch() {
               Separated they live in Bookmarks right at the coast of the famous
               Semantics,
               <br /> large language ocean Separated they live in Bookmarks right
-            </span>
+            </span> 
           </div>
         </div>
         <div className="about__features">

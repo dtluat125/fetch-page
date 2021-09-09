@@ -1,22 +1,21 @@
 import React from "react";
-import SignUpButton from "../Home-desktop/Trusted Cus/SignUpButton";
 
-function Available() {
+function RedTheme(props) {
   return (
     <div className="available">
       <div className="available__inner row">
         <div className="available__right col-md-10">
-          <div className="available__title">Available Positions</div>
+          <div className="c-h3-title c-h3-title--maintain available__title">{props.title}</div>
           <div className="available__text">
-            Be part of our growing network of satisfied partners
+            {props.subtitle}
           </div>
         </div>
         <div className="available__left col-md-2">
-          <SignUpButton />
+          <div className="c-large-button" role="button">{props.buttonText}</div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Available;
+export default RedTheme;
