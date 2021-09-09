@@ -9,26 +9,41 @@ const SlickSalary = () => {
     const settings = {
         className: "slick-salary",
         infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        centerMode: true,
         autoplay: true,
+        autoplaySpeed: 800,
         responsive: [
             {
                 breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    dots: false,
-                    centerMode: true,
-                    autoplay: true,
-                    autoplaySpeed: 700,
+                    dots: true,
+                    autoplay: false,
+                    centerMode: false,
                 }
             },
             {
-                breakpoint: 576,
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: true,
+                    autoplay: false,
+                    centerMode: false,
+                }
+            },
+            {
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     dots: true,
                     autoplay: false,
+                    centerMode: false,
                 }
             },
         ]

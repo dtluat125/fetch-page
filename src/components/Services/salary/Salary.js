@@ -287,29 +287,30 @@ const MoreInfoModal = () => {
                 <IconMoreInfo />
             </span>
             <Modal
+                className="modal-expertise"
                 visible={visible}
                 title="Area of expertise"
                 footer={null}
                 onCancel={() => setVisible(false)}
                 centered
             >
-                <div className="exp-content-wrap">
+                <div className="modal-exp-content-wrap">
                     <h6>Frontend developer</h6>
                     <p>Implements designs for users and debugging</p>
                 </div>
-                <div className="exp-content-wrap ">
+                <div className="modal-exp-content-wrap ">
                     <h6>Backend developer</h6>
                     <p>Integrates and ensures smooth-running of app</p>
                 </div>
-                <div className="exp-content-wrap ">
+                <div className="modal-exp-content-wrap ">
                     <h6>Full stack developer</h6>
                     <p>Covers both frontend and backend activities</p>
                 </div>
-                <div className="exp-content-wrap ">
+                <div className="modal-exp-content-wrap ">
                     <h6>Project Manager</h6>
                     <p>Oversees an entire project scope</p>
                 </div>
-                <div className="exp-content-wrap ">
+                <div className="modal-exp-content-wrap ">
                     <h6>Designer</h6>
                     <p>Creates a relatable concept with attractive visuals</p>
                 </div>

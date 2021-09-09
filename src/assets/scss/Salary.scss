@@ -823,3 +823,55 @@
     }
 }
 
+.modal-expertise {
+    .ant-modal-title {
+        font-family: Gilroy-SemiBold;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #17274E;
+    }
+
+    .ant-modal-close-x {
+        svg {
+            width: 22px;
+            height: 22px;
+            fill: #17274E;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .ant-modal-header {
+        border-bottom: none;
+    }
+
+    .modal-exp-content-wrap {
+        margin-bottom: 30px;
+
+        h6 {
+            font-family: Gilroy-Regular;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #17274E;
+            margin-bottom: 8px;
+
+        }
+
+        p {
+            font-family: Gilroy-Regular;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: #3E5476;
+            margin-bottom: 0;
+        }
+    }
+
+}
+
