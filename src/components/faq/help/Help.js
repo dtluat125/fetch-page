@@ -10,7 +10,7 @@ const Help = ({ disableBtn, data }) => {
 
     return (
         <div className="help">
-            <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, { xs: 21, sm: 24, xl: 30 }]} align="middle">
+            <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, { xs: 21, sm: 24, xl: 30 }]} >
                 <Col className="col-10-2">
                     <div className="icon-wrap">
                         <img src={HelpIcon} alt="icon help" />

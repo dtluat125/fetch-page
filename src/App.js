@@ -10,7 +10,10 @@ import Contact from './components/contact/Contact';
 import Employees from './components/employees/Employees';
 import Faq from './components/faq/Faq';
 import NotFound from './components/404/NotFound';
+import Salary from './components/Services/salary/Salary';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
 function App() {
   return (
     <Router>
@@ -42,6 +45,9 @@ function App() {
               title="Full-suite project consultancy"
               subTitle="Enjoy carefully curated management for your project from start to finish."
             />
+          </Route>
+          <Route path="/services/salary">
+            <Salary />
           </Route>
           <Route path="/employees">
             <Employees />
