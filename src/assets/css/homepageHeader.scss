@@ -5,6 +5,10 @@
   align-items: stretch;
 }
 
+.homepage__header__inner{
+  flex-direction: row-reverse;
+}
+
 .c-page-header__inner {
   padding: 100px 10% !important;
   width: 100%;
