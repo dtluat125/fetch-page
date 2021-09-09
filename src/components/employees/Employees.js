@@ -168,7 +168,7 @@ const Employees = () => {
                         </Col>
                         <Col xs={24} sm={24} md={12} xl={12}>
                             <div className="right-wrap">
-                                <img src={findMore}/>
+                                <img src={findMore} alt="find more"/>
                             </div>
                         </Col>
                     </Row>
@@ -178,7 +178,7 @@ const Employees = () => {
                 <div className="cus-container">
                     <Row className="first-row" justify="center" gutter={[{xs: 21, sm: 24, xl:30}, 0]}>
                         <Col className="first-row-col-center" xs={24} sm={24} md={20} xl={12}>
-                            <img src={heart}/>
+                            <img src={heart} alt="heart"/>
                             <h1>150+</h1>
                             <h2>associates and growing</h2>
                             <p>You don't just play a role on our client's team. First and foremost, you are a part of the Fetch family. As a valued member of our community, you stand to enjoy bonuses like company trips and more.</p>

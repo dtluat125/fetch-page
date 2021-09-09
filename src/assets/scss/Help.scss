@@ -109,9 +109,15 @@
             font-size: 20px;
             line-height: 20px;
             letter-spacing: -0.25px;
-            text-align: left;
             color: #17274E;
             margin-bottom: 16px;
+
+            @include Responsive(xs) {
+                text-align: center;
+            }
+            @include Responsive(sm) {
+                text-align: left;
+            }
 
         }
 
@@ -120,9 +126,15 @@
             font-size: 16px;
             line-height: 24px;
             letter-spacing: 0px;
-            text-align: left;
             color: #A4B7C8;
             margin-bottom: 0;
+
+            @include Responsive(xs) {
+                text-align: center;
+            }
+            @include Responsive(sm) {
+                text-align: left;
+            }
 
         }
     }

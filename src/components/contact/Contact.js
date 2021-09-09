@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/scss/Contact.scss';
 import { Row, Col } from 'antd';
-import imgLeft from '../../assets/img/contactColLeft.png';
+// import imgLeft from '../../assets/img/contactColLeft.png';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { Select } from 'antd';
