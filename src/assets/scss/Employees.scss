@@ -11,6 +11,13 @@
     }
 
     .employees-banner {
+        .banner-wrap {
+            @include Responsive(xs) { padding-top: 19px; }
+            @include Responsive(sm) { padding-top: 19px; }
+            @include Responsive(md) { padding-top: 30px; }
+            @include Responsive(lg) { padding-top: 50px; }
+            @include Responsive(xl) { padding-top: 60px; }
+        }
         img {
             max-width: 100%;
         }

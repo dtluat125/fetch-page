@@ -9,7 +9,7 @@ import { Select } from 'antd';
 const Contact = () => {
     return (
         <div className="contact">
-            <section ><Header /></section>
+            <Header />
             <section className="contact-body">
                 <div className="cus-container">
                     <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]} justify="center">
