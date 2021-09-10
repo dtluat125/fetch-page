@@ -5,10 +5,11 @@ import ServiceHeader from "./Header/ServiceHeader";
 import ServiceTheme1 from "../../assets/img/ServiceTheme1.png";
 import ServiceBody from "./ServiceBody/ServiceBody";
 import LogoWhite from "../../assets/img/LogoWhite.png";
+import LogoMobileWhite from "../../assets/img/LogoMobileWhite.png";
 function Service(props) {
   return (
     <div>
-      <Header theme = "#FFBE16" logoProp={LogoWhite}/>
+      <Header theme = "#FFBE16" logoProp={LogoWhite} logoMobileProp = {LogoMobileWhite}/>
       <ServiceHeader
         theme={ServiceTheme1}
         headerTitle={props.title}

@@ -10,7 +10,9 @@ function AboutFetch() {
     let step = num == 0 ? 0 : num ? num : 1;
     const slide = document.querySelector("#cc");
     const slideWidth = slide.clientWidth;
-    setPosition(position + step * (slideWidth + 120));
+    const windowWidth = window.innerWidth;
+    console.log((slideWidth +( windowWidth<=320?60:120)))
+    setPosition(position + step * (slideWidth + (windowWidth<=320?60:120)));
   };
   const switchSlide = (num) => {
     moveLeft(current - num);
@@ -18,6 +20,7 @@ function AboutFetch() {
   };
 
   useEffect(() => {
+    
     const activeDot = document.querySelector("#c" + current);
     activeDot?.classList.add("active");
     for (let i = 1; i <= 4; i++) {

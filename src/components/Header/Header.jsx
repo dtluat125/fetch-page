@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/header.css";
 import logo from "../../assets/img/Group 5169054.png";
+import logoMobile from "../../assets/img/LogoMobile.png";
 import dropdownIcon from "../../assets/img/Vector 15.png";
 import MenuItem from "./MenuItem";
 import NavbarClose from "../../assets/img/NavbarClose.png";
@@ -17,7 +18,7 @@ import UpperArrow from "../../assets/img/UpperArrow.png";
 import DownArrowWhite from "../../assets/img/DownArrowWhite.png";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
-function Header({ logoProp, theme }) {
+function Header({ logoProp, theme, logoMobileProp }) {
   const [collapse, setCollapse] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [collapseDropdown, setCollapseDropdown] = useState(false);
@@ -56,7 +57,7 @@ function Header({ logoProp, theme }) {
       >
         <Link to="/">
           <div className="group-5169054 header__logo">
-            <img src={logoProp ? logoProp : logo} alt="" />
+            <img src={!inMobile?logoProp ? logoProp : logo:logoMobileProp?logoMobileProp:logoMobile} alt="" />
           </div>
         </Link>
         <div
