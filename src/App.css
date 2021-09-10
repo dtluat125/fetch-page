@@ -136,14 +136,20 @@ a {
   }
 
   .c-h5-title--maintain {
-    font-size: 22px!important;
-    font-family: "Gilroy-SemiBold"!important;
-    line-height: 135%!important;
+    font-size: 22px !important;
+    font-family: "Gilroy-SemiBold" !important;
+    line-height: 135% !important;
     color: #a4b7c8;
   }
 
   .c-h1-title {
     font-size: 32px !important;
+    line-height: 135% !important;
+  }
+
+  .c-h4-title {
+    font-size: 22px !important;
+    font-family: "Gilroy-SemiBold" !important;
     line-height: 135% !important;
   }
 }

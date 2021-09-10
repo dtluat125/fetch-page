@@ -106,7 +106,6 @@
 .navbar-toggler {
   position: absolute;
   right: 0px;
-  width: 21px;
   height: 14px;
 }
 
@@ -206,22 +205,21 @@
   width: 100%;
 }
 
-.header--yellow .menu-item {
-  color: #ffffff;
+.header--yellow div {
+  color: #ffffff !important;
 }
 
-.header__contact-button {
+.header--yellow .header__contact-button {
   background: #ffffff;
   /* shadow 01 */
   box-shadow: 0px 6px 12px rgba(19, 42, 151, 0.1);
-
 }
 
-.header__contact-button span{
+.header--yellow .header__contact-button span {
   color: #ffbe16;
 }
 
-.menu-item.show .menu-icon{
+.menu-item.show .menu-icon {
   transform: rotate(180deg);
 }
 
@@ -321,10 +319,13 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 576px) {
   .header__contact-button {
     width: 100%;
     display: flex;
+  }
+
+  .header__inner {
   }
 }
 @media (max-width: 400px) {

@@ -51,7 +51,7 @@ function Header({ logoProp, theme }) {
       <div
         className="header__inner"
         style={
-          !showContent ? { height: 100 } : inMobile ? { height: "100vh" } : {}
+          !showContent ? { height: 100 } : inMobile ? { minHeight: "100vh" } : {}
         }
       >
         <Link to="/">

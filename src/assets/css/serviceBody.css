@@ -69,8 +69,26 @@
     transform: translateX(30px);
 }
 
+.service-body__inner .col-md-8{
+  padding: 0!important;
+}
 @media (min-width: 992px) {
   .service-feature:nth-child(even) .service-feature__inner {
     flex-direction: row-reverse;
   }
 }
+
+@media(max-width: 768px){
+  .sidebar{
+    display: none;
+  }
+
+  .service-feature__inner{
+    flex-direction: column-reverse;
+  }
+  .c-theme-holder{
+    margin-bottom: 60px;
+  }
+}
+
+
