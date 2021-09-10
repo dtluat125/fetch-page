@@ -16,6 +16,7 @@ import Payroll from "../../assets/img/Payroll.png";
 import FullSuite from "../../assets/img/FullSuite.png";
 import UpperArrow from "../../assets/img/UpperArrow.png";
 import DownArrowWhite from "../../assets/img/DownArrowWhite.png";
+import NavbarOpenWhite from "../../assets/img/NavbarOpenWhite.png";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
 function Header({ logoProp, theme, logoMobileProp }) {
@@ -93,7 +94,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 className={
                   collapseDropdown
                     ? isMobile
-                      ? "header__dropdown-menu "
+                      ?inMobile? "header__dropdown-menu header__dropdown-collapse":"header__dropdown-menu "
                       : "header__dropdown-menu collapse "
                     : "dropdown-menu header__dropdown-menu"
                 }
@@ -153,10 +154,10 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 id="resourcesMenu"
                 className={
                   collapseDropdown
-                    ? isMobile
-                      ? "header__dropdown-menu "
-                      : "header__dropdown-menu collapse "
-                    : "dropdown-menu header__dropdown-menu"
+                    ?  isMobile
+                    ?inMobile? "header__dropdown-menu header__dropdown-collapse":"header__dropdown-menu "
+                    : "header__dropdown-menu collapse "
+                  : "dropdown-menu header__dropdown-menu"
                 }
                 aria-labelledby="resources"
               >
@@ -203,7 +204,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
             </div>
           ) : (
             <div className="navbar-toggler" role="button" onClick={openNav}>
-              <img src={NavbarOpen} />
+              <img src={theme?NavbarOpenWhite:NavbarOpen} />
             </div>
           ))}
       </div>

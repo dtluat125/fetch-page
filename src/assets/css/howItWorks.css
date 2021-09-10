@@ -160,3 +160,9 @@
   }
 }
 
+@media (max-width: 576px){
+  .how-it-works__feature{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

@@ -93,7 +93,7 @@ function HowItWorks() {
             className="how-it-works__features__left"
           >
             <div className="how-it-work__sub-group">
-              <div className="c-h5-title">
+              <div className="c-h5-title c-h5-title--maintain">
                 We offer a diverse range of products
               </div>
               <div className="c-p-subtitle">
@@ -102,7 +102,7 @@ function HowItWorks() {
               </div>
             </div>
             <div className="how-it-work__sub-group">
-              <div className="c-h5-title">
+              <div className="c-h5-title c-h5-title--maintain">
                 Flexible and catered to your needs
               </div>
               <div className="c-p-subtitle">
