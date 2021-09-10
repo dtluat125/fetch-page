@@ -17,6 +17,7 @@ import FullSuite from "../../assets/img/FullSuite.png";
 import UpperArrow from "../../assets/img/UpperArrow.png";
 import DownArrowWhite from "../../assets/img/DownArrowWhite.png";
 import NavbarOpenWhite from "../../assets/img/NavbarOpenWhite.png";
+import Calculator from "../../assets/img/Calculator.png";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
 function Header({ logoProp, theme, logoMobileProp }) {
@@ -181,6 +182,13 @@ function Header({ logoProp, theme, logoMobileProp }) {
                     title="FAQs"
                     text={!collapseDropdown && "Questions & Answers"}
                     icon={!collapseDropdown && FAQs}
+                  />
+                </Link>
+                <Link to="/services/salary">
+                  <DropdownItem
+                    title="Vietnam Calculator"
+                    text={!collapseDropdown && "Assess estimated costs"}
+                    icon={!collapseDropdown && Calculator}
                   />
                 </Link>
               </div>

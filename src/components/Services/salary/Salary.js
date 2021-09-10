@@ -18,10 +18,12 @@ import hrAvt from '../../../assets/img/hrAvt.png';
 import SlickSalary from './SlickSalary';
 import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
+import LogoWhite from "../../../assets/img/LogoWhite.png";
+import LogoMobileWhite from "../../../assets/img/LogoMobileWhite.png";
 const Salary = () => {
     return (
         <div className="salary-caculator">
-            <Header theme="#FFBE16" logoProp={logoFaq}/>
+            <Header theme = "#FFBE16" logoProp={LogoWhite} logoMobileProp = {LogoMobileWhite} />
             <section className="salary-header">
                 <div className="cus-container">
                     <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]} justify="space-between">
