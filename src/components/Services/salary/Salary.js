@@ -12,6 +12,7 @@ import { ReactComponent as IconManager } from '../../../assets/img/iconManager.s
 import { ReactComponent as IconDesigner } from '../../../assets/img/iconDesigner.svg';
 import { ReactComponent as ArrowDown } from '../../../assets/img/arrowDown.svg';
 import { ReactComponent as IconMoreInfo } from '../../../assets/img/iconMoreInfo.svg';
+import logoFaq from '../../../assets/img/logoFaq.png';
 import ensignVN from '../../../assets/img/ensignVN.png';
 import hrAvt from '../../../assets/img/hrAvt.png';
 import SlickSalary from './SlickSalary';
@@ -20,7 +21,7 @@ import Header from '../../Header/Header';
 const Salary = () => {
     return (
         <div className="salary-caculator">
-            {/* <Header /> */}
+            <Header theme="#FFBE16" logoProp={logoFaq}/>
             <section className="salary-header">
                 <div className="cus-container">
                     <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]} justify="space-between">
