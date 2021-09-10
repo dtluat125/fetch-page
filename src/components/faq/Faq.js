@@ -7,7 +7,8 @@ import HelpDetail from './help/HelpDetail';
 import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import logoFaq from '../../assets/img/logoFaq.png';
+import LogoWhite from "../../assets/img/LogoWhite.png";
+import LogoMobileWhite from "../../assets/img/LogoMobileWhite.png";
 
 
 const data = [
@@ -20,7 +21,7 @@ const data = [
 const Faq = () => {
     return (
         <div className="faq">
-            <Header theme="#FFBE16" logoProp={logoFaq}/>
+            <Header theme = "#FFBE16" logoProp={LogoWhite} logoMobileProp = {LogoMobileWhite} />
             <section className="faq-search">
                 <div className="cus-container">
                     <Row justify="center" className="row-search" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, 0]}>
