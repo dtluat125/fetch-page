@@ -3,6 +3,7 @@ import "../../../assets/css/feedbacks.css";
 import SlideTrack from "./SlideTrack";
 import FloatTheme from "../../../assets/img/FloatTheme.png";
 function Feedbacks() {
+  
   return (
     <div className="feedbacks-container">
       <div className="c-float-group">
