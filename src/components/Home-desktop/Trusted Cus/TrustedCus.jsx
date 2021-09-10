@@ -21,7 +21,17 @@ function TrustedCus({ signUp }) {
     draggable: true,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 3,
+          dots: true,
+          autoplay: true,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 1250,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 3,
