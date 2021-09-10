@@ -97,6 +97,11 @@
   text-align: center;
   margin-bottom: 30px;
 }
+@media(min-width:768px){
+  .about-container__inner .switch-dots{
+    display: none;
+  }
+}
 @media(max-width: 768px){
   .feature__track{
     flex-wrap: nowrap!important;

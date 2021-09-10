@@ -14,9 +14,10 @@ import ServiceManagement from "../../assets/img/ServiceManageMent.png";
 import Payroll from "../../assets/img/Payroll.png";
 import FullSuite from "../../assets/img/FullSuite.png";
 import UpperArrow from "../../assets/img/UpperArrow.png";
+import DownArrowWhite from "../../assets/img/DownArrowWhite.png";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
-function Header({ logoProp }) {
+function Header({ logoProp, theme }) {
   const [collapse, setCollapse] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [collapseDropdown, setCollapseDropdown] = useState(false);
@@ -46,7 +47,7 @@ function Header({ logoProp }) {
   };
   // Mobile handler
   return (
-    <div className="header">
+    <div className={theme?"header header--yellow":"header"} style={theme&&{backgroundColor: theme}}>
       <div
         className="header__inner"
         style={
@@ -83,7 +84,7 @@ function Header({ logoProp }) {
                 title="Services"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
-                icon={dropdownIcon}
+                icon={theme?DownArrowWhite:dropdownIcon}
                 id="services"
                 target={collapseDropdown && "servicesMenu"}
               />
@@ -142,7 +143,7 @@ function Header({ logoProp }) {
                 title="Resources"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
-                icon={dropdownIcon}
+                icon={theme?DownArrowWhite:dropdownIcon}
                 target={collapseDropdown && "resourcesMenu"}
                 id="resources"
                 isMobile={isMobile}

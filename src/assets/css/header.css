@@ -201,10 +201,28 @@
   width: 246px;
 }
 
-
 .header__contact-button-container {
   align-items: center;
   width: 100%;
+}
+
+.header--yellow .menu-item {
+  color: #ffffff;
+}
+
+.header__contact-button {
+  background: #ffffff;
+  /* shadow 01 */
+  box-shadow: 0px 6px 12px rgba(19, 42, 151, 0.1);
+
+}
+
+.header__contact-button span{
+  color: #ffbe16;
+}
+
+.menu-item.show .menu-icon{
+  transform: rotate(180deg);
 }
 
 @media (max-width: 1000px) {
@@ -308,7 +326,7 @@
     width: 100%;
     display: flex;
   }
-} 
+}
 @media (max-width: 400px) {
   .header__left.show {
     width: 100%;
@@ -317,8 +335,8 @@
   }
   .header__menu-group {
     margin-bottom: 0px;
-}
-.dropdown{
-  margin: 0!important;
-}
+  }
+  .dropdown {
+    margin: 0 !important;
+  }
 }

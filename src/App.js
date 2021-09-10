@@ -28,24 +28,28 @@ function App() {
             <Service
               title="Talent acquisition"
               subTitle="Utilise your preferred talent for your projects."
+              id={1}
             />
           </Route>
           <Route path="/services/2">
             <Service
               title="Service management"
               subTitle="Run your remote team and leave the HR aspects to us."
+              id={2}
             />
           </Route>
           <Route path="/services/3">
             <Service
               title="Payroll and compliances"
               subTitle="Experience a seamless contracting and payroll process"
+              id={3}
             />
           </Route>
           <Route path="/services/4">
             <Service
               title="Full-suite project consultancy"
               subTitle="Enjoy carefully curated management for your project from start to finish."
+              id={4}
             />
           </Route>
           <Route path="/services/salary">
