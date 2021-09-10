@@ -188,10 +188,12 @@
   font-size: 18px;
   line-height: 24px;
   /* or 133% */
-
   letter-spacing: -0.25px;
-
   color: #17274e !important;
+}
+
+.header__dropdown-collapse .header__dropdown-item__title{
+  color: #A4B7C8!important;
 }
 
 .header__dropdown-item__text {
