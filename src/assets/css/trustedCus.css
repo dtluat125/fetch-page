@@ -5,9 +5,10 @@
 .trusted-cus__inner {
   display: flex;
   flex-direction: column;
+  
 }
 
-.trusted-cus__top {
+.trusted-cus__top { 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,6 +46,7 @@
   box-sizing: border-box;
   border-radius: 8px;
   background: inherit;
+  max-width: 150px;
 }
 
 .trusted-cus__view-more-button span {
@@ -89,6 +91,7 @@
 /* cus logo */
 .cus-logo-holder {
   width: 160px;
+  min-width: 160px;
   height: 90px;
   background: #f5f8fa;
   border-radius: 10px;
@@ -96,11 +99,17 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 .trusted-cus__bottom {
   margin-top: 35px;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+@media(max-width: 768px){
+  .trusted-cus__top div{
+    text-align: center;
+  }
 }

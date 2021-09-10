@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SignUpButton({signUp}) {
+function SignUpButton({signUp, text}) {
     return (
         <div>
             {!signUp?

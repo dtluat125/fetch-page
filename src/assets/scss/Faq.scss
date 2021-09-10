@@ -16,31 +16,22 @@
     .cus-container {
         padding-left: var(--padding-x);
         padding-right: var(--padding-x);
-    }
 
-    .faq-header > div {
-        background-color: #FFBE16;
-
-        .header__menu-first-group {
-            div {
-                color: #FFFFFF;
-            }
+        @include Responsive(xs) {
+            padding-top: 128px;
+            padding-bottom: 128px;
         }
 
-        .dropdown {
-            .menu-item {
-                color: #FFFFFF;
-            }
+        @include Responsive(sm) {
+            padding-top: 128px;
+            padding-bottom: 128px;
         }
 
-        .header__contact-button {
-            box-shadow: none;
-            background-color: #FFFFFF;
-            
-            & > span {
-                color: #FFBE16;
-            }
+        @include Responsive(xl) {
+            padding-top: 110px;
+            padding-bottom: 152px;
         }
+
     }
 
     .faq-search {
@@ -60,21 +51,18 @@
                 color: #273A5F;
 
                 @include Responsive(xs) {
-                    margin-top: 128px;
                     margin-bottom: 16px;
                     line-height: 45px;
                     letter-spacing: -1px;
                 }
 
                 @include Responsive(sm) {
-                    margin-top: 128px;
                     margin-bottom: 16px;
                     line-height: 45px;
                     letter-spacing: -1px;
                 }
 
                 @include Responsive(xl) {
-                    margin-top: 146px;
                     margin-bottom: 12px;
                     line-height: 60px;
                     letter-spacing: -0.5px;
@@ -118,16 +106,16 @@
 
                 @include Responsive(xs) {
                     height: 64px;
-                    margin-bottom: 128px;
+            
                 }
                 @include Responsive(sm) {
                     height: 64px;
-                    margin-bottom: 128px;
+                    
                 }
 
                 @include Responsive(xl) {
                     height: 80px;
-                    margin-bottom: 98px;
+                    
                 }
 
                 .icon-wrap {

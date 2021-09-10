@@ -7,15 +7,20 @@ function MenuItem({
   groupPosition,
   icon,
   dropdownToggle,
+  dropdownCollapse,
   id,
+  target,
+  isMobile
 }) {
   return (
     <div
       role={"button"}
       id={id}
-      className={dropdownToggle ? "menu-item" : "menu-item"}
-      data-bs-toggle={dropdownToggle && "dropdown"}
+      className={dropdownCollapse?isMobile?"menu-item menu-collapse-toggle":"menu-item menu-collapse-toggle collapsed":"menu-item"}
+      data-bs-toggle={dropdownToggle ? "dropdown":dropdownCollapse&&"collapse"}
+      data-bs-target = {"#" + target}
       aria-expanded="false"
+      aria-controls={target}
     >
       {title}
       {icon&&<img className="menu-icon" src={icon} alt="" />}

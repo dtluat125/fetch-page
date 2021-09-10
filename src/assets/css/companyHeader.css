@@ -1,12 +1,23 @@
+
 .company-header-container {
-  padding-top: 400px;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position-y:top;
-  background-position-x: center;
-  background-color: #f3f5f7;
+  background-size: cover;
+  background-position: center;
+  background-color: #ffffff;
   overflow-x: hidden;
+}
+
+.company-header-container img{
+
+}
+
+.company-banner .c-h1-title{
+  text-align: center;
+}
+
+.company-banner .c-h6-title{
+  text-align: center;
 }
 
 .company-header__inner {

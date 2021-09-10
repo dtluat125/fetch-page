@@ -1,41 +1,37 @@
 import React from "react";
 import "../../../assets/css/usp.css";
-import UspTheme from "../../../assets/img/Efficient.png";
+
 import CheckIcon from "../../../assets/img/CheckIcon.png";
-function USP1() {
+function USP1(props) {
   return (
-    <div className="usp-container">
+    <div className="c-cus-container usp-container">
       <div className="usp-container__inner row">
         <div className="col-md-6 usp__left">
-          <div className="usp__title">
-            Fetch helps businesses run more efficiently
-          </div>
+          <div className="c-h2-title usp__title">{props.uspTitle}</div>
           <div className="usp__content">
             <div className="usp__text-group">
               <div className="check-icon__container">
-                <div className="check-icon">
+                <div className="check-icon check-icon--yellow"> 
                   <img src={CheckIcon} alt="" />
                 </div>
               </div>
               <div className="usp__text-group__content">
-                <div className="usp__content__title">We’re Experienced</div>
-                <div className="usp__content__small-text">
-                  Being one of the first in the industry has allowed us to gain
-                  a strong grasp of the Vietnamese market.
+                <div className="usp__content__title c-h5-title">{props.uspSubtitle1}</div>
+                <div className="usp__content__small-text c-p-subtitle">
+                  {props.uspText1}
                 </div>
               </div>
             </div>
             <div className="usp__text-group">
               <div className="check-icon__container">
-                <div className="check-icon">
+                <div className="check-icon check-icon--yellow">
                   <img src={CheckIcon} alt="" />
                 </div>
               </div>
               <div className="usp__text-group__content">
-                <div className="usp__content__title">We’re Experienced</div>
-                <div className="usp__content__small-text">
-                  Being one of the first in the industry has allowed us to gain
-                  a strong grasp of the Vietnamese market.
+                <div className="usp__content__title c-h5-title">{props.uspSubtitle2}</div>
+                <div className="usp__content__small-text c-p-subtitle">
+                {props.uspText2}
                 </div>
               </div>
             </div>
@@ -43,7 +39,7 @@ function USP1() {
         </div>
         <div className="col-md-6 usp__right">
           <div className="usp__theme">
-            <img src={UspTheme} alt="" />
+            <img src={props.uspTheme} alt="" />
           </div>
         </div>
       </div>

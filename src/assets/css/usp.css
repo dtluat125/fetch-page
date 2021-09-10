@@ -12,11 +12,12 @@
 
 .usp__theme {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .usp__theme img {
-  width: 100%;
-  max-width: 540;
+  max-width: 100%;
 }
 /* Left */
 .usp__left {
@@ -80,18 +81,31 @@
 }
 /* USP 2 */
 .usp2__left {
-  padding: 100px 5% !important;
-  background: #f1f3f7;
+  padding: 100px 5%;
+  background: #F9FBFE;
 }
 
 .usp2__right {
-  padding-left: 10%!important;
+  padding-left: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 10%!important;
+  padding-right: 10%;
+  background: #F9FBFE
 }
 
 .check-icon--yellow {
   background: #ffc01e;
+}
+
+@media (min-width: 768px) {
+  .usp-container:nth-child(even) .usp-container__inner {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  .usp-container__inner {
+    flex-direction: column-reverse;
+  }
 }
