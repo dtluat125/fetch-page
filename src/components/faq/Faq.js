@@ -20,10 +20,10 @@ const data = [
 const Faq = () => {
     return (
         <div className="faq">
-            <section className="faq-header"><Header logoProp={logoFaq}/></section>
+            <Header theme="#FFBE16" logoProp={logoFaq}/>
             <section className="faq-search">
                 <div className="cus-container">
-                    <Row justify="center" className="row-search" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, { xs: 21, sm: 16, md: 24, xl: 30 }]}>
+                    <Row justify="center" className="row-search" gutter={[{ xs: 21, sm: 16, md: 24, xl: 30 }, 0]}>
                         <Col xs={24} sm={24} lg={20}>
                             <h1>Fetch Help Center</h1>
                             <p>Be part of our growing network of satisfied partners</p>
