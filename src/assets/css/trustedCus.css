@@ -104,8 +104,7 @@
 
 .trusted-cus__bottom {
   margin-top: 35px;
-  display: flex;
-  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 
 @media(max-width: 768px){

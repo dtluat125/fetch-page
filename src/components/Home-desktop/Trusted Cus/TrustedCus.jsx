@@ -7,7 +7,62 @@ import Cus3 from "../../../assets/img/Cus3.png";
 import Cus4 from "../../../assets/img/Cus4.png";
 import Cus5 from "../../../assets/img/Cus5.png";
 import Cus6 from "../../../assets/img/Cus6.png";
+import { Carousel } from "antd";
 function TrustedCus({ signUp }) {
+  const settings = {
+    className: "slick-trusted-cus",
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 3,
+    dots: false,
+    centerMode: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    draggable: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3,
+          dots: true,
+          autoplay: true,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          dots: false,
+          autoplay: true,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: false,
+          autoplay: true,
+          centerMode: false,
+        },
+      },
+
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+          autoplay: true,
+          centerMode: false,
+        },
+      },
+    ],
+  };
   return (
     <div className="c-cus-container  trusted-cus ">
       <div className="trusted-cus__inner">
@@ -29,12 +84,14 @@ function TrustedCus({ signUp }) {
         </div>
         {!signUp && (
           <div className="trusted-cus__bottom">
-            <CusLogoHolder logo={Cus1} />
-            <CusLogoHolder logo={Cus2} />
-            <CusLogoHolder logo={Cus3} />
-            <CusLogoHolder logo={Cus4} />
-            <CusLogoHolder logo={Cus5} />
-            <CusLogoHolder logo={Cus6} />
+            <Carousel {...settings}>
+              <CusLogoHolder logo={Cus1} />
+              <CusLogoHolder logo={Cus2} />
+              <CusLogoHolder logo={Cus3} />
+              <CusLogoHolder logo={Cus4} />
+              <CusLogoHolder logo={Cus5} />
+              <CusLogoHolder logo={Cus6} />
+            </Carousel>
           </div>
         )}
       </div>

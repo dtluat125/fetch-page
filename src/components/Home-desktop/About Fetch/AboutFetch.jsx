@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Carousel, Col, Row } from "antd";
 import React, { useEffect, useState } from "react";
 import "../../../assets/css/about.css";
 import AboutTheme from "../../../assets/img/AboutTheme.png";
@@ -6,29 +6,52 @@ function AboutFetch() {
   const [position, setPosition] = useState(0);
   const [current, setCurrent] = useState(1);
 
-  const moveLeft = (num) => {
-    let step = num == 0 ? 0 : num ? num : 1;
-    const slide = document.querySelector("#cc");
-    const slideWidth = slide.clientWidth;
-    const windowWidth = window.innerWidth;
-    console.log((slideWidth +( windowWidth<=320?60:120)))
-    setPosition(position + step * (slideWidth + (windowWidth<=320?60:120)));
-  };
-  const switchSlide = (num) => {
-    moveLeft(current - num);
-    setCurrent(num);
-  };
+  // const moveLeft = (num) => {
+  //   let step = num == 0 ? 0 : num ? num : 1;
+  //   const slide = document.querySelector("#cc");
+  //   const slideWidth = slide.clientWidth;
+  //   const windowWidth = window.innerWidth;
+  //   console.log(slideWidth + (windowWidth <= 320 ? 60 : 120));
+  //   setPosition(
+  //     position + step * (slideWidth + (windowWidth <= 320 ? 60 : 120))
+  //   );
+  // };
+  // const switchSlide = (num) => {
+  //   moveLeft(current - num);
+  //   setCurrent(num);
+  // };
 
-  useEffect(() => {
-    
-    const activeDot = document.querySelector("#c" + current);
-    activeDot?.classList.add("active");
-    for (let i = 1; i <= 4; i++) {
-      if (current != i) {
-        document.querySelector("#c" + i).classList.remove("active");
-      }
-    }
-  }, [position, current]);
+  // useEffect(() => {
+  //   const activeDot = document.querySelector("#c" + current);
+  //   activeDot?.classList.add("active");
+  //   for (let i = 1; i <= 4; i++) {
+  //     if (current != i) {
+  //       document.querySelector("#c" + i).classList.remove("active");
+  //     }
+  //   }
+  // }, [position, current]);
+  const settings = {
+    className: "slick-about",
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    centerMode: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    draggable: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          autoplay: true,
+        },
+      },
+    ],
+  };
   return (
     <div className="about-container c-cus-container">
       <div
@@ -45,7 +68,7 @@ function AboutFetch() {
         </div>
         <Row
           className="feature__track"
-          id = "c"
+          id="c"
           style={{ transform: `translateX(${position + "px"})` }}
         >
           <Col id="cc" md={6} offset={6} className="about__feature">
@@ -71,7 +94,43 @@ function AboutFetch() {
             </div>
           </Col>
         </Row>
-        <div className="switch-dots">
+        <div className="slicker">
+          <Carousel {...settings}>
+            <Col id="cc" md={6} offset={6} className="about__feature">
+            <div className="about__feature__inner">
+              <div className="feature-num">500+</div>
+              <div className="c-h6-subtitle feature-des">
+                successful deployments
+              </div>
+              </div>
+            </Col>
+            <Col md={6} offset={6} className="about__feature">
+            <div className="about__feature__inner">
+              <div className="feature-num">7+</div>
+              <div className="c-h6-subtitle feature-des">
+                years in the business
+              </div>
+              </div>
+            </Col>
+            <Col md={6} className="about__feature">
+            <div className="about__feature__inner">
+              <div className="feature-num">USD 5 million</div>
+              <div className="c-h6-subtitle feature-des">
+                remunerated to date
+              </div>
+              </div>
+            </Col>
+            <Col md={6} offset={6} className="about__feature">
+              <div className="about__feature__inner">
+                <div className="feature-num">100+</div>
+                <div className="c-h6-subtitle feature-des">
+                  partnerships and growing
+                </div>
+              </div>
+            </Col>
+          </Carousel>
+        </div>
+        {/* <div className="switch-dots">
           <div
             onClick={() => switchSlide(1)}
             className="dot active"
@@ -96,7 +155,7 @@ function AboutFetch() {
             role="button"
             id="c4"
           ></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

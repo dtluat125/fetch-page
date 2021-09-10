@@ -124,9 +124,8 @@
 }
 
 .talents__cards__inner {
-  display: flex;
   justify-content: center;
-  transition: all 0.3s ease
+  transition: all 0.3s ease;
 }
 
 .talents__cards__inner .card {
@@ -172,10 +171,28 @@
   padding-bottom: 55px;
 }
 
+.card-container {
+  margin-bottom: 30px;
+}
+
+.slick-trusted-cus .slick-dots {
+  bottom: -30px !important;
+}
+
+.slick-dots li button {
+  width: 16px!important;
+  height: 16px!important;
+  border-radius: 50%!important;
+  background-color: #a4b7c8;
+  margin-right: 14px;
+}
+
+
+
 @media (max-width: 996px) {
-  .talents__cards {
+  /* .talents__cards {
     margin-top: 200px;
-  }
+  } */
   .talents__map__content {
     width: 90% !important;
   }
@@ -196,8 +213,8 @@
     max-width: 100%;
   }
 }
-@media(min-width: 768px){
-  .dot--dark{
+@media (min-width: 768px) {
+  .dot--dark {
     display: none;
   }
 }
