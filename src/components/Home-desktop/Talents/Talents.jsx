@@ -61,7 +61,8 @@ function Talents() {
           slidesToScroll: 1,
           dots: true,
           autoplay: true,
-          centerMode: false,
+          centerMode: true,
+          centerPadding: "0"
         },
       },
     ],

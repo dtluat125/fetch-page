@@ -66,6 +66,7 @@ function SlideTrack() {
     autoplay: true,
     autoplaySpeed: 3000,
     draggable: true,
+    centerPadding: "0px",
     responsive: [
       {
         breakpoint: 1200,
