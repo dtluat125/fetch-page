@@ -129,10 +129,10 @@
 }
 
 .talents__cards__inner .card {
-  width: 240px;
+  max-width: 260px;
   margin-right: 30px;
   margin-bottom: 30px;
-  max-height: 400px;
+  height: 400px;
   border-radius: 8px;
 }
 

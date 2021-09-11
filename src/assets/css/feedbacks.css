@@ -38,6 +38,7 @@
   box-shadow: 0px 18px 35px #eef6fa;
   border-radius: 18px;
   opacity: 0.6;
+  margin-bottom: 50px;
 }
 
 .slide__inner {
@@ -226,7 +227,7 @@
   width: 16px !important;
   height: 16px !important;
   border-radius: 50% !important;
-  background-color: #a4b7c8;
+  background-color: #17274E!important;
   margin-right: 14px;
 }
 
@@ -282,7 +283,8 @@
     opacity: 1!important;
   }
   .slide-container{
-    margin: 0 16px;
+    margin-left:16px;
+    margin-right: 16px;
   }
 
   .slide__main-content{

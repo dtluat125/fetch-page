@@ -82,7 +82,7 @@ function SlideTrack() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: false,
+          dots: true,
           autoplay: true,
           centerMode: true,
         },
@@ -92,7 +92,7 @@ function SlideTrack() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: false,
+          dots: true,
           autoplay: true, 
           centerMode: false,
         },
@@ -103,7 +103,7 @@ function SlideTrack() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false,
+          dots: true,
           autoplay: true, 
           centerMode: false,
         },
