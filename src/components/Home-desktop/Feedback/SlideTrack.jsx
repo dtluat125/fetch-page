@@ -72,7 +72,7 @@ function SlideTrack() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          dots: true,
+          dots: false,
           autoplay: true,
           centerMode: true,
         },
@@ -82,7 +82,7 @@ function SlideTrack() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true,
+          dots: false,
           autoplay: true,
           centerMode: true,
         },
@@ -90,9 +90,20 @@ function SlideTrack() {
       {
         breakpoint: 768,
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+          autoplay: true, 
+          centerMode: false,
+        },
+      },
+
+      {
+        breakpoint: 576,
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
+          dots: false,
           autoplay: true, 
           centerMode: false,
         },
