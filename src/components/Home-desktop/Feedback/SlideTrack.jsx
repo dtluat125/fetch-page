@@ -66,13 +66,14 @@ function SlideTrack() {
     autoplay: true,
     autoplaySpeed: 3000,
     draggable: true,
+    centerPadding: "0px",
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          dots: true,
+          dots: false,
           autoplay: true,
           centerMode: true,
         },
@@ -89,6 +90,17 @@ function SlideTrack() {
       },
       {
         breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true,
+          autoplay: true, 
+          centerMode: false,
+        },
+      },
+
+      {
+        breakpoint: 576,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

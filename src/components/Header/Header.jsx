@@ -32,7 +32,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
 
       if (windowWidth < 1000) setCollapse(true);
       else setCollapse(false);
-      if (windowWidth < 720) setCollapseDropdown(true);
+      if (windowWidth < 755) setCollapseDropdown(true);
       else setCollapseDropdown(false);
       if(windowWidth<400) setInMobile(true);
       else setInMobile(false)

@@ -62,6 +62,7 @@ function Talents() {
           dots: true,
           autoplay: true,
           centerMode: true,
+          centerPadding: "0"
         },
       },
     ],
