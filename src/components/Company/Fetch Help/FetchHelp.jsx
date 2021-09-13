@@ -23,16 +23,14 @@ function FetchHelp() {
         className="fetch-help__theme row"
         style={{ backgroundImage: `url(${Theme2})` }}
       >
-        <div className="fetch-help__theme__left col-md-6">
-          <div className="fetch-help__theme__quote c-text">
-            “Fetch helped our businesses run more efficiently”
+        <div className="fetch-help__theme__left col-md-7">
+          <div className="fetch-help__theme__quote c-h2-title">
+            "We maximised Chartdesk's budget to help build a small yet effective
+            team of developers."
           </div>
-          <div className="fetch-help__theme__author c-text">
-            Alison Harrington, <br />
-            Ruby On Rails Developer
-          </div>
+          <div className="fetch-help__theme__author c-h6-subtitle" style={{color: "#FFFFFF"}}>Chartdesk</div>
         </div>
-        <div className="fetch-help__theme__right col-md-6">
+        <div className="fetch-help__theme__right col-md-5">
           <div className="fetch-help__theme__rec">
             <div className="fetch-help__theme__rec__big-num c-text">80%</div>
             <div className="fetch-help__theme__rec-subtitle c-text c-h5-title c-h5-title--maintain">

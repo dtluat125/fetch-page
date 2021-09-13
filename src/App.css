@@ -81,6 +81,14 @@ a {
   overflow-x: hidden;
 }
 
+.check-item .c-p-subtitle {
+  color: #17274e;
+}
+
+.check-item .c-h6-title {
+  color: #273a5f;
+}
+
 @media (max-width: 992px) {
   .c-h1-title {
     font-size: 48px !important;
@@ -128,6 +136,12 @@ a {
     letter-spacing: -0.25px;
   }
 
+  .fetch-help__theme__quote {
+    font-family: Gilroy-SemiBold;
+    font-size: 32px!important;
+    line-height: 135%!important;
+  }
+
   .c-h5-title {
     font-family: "Gilroy-Regular" !important;
     font-size: 19px !important;
@@ -139,7 +153,7 @@ a {
     font-size: 22px !important;
     font-family: "Gilroy-SemiBold" !important;
     line-height: 135% !important;
-    color: #17274E;
+    color: #17274e;
   }
 
   .c-h1-title {

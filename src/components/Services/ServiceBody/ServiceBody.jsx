@@ -118,7 +118,8 @@ function ServiceBody(props) {
     [
       {
         featureTheme: ServiceFeatureTheme15,
-        featureTitle: "Meticulous end-to-end management of your organisation's project and tech needs",
+        featureTitle:
+          "Meticulous end-to-end management of your organisation's project and tech needs",
         featureSubtitle:
           "Our three-pronged approach gives you a personalised business solution, allowing you to undertake any task effortlessly.",
       },
@@ -131,13 +132,13 @@ function ServiceBody(props) {
       },
       {
         featureTheme: ServiceFeatureTheme17,
-        featureTitle: "Step 2:<br/> Execution",
+        featureTitle: "Step 2: Execution",
         featureSubtitle:
           "We bring you access to the best techies you can find in Vietnam through our vast recruitment network.",
       },
       {
         featureTheme: ServiceFeatureTheme18,
-        featureTitle: "Step 3:<br/> Long-term sustainability",
+        featureTitle: "Step 3: Long-term sustainability",
         featureSubtitle:
           "The consultant will guide your local staff to take over the team's management when they’re thoroughly trained and proficient, thereby allowing full control and sustainability for independent growth into the future for your organisation.",
       },
@@ -167,6 +168,16 @@ function ServiceBody(props) {
           let currentOptions = optionsArr.find(
             (option) => option.getAttribute("option") == current
           );
+          let previousOptions = optionsArr.filter(
+            (option) => option.getAttribute("option")[1] < current[1]
+          );
+          let previousOptionsArr =
+            previousOptions && Array.from(previousOptions);
+          previousOptions?.forEach((option) => {
+            option
+              .querySelector(".sidebar-option-container")
+              .classList.add("scrolled");
+          });
           currentOptions
             .querySelector(".sidebar-option-container")
             .classList.add("active");
@@ -177,17 +188,33 @@ function ServiceBody(props) {
                 .querySelector(".sidebar-option-container.active")
                 ?.classList.remove("active");
             }
+            if (option.getAttribute("option")[1] > current[1]) {
+              option
+                .querySelector(".sidebar-option-container.scrolled")
+                ?.classList.remove("scrolled");
+            }
           });
         } else {
         }
       });
+      let serviceBody = document.querySelector(".service-body");
+      let sidebar = document.querySelector(".sidebar")
+      let bodyRect = serviceBody?.getBoundingClientRect();
+      let top = bodyRect?.top;
+      if(top < 0){
+        sidebar.classList.add("sidebar--fixed")
+      }
+      else if(top > 0){
+        console.log(top)
+        sidebar.classList.remove("sidebar--fixed")
+      }
     });
   });
   return (
     <Router>
       <div className="service-body">
         <div className="service-body__inner c-page-header__inner row">
-          <div className="service-body__left col-md-4">
+          <div className="service-body__left col-lg-4">
             <div className="sidebar">
               <div className="sidebar-content">
                 <div className="sidebar-title c-h5-title">{props.title}</div>
@@ -211,7 +238,7 @@ function ServiceBody(props) {
               </div>
             </div>
           </div>
-          <div className="service-body__right col-md-8">
+          <div className="service-body__right col-lg-8">
             {featuresArr[props.id - 1]?.map((feature, index) => {
               const { featureTheme, featureTitle, featureSubtitle } = feature;
               return (

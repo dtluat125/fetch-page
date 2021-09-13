@@ -61,6 +61,5 @@ body {
 
 @media(max-width: 568px){
   .c-large-button{
-    min-width: 200px!important;
   }
 }

@@ -25,9 +25,8 @@ function HowItWorks() {
               We offer customised packages to each client
             </div>
             <div className="c-h6-title " style={{ textAlign: "center" }}>
-              There’s no “one size fits all” formula for every business –
-              discover our range of services and build a combination that works
-              best for your company.
+              No longer is hiring and managing offshore staff daunting. With
+              Fetch, you get to build your remote dream.
             </div>
           </div>
         </Col>
@@ -154,7 +153,7 @@ function HowItWorks() {
             Find tailormade, flexible solutions, designed for your business
             needs.
           </div>
-          <button className="c-large-button" style={{background: "#fff"}}>
+          <button className="c-large-button" style={{ background: "#fff" }}>
             Learn more
           </button>
         </div>

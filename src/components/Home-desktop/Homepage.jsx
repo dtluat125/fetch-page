@@ -11,6 +11,7 @@ import USP2 from "./USP/USP2";
 import Usp1Theme from "./../../assets/img/Usp1Theme.png";
 import Usp2Theme from "./../../assets/img/Usp2Theme.png";
 import Usp3Theme from "./../../assets/img/Usp3Theme.png";
+import Usp3MobileTheme from "./../../assets/img/Usp3MobileTheme.png";
 import Footer from "../Footer/Footer";
 import RedTheme from "../RedTheme";
 function Homepage() {
@@ -27,6 +28,7 @@ function Homepage() {
           uspSubtitle2="We've streamlined the process"
           uspText2="Confidently purvey from our vetted professionals that have been thoroughly assessed prior."
           uspTheme={Usp3Theme}
+          uspMobileTheme = {Usp3MobileTheme}
         />
 
         <USP1

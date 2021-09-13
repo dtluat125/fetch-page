@@ -7,10 +7,10 @@ function HomepageHeader() {
   return (
     <div className="hompage__header">
       <div className="homepage__header__inner c-page-header__inner row">
-        <div className="hompage__header__image-group col-md-6">
+        <div className="hompage__header__image-group col-lg-6">
           <img src={imageGroup} alt="" />
         </div>
-        <div className="homepage__header__left col-md-6">
+        <div className="homepage__header__left col-lg-6">
           <div className=" c-h1-title homepage__header__h1 ">
             Smoother recruiting begins with Fetch
           </div>
@@ -19,7 +19,7 @@ function HomepageHeader() {
             Build your remote dream team effortlessly and let Fetch take care of
             the HR side of business.
           </div>
-          <button className="c-large-button homepage__header__signup-button">
+          <button className="c-large-button homepage__header__signup-button" style={{width: 123}}>
             <span>Learn more</span>{" "}
           </button>
         </div>

@@ -88,7 +88,7 @@ function TrustedCus({ signUp }) {
             style={{ display: "flex", justifyContent: "center" }}
           >
             <button className="c-large-button trusted-cus__view-more-button">
-              <span>View more</span>
+              <span>Learn more</span>
             </button>
           </div>
         </div>

@@ -88,11 +88,12 @@
 
 .hompage__header__image-group {
   width: 100%;
-  max-width: 540px;
+  
 }
 
 .hompage__header__image-group img {
   width: 100%;
+  max-width: 540px!important;
 }
 
 /* @media (max-width: 1380px){

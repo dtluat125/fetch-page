@@ -33,6 +33,10 @@ function Company() {
         title="What makes Fetch different?"
         theme={Theme1}
         backgroundColor="#F9FBFE"
+        subtitle1="Fast-free Hiring"
+        text1="Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market."
+        subtitle2 = "Full-control hiring"
+        text2="Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market."
       />
       <TrustedBy />
       <FetchHelp />

@@ -50,7 +50,6 @@ function Talents() {
           slidesToScroll: 1,
           dots: true,
           autoplay: true,
-          centerMode: false,
         },
       },
 

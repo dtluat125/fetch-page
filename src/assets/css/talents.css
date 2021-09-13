@@ -188,7 +188,20 @@
 }
 
 
+@media(min-width: 996px){
+  .slick-trusted-cus{
 
+  }
+  .slick-trusted-cus .slick-list .slick-track{
+    display: flex;
+    justify-content: center;
+  }
+
+  .slick-trusted-cus .slick-list .slick-track .slick-slide{
+    width: unset!important;
+    margin: 0 5px ;
+  }
+}
 @media (max-width: 996px) {
   /* .talents__cards {
     margin-top: 200px;

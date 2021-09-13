@@ -77,6 +77,10 @@
   margin-bottom: 50px;
 }
 
+.how-it-work__sub-group .c-h5-title{
+  margin-bottom: 24px;
+}
+
 .how-it-works__features__inner {
   width: 540px;
   height: 535px;
@@ -127,6 +131,7 @@
 
 .text-group-with-button .c-h6-title {
   text-align: center;
+  color: #273A5F;
 }
 
 .text-group-with-button button {

@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../assets/css/usp.css";
 
 import CheckIcon from "../../../assets/img/CheckIcon.png";
 function USP1(props) {
+  const [inMobile, setInMobile] = useState(false);
+  useEffect(() => {
+    const probeWindow  = () => {
+      let windowWidth = window.innerWidth;
+      if(windowWidth <= 400) {
+        setInMobile(true)
+      }
+      else setInMobile(false)
+    }
+    probeWindow();
+    window.addEventListener("resize", probeWindow);
+
+  }, )
   return (
     <div className="c-cus-container usp-container">
       <div className="usp-container__inner row">
@@ -39,7 +52,7 @@ function USP1(props) {
         </div>
         <div className="col-md-6 usp__right">
           <div className="usp__theme">
-            <img src={props.uspTheme} alt="" />
+            <img src={!inMobile?props.uspTheme:props.uspMobileTheme?props.uspMobileTheme:props.uspTheme} alt="" />
           </div>
         </div>
       </div>
