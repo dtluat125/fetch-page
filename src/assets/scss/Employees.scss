@@ -12,6 +12,8 @@
 
     .employees-banner {
         .banner-wrap {
+            display: flex;
+            justify-content: center;
             @include Responsive(xs) { padding-top: 19px; }
             @include Responsive(sm) { padding-top: 19px; }
             @include Responsive(md) { padding-top: 30px; }
