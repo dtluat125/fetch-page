@@ -9,15 +9,33 @@ const SlickSalary = () => {
     const settings = {
         className: "slick-salary",
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
         dots: false,
-        centerMode: true,
-        autoplay: true,
         autoplaySpeed: 800,
         responsive: [
             {
-                breakpoint: 1200,
+                breakpoint: 5000,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: false,
+                    autoplay: true,
+                    centerMode: true,
+                    centerPadding: "130px",
+                }
+            },
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: false,
+                    autoplay: true,
+                    centerMode: true,
+                    centerPadding: "60px",
+                }
+            },
+            {
+                breakpoint: 1150,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
@@ -27,7 +45,7 @@ const SlickSalary = () => {
                 }
             },
             {
-                breakpoint: 992,
+                breakpoint: 940,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -37,7 +55,7 @@ const SlickSalary = () => {
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 640,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,

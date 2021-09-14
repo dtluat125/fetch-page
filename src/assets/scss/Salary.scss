@@ -120,10 +120,10 @@
                 @include Responsive(lg) { margin-bottom: 32px; }
 
                 .e-type-opt {
-                    @include Responsive(xs) { padding: 21px 12px; }
+                    @include Responsive(xs) { padding: 21px 12px 16px 12px; }
                     @include Responsive(sm) { padding: 21px 12px; }
                     @include Responsive(md) { padding: 24px 24px; }
-                    @include Responsive(lg) { padding: 28px 24px; }
+                    @include Responsive(lg) { padding: 28px 19px; }
 
                     .icon-wrap {
                         margin-left: auto;
@@ -178,10 +178,13 @@
                     span {
                         display: block;
                         text-align: center;
-                        
                         font-family: Gilroy-Regular;
                         letter-spacing: 0px;
                         color: #091738;
+
+                        &:first-letter {
+                            text-transform: uppercase;
+                        }
 
                         @include Responsive(xs) {
                             font-size: 14px;
@@ -201,7 +204,7 @@
                         @include Responsive(lg) {
                             font-size: 19px;
                             line-height: 28px;
-                            margin-top: 25px;
+                            margin-top: 20px;
                         }
                     }
                 }
@@ -229,8 +232,12 @@
                 }
 
                 .expertise-type-opt {
-                    padding: 20px 30px;
                     height: 100%;
+
+                    @include Responsive(xs){ padding: 33px 20px 20px 20px; }
+                    @include Responsive(sm){ padding: 33px 20px 20px 20px; }
+                    @include Responsive(lg){ padding: 20px 16px 16px 16px; }
+                    @include Responsive(xl){ padding: 20px 30px 16px 28px; }
 
                     .expertise-type-opt-inner {
                         display: flex;
@@ -255,7 +262,7 @@
                             width: 80px;
                             height: 80px;
 
-                            svg {
+                            img {
                                 width: 46px;
                                 height: 38px;
                             }
@@ -266,21 +273,24 @@
                             width: 80px;
                             height: 80px;
 
-                            svg {
+                            img {
                                 width: 46px;
                                 height: 38px;
                             }
                         }
                         @include Responsive(lg) {
-                            margin-right: 30px;
+                            margin-right: 12px;
                             margin-bottom: 0;
                             width: 37px;
                             height: 37px;
 
-                            svg {
+                            img {
                                 width: 27px;
                                 height: 27px;
                             }
+                        }
+                        @include Responsive(xl) {
+                            margin-right: 30px;
                         }
                     }
 
@@ -302,9 +312,11 @@
                         h6 {
                             font-family: Gilroy-Regular;
                             letter-spacing: 0px;
-                            
                             color: #17274E;
-                            
+
+                            &:first-letter {
+                                text-transform: uppercase;
+                            }
 
                             @include Responsive(xs) {
                                 font-size: 14px;
@@ -344,6 +356,10 @@
                             color: #17274E;
                             margin-bottom: 0;
 
+                            &:first-letter {
+                                text-transform: uppercase;
+                            }
+
                             @include Responsive(xs) { display: none; }
                             @include Responsive(sm) { display: none; }
                             @include Responsive(lg) { display: block; }
@@ -356,16 +372,20 @@
                 @include Responsive(xs) { margin-bottom: 66px; }
                 @include Responsive(sm) { margin-bottom: 66px; }
                 @include Responsive(md) { margin-bottom: 56px; }
-                @include Responsive(lg) { margin-bottom: 46px; }
-                @include Responsive(xl) { margin-bottom: 39px; }
+                @include Responsive(lg) { margin-bottom: 63px; }
+                @include Responsive(xl) { margin-bottom: 38px; }
 
                 .row-calc-type {
                     
                     .calc-type-opt {
-                        padding: 20px 30px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        height: 100%;
+                        @include Responsive(xs) { padding: 19px 27px; }
+                        @include Responsive(sm) { padding: 19px 27px; }
+                        @include Responsive(lg) { padding: 19px 20px; }
+                        @include Responsive(xl) { padding: 19px 27px; }
                         span {
                             font-family: Gilroy-Regular;
                             font-size: 19px;
@@ -373,6 +393,9 @@
                             letter-spacing: 0px;
                             text-align: center;
                             color:#3E5476;
+                            &:first-letter {
+                                text-transform: uppercase;
+                            }
                         }
                     }
                 }
@@ -380,6 +403,9 @@
 
             .amount-wrap {
 
+                label {
+                    margin-bottom: 4px;
+                }
                 .row-amount {
                     .money-unit {
                         @include Responsive(xs) { padding: 16px 8px; }
@@ -400,8 +426,8 @@
                                     margin-right: 4px;
                                 }
                                 @include Responsive(sm) { 
-                                    max-width: 100%;
-                                    max-height: 100%;
+                                    max-width: 28px;
+                                    max-height: 28px;
                                     margin-right: 10px;
                                 }
                             }
@@ -473,22 +499,24 @@
                 box-sizing: border-box;
                 box-shadow: 0px 6px 12px rgba(19, 42, 151, 0.1);
                 border-radius: 15px;
-                
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+
                 @include Responsive(xs) {
                     padding: 18px 13px;
-                    margin-bottom: 64px;
+                    // margin-bottom: 64px;
                 }
                 @include Responsive(sm) {
                     padding: 22px 22px;
-                    margin-bottom: 64px;
+                    // margin-bottom: 64px;
                 }
                 @include Responsive(md) {
                     padding: 26px 26px;
-                    margin-bottom: 64px;
+                    // margin-bottom: 64px;
                 }
                 @include Responsive(lg) {
                     padding: 30px 32px;
-                    margin-bottom: 42px;
+                    // margin-bottom: 42px;
                 }
 
                 .row-for-type {
@@ -502,6 +530,10 @@
                         margin-bottom: 45px;
                     }
                     @include Responsive(lg) { 
+                        justify-content: space-around; 
+                        margin-bottom: 28px;
+                    }
+                    @include Responsive(xl) { 
                         justify-content: space-around; 
                         margin-bottom: 33px;
                     }
@@ -519,6 +551,9 @@
                             letter-spacing: 0px;
                             text-align: center;
                             color: #17274E;
+                            &:first-letter {
+                                text-transform: uppercase;
+                            }
 
                             @include Responsive(xs) { font-size: 16px; }
                             @include Responsive(sm) { font-size: 19px; }
@@ -527,6 +562,17 @@
                 }
 
                 .currency-wrap {
+
+                    label {
+                        margin-bottom: 16px;
+                    }
+
+                    @include Responsive(xl) {
+                        .col-currency-opt {
+                            flex: 0 0 calc(100px + 2*var(--padding-x));
+                            max-width: calc(100px + 2*var(--padding-x));
+                        }
+                    }
 
                     .currency-opt {
                         display: flex;
@@ -568,9 +614,16 @@
                 }
     
                 .divider-under-currency {
-                    margin-top: 37px;
-                    margin-bottom: 43px;
                     border-top: 3px solid #EEF3F8;
+                    @include Responsive(lg) {
+                        margin-top: 30px;
+                        margin-bottom: 43px;
+                    }
+
+                    @include Responsive(xl) {
+                        margin-top: 37px;
+                        margin-bottom: 43px;
+                    }
                 }
     
                 .breakdown-wrap {
@@ -601,6 +654,21 @@
                     h5 {
                         margin-bottom: 32px;
                     }
+
+                    .ant-descriptions-row {
+                        .ant-descriptions-item {
+                            padding-bottom: 24px;
+                        }
+
+                        &:last-child {
+                            .ant-descriptions-item {
+                                @include Responsive(lg) { padding-bottom: 35px; }
+                                
+                            }
+                        }
+
+                    }
+
     
                     .ant-descriptions-item-label {
                         span:nth-child(1) {
@@ -610,6 +678,9 @@
                             letter-spacing: 0px;
                             text-align: left;
                             color: #17274E;
+                            &:first-letter {
+                                text-transform: uppercase;
+                            }
     
                         }
                         span:nth-child(2) {
@@ -650,23 +721,40 @@
                 box-sizing: border-box;
                 box-shadow: 0px 6px 12px rgba(19, 42, 151, 0.1);
                 border-radius: 15px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
                 border: none;
                 overflow: hidden;
                 bottom: 0;
 
-                @include Responsive(xs) {position: relative;}
-                @include Responsive(sm) {position: relative;}
-                @include Responsive(lg) {position: absolute;}
+                // @include Responsive(xs) {position: relative;}
+                // @include Responsive(sm) {position: relative;}
+                // @include Responsive(lg) {position: absolute;}
 
                 .card-top-wrap {
-                    padding: 24px 28px;
+                    // padding: 24px 28px;
                     display: flex;
-                    align-items: center;
+                    // align-items: center;
                     flex-wrap: wrap;
 
                     @include Responsive(xs) { 
                         justify-content: center;
                         row-gap: 12px; 
+                        padding: 35px 11px;
+                    }
+                    @include Responsive(sm) { 
+                        justify-content: center;
+                        row-gap: 12px; 
+                        padding: 35px 11px;
+                    }
+                    @include Responsive(md) {
+                        padding: 35px 26px;
+                    }
+                    @include Responsive(lg) {
+                        padding: 34px 26px 34px 32px;
+                    }
+                    @include Responsive(xl) {
+                        padding: 42px 26px 42px 32px;
                     }
 
                     img {
@@ -728,6 +816,20 @@
                     text-align: center;
                     color: #FFFFFF;
                     padding: 17px 0px;
+                    margin-top: 24px;
+                    border-radius: 8px;
+                    box-shadow: 0px 6px 10px rgba(6, 102, 235, 0.16);
+
+                    @include Responsive(xs) { 
+                        max-width: 227px; 
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    @include Responsive(sm) { 
+                        max-width: 290px;
+                    }
+                    @include Responsive(lg) { max-width: 312px; }
+                    &:hover{ opacity: 0.9; }
                 }
             }
 

@@ -8,12 +8,13 @@ import avt2 from '../../assets/img/avt2.png';
 import bannerEmployees from '../../assets/img/bannerEmployees.png';
 import findMore from '../../assets/img/findMore.png';
 import heart from '../../assets/img/heart.png';
-import { Row, Col } from 'antd';
+import { Row, Col, Skeleton } from 'antd';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 
 const Employees = () => {
+    
     return (
         <div className="employees">
             <Header />

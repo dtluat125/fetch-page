@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .help-article {
-    margin-bottom: 77px;
+    // margin-bottom: 11px;
     
     .help-article-inner {
         background: #FFFFFF;
@@ -18,24 +18,26 @@
             padding-left: var(--padding-x);
             padding-right: var(--padding-x);
             padding-top: 54px;
+            padding-bottom: 66px;
         }
 
         @include Responsive(sm) {
             padding-left: var(--padding-x);
             padding-right: var(--padding-x);
             padding-top: 54px;
+            padding-bottom: 66px;
         }
 
         @include Responsive(lg) {
             padding-left: calc(0.1 * (100% + 2 * var(--padding-x)));
             padding-right: calc(0.1 * (100% + 2 * var(--padding-x)));
             padding-top: 52px;
+            padding-bottom: 50px;
         }
 
         @include Responsive(xl) {
             padding-left: calc(0.2 * (100% + 2 * var(--padding-x)));
             padding-right: calc(0.2 * (100% + 2 * var(--padding-x)));
-            padding-top: 52px;
         }
 
         h3 {
@@ -59,7 +61,7 @@
     }
 
     .article-body {
-        margin-bottom: 19px;
+        // margin-bottom: 19px;
 
         & > p,ul {
             font-family: Gilroy-Regular;
@@ -83,7 +85,9 @@
     .evaluate {
         padding-left: var(--padding-x);
         padding-right: var(--padding-x);
-        padding-bottom: var(--padding-x);
+        @include Responsive(xs) { padding-bottom: 34px; }
+        @include Responsive(sm) { padding-bottom: 34px; }
+        @include Responsive(lg) { padding-bottom: var(--padding-x); }
 
         .evaluate-inner {
             background-color: #F1F3F5;
