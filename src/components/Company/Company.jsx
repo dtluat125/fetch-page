@@ -10,19 +10,8 @@ import FetchHelp from "./Fetch Help/FetchHelp";
 import Available from "./Available";
 import RedTheme from "../RedTheme";
 import { Skeleton } from "antd";
-function Company() {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    window.addEventListener("load", () => {
-      var images = document.querySelectorAll("img");
-      var imagesArr = Array.from(images);
-      let elements = document.querySelectorAll("*")
-      var elementsArr = Array.from(elements);
-      
-      if (imagesArr[0].complete) setLoading(false);
-    });
-    
-  });
+function Company({loading}) {
+  
   return (
     <div className="company">
       <Header />

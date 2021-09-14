@@ -14,19 +14,8 @@ import Usp3Theme from "./../../assets/img/Usp3Theme.png";
 import Usp3MobileTheme from "./../../assets/img/Usp3MobileTheme.png";
 import Footer from "../Footer/Footer";
 import RedTheme from "../RedTheme";
-function Homepage() {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    window.addEventListener("load", () => {
-      var images = document.querySelectorAll("img");
-      var imagesArr = Array.from(images);
-      let elements = document.querySelectorAll("*")
-      var elementsArr = Array.from(elements);
-      
-      if (imagesArr[0].complete) setLoading(false);
-    });
-    
-  });
+function Homepage({loading}) {
+  
   return (
     <div className="homepage">
       <Header></Header>
