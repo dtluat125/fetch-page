@@ -5,8 +5,9 @@ import Cus3 from "../../../assets/img/Cus3.png";
 import Cus4 from "../../../assets/img/Cus4.png";
 import Cus5 from "../../../assets/img/Cus5.png";
 import "../../../assets/css/trustedBy.css";
-import { Carousel, Col } from "antd";
-function TrustedBy() {
+import { Carousel, Col, Skeleton } from "antd";
+import SkeletonInput from "antd/lib/skeleton/Input";
+function TrustedBy({loading}) {
   const settings = {
     className: "slick-trusted-by",
     infinite: true,
@@ -30,19 +31,20 @@ function TrustedBy() {
           lg={8}
           className="company-trusted-by__text"
         >
-          <div
+          {loading?<Skeleton.Input active style={{minWidth: 300, textAlign: "center"}}/>:<div
             className="company-trusted-by__title c-h3-title c-h3-title--maintain"
             style={{ fontSize: 37 }}
           >
             Trusted by many
-          </div>
+          </div>}{loading?<Skeleton active/>:
           <div className="company-trusted-by__small-text c-h6-title">
             Being one of the first in the industry has allowed us to gain a
             strong grasp of the Vietnamese market.
-          </div>
+          </div>}
         </Col>
 
-        <div className=" cus-container-fluid">
+        <div className=" cus-container-fluid">{
+          loading?<SkeletonInput/>:
           <Carousel {...settings}>
             <div className="brand-card brand-card--white">
               <div className="brand-card__inner">
@@ -69,7 +71,7 @@ function TrustedBy() {
                 <img src={Cus5} alt="" />
               </div>
             </div>
-          </Carousel>
+          </Carousel>}
         </div>
       </div>
     </div>

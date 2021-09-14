@@ -89,6 +89,19 @@ a {
   color: #273a5f;
 }
 
+.MuiSkeleton-text{
+  width: 80%;
+}
+
+.MuiSkeleton-text.c-title{
+  margin-bottom: 24px!important;
+}
+
+.MuiSkeleton-root.skeleton--button{
+  width: 123px;
+  height: 54px;
+}
+
 @media (max-width: 992px) {
   .c-h1-title {
     font-size: 48px !important;
@@ -103,7 +116,9 @@ a {
     line-height: 125% !important;
 
   } */
-
+  .MuiSkeleton-text{
+    width: 100%;
+  }
   .c-cus-container {
     padding: 50px 0 !important;
     padding-left: 12px !important;
@@ -165,5 +180,33 @@ a {
     font-size: 22px !important;
     font-family: "Gilroy-SemiBold" !important;
     line-height: 135% !important;
+  }
+}
+/* .sekeleton {
+  opacity: 0.7;
+  animation: sekeleton-loading 1s linear infinite alternate;
+
+}
+
+.sekeleton-text{
+  width: 100%;
+  height: 0.5rem;
+  margin-bottom: .25rem;
+  border-radius: .125rem;
+}
+
+.sekeleton-text:last-child{
+  width: 80%;
+} */
+
+
+
+@keyframes sekeleton-loading{
+  0%{
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100%{
+    background-color: hsl(200, 20%, 95%);
   }
 }

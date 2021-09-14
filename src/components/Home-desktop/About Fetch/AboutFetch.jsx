@@ -1,8 +1,8 @@
-import { Carousel, Col, Row } from "antd";
+import { Carousel, Col, Row, Skeleton } from "antd";
 import React, { useEffect, useState } from "react";
 import "../../../assets/css/about.css";
 import AboutTheme from "../../../assets/img/AboutTheme.png";
-function AboutFetch() {
+function AboutFetch({loading}) {
   const [position, setPosition] = useState(0);
   const [current, setCurrent] = useState(1);
 
@@ -71,62 +71,65 @@ function AboutFetch() {
           id="c"
           style={{ transform: `translateX(${position + "px"})` }}
         >
-          <Col id="cc" md={6} offset={6} className="about__feature">
+          {<Col id="cc" md={6} offset={6} className="about__feature">{loading?<Skeleton active/>:<>
             <div className="feature-num">500+</div>
             <div className="c-h6-subtitle feature-des">
               successful deployments
-            </div>
-          </Col>
+            </div></>}
+          </Col>}
           <Col md={6} offset={6} className="about__feature">
+          {loading?<Skeleton active/>:<>
             <div className="feature-num">7+</div>
             <div className="c-h6-subtitle feature-des">
               years in the business
             </div>
+            </>}
           </Col>
           <Col md={6} className="about__feature">
+          {loading?<Skeleton active/>:<>
             <div className="feature-num">USD 5 million</div>
             <div className="c-h6-subtitle feature-des">remunerated to date</div>
+            </>}
           </Col>
           <Col md={6} offset={6} className="about__feature">
+          {loading?<Skeleton active/>:<>
             <div className="feature-num">100+</div>
             <div className="c-h6-subtitle feature-des">
               partnerships and growing
             </div>
+            </>}
           </Col>
         </Row>
         <div className="slicker">
           <Carousel {...settings}>
             <Col id="cc" md={6} offset={6} className="about__feature">
-            <div className="about__feature__inner">
-              <div className="feature-num">500+</div>
-              <div className="c-h6-subtitle feature-des">
-                successful deployments
-              </div>
-              </div>
+            {loading?<Skeleton active/>:<div className="about__feature__inner">
+            <div className="feature-num">500+</div>
+            <div className="c-h6-subtitle feature-des">
+              successful deployments
+            </div></div>}
             </Col>
             <Col md={6} offset={6} className="about__feature">
-            <div className="about__feature__inner">
-              <div className="feature-num">7+</div>
-              <div className="c-h6-subtitle feature-des">
-                years in the business
-              </div>
-              </div>
+            {loading?<Skeleton active/>:<div className="about__feature__inner">
+            <div className="feature-num">7+</div>
+            <div className="c-h6-subtitle feature-des">
+              years in the business
+            </div>
+            </div>}
             </Col>
             <Col md={6} className="about__feature">
-            <div className="about__feature__inner">
-              <div className="feature-num">USD 5 million</div>
-              <div className="c-h6-subtitle feature-des">
-                remunerated to date
-              </div>
-              </div>
+            {loading?<Skeleton active/>:<div className="about__feature__inner">
+            <div className="feature-num">USD 5 million</div>
+            <div className="c-h6-subtitle feature-des">remunerated to date</div>
+            </div>}
             </Col>
             <Col md={6} offset={6} className="about__feature">
-              <div className="about__feature__inner">
-                <div className="feature-num">100+</div>
-                <div className="c-h6-subtitle feature-des">
-                  partnerships and growing
-                </div>
-              </div>
+            {loading?<Skeleton active/>:<div className="about__feature__inner">
+            <div className="feature-num">100+</div>
+            <div className="c-h6-subtitle feature-des">
+              partnerships and growing
+            </div>
+            </div>}
             </Col>
           </Carousel>
         </div>

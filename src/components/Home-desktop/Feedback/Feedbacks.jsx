@@ -2,11 +2,13 @@ import React from "react";
 import "../../../assets/css/feedbacks.css";
 import SlideTrack from "./SlideTrack";
 import FloatTheme from "../../../assets/img/FloatTheme.png";
-function Feedbacks() {
+import { Skeleton } from "antd";
+function Feedbacks({loading}) {
   
   return (
     <div className="feedbacks-container">
-      <div className="c-float-group">
+      
+      {loading?<div className="c-float-group"><Skeleton active></Skeleton></div>:<div className="c-float-group">
         <div className="float-group__theme">
           <img src={FloatTheme} alt="" />
         </div>
@@ -25,17 +27,18 @@ function Feedbacks() {
         <div className="c-large-button" role="button">
           Find now
         </div>
-      </div>
+      </div>}
       <div className="feedbacks__inner">
-        <div className="text-group feedbacks__text-group">
+        {<div className="text-group feedbacks__text-group">
           <div className="c-h3-title c-h3-title--maintain text-group__title feedbacks__title">
             Client reviews and testimony
           </div>
           <div className=" c-h6-title text-group__small-text feedbacks__small-text">
             What Fetch partners have to say
           </div>
-        </div>
-        <SlideTrack />
+        </div>}
+        {
+        <SlideTrack loading={loading}/>}
       </div>
     </div>
   );

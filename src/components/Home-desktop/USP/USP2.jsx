@@ -2,20 +2,29 @@ import React from "react";
 import "../../../assets/css/usp.css";
 import Usp2Theme from "../../../assets/img/Usp2Theme.png";
 import CheckIcon from "../../../assets/img/CheckIcon.png";
-function USP2({ title, theme, company, backgroundColor }) {
+import SkeletonImage from "antd/lib/skeleton/Image";
+import { Skeleton } from "antd";
+function USP2({ title, theme, company, backgroundColor, loading }) {
   return (
-    <div className="usp2-container ">
+    <div className="usp2-container" style={{ width: "100%" }}>
       <div className="usp2-container__inner c-cus-container row ">
-        <div className="col-md-6 usp2__left">
-          <div className="usp__theme">
-            <img src={title ? theme : Usp2Theme} alt="" />
+        {loading ? (
+          <SkeletonImage
+            className="col-md-6 usp2__left"
+            style={{ minWidth: 300 }}
+          />
+        ) : (
+          <div className="col-md-6 usp2__left">
+            <div className="usp__theme">
+              <img src={title ? theme : Usp2Theme} alt="" />
+            </div>
           </div>
-        </div>
+        )}
         <div className="col-md-6 usp2__right">
-          <div className="usp__title  c-h3-title">
+          {loading?<Skeleton paragraph="false"/>:<div className="usp__title  c-h3-title">
             {title ? title : "Fetch helps businesses run more efficiently"}
-          </div>
-          {company ? (
+          </div>}
+          {company&&!loading && (
             <div className="usp__content">
               <div className="usp__text-group">
                 <div className="check-icon__container">
@@ -46,38 +55,7 @@ function USP2({ title, theme, company, backgroundColor }) {
                 </div>
               </div>
             </div>
-          ) : (
-            <div className="usp__content">
-              <div className="usp__text-group">
-                <div className="check-icon__container">
-                  <div className="check-icon check-icon--yellow">
-                    <img src={CheckIcon} alt="" />
-                  </div>
-                </div>
-                <div className="usp__text-group__content">
-                  <div className="usp__content__title">We’re Experienced</div>
-                  <div className="usp__content__small-text">
-                    Being one of the first in the industry has allowed us to
-                    gain a strong grasp of the Vietnamese market.
-                  </div>
-                </div>
-              </div>
-              <div className="usp__text-group">
-                <div className="check-icon__container">
-                  <div className="check-icon check-icon--yellow">
-                    <img src={CheckIcon} alt="" />
-                  </div>
-                </div>
-                <div className="usp__text-group__content">
-                  <div className="usp__content__title">We’re Experienced</div>
-                  <div className="usp__content__small-text">
-                    Being one of the first in the industry has allowed us to
-                    gain a strong grasp of the Vietnamese market.
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+          ) }
         </div>
       </div>
     </div>

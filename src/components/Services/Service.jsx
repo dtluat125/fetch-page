@@ -14,9 +14,11 @@ function Service(props) {
         theme={ServiceTheme1}
         headerTitle={props.title}
         headerSubtitle={props.subTitle}
+        loading={props.loading}
       />
       <ServiceBody title = {props.title}
       id = {props.id}
+      loading={props.loading}
       />
       <Footer />
     </div>

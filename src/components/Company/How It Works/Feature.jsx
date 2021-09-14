@@ -1,12 +1,14 @@
+import { Skeleton } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Feature({ icon, title, backgroundColor, color, destination }) {
+function Feature({ icon, title, backgroundColor, color, destination, loading }) {
   return (
     <div
       className="how-it-works__feature"
       style={{ backgroundColor: backgroundColor, marginBottom: 27 }}
     >
+      {loading?<Skeleton></Skeleton>:<>
       <div className="how-it-works__feature__icon">
         <img src={icon} alt="" />
       </div>
@@ -15,6 +17,7 @@ function Feature({ icon, title, backgroundColor, color, destination }) {
           {title}
         </div>
       </Link>
+      </>}
     </div>
   );
 }
