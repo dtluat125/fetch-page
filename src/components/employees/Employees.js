@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../assets/scss/Employees.scss';
 import FrameUsp from '../../assets/img/FrameUsp.png';
 import {ReactComponent as Tick15 } from '../../assets/img/tick15.svg';
@@ -14,14 +14,25 @@ import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 
 const Employees = () => {
-    
+
     return (
         <div className="employees">
             <Header />
             <section className="employees-banner">
-                <div className="cus-container-fluid banner-wrap">
-                    <img src={bannerEmployees} alt="banner-employees"/>
-                </div>
+                <SkeletonHOC 
+                    active
+                    paragraph={{rows: 10, width: "100%"}} 
+                    title={{width: "100%"}}
+                    render={(setLoading) => (
+                        <div className="cus-container-fluid banner-wrap">
+                            <img 
+                                onLoad={() => setLoading(false)}
+                                src={bannerEmployees} 
+                                alt="banner-employees"
+                            />
+                        </div>
+                    )}
+                />
             </section>
             <section className="employees-header">
                 <div className="cus-container">
@@ -112,7 +123,12 @@ const Employees = () => {
                         </Col>
                         <Col className="usp-col-top-right" xs={24} sm={24} md={12} >
                             <div className="col-6-wrap">
-                                <img src={FrameUsp} alt="FrameUsp" />
+                                <SkeletonHOC 
+                                    active
+                                    paragraph={{rows: 10, width: "100%"}} 
+                                    title={{width: "100%"}}
+                                    render={(setLoading) => <img onLoad={() => setLoading(false)} src={FrameUsp} alt="FrameUsp" />}
+                                />
                             </div>
                         </Col>
                     </Row>
@@ -123,7 +139,12 @@ const Employees = () => {
                     <Row className="row-bottom" gutter={[{xs: 21, sm: 24, xl:30}, 0]}>
                         <Col className="usp-col-bt-left" xs={24} sm={24} md={12} >
                             <div className="col-6-wrap">
-                                <img src={uspBLbanner} alt="" />
+                                <SkeletonHOC 
+                                    active
+                                    paragraph={{rows: 10, width: "100%"}} 
+                                    title={{width: "100%"}}
+                                    render={(setLoading) => <img onLoad={() => setLoading(false)} src={uspBLbanner} alt="FrameUsp" />}
+                                />
                             </div>
                         </Col>
                         <Col className="usp-col-bt-right col-6-text" xs={24} sm={24} md={12} >
@@ -169,7 +190,12 @@ const Employees = () => {
                         </Col>
                         <Col xs={24} sm={24} md={12} xl={12}>
                             <div className="right-wrap">
-                                <img src={findMore} alt="find more"/>
+                                <SkeletonHOC 
+                                    active
+                                    paragraph={{rows: 10, width: "100%"}} 
+                                    title={{width: "100%"}}
+                                    render={(setLoading) => <img onLoad={() => setLoading(false)} src={findMore} alt="find more" />}
+                                />
                             </div>
                         </Col>
                     </Row>
@@ -189,7 +215,12 @@ const Employees = () => {
                     <Row className="second-row" gutter={[{xs: 21, sm: 24, xl:30}, 0]}>
                         <Col className="second-row-col-half" xs={24} md={12}>
                             <div className="cmt-wrap">
-                                <img src={avt1} alt="avt"/>
+                                <SkeletonHOC 
+                                    active
+                                    paragraph={{rows: 3, width: "100%"}} 
+                                    title={{width: "100%"}}
+                                    render={(setLoading) => <img onLoad={() => setLoading(false)} src={avt1} alt="avt"/>}
+                                />
                                 <div className="cmt">
                                     <p>“I’ve been working at Fetch for some years. Not only do I tackle meaningful challenges and projects, I also get to enjoy valuable team-bonding sessions through company dinners and activities that allow me to exchange and learn new skills with my coworkers.”</p>
                                     <p className="signal">
@@ -201,7 +232,12 @@ const Employees = () => {
                         </Col>
                         <Col className="second-row-col-half" xs={24} md={12}>
                             <div className="cmt-wrap">
-                                <img src={avt2} alt="avt"/>
+                                <SkeletonHOC 
+                                    active
+                                    paragraph={{rows: 4, width: "100%"}} 
+                                    title={{width: "100%"}}
+                                    render={(setLoading) => <img onLoad={() => setLoading(false)} src={avt2} alt="avt"/>}
+                                />
                                 <div className="cmt">
                                     <p>“I just graduated from college and I’m glad to be able to begin my employment with Fetch. I get the opportunity of working with a global team while still living in Vietnam. This allows me to broaden my horizon without having to making additional expenses such as rent in a foreign country.”</p>
                                     <p className="signal">
@@ -237,4 +273,20 @@ const Employees = () => {
     )
 }
 
-export default Employees
+export default Employees;
+
+const SkeletonHOC = ({ active, render, paragraph, title }) => {
+    const [loading, setLoading] = useState(true);
+
+    return (
+        <React.Fragment>
+            <Skeleton 
+                loading={loading} 
+                active={active} 
+                paragraph={paragraph} 
+                title={title}
+            />
+            {render(setLoading)}
+        </React.Fragment>
+    )
+}
