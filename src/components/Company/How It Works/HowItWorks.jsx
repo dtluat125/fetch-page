@@ -7,28 +7,33 @@ import Feature3 from "../../../assets/img/Feature3.png";
 import Feature4 from "../../../assets/img/Feature4.png";
 import CompanyPic1 from "../../../assets/img/CompanyPic1.png";
 import CheckIcon from "../../../assets/img/CheckIcon.png";
-import { Col, Row } from "antd";
+import { Col, Row, Skeleton } from "antd";
 import { Link } from "react-router-dom";
-function HowItWorks() {
+import SkeletonButton from "antd/lib/skeleton/Button";
+function HowItWorks({ loading }) {
   return (
     <div className="how-it-works">
       <div className="how-it-works__inner ">
         <Col sm={24} lg={16} xl={16} className="ant-col c-cus-container">
           <div className="company-pic1 ant-row ant-row-center">
-            <img src={CompanyPic1} alt="" />
+            {loading ? <Skeleton /> : <img src={CompanyPic1} alt="" />}
           </div>
-          <div className="how-it-works__title-group">
-            <div
-              className="c-h3-title c-h3-title--maintain"
-              style={{ textAlign: "center", marginBottom: 14 }}
-            >
-              We offer customised packages to each client
+          {loading ? (
+            <Skeleton active />
+          ) : (
+            <div className="how-it-works__title-group">
+              <div
+                className="c-h3-title c-h3-title--maintain"
+                style={{ textAlign: "center", marginBottom: 14 }}
+              >
+                We offer customised packages to each client
+              </div>
+              <div className="c-h6-title " style={{ textAlign: "center" }}>
+                No longer is hiring and managing offshore staff daunting. With
+                Fetch, you get to build your remote dream.
+              </div>
             </div>
-            <div className="c-h6-title " style={{ textAlign: "center" }}>
-              No longer is hiring and managing offshore staff daunting. With
-              Fetch, you get to build your remote dream.
-            </div>
-          </div>
+          )}
         </Col>
         <Row gutter={24} className="how-it-works__features ant-row">
           <Col
@@ -39,12 +44,17 @@ function HowItWorks() {
             className="how-it-works__features__inner"
           >
             <div className="how-it-works__features__banner">
-              <span className="c-h5-title ant-col">Client services</span>
+              {loading ? (
+                <Skeleton />
+              ) : (
+                <span className="c-h5-title ant-col">Client services</span>
+              )}{" "}
             </div>
             <Row gutter={[27, 27]}>
               <Col span={12}>
                 <Row>
                   <Feature
+                    loading={loading}
                     destination="/services/1"
                     backgroundColor="#D2E2ED"
                     icon={Feature1}
@@ -52,6 +62,7 @@ function HowItWorks() {
                   />
 
                   <Feature
+                    loading={loading}
                     destination="/services/3"
                     icon={Feature2}
                     color="#FFFFFF"
@@ -63,6 +74,7 @@ function HowItWorks() {
               <Col span={12}>
                 <Row>
                   <Feature
+                    loading={loading}
                     destination="/services/2"
                     backgroundColor="#FF6847"
                     icon={Feature3}
@@ -71,6 +83,7 @@ function HowItWorks() {
                   />
 
                   <Feature
+                    loading={loading}
                     destination="/services/4"
                     icon={Feature4}
                     color="#FFFFFF"
@@ -91,71 +104,91 @@ function HowItWorks() {
             xl={8}
             className="how-it-works__features__left"
           >
-            <div className="how-it-work__sub-group">
-              <div className="c-h5-title c-h5-title--maintain">
-                We offer a diverse range of products
-              </div>
-              <div className="c-p-subtitle">
-                From team management to project consultancy, we will always have
-                a service available to meet your business requirements.
-              </div>
-            </div>
-            <div className="how-it-work__sub-group">
-              <div className="c-h5-title c-h5-title--maintain">
-                Flexible and catered to your needs
-              </div>
-              <div className="c-p-subtitle">
-                Don't need a particular feature in the service selected? No
-                problem. Our plans are designed to be adaptable to match your
-                requests accordingly.
-              </div>
-            </div>
-            <div className="check-group">
-              <div className="check-item ant-row">
-                <div className="check-icon__container">
-                  <div className="check-icon check-icon--yellow">
-                    <img src={CheckIcon} alt="" />
-                  </div>
-                </div>
-                <div className="c-p-subtitle">Talent acquisition</div>
-              </div>
-              <div className="check-item ant-row">
-                <div className="check-icon__container">
-                  <div className="check-icon check-icon--yellow">
-                    <img src={CheckIcon} alt="" />
-                  </div>
-                </div>
-                <div className="c-p-subtitle">Services management</div>
-              </div>
-              <div className="check-item ant-row">
-                <div className="check-icon__container">
-                  <div className="check-icon check-icon--yellow">
-                    <img src={CheckIcon} alt="" />
-                  </div>
-                </div>
-                <div className="c-p-subtitle">Payroll and compliances</div>
-              </div>
-              <div className="check-item ant-row">
-                <div className="check-icon__container">
-                  <div className="check-icon check-icon--yellow">
-                    <img src={CheckIcon} alt="" />
-                  </div>
+            {loading ? (
+              <Skeleton />
+            ) : (
+              <div className="how-it-work__sub-group">
+                <div className="c-h5-title c-h5-title--maintain">
+                  We offer a diverse range of products
                 </div>
                 <div className="c-p-subtitle">
-                  Full-suite project consultancy
+                  From team management to project consultancy, we will always
+                  have a service available to meet your business requirements.
                 </div>
               </div>
+            )}
+            {loading ? (
+              <Skeleton />
+            ) : (
+              <div className="how-it-work__sub-group">
+                <div className="c-h5-title c-h5-title--maintain">
+                  Flexible and catered to your needs
+                </div>
+                <div className="c-p-subtitle">
+                  Don't need a particular feature in the service selected? No
+                  problem. Our plans are designed to be adaptable to match your
+                  requests accordingly.
+                </div>
+              </div>
+            )}
+
+            <div className="check-group">
+              {loading ? (
+                <>
+                  <Skeleton avatar="true" />
+                  <Skeleton avatar="true" />
+                  <Skeleton avatar="true" />
+                  <Skeleton avatar="true" />
+                </>
+              ) : (
+                <>
+                  <div className="check-item ant-row">
+                    <div className="check-icon__container">
+                      <div className="check-icon check-icon--yellow">
+                        <img src={CheckIcon} alt="" />
+                      </div>
+                    </div>
+                    <div className="c-p-subtitle">Talent acquisition</div>
+                  </div>
+                  <div className="check-item ant-row">
+                    <div className="check-icon__container">
+                      <div className="check-icon check-icon--yellow">
+                        <img src={CheckIcon} alt="" />
+                      </div>
+                    </div>
+                    <div className="c-p-subtitle">Services management</div>
+                  </div>
+                  <div className="check-item ant-row">
+                    <div className="check-icon__container">
+                      <div className="check-icon check-icon--yellow">
+                        <img src={CheckIcon} alt="" />
+                      </div>
+                    </div>
+                    <div className="c-p-subtitle">Payroll and compliances</div>
+                  </div>
+                  <div className="check-item ant-row">
+                    <div className="check-icon__container">
+                      <div className="check-icon check-icon--yellow">
+                        <img src={CheckIcon} alt="" />
+                      </div>
+                    </div>
+                    <div className="c-p-subtitle">
+                      Full-suite project consultancy
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </Col>
         </Row>
         <div className="text-group-with-button">
-          <div className="c-h6-title">
+          {loading?<Skeleton/>:<div className="c-h6-title" style={{minWidth: "50%"}}> 
             Find tailormade, flexible solutions, designed for your business
             needs.
-          </div>
+          </div>}{loading?<SkeletonButton/>:
           <button className="c-large-button" style={{ background: "#fff" }}>
             Learn more
-          </button>
+          </button>}
         </div>
       </div>
     </div>

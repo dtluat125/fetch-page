@@ -20,6 +20,7 @@ import ServiceFeatureTheme17 from "../../../assets/img/ServiceFeatureTheme17.png
 import ServiceFeatureTheme18 from "../../../assets/img/ServiceFeatureTheme18.png";
 import "../../../assets/css/serviceBody.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Skeleton } from "antd";
 function ServiceBody(props) {
   const featuresArr = [
     [
@@ -198,15 +199,14 @@ function ServiceBody(props) {
         }
       });
       let serviceBody = document.querySelector(".service-body");
-      let sidebar = document.querySelector(".sidebar")
+      let sidebar = document.querySelector(".sidebar");
       let bodyRect = serviceBody?.getBoundingClientRect();
       let top = bodyRect?.top;
-      if(top < 0){
-        sidebar.classList.add("sidebar--fixed")
-      }
-      else if(top > 0){
-        console.log(top)
-        sidebar.classList.remove("sidebar--fixed")
+      if (top < 0) {
+        sidebar.classList.add("sidebar--fixed");
+      } else if (top > 0) {
+        console.log(top);
+        sidebar.classList.remove("sidebar--fixed");
       }
     });
   });
@@ -216,26 +216,28 @@ function ServiceBody(props) {
         <div className="service-body__inner c-page-header__inner row">
           <div className="service-body__left col-lg-4">
             <div className="sidebar">
-              <div className="sidebar-content">
-                <div className="sidebar-title c-h5-title">{props.title}</div>
-                <div className="sidebar-options">
-                  {featuresTitle.map((featureTitle, index) => (
-                    <a
-                      href={"#a" + index}
-                      option={"a" + index}
-                      className="sidebar-option-container-wrapper"
-                    >
-                      <div className="sidebar-option-container" role="button">
-                        <div className="a-wrapper">
-                          <a className="sidebar-option c-p-subtitle">
-                            {featureTitle}
-                          </a>
+              {props.loading?<Skeleton/>:
+                <div className="sidebar-content">
+                  <div className="sidebar-title c-h5-title">{props.title}</div>
+                  <div className="sidebar-options">
+                    {featuresTitle.map((featureTitle, index) => (
+                      <a
+                        href={"#a" + index}
+                        option={"a" + index}
+                        className="sidebar-option-container-wrapper"
+                      >
+                        <div className="sidebar-option-container" role="button">
+                          <div className="a-wrapper">
+                            <a className="sidebar-option c-p-subtitle">
+                              {featureTitle}
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                    </a>
-                  ))}
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              }
             </div>
           </div>
           <div className="service-body__right col-lg-8">

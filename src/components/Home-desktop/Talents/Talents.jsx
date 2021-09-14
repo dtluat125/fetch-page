@@ -8,8 +8,9 @@ import Star from "../../../assets/img/Star.png";
 import Card1 from "../../../assets/img/Card1.png";
 import Card2 from "../../../assets/img/Card2.png";
 import { Carousel } from "antd";
+import { Skeleton } from "@material-ui/lab";
 
-function Talents() {
+function Talents({ loading }) {
   const [position, setPosition] = useState(0);
   const [current, setCurrent] = useState(1);
   const settings = {
@@ -61,7 +62,7 @@ function Talents() {
           dots: true,
           autoplay: true,
           centerMode: true,
-          centerPadding: "0"
+          centerPadding: "0",
         },
       },
     ],
@@ -91,27 +92,64 @@ function Talents() {
       <div className="talents__inner">
         <div className="talents__map">
           <div className="talents__map__content">
-            <div className="star-holder">
-              <img src={Star} alt="" />
-            </div>
-            <div className="c-h1-title talents__map__content__title">
-              Get the best talents in Vietnam with us
-            </div>
-            <div className="c-h6-title talents__map__content__text">
-              Whether you're looking for a software developer, tester or
-              designer, we got you covered.
-            </div>
-            <div className="c-large-button" role="button">
-              Find out more
-            </div>
+            {loading ? (
+              <Skeleton variant="circle" width="96px" height="96px" />
+            ) : (
+              <div className="star-holder">
+                <img src={Star} alt="" />
+              </div>
+            )}
+            {loading ? (
+              <Skeleton variant="text" className="c-title c-h1-title" />
+            ) : (
+              <div className="c-h1-title talents__map__content__title">
+                {"Get the best talents in Vietnam with us"}
+              </div>
+            )}
+            {loading ? (
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <Skeleton
+                  variant="text"
+                  className="c-h6-title talents__map__content__text"
+                />
+                <Skeleton
+                  variant="text"
+                  className="c-h6-title talents__map__content__text"
+                />
+                <Skeleton
+                  variant="text"
+                  className="c-h6-title talents__map__content__text"
+                />
+              </div>
+            ) : (
+              <div className="c-h6-title talents__map__content__text">
+                Whether you're looking for a software developer, tester or
+                designer, we got you covered.
+              </div>
+            )}
+            {loading ? (
+              <Skeleton variant="rect" className="skeleton--button" />
+            ) : (
+              <div className="c-large-button" role="button">
+                Find out more
+              </div>
+            )}
           </div>
-
-          <div
-            className="talents__map-holder"
-            style={{ backgroundImage: `url(${Map})` }}
-          >
-            <img src={Vietnam} className="map-img"></img>
-          </div>
+          {
+            <div
+              className="talents__map-holder"
+              style={{ backgroundImage: `url(${Map})` }}
+            >
+              <img src={Vietnam} className="map-img"></img>
+            </div>
+          }
         </div>
 
         <div className="talents__cards">
@@ -121,16 +159,19 @@ function Talents() {
           >
             <Carousel {...settings}>
               <Card
+                loading={loading}
                 photo={InterviewPic}
                 title="Interview Process"
                 content="No staff delegation – enjoy absolute control over the entire hiring process"
               />
               <Card
+                loading={loading}
                 photo={Card1}
                 title="No staff delegation"
                 content="Get absolute control over the entire hiring process"
               />
               <Card
+                loading={loading}
                 photo={Card2}
                 title="Probational term guarantee"
                 content="Switch to find your perfect fit (within a trial period)"

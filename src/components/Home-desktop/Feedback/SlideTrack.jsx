@@ -6,7 +6,7 @@ import feedbackPic3 from "../../../assets/img/feedbackPic3.png";
 import LeftArrow from "../../../assets/img/LeftArrow.png";
 import RightArrow from "../../../assets/img/RightArrow.png";
 import { Carousel } from "antd";
-function SlideTrack() {
+function SlideTrack({loading}) {
   // const [position, setPosition] = useState(0);
 
   // const moveLeft = (num) => {
@@ -94,7 +94,7 @@ function SlideTrack() {
           slidesToShow: 2,
           slidesToScroll: 1,
           dots: true,
-          autoplay: true, 
+          autoplay: true,
           centerMode: false,
         },
       },
@@ -105,7 +105,7 @@ function SlideTrack() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: true,
-          autoplay: true, 
+          autoplay: true,
           centerMode: false,
         },
       },
@@ -116,6 +116,7 @@ function SlideTrack() {
       <div className="slide-track__inner">
         <Carousel {...settings}>
           <Slide
+            loading={loading}
             id="aa"
             photo={feedbackPic1}
             content="“All base UI elements are made using Nested Symbols and shared styles that are logically connected. Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”"
@@ -124,6 +125,7 @@ function SlideTrack() {
           />
 
           <Slide
+            loading={loading}
             photo={feedbackPic2}
             content="“All base UI elements are made using Nested Symbols and shared styles that are logically connected. Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”"
             name="Name here"
@@ -131,12 +133,14 @@ function SlideTrack() {
           />
 
           <Slide
+            loading={loading}
             photo={feedbackPic3}
             content="“All base UI elements are made using Nested Symbols and shared styles that are logically connected. Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”"
             name="Name here"
             description="des here"
           />
           <Slide
+            loading={loading}
             photo={feedbackPic3}
             content="“All base UI elements are made using Nested Symbols and shared styles that are logically connected. Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”"
             name="Name here"

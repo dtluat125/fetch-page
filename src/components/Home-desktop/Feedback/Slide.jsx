@@ -1,8 +1,10 @@
+import { Skeleton } from "antd";
 import React from "react";
 
-function Slide({ photo, content, name, description, id }) {
+function Slide({ photo, content, name, description, id, loading }) {
   return (
     <div className="slide-container" id = {id}>
+      {loading?<div className="slide__inner" style={{minHeight: 500, padding: 40}}><Skeleton active></Skeleton></div>:
       <div className="slide__inner row">
         <div className="slide__photo-container">
           <div
@@ -17,7 +19,7 @@ function Slide({ photo, content, name, description, id }) {
             <div className="slide__info-description">{description}</div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 }

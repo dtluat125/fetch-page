@@ -168,6 +168,7 @@
   display: flex;
   align-items: flex-end;
   margin-top: 30px;
+  justify-content: flex-end;
 }
 
 .available .c-large-button {
@@ -202,6 +203,9 @@
 @media (min-width: 768px) {
   .fetch-help__checked-group .collapse:not(.show) {
     display: none !important;
+  }
+  .available__left{
+    justify-content: center;
   }
 }
 

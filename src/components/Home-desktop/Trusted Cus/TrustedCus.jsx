@@ -8,7 +8,8 @@ import Cus4 from "../../../assets/img/Cus4.png";
 import Cus5 from "../../../assets/img/Cus5.png";
 import Cus6 from "../../../assets/img/Cus6.png";
 import { Carousel } from "antd";
-function TrustedCus({ signUp }) {
+import { Skeleton } from "@material-ui/lab";
+function TrustedCus({ signUp, loading }) {
   const settings = {
     className: "slick-trusted-cus",
     infinite: true,
@@ -78,22 +79,32 @@ function TrustedCus({ signUp }) {
       <div className="trusted-cus__inner">
         <div className="trusted-cus__top row">
           <div className="trusted-cus__content col-md-8">
+            {loading?<Skeleton variant="text" className="c-title trusted-by-many"/>:
             <div className="trusted-by-many">Trusted by many</div>
-            <div className="trusted-cus__small-text">
+            }{loading?<Skeleton variant="text" className="trusted-cus__small-text"/>:<div className="trusted-cus__small-text">
               We’re proud to share our growing list of satisfied partners
-            </div>
+            </div>}
           </div>
           <div
-            className=" col-md-4"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
+            className=" col-md-4 trusted-cus__button-container"
+          
+          >{loading?<Skeleton className="skeleton--button"/>:
             <button className="c-large-button trusted-cus__view-more-button">
               <span>Learn more</span>
-            </button>
+            </button>}
           </div>
         </div>
         {!signUp && (
-          <div className="trusted-cus__bottom">
+          <div className="trusted-cus__bottom">{loading?<div
+          style={{display:"flex", flexWrap:"nowrap"}}
+          >
+            <Skeleton variant="rect" height="90px" className="cus-logo-holder"/>
+            <Skeleton variant="rect" height="90px" className="cus-logo-holder"/>
+            <Skeleton variant="rect" height="90px" className="cus-logo-holder"/>
+            <Skeleton variant="rect" height="90px" className="cus-logo-holder"/>
+            <Skeleton variant="rect" height="90px" className="cus-logo-holder"/>
+            <Skeleton variant="rect" height="90px" className="cus-logo-holder"/>
+          </div>:
             <Carousel {...settings}>
               <CusLogoHolder logo={Cus1} />
               <CusLogoHolder logo={Cus2} />
@@ -101,7 +112,7 @@ function TrustedCus({ signUp }) {
               <CusLogoHolder logo={Cus4} />
               <CusLogoHolder logo={Cus5} />
               <CusLogoHolder logo={Cus6} />
-            </Carousel>
+            </Carousel>}
           </div>
         )}
       </div>

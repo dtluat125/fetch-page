@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../assets/css/homepage.css";
 import AboutFetch from "./About Fetch/AboutFetch";
 import Feedbacks from "./Feedback/Feedbacks";
@@ -15,23 +15,37 @@ import Usp3MobileTheme from "./../../assets/img/Usp3MobileTheme.png";
 import Footer from "../Footer/Footer";
 import RedTheme from "../RedTheme";
 function Homepage() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      var images = document.querySelectorAll("img");
+      var imagesArr = Array.from(images);
+      let elements = document.querySelectorAll("*")
+      var elementsArr = Array.from(elements);
+      
+      if (imagesArr[0].complete) setLoading(false);
+    });
+    
+  });
   return (
     <div className="homepage">
       <Header></Header>
-      <HomepageHeader />
-      <TrustedCus />
+      <HomepageHeader loading={loading} />
+      <TrustedCus loading={loading} />
       <div className="usp">
         <USP1
+          loading={loading}
           uspTitle="A pioneer in the industry"
           uspSubtitle1="We’re experienced and reliable"
           uspText1="Being one of the first in the field, we have gained a strong grasp of the Vietnamese market."
           uspSubtitle2="We've streamlined the process"
           uspText2="Confidently purvey from our vetted professionals that have been thoroughly assessed prior."
           uspTheme={Usp3Theme}
-          uspMobileTheme = {Usp3MobileTheme}
+          uspMobileTheme={Usp3MobileTheme}
         />
 
         <USP1
+          loading={loading}
           uspTitle="We deliver results"
           uspSubtitle1="Everything is taken care of"
           uspText1="We eliminate all the administrative tasks and paperwork – simply interview and onboard your chosen candidate!"
@@ -41,6 +55,7 @@ function Homepage() {
         />
 
         <USP1
+          loading={loading}
           uspTitle="We give you unrivalled solutions"
           uspSubtitle1="Unrestricted flexibility and access"
           uspText1="Our team is your team – get full control of your selected talent without constraints and hindering from a middle man."
@@ -49,10 +64,15 @@ function Homepage() {
           uspTheme={Usp2Theme}
         />
       </div>
-      <Talents />
-      <Feedbacks />
-      <AboutFetch />
-      <RedTheme title="Find the perfect fit with Fetch" subtitle="Find the perfect fit with Fetch" buttonText="Sign Up"/>
+      <Talents loading={loading}/>
+      <Feedbacks loading={loading}/>
+      <AboutFetch loading={loading}/>
+      <RedTheme
+        title="Find the perfect fit with Fetch"
+        subtitle="Find the perfect fit with Fetch"
+        buttonText="Sign Up"
+        loading={loading}
+      />
       <Footer />
     </div>
   );

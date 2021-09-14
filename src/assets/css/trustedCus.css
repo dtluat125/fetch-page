@@ -106,9 +106,17 @@
   margin-top: 35px;
   flex-wrap: nowrap;
 }
-
+.trusted-cus__button-container{
+  display: flex;
+  justify-content: flex-end;
+}
 @media(max-width: 768px){
   .trusted-cus__top div{
     text-align: center;
+  }
+
+  .trusted-cus__button-container{
+    display: flex;
+    justify-content: center;
   }
 }
