@@ -43,7 +43,6 @@ const HelpArticle = () => {
                             <p>
                                 You can read all about our story here or request a demo from our amazing team.
                             </p>
-                            <br/>
                     </div>
                 </div>
                 <div className="evaluate">

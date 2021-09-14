@@ -7,9 +7,12 @@
     border-radius: 8px;
     padding-top: 40px;
     padding-bottom: 40px;
-    margin-bottom: 32px;
+    
+    @include Responsive(xs) { margin-bottom: 24px; }
+    @include Responsive(sm) { margin-bottom: 24px; }
+    @include Responsive(md) { margin-bottom: 32px; }
 
-    &:last-child { margin-bottom: 67px; }
+    &:last-child { margin-bottom: 0; }
 
     &:hover {
         border-color:#D2E2ED;
