@@ -163,7 +163,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 aria-labelledby="resources"
               >
                 {!collapseDropdown && <div className="upperArrow"></div>}
-                <Link to="/404">
+                <Link to="/ourstory">
                   <DropdownItem
                     title="Our story"
                     text={!collapseDropdown && "Learn more about us"}

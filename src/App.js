@@ -14,6 +14,7 @@ import Salary from "./components/Services/salary/Salary";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "antd/dist/antd.css";
 import { useEffect, useState } from "react";
+import Story from "./components/story/Story";
 function App() {
 
   return (
@@ -57,6 +58,9 @@ function App() {
               id={4}
               
             />
+          </Route>
+          <Route exact path="/ourstory">
+            <Story />
           </Route>
           <Route path="/services/salary">
             <Salary />

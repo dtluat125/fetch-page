@@ -1,0 +1,412 @@
+@import '../../App.scss';
+
+.story {
+    @include Responsive(xs) { --padding-x: 10.5px; }
+    @include Responsive(sm) { --padding-x: 12px; }
+    @include Responsive(xl) { --padding-x: 15px;}
+
+    .cus-container {
+        padding-left: var(--padding-x);
+        padding-right: var(--padding-x);
+    }
+
+    .story-intro {
+        position: relative;
+        @include Responsive(xs) {
+            --padding-y-top: 118px;
+            --padding-y-bottom: 53px;
+        }
+        @include Responsive(sm) {
+            --padding-y-top: 118px;
+            --padding-y-bottom: 53px;
+        }
+        @include Responsive(md) {
+            --padding-y-top: 102px;
+            --padding-y-bottom: 114px;
+        }
+
+        .cus-container {
+            padding-top: var(--padding-y-top);
+            padding-bottom: var(--padding-y-bottom);
+        }
+        
+        .wrap-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: rgba(255, 190, 22, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include Responsive(xs) {
+                margin-bottom: 55px;
+            }
+            @include Responsive(sm) {
+                margin-bottom: 55px;
+            }
+            @include Responsive(md) {
+                margin-bottom: 75px;
+            }
+            @include Responsive(lg) {
+                margin-bottom: 95px;
+            }
+
+            img {
+                max-width: 53px;
+                max-height: 32px;
+            }
+        }
+
+        h1 {
+            font-family: Gilroy-SemiBold;
+            text-align: center;
+            color: #17274E;
+            margin-bottom: 24px;
+
+            @include Responsive(xs) {
+                font-size: 32px;
+                line-height: 43px;
+                letter-spacing: -0.5px;
+            }
+            @include Responsive(sm) {
+                font-size: 32px;
+                line-height: 43px;
+                letter-spacing: -0.5px;
+            }
+            @include Responsive(lg) {
+                font-size: 40px;
+                line-height: 53px;
+                letter-spacing: -0.8px;
+            }
+            @include Responsive(xl) {
+                font-size: 54px;
+                line-height: 60px;
+                letter-spacing: -1px;
+            }
+        }
+
+        h6 {
+            font-family: Gilroy-Regular;
+            font-size: 19px;
+            line-height: 28px;
+            letter-spacing: 0px;
+            text-align: center;
+            color: #3E5476;
+            margin-bottom: 0;
+        }
+
+        .v-line-tree-top {
+            position: absolute;
+            top: calc(var(--padding-y-top) + 96px);
+            bottom: 0;
+            left: calc(50% - 3px);
+            width: 6px;
+            border: none;
+            background: linear-gradient(360deg, #FFBD14 2.73%, #FFFFFF 50.1%, #FFF2D0 100%);
+            // border-left: 6px solid;
+            // width: 0;
+            // border-right: none;
+            // border-image-source: linear-gradient(360deg, #FFBD14 2.73%, #FFFFFF 50.1%, #FFF2D0 100%);
+            z-index: -2;
+
+        }
+    }
+
+    .story-tree {
+        position: relative;
+        
+        .cus-container {
+            @include Responsive(xs) {
+                padding-bottom: 82px;
+            }
+            @include Responsive(sm) {
+                padding-bottom: 82px;
+            }
+            @include Responsive(md) {
+                padding-bottom: 70px;
+            }
+            @include Responsive(xl) {
+                padding-bottom: 53px;
+                padding-top: 90px;
+                background-image: url("../img/bgTree.png");
+                background-origin: content-box;
+                background-repeat: no-repeat;
+                background-position-y: -90px;
+            }
+        }
+
+        .leave-left {
+            border: 6px solid #FFBE16;
+            border-bottom-right-radius: 32px;
+            margin-left: calc(-2*var(--padding-x));
+            margin-right: calc(-1*var(--padding-x) - 3px);
+            border-top: none;
+            border-left: none;
+        }
+
+        .leave-right {
+            border: 6px solid #FFBE16;
+            border-bottom-left-radius: 32px;
+            margin-left: calc(-1*var(--padding-x) - 3px);
+            margin-right: calc(-2*var(--padding-x));
+            border-top: none;
+            border-right: none;
+        }
+
+        .tree-row-top {
+            @include Responsive(xs) {
+                row-gap: 54px !important;
+                margin-bottom: 95px;
+            }
+            @include Responsive(sm) {
+                margin-bottom: 95px ;
+                row-gap: 54px !important;
+            }
+            @include Responsive(md) {
+                margin-bottom: 0;
+                row-gap: 0 !important;
+            }
+
+            .leave-left { 
+                @include Responsive(md) {height: 46%; }
+                @include Responsive(lg) {height: 44%; }
+                @include Responsive(xl) {height: 48%; }
+            }
+            .leave-right { 
+                @include Responsive(md) {height: 58%; }
+                @include Responsive(lg) {height: 74%; }
+                @include Responsive(xl) {height: 78%; }
+            }
+
+            .card-story {
+                @include Responsive(xs) {
+                    padding-top: 27px;
+                    padding-bottom: 29px;
+                }
+                @include Responsive(sm) {
+                    padding-top: 27px;
+                    padding-bottom: 29px;
+                }
+                @include Responsive(md) {
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                }
+                @include Responsive(xl) {
+                    padding-top: 47px;
+                    padding-bottom: 30px;
+                }
+            }
+
+            .card-top-left {
+                @include Responsive(md) {
+                    margin-top: 45px;
+                }
+            }
+            .card-top-right {
+                @include Responsive(md) {
+                    margin-top: 100px;
+                }
+                @include Responsive(lg) {
+                    margin-top: 195px;
+                }
+            }
+        }
+
+        .tree-row-bottom {
+            @include Responsive(xs) { row-gap: 54px !important; }
+            @include Responsive(sm) { row-gap: 54px !important; }
+            @include Responsive(md) { row-gap: 0 !important; }
+
+            .leave-left {
+                @include Responsive(md) {height: 34%; } 
+                @include Responsive(lg) {height: 40%; }
+                @include Responsive(xl) {height: 38%; }
+            }
+            .leave-right { 
+                @include Responsive(md) {height: 66%; }
+                @include Responsive(lg) {height: 76%; }
+                @include Responsive(xl) {height: 78%; }
+            }
+
+            .card-story {
+                @include Responsive(xs) {
+                    padding-top: 62px;
+                    padding-bottom: 37px;
+                    row-gap: 66px;
+                }
+                @include Responsive(sm) {
+                    padding-top: 62px;
+                    padding-bottom: 37px;
+                    row-gap: 66px;
+                }
+                @include Responsive(md) {
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                    row-gap: 66px;
+                }
+                @include Responsive(xl) {
+                    padding-top: 47px;
+                    padding-bottom: 32px;
+                    row-gap: 0;
+                }
+            }
+
+            .card-btm-right {
+                @include Responsive(md) {
+                    margin-top: 166px;
+                }
+                @include Responsive(xl) {
+                    margin-top: 206px;
+                }
+            }
+
+            
+        }
+
+        .wrap-title-tree {
+            max-height: 46px;
+            background: #FFBE16;
+            border-radius: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 14px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include Responsive(xs) { max-width: 144px; }
+            @include Responsive(sm) { max-width: 162px; }
+            @include Responsive(xl) { max-width: 162px; }
+
+            span {
+                font-family: Gilroy-SemiBold;
+                font-size: 20px;
+                line-height: 24px;
+                letter-spacing: -0.5px;
+                text-align: center;
+                color: #FFFFFF;
+            }
+        }
+
+        .card-story {
+            
+            background: #FFFFFF;
+            border: 1px solid #D9E5EF;
+            box-sizing: border-box;
+            border-radius: 12px;
+
+            @include Responsive(xs) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            @include Responsive(sm) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            @include Responsive(md) {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+            @include Responsive(xl) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            &:hover {
+                box-shadow: 0px 10px 25px rgba(39, 58, 95, 0.2);
+            }
+
+            .wrap-icon {
+                width: 96px;
+                height: 96px;
+                border-radius: 50%;
+                background: rgba(255, 190, 22, 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+    
+                @include Responsive(xs) {
+                    margin-bottom: 55px;
+                }
+                @include Responsive(sm) {
+                    margin-bottom: 55px;
+                }
+                @include Responsive(md) {
+                    margin-bottom: 45px;
+                }
+                @include Responsive(xl) {
+                    margin-bottom: 47px;
+                }
+    
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            p {
+                font-family: Gilroy-Regular;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #3E5476;
+                margin-bottom: 0;
+            }
+        }
+
+        .v-line-tree-btm {
+            position: absolute;
+            width: 6px;
+            background-color: #FFBE16;
+            top: 0;
+            left: calc(50% - 3px);
+            bottom: 25%;
+            z-index: -2;
+        }
+    }
+
+    .story-close {
+        border-bottom: 1px solid #BAC9D7;
+
+        .cus-container {
+            @include Responsive(xs) { padding-bottom: 82px; }
+            @include Responsive(sm) { padding-bottom: 82px; }
+            @include Responsive(xl) { padding-bottom: 53px; }
+        }
+        .close-wrap {
+            background: #091738;
+            border-radius: 12px;
+            
+            @include Responsive(xxs) { padding: 40px 14px !important; }
+            @include Responsive(xs) { padding: 61px 28px 66px; }
+            @include Responsive(sm) { padding: 50px 22px 50px; }
+            @include Responsive(md) { padding: 50px 24px 50px; }
+            @include Responsive(lg) { padding: 61px 75px 43px; }
+
+            h2 {
+                font-family: Gilroy-SemiBold;
+                font-size: 48px;
+                line-height: 55px;
+                letter-spacing: -1px;
+                color: #FFFFFF;
+                @include Responsive(xs) { text-align: left; }
+                @include Responsive(sm) { text-align: center; }
+            }
+
+            h6 {
+                font-family: Gilroy-Regular;
+                font-size: 19px;
+                line-height: 28px;
+                letter-spacing: 0px;
+                text-align: center;
+                color: #FFFFFF;
+                @include Responsive(xs) { text-align: left; }
+                @include Responsive(sm) { text-align: center; }
+            }
+        }
+    }
+}
