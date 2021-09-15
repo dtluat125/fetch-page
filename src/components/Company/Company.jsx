@@ -28,7 +28,7 @@ function Company({}) {
         if (count === imagesArr.length) {
           setTimeout(() => {
             setLoading(false);
-          }, 2000);
+          }, 800);
         }
       }
     };
