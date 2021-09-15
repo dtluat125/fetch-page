@@ -154,7 +154,7 @@ function ServiceBody(props) {
       var scrollDistance = window.scrollY;
       let current = "";
       let features = document.querySelectorAll(".service-feature");
-      features.forEach((feature, index) => {
+      features?.forEach((feature, index) => {
         let rect = feature.getBoundingClientRect();
         let bottom =
           window.innerHeight - feature.getBoundingClientRect().bottom;
@@ -250,6 +250,7 @@ function ServiceBody(props) {
                   featureSubtitle={featureSubtitle}
                   key={index}
                   id={"a" + index}
+                  loading={props.loading}
                 />
               );
             })}

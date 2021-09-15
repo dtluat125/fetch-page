@@ -41,6 +41,7 @@
   box-shadow: 0px 6px 10px #d2e2ed;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .header__contact-button__content {
@@ -269,6 +270,11 @@
   letter-spacing: -0.25px;
 
   color: #a4b7c8;
+}
+
+.header__contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
 }
 
 @media (max-width: 768px) {

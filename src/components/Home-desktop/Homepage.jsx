@@ -14,8 +14,40 @@ import Usp3Theme from "./../../assets/img/Usp3Theme.png";
 import Usp3MobileTheme from "./../../assets/img/Usp3MobileTheme.png";
 import Footer from "../Footer/Footer";
 import RedTheme from "../RedTheme";
-function Homepage({loading}) {
-  
+function Homepage({}) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkImg = () => {
+      var images = homepage.querySelectorAll("img");
+      var imagesArr = Array.from(images);
+      console.log(imagesArr.length);
+      let count = 0;
+      imagesArr.forEach((img) => {
+        if (img.complete) incrementCounter();
+        else img.addEventListener("load", incrementCounter);
+      });
+      function incrementCounter() {
+        count++;
+        console.log(loading);
+        if (count === imagesArr.length) {
+          setTimeout(() => {
+            setLoading(false);
+          }, 2000);
+        }
+      }
+    };
+    var homepage = document.querySelector(".homepage");
+    if (document.readyState === "complete") {
+      checkImg();
+    } else window.addEventListener("load", checkImg);
+    return () => {
+      window.removeEventListener("load", () => {
+        setLoading(true);
+      });
+    };
+  });
+
   return (
     <div className="homepage">
       <Header></Header>
@@ -53,9 +85,9 @@ function Homepage({loading}) {
           uspTheme={Usp2Theme}
         />
       </div>
-      <Talents loading={loading}/>
-      <Feedbacks loading={loading}/>
-      <AboutFetch loading={loading}/>
+      <Talents loading={loading} />
+      <Feedbacks loading={loading} />
+      <AboutFetch loading={loading} />
       <RedTheme
         title="Find the perfect fit with Fetch"
         subtitle="Find the perfect fit with Fetch"

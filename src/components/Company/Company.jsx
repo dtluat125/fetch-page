@@ -10,24 +10,63 @@ import FetchHelp from "./Fetch Help/FetchHelp";
 import Available from "./Available";
 import RedTheme from "../RedTheme";
 import { Skeleton } from "antd";
-function Company({loading}) {
-  
+function Company({}) {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const checkImg = () => {
+      var images = company.querySelectorAll("img");
+      var imagesArr = Array.from(images);
+      console.log(imagesArr.length);
+      let count = 0;
+      imagesArr.forEach((img) => {
+        if (img.complete) incrementCounter();
+        else img.addEventListener("load", incrementCounter);
+      });
+      function incrementCounter() {
+        count++;
+        console.log(loading);
+        if (count === imagesArr.length) {
+          setTimeout(() => {
+            setLoading(false);
+          }, 2000);
+        }
+      }
+    };
+    var company = document.querySelector(".company");
+    if (document.readyState === "complete") {
+      checkImg();
+    } else window.addEventListener("load", checkImg);
+    return () => {
+      window.removeEventListener("load", () => {
+        setLoading(true);
+      });
+    };
+  });
+
   return (
     <div className="company">
       <Header />
       <CompanyHeader loading={loading} />
       <div className="company-header c-cus-container ">
         <div className=" ant-row ant-row-center">
-         {loading?<Skeleton  active/> : <div className="company-banner ant-col ant-col-xs-24 ant-col-sm-24 ant-col-lg-16 ant-col-xl-16">{<>
-            <div className="c-h1-title">
-              Let Fetch scale your business to new heights
+          {loading ? (
+            <Skeleton active />
+          ) : (
+            <div className="company-banner ant-col ant-col-xs-24 ant-col-sm-24 ant-col-lg-16 ant-col-xl-16">
+              {
+                <>
+                  <div className="c-h1-title">
+                    Let Fetch scale your business to new heights
+                  </div>
+                  <div className="c-h6-title">
+                    What really matters while running a business is time and
+                    productivity. With Fetch, you get to place greater focus on
+                    these details with a robust team.
+                  </div>
+                </>
+              }
             </div>
-            <div className="c-h6-title">
-              What really matters while running a business is time and
-              productivity. With Fetch, you get to place greater focus on these
-              details with a robust team.
-            </div></>}
-          </div>}
+          )}
         </div>
       </div>
       <HowItWorks loading={loading} />
