@@ -234,7 +234,7 @@ const Employees = () => {
                             <div className="cmt-wrap">
                                 <SkeletonHOC 
                                     active
-                                    paragraph={{rows: 4, width: "100%"}} 
+                                    paragraph={{rows: 3, width: "100%"}} 
                                     title={{width: "100%"}}
                                     render={(setLoading) => <img onLoad={() => setLoading(false)} src={avt2} alt="avt"/>}
                                 />
