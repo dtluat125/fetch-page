@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import '../../assets/scss/Employees.scss';
 import FrameUsp from '../../assets/img/FrameUsp.png';
 import {ReactComponent as Tick15 } from '../../assets/img/tick15.svg';
@@ -12,9 +12,11 @@ import { Row, Col, Skeleton } from 'antd';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
+import "animate.css"
 
 const Employees = () => {
-
+    
+      
     return (
         <div className="employees">
             <Header />
@@ -38,11 +40,17 @@ const Employees = () => {
                 <div className="cus-container">
                     <Row gutter={[{xs: 21, sm: 24, xl:30}, 0]} justify="center">
                         <Col xs={24} sm={24} lg={16} xl={16} className="reach-further">
-                            <h1>Work globally, stay locally</h1>
-                            <h6>
-                                Experience the world without stepping out of Vietnam. Get unrestricted international exposure while applying your expertise from the comforts of home with Fetch.
-                            </h6>
-                            <button className="btn-learn-more">Learn More</button>
+                            <AnimationWrap
+                                render={(ref, animate) => (
+                                    <div ref={ref} className={animate && "zoomIn"}>
+                                        <h1>Work globally, stay locally</h1>
+                                        <h6>
+                                            Experience the world without stepping out of Vietnam. Get unrestricted international exposure while applying your expertise from the comforts of home with Fetch.
+                                        </h6>
+                                        <button className="btn-learn-more">Learn More</button>
+                                    </div>
+                                )}
+                            />
                         </Col>
                     </Row>
                 </div>
@@ -51,42 +59,51 @@ const Employees = () => {
                 <div className="cus-container">
                     <Row className="career-row" gutter={[{xs: 21, sm: 24, xl:30}, 0]} align="middle">
                         <Col xs={24} sm={24} lg={12} xl={12}>
-                            <div className="left-wrap">
-                                <h1>Why build your career with Fetch?</h1>
-                                <p>It's simple, Fetch cares. We are committed to nurturing every employee to be the best developer they can be. To provide you with the right tools and opportunities to a global audience, expanding their horizons beyond Vietnam.</p>
-                            </div>
+                            <AnimationWrap
+                                render={(ref, animate) => (
+                                    <div ref={ref} className={`left-wrap animate__animated ${animate && "animate__slideInLeft"}`}>
+                                        <h1>Why build your career with Fetch?</h1>
+                                        <p>It's simple, Fetch cares. We are committed to nurturing every employee to be the best developer they can be. To provide you with the right tools and opportunities to a global audience, expanding their horizons beyond Vietnam.</p>
+                                    </div>
+                                )}
+                            />
+                            
                         </Col>
                         <Col xs={24} sm={24} lg={12} xl={12}>
-                            <ul className="list-wrap">
-                                <li>
-                                    <div className="head">
-                                        <span>1</span>
-                                    </div>
-                                    <div className="content">
-                                        <h5>Greater opportunities</h5>
-                                        <p>Work in various organisations that allow you to learn and cultivate your skills.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="head">
-                                        <span>2</span>
-                                    </div>
-                                    <div className="content">
-                                        <h5>Attractive stipend</h5>
-                                        <p>Be compensated fairly – enjoy a remuneration that reflects your talents.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="head">
-                                        <span>3</span>
-                                    </div>
-                                    <div className="content">
-                                        <h5>Professional growth </h5>
-                                        <p>Our employees are highly sought after and enjoy career prospects spanning multiple levels.</p>
-                                    </div>
-                                </li>
-                                <div className="horizontal-line"></div>
-                            </ul>
+                            <AnimationWrap
+                                render={(ref, animate) => (
+                                    <ul ref={ref} className={`list-wrap animate__animated ${animate && "animate__slideInRight"}`}>
+                                        <li>
+                                            <div className="head">
+                                                <span>1</span>
+                                            </div>
+                                            <div className="content">
+                                                <h5>Greater opportunities</h5>
+                                                <p>Work in various organisations that allow you to learn and cultivate your skills.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="head">
+                                                <span>2</span>
+                                            </div>
+                                            <div className="content">
+                                                <h5>Attractive stipend</h5>
+                                                <p>Be compensated fairly – enjoy a remuneration that reflects your talents.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="head">
+                                                <span>3</span>
+                                            </div>
+                                            <div className="content">
+                                                <h5>Professional growth </h5>
+                                                <p>Our employees are highly sought after and enjoy career prospects spanning multiple levels.</p>
+                                            </div>
+                                        </li>
+                                        <div className="horizontal-line"></div>
+                                    </ul>
+                                )}
+                            />
                         </Col>
                     </Row>
                 </div>
@@ -288,5 +305,36 @@ const SkeletonHOC = ({ active, render, paragraph, title }) => {
             />
             {render(setLoading)}
         </React.Fragment>
+    )
+}
+
+const AnimationWrap = ({render}) => {
+    const ref = useRef();
+    const [animate, setAnimate] = useState(false);
+    
+
+    useLayoutEffect(() => {
+        const topPosition = ref.current.getBoundingClientRect().top;
+        const bottomPosition = (element) => element.getBoundingClientRect().bottom;
+        const onScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight/2;
+            console.log("y: ", window.scrollY);
+            console.log("w: ", window.innerHeight);
+            console.log("t: ", topPosition);
+            if (topPosition < scrollPosition) {
+                setAnimate(true);
+            } else {
+                setAnimate(false);
+            }
+        }
+        window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
+
+    return (
+        <React.Fragment>
+            {render(ref, animate)}
+        </React.Fragment>
+        
     )
 }
