@@ -2,6 +2,7 @@
   text-align: center;
 }
 // media queries
+$xxs: 374.98px;
 $xs: 575.98px;   
 $sm: 576px;  
 $md: 768px;   
@@ -19,23 +20,26 @@ $max-width-xxl: 1140px;
 
 
 @mixin Responsive($canvas) {
-    @if $canvas == xs {
-        @media only screen and (max-width: $xs) { @content; } 
+    @if $canvas == xxs {
+      @media only screen and (max-width: $xxs) { @content; } 
+    }
+    @else if $canvas == xs {
+      @media only screen and (max-width: $xs) { @content; } 
     }
     @else if $canvas == sm {
-        @media only screen and (min-width: $sm) { @content; } 
+      @media only screen and (min-width: $sm) { @content; } 
     }
     @else if $canvas == md {
-        @media only screen and (min-width: $md) { @content; } 
+      @media only screen and (min-width: $md) { @content; } 
     }
     @else if $canvas == lg {
-        @media only screen and (min-width: $lg) { @content; } 
+      @media only screen and (min-width: $lg) { @content; } 
     }
     @else if $canvas == xl {
-        @media only screen and (min-width: $xl) { @content; } 
+      @media only screen and (min-width: $xl) { @content; } 
     }
     @else if $canvas == xxl {
-        @media only screen and (min-width: $xxl) { @content; } 
+      @media only screen and (min-width: $xxl) { @content; } 
     }
 }
 

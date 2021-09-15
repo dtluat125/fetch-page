@@ -2,7 +2,7 @@ import React from 'react';
 import HelpList from './HelpList';
 import '../../../assets/scss/HelpDetail.scss';
 import HelpNav from './HelpNav';
-import { Switch, useRouteMatch, Route } from 'react-router';
+import { Switch, Route } from 'react-router';
 import HelpArticle from './HelpArticle';
 
 const data = [
@@ -12,7 +12,6 @@ const data = [
 ]
 
 const HelpDetail = () => {
-    const {url, path} = useRouteMatch();
 
     return (
         <div className="help-detail">
