@@ -8,9 +8,10 @@ function ServiceFeature({
   featureSubtitle,
   id,
   loading,
+  animation
 }) {
   return (
-    <div className="c-page-header service-feature" id={id}>
+    <div className="c-page-header service-feature" id={id} data-aos={animation}>
       <div className="service-feature__inner row">
         <div className="col-lg-6 service-feature__left service-feature__text-side">
           {loading?<Skeleton active/>:

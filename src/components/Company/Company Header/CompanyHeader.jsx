@@ -5,7 +5,7 @@ import CompanyHeaderBackground from "../../../assets/img/CompanyHeaderBackground
 function CompanyHeader({loading}) {
   return (
     <div
-      className="company-header-container"
+      className="company-header-container" data-aos="fade-left" data-aos-anchor-placement="top-center"
     >
      {loading?<Skeleton variant="rect" style={{width: "100%", height: 200}}/>: <img src={CompanyHeaderBackground} alt="" />}
     </div>

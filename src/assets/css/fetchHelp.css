@@ -235,7 +235,7 @@
   }
 
   .fetch-help__theme {
-    transform: translateY(-20%);
+    transform: translateY(-20%)!important;
   }
   .fetch-help__theme__rec__big-num {
     font-family: Gilroy-Light;

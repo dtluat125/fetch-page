@@ -102,9 +102,7 @@
 }
 
 @media (min-width: 996px) {
-  .usp-container:nth-child(even) .usp-container__inner {
-    flex-direction: row-reverse;
-  }
+
   .usp2__left{
     padding-right: 50px!important;
   }
@@ -113,6 +111,17 @@
     padding-left: 50px!important;
   }
 
+}
+
+@media (min-width: 768px){
+  .usp-container:nth-child(even) .usp-container__inner {
+    flex-direction: row-reverse;
+  }
+
+  .usp-container:nth-child(even) .usp__left{
+    padding-left: 6%;
+    padding-right:0 !important;
+  }
 }
 
 @media (max-width: 768px) {

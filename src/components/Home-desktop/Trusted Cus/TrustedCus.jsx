@@ -75,9 +75,9 @@ function TrustedCus({ signUp, loading }) {
     ],
   };
   return (
-    <div className="c-cus-container  trusted-cus ">
+    <div className="c-cus-container  trusted-cus " >
       <div className="trusted-cus__inner">
-        <div className="trusted-cus__top row">
+        <div className="trusted-cus__top row" data-aos="fade-left">
           <div className="trusted-cus__content col-md-8">
             {loading?<Skeleton variant="text" className="c-title trusted-by-many"/>:
             <div className="trusted-by-many">Trusted by many</div>
@@ -95,7 +95,7 @@ function TrustedCus({ signUp, loading }) {
           </div>
         </div>
         {!signUp && (
-          <div className="trusted-cus__bottom">{loading?<div
+          <div className="trusted-cus__bottom" data-aos="fade-right">{loading?<div
           style={{display:"flex", flexWrap:"nowrap"}}
           >
             <Skeleton variant="rect" height="90px" className="cus-logo-holder"/>

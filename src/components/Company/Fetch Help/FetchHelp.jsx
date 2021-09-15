@@ -21,7 +21,7 @@ function FetchHelp({ loading }) {
   return (
     <div className="fetch-help">
       <div
-        className="fetch-help__theme row"
+        className="fetch-help__theme row " data-aos="fade-left"
         style={{ backgroundImage: `url(${Theme2})` }}
       >
         <div className="fetch-help__theme__left col-md-7">
@@ -63,7 +63,7 @@ function FetchHelp({ loading }) {
           )}
         </div>
       </div>
-      <div className="fetch-help__inner">
+      <div className="fetch-help__inner" data-aos="fade-right">
         <div className="fetch-help__checked-group ant-row">
           <div
             className="col-md-6"
