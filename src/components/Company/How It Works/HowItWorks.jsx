@@ -14,14 +14,14 @@ function HowItWorks({ loading }) {
   return (
     <div className="how-it-works">
       <div className="how-it-works__inner ">
-        <Col sm={24} lg={16} xl={16} className="ant-col c-cus-container">
+        <Col sm={24} lg={16} xl={16} className="ant-col c-cus-container" data-aos="fade-left">
           <div className="company-pic1 ant-row ant-row-center">
             {loading ? <Skeleton /> : <img src={CompanyPic1} alt="" />}
           </div>
           {loading ? (
             <Skeleton active />
           ) : (
-            <div className="how-it-works__title-group">
+            <div className="how-it-works__title-group" data-aos="fade-left">
               <div
                 className="c-h3-title c-h3-title--maintain"
                 style={{ textAlign: "center", marginBottom: 14 }}
@@ -35,7 +35,7 @@ function HowItWorks({ loading }) {
             </div>
           )}
         </Col>
-        <Row gutter={24} className="how-it-works__features ant-row">
+        <Row gutter={24} className="how-it-works__features ant-row" data-aos="fade-right">
           <Col
             xs={24}
             sm={24}
@@ -181,7 +181,7 @@ function HowItWorks({ loading }) {
             </div>
           </Col>
         </Row>
-        <div className="text-group-with-button">
+        <div className="text-group-with-button" data-aos="zoom-in">
           {loading?<Skeleton/>:<div className="c-h6-title" style={{minWidth: "50%"}}> 
             Find tailormade, flexible solutions, designed for your business
             needs.

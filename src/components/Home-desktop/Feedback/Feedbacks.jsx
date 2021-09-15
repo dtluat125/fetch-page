@@ -6,9 +6,9 @@ import { Skeleton } from "antd";
 function Feedbacks({loading}) {
   
   return (
-    <div className="feedbacks-container">
+    <div className="feedbacks-container" data-aos="fade-right">
       
-      {loading?<div className="c-float-group"><Skeleton active></Skeleton></div>:<div className="c-float-group">
+      {loading?<div className="c-float-group" ><Skeleton active></Skeleton></div>:<div  className="c-float-group">
         <div className="float-group__theme">
           <img src={FloatTheme} alt="" />
         </div>

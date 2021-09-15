@@ -6,7 +6,7 @@ import SkeletonImage from "antd/lib/skeleton/Image";
 import { Skeleton } from "antd";
 function USP2({ title, theme, company, backgroundColor, loading }) {
   return (
-    <div className="usp2-container" style={{ width: "100%" }}>
+    <div className="usp2-container" data-aos="fade-left" style={{ width: "100%" }}>
       <div className="usp2-container__inner c-cus-container row ">
         {loading ? (
           <SkeletonImage

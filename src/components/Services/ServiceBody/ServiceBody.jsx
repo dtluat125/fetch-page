@@ -180,7 +180,7 @@ function ServiceBody(props) {
               .classList.add("scrolled");
           });
           currentOptions
-            .querySelector(".sidebar-option-container")
+            ?.querySelector(".sidebar-option-container")
             .classList.add("active");
           console.log(current + " active");
           optionsArr.forEach((option) => {
@@ -215,8 +215,8 @@ function ServiceBody(props) {
       <div className="service-body">
         <div className="service-body__inner c-page-header__inner row">
           <div className="service-body__left col-lg-4">
-            <div className="sidebar">
-              {props.loading?<Skeleton/>:
+            <div className="sidebar" data-aos="fade-down">
+              {props.loading?<Skeleton />:
                 <div className="sidebar-content">
                   <div className="sidebar-title c-h5-title">{props.title}</div>
                   <div className="sidebar-options">
@@ -243,8 +243,10 @@ function ServiceBody(props) {
           <div className="service-body__right col-lg-8">
             {featuresArr[props.id - 1]?.map((feature, index) => {
               const { featureTheme, featureTitle, featureSubtitle } = feature;
+              let animation = index%2===0?"fade-left":"fade-right";
               return (
                 <ServiceFeature
+                  animation = {animation}
                   featureTheme={featureTheme}
                   featureTitle={featureTitle}
                   featureSubtitle={featureSubtitle}

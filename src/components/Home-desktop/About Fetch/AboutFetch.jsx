@@ -53,7 +53,7 @@ function AboutFetch({loading}) {
     ],
   };
   return (
-    <div className="about-container c-cus-container">
+    <div className="about-container c-cus-container" data-aos="fade-left">
       <div
         className="about-container__inner"
         style={{ backgroundImage: `url(${AboutTheme})` }}

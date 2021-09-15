@@ -15,8 +15,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "antd/dist/antd.css";
 import { useEffect, useState } from "react";
 import Story from "./components/story/Story";
+import "aos/dist/aos.js";
+import "aos/dist/aos.css";
+import AOS from "aos"
 function App() {
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      offset: 200
+    });
+  }, )
   return (
     <Router>
       <div className="app-container">

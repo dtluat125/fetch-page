@@ -91,7 +91,7 @@ function Talents({ loading }) {
     <div className="talents-container">
       <div className="talents__inner">
         <div className="talents__map">
-          <div className="talents__map__content">
+          <div className="talents__map__content" data-aos="fade-down">
             {loading ? (
               <Skeleton variant="circle" width="96px" height="96px" />
             ) : (
@@ -152,9 +152,10 @@ function Talents({ loading }) {
           }
         </div>
 
-        <div className="talents__cards">
+        <div className="talents__cards" >
           <div
             className="talents__cards__inner"
+            data-aos="fade-left"
             style={{ transform: `translateX(${position + "px"})` }}
           >
             <Carousel {...settings}>

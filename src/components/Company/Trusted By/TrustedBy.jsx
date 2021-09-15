@@ -22,7 +22,7 @@ function TrustedBy({loading}) {
   };
 
   return (
-    <div className="conpany-trusted-by">
+    <div className="conpany-trusted-by" data-aos="fade-right">
       <div className="company-trusted-by__inner">
         <Col
           xs={24}

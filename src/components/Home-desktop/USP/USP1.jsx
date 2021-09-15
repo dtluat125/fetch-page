@@ -15,7 +15,7 @@ function USP1(props) {
     window.addEventListener("resize", probeWindow);
   });
   return (
-    <div className="c-cus-container usp-container">
+    <div className="c-cus-container usp-container" data-aos={props.animation}>
       <div className="usp-container__inner row">
         <div className="col-md-6 usp__left">
           {props.loading ? (

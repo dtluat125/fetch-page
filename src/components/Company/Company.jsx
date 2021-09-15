@@ -47,7 +47,7 @@ function Company({}) {
     <div className="company">
       <Header />
       <CompanyHeader loading={loading} />
-      <div className="company-header c-cus-container ">
+      <div className="company-header c-cus-container " data-aos="fade-right">
         <div className=" ant-row ant-row-center">
           {loading ? (
             <Skeleton active />
