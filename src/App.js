@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     AOS.init({
       duration: 1200,
-      offset: 200
+      offset: 220
     });
   }, )
   return (
