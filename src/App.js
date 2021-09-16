@@ -1,23 +1,24 @@
+import { useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Homepage from "./components/Home-desktop/Homepage";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.js";
-import Company from "./components/Company/Company";
-import Service from "./components/Services/Service";
+import "animate.css";
 import "./App.scss";
 import "antd/dist/antd.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
+import "aos/dist/aos.js";
+import "aos/dist/aos.css";
+import Homepage from "./components/Home-desktop/Homepage";
+import Company from "./components/Company/Company";
+import Service from "./components/Services/Service";
 import Contact from "./components/contact/Contact";
 import Employees from "./components/employees/Employees";
 import Faq from "./components/faq/Faq";
 import NotFound from "./components/404/NotFound";
 import Salary from "./components/Services/salary/Salary";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "antd/dist/antd.css";
-import { useEffect, useState } from "react";
 import Story from "./components/story/Story";
-import "aos/dist/aos.js";
-import "aos/dist/aos.css";
-import AOS from "aos"
+import AOS from "aos";
+
 function App() {
 
   useEffect(() => {

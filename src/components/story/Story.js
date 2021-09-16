@@ -8,6 +8,7 @@ import storyIcon4 from '../../assets/img/storyIcon4.png';
 import { Row, Col } from 'antd';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import AnimationWrap from '../animation/AnimationWrap';
 
 const storyData = [
     {id: 1, icon: storyIcon1, content: "Launched in 2014, Fetch begins operations in Ho Chi Minh City with just 12 staff."},
@@ -28,8 +29,27 @@ const Story = () => {
                             <div className="wrap-icon">
                                 <img src={bookIcon} alt="book icon" />
                             </div>
-                            <h1>Making the tech world more accessible since 2014.</h1>
-                            <h6>Grown from humble roots to becoming one of the leaders of our industry in less than a decade, Fetch is now synonymous with the tech world and the best it can offer.</h6>
+                            <AnimationWrap
+                                ratio={0.4} 
+                                render={(ref, animate) => 
+                                    <h1 
+                                        ref={ref} 
+                                        className={animate && "animate__animated animate__bounceIn"}
+                                    >
+                                        Making the tech world more accessible since 2014.
+                                    </h1>
+                                }
+                            />
+                            <AnimationWrap 
+                                render={(ref, animate) => 
+                                    <h6
+                                        ref={ref} 
+                                        className={animate && "animate__animated animate__pulse"}
+                                    >
+                                        Grown from humble roots to becoming one of the leaders of our industry in less than a decade, Fetch is now synonymous with the tech world and the best it can offer.
+                                    </h6>
+                                }
+                            />
                         </Col>
                     </Row>
                 </div>
@@ -42,7 +62,16 @@ const Story = () => {
                             <div className="wrap-title-tree"><span>Our history</span></div>
                         </Col>
                         <Col xs={24} sm={20} md={{span: 8}}>
-                            <StoryCard className="card-top-left" icon={storyData[0].icon} content={storyData[0].content}/>
+                            <AnimationWrap 
+                                render={(ref, animate) => 
+                                    <StoryCard
+                                        refCard={ref}  
+                                        className={`card-top-left animate__animated ${animate && "animate__fadeInLeftBig"}`} 
+                                        icon={storyData[0].icon} 
+                                        content={storyData[0].content}
+                                    />
+                                }
+                            />
                         </Col>
                         <Col xs={0} sm={0} md={2}>
                             <div className="leave-left"></div>
@@ -51,7 +80,16 @@ const Story = () => {
                             <div className="leave-right"></div>
                         </Col>
                         <Col xs={24} sm={20} md={{span: 8, }}>
-                            <StoryCard className="card-top-right" icon={storyData[1].icon} content={storyData[1].content}/>
+                            <AnimationWrap 
+                                render={(ref, animate) => 
+                                    <StoryCard
+                                        refCard={ref}  
+                                        className={`card-top-right animate__animated ${animate && "animate__fadeInRightBig"}`} 
+                                        icon={storyData[1].icon} 
+                                        content={storyData[1].content}
+                                    />
+                                }
+                            />
                         </Col>
                     </Row>
                     <Row className="tree-row-bottom" gutter={{ xs: 21, sm: 24, xl: 30 }} justify="center">
@@ -59,7 +97,16 @@ const Story = () => {
                             <div className="wrap-title-tree"><span>Our future</span></div>
                         </Col>
                         <Col xs={24} sm={20} md={{span: 8}}>
-                            <StoryCard className="card-btm-left" icon={storyData[2].icon} content={storyData[2].content}/>
+                            <AnimationWrap 
+                                render={(ref, animate) => 
+                                    <StoryCard
+                                        refCard={ref}  
+                                        className={`card-btm-left animate__animated ${animate && "animate__fadeInLeftBig"}`} 
+                                        icon={storyData[2].icon} 
+                                        content={storyData[2].content}
+                                    />
+                                }
+                            />
                         </Col>
                         <Col xs={0} sm={0} md={2}>
                             <div className="leave-left"></div>
@@ -68,7 +115,16 @@ const Story = () => {
                             <div className="leave-right"></div>
                         </Col>
                         <Col xs={24} sm={20} md={{span: 8}} >
-                            <StoryCard className="card-btm-right" icon={storyData[3].icon} content={storyData[3].content}/>
+                            <AnimationWrap 
+                                render={(ref, animate) => 
+                                    <StoryCard
+                                        refCard={ref}  
+                                        className={`card-btm-right animate__animated ${animate && "animate__fadeInRightBig"}`} 
+                                        icon={storyData[3].icon} 
+                                        content={storyData[3].content}
+                                    />
+                                }
+                            />
                         </Col>
                     </Row>
                 </div>
@@ -93,9 +149,9 @@ const Story = () => {
 
 export default Story;
 
-const StoryCard = ({className, icon, content}) => {
+const StoryCard = ({className, icon, content, refCard}) => {
     return (
-        <div className={`card-story ${className}`}>
+        <div ref={refCard} className={`card-story ${className}`}>
             <div className="wrap-icon">
                 <img src={icon} alt="icon card" />
             </div>
