@@ -152,7 +152,7 @@ const Salary = () => {
                                 <label>Calculation type</label>
                                 <Row className="row-calc-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
                                     {billData?.calTypes?.map((calType, index) => (
-                                        <Col key={index} span={8}>
+                                        <Col className="col-calc-type" key={index} span={8}>
                                             <div 
                                                 role="button" 
                                                 className={`sal-opt-wrap ${bill.calType === calType?.title && "sal-opt-wrap-active"} calc-type-opt`}
