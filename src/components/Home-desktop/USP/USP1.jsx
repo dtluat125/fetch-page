@@ -14,17 +14,27 @@ function USP1(props) {
     probeWindow();
     window.addEventListener("resize", probeWindow);
   });
+  let left, right;
+  if(props.animation==="left"){
+    
+    left="right"
+    right = "left"
+  }
+  else{
+    left = "left"
+    right = "right"
+  }
   return (
-    <div className="c-cus-container usp-container" data-aos={props.animation}>
+    <div className="c-cus-container usp-container" >
       <div className="usp-container__inner row">
         <div className="col-md-6 usp__left">
           {props.loading ? (
             <Skeleton variant="text" className="c-h2-title c-title" />
           ) : (
-            <div className="c-h2-title usp__title">{props.uspTitle}</div>
+            <div className="c-h2-title usp__title" data-aos={"fade-" + left}>{props.uspTitle}</div>
           )}
           <div className="usp__content">
-            <div className="usp__text-group">
+            <div className="usp__text-group" data-aos={"fade-" + left}>
               <div className="check-icon__container">
                 {props.loading ? (
                   <Skeleton
@@ -59,7 +69,7 @@ function USP1(props) {
                 )}
               </div>
             </div>
-            <div className="usp__text-group">
+            <div className="usp__text-group" data-aos={"fade-" + left}>
               <div className="check-icon__container">
                 {props.loading ? (
                   <Skeleton
@@ -97,7 +107,7 @@ function USP1(props) {
           </div>
         </div>
         <div className="col-md-6 usp__right">
-          <div className="usp__theme">
+          <div className="usp__theme" data-aos={"fade-down-" + right}>
             {props.loading?<Skeleton variant="rect" width="300px" height="300px"/>:
             <img
               src={

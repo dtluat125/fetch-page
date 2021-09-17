@@ -53,7 +53,7 @@ function AboutFetch({loading}) {
     ],
   };
   return (
-    <div className="about-container c-cus-container" data-aos="fade-left">
+    <div className="about-container c-cus-container">
       <div
         className="about-container__inner"
         style={{ backgroundImage: `url(${AboutTheme})` }}
@@ -72,14 +72,14 @@ function AboutFetch({loading}) {
           style={{ transform: `translateX(${position + "px"})` }}
         >
           {<Col id="cc" md={6} offset={6} className="about__feature">{loading?<Skeleton active/>:<>
-            <div className="feature-num">500+</div>
+            <div className="feature-num" data-aos="scale-bounce" >500+</div>
             <div className="c-h6-subtitle feature-des">
               successful deployments
             </div></>}
           </Col>}
           <Col md={6} offset={6} className="about__feature">
           {loading?<Skeleton active/>:<>
-            <div className="feature-num">7+</div>
+            <div className="feature-num" data-aos="scale-bounce">7+</div>
             <div className="c-h6-subtitle feature-des">
               years in the business
             </div>
@@ -87,13 +87,13 @@ function AboutFetch({loading}) {
           </Col>
           <Col md={6} className="about__feature">
           {loading?<Skeleton active/>:<>
-            <div className="feature-num">USD 5 million</div>
+            <div className="feature-num" data-aos="scale-bounce">USD 5 million</div>
             <div className="c-h6-subtitle feature-des">remunerated to date</div>
             </>}
           </Col>
           <Col md={6} offset={6} className="about__feature">
           {loading?<Skeleton active/>:<>
-            <div className="feature-num">100+</div>
+            <div className="feature-num" data-aos="scale-bounce">100+</div>
             <div className="c-h6-subtitle feature-des">
               partnerships and growing
             </div>
@@ -104,14 +104,14 @@ function AboutFetch({loading}) {
           <Carousel {...settings}>
             <Col id="cc" md={6} offset={6} className="about__feature">
             {loading?<Skeleton active/>:<div className="about__feature__inner">
-            <div className="feature-num">500+</div>
+            <div className="feature-num" data-aos="scale-bounce">500+</div>
             <div className="c-h6-subtitle feature-des">
               successful deployments
             </div></div>}
             </Col>
-            <Col md={6} offset={6} className="about__feature">
+            <Col md={6} offset={6} className="about__feature" >
             {loading?<Skeleton active/>:<div className="about__feature__inner">
-            <div className="feature-num">7+</div>
+            <div className="feature-num" data-aos="scale-bounce">7+</div>
             <div className="c-h6-subtitle feature-des">
               years in the business
             </div>
@@ -119,13 +119,13 @@ function AboutFetch({loading}) {
             </Col>
             <Col md={6} className="about__feature">
             {loading?<Skeleton active/>:<div className="about__feature__inner">
-            <div className="feature-num">USD 5 million</div>
+            <div className="feature-num" data-aos="scale-bounce">USD 5 million</div>
             <div className="c-h6-subtitle feature-des">remunerated to date</div>
             </div>}
             </Col>
             <Col md={6} offset={6} className="about__feature">
             {loading?<Skeleton active/>:<div className="about__feature__inner">
-            <div className="feature-num">100+</div>
+            <div className="feature-num" data-aos="scale-bounce">100+</div>
             <div className="c-h6-subtitle feature-des">
               partnerships and growing
             </div>

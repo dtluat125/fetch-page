@@ -18,13 +18,17 @@ import NotFound from "./components/404/NotFound";
 import Salary from "./components/Services/salary/Salary";
 import Story from "./components/story/Story";
 import AOS from "aos";
+import ServiceTheme1 from "./assets/img/ServiceTheme1.png"
+import ServiceTheme2 from "./assets/img/ServiceTheme2.png"
+import ServiceTheme3 from "./assets/img/ServiceTheme3.png"
+import ServiceTheme4 from "./assets/img/ServiceTheme4.png"
 
 function App() {
 
   useEffect(() => {
     AOS.init({
-      duration: 1200,
-      offset: 220
+
+  
     });
   }, )
   return (
@@ -42,6 +46,7 @@ function App() {
               title="Talent acquisition"
               subTitle="Utilise your preferred talent for your projects."
               id={1}
+              serviceTheme = {ServiceTheme1}
               
             />
           </Route>
@@ -50,7 +55,7 @@ function App() {
               title="Service management"
               subTitle="Run your remote team and leave the HR aspects to us."
               id={2}
-              
+              serviceTheme = {ServiceTheme2}
             />
           </Route>
           <Route path="/services/3">
@@ -58,6 +63,7 @@ function App() {
               title="Payroll and compliances"
               subTitle="Experience a seamless contracting and payroll process"
               id={3}
+              serviceTheme = {ServiceTheme3}
               
             />
           </Route>
@@ -66,6 +72,7 @@ function App() {
               title="Full-suite project consultancy"
               subTitle="Enjoy carefully curated management for your project from start to finish."
               id={4}
+              serviceTheme = {ServiceTheme4}
               
             />
           </Route>

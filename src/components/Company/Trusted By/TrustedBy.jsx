@@ -22,7 +22,7 @@ function TrustedBy({loading}) {
   };
 
   return (
-    <div className="conpany-trusted-by" data-aos="fade-right">
+    <div className="conpany-trusted-by" >
       <div className="company-trusted-by__inner">
         <Col
           xs={24}
@@ -34,16 +34,17 @@ function TrustedBy({loading}) {
           {loading?<Skeleton.Input active style={{minWidth: 300, textAlign: "center"}}/>:<div
             className="company-trusted-by__title c-h3-title c-h3-title--maintain"
             style={{ fontSize: 37 }}
+            data-aos="zoom-in"
           >
             Trusted by many
           </div>}{loading?<Skeleton active/>:
-          <div className="company-trusted-by__small-text c-h6-title">
+          <div className="company-trusted-by__small-text c-h6-title" data-aos="zoom-in">
             Being one of the first in the industry has allowed us to gain a
             strong grasp of the Vietnamese market.
           </div>}
         </Col>
 
-        <div className=" cus-container-fluid">{
+        <div className=" cus-container-fluid" data-aos="flip-up">{
           loading?<SkeletonInput/>:
           <Carousel {...settings}>
             <div className="brand-card brand-card--white">

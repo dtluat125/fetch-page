@@ -48,10 +48,11 @@ function Service(props) {
         logoMobileProp={LogoMobileWhite}
       />
       <ServiceHeader
-        theme={ServiceTheme1}
+        theme={props.serviceTheme}
         headerTitle={props.title}
         headerSubtitle={props.subTitle}
         loading={loading}
+        touchBottom = {props.id===1||props.id===4}
       />
       <ServiceBody title={props.title} id={props.id} loading={loading} />
       <Footer />

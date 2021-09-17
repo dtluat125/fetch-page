@@ -57,7 +57,7 @@ function Homepage({}) {
       <TrustedCus loading={loading} />
       <div className="usp">
         <USP1
-          animation="fade-left"
+          animation="left"
           loading={loading}
           uspTitle="A pioneer in the industry"
           uspSubtitle1="We’re experienced and reliable"
@@ -69,7 +69,7 @@ function Homepage({}) {
         />
 
         <USP1
-          animation="fade-right"
+          animation="right"
           loading={loading}
           uspTitle="We deliver results"
           uspSubtitle1="Everything is taken care of"
@@ -80,7 +80,7 @@ function Homepage({}) {
         />
 
         <USP1
-          animation="fade-left"
+          animation="left"
           loading={loading}
           uspTitle="We give you unrivalled solutions"
           uspSubtitle1="Unrestricted flexibility and access"

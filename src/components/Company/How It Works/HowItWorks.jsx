@@ -35,7 +35,7 @@ function HowItWorks({ loading }) {
             </div>
           )}
         </Col>
-        <Row gutter={24} className="how-it-works__features ant-row" data-aos="fade-right">
+        <Row gutter={24} className="how-it-works__features ant-row" >
           <Col
             xs={24}
             sm={24}
@@ -43,17 +43,18 @@ function HowItWorks({ loading }) {
             xl={16}
             className="how-it-works__features__inner"
           >
-            <div className="how-it-works__features__banner">
+            <div className="how-it-works__features__banner" data-aos="fade-left">
               {loading ? (
                 <Skeleton />
               ) : (
-                <span className="c-h5-title ant-col">Client services</span>
+                <span className="c-h5-title ant-col" >Client services</span>
               )}{" "}
             </div>
             <Row gutter={[27, 27]}>
               <Col span={12}>
-                <Row>
+                <Row  >
                   <Feature
+                    animation="fade-up"
                     loading={loading}
                     destination="/services/1"
                     backgroundColor="#D2E2ED"
@@ -62,6 +63,7 @@ function HowItWorks({ loading }) {
                   />
 
                   <Feature
+                  animation="fade-up"
                     loading={loading}
                     destination="/services/3"
                     icon={Feature2}
@@ -72,8 +74,9 @@ function HowItWorks({ loading }) {
                 </Row>
               </Col>
               <Col span={12}>
-                <Row>
+                <Row  >
                   <Feature
+                  animation="fade-up"
                     loading={loading}
                     destination="/services/2"
                     backgroundColor="#FF6847"
@@ -83,6 +86,7 @@ function HowItWorks({ loading }) {
                   />
 
                   <Feature
+                  animation="fade-up"
                     loading={loading}
                     destination="/services/4"
                     icon={Feature4}
@@ -108,10 +112,10 @@ function HowItWorks({ loading }) {
               <Skeleton />
             ) : (
               <div className="how-it-work__sub-group">
-                <div className="c-h5-title c-h5-title--maintain">
+                <div className="c-h5-title c-h5-title--maintain"  data-aos="fade-right">
                   We offer a diverse range of products
                 </div>
-                <div className="c-p-subtitle">
+                <div className="c-p-subtitle" data-aos="fade-right">
                   From team management to project consultancy, we will always
                   have a service available to meet your business requirements.
                 </div>
@@ -121,10 +125,10 @@ function HowItWorks({ loading }) {
               <Skeleton />
             ) : (
               <div className="how-it-work__sub-group">
-                <div className="c-h5-title c-h5-title--maintain">
+                <div className="c-h5-title c-h5-title--maintain" data-aos="fade-right">
                   Flexible and catered to your needs
                 </div>
-                <div className="c-p-subtitle">
+                <div className="c-p-subtitle" data-aos="fade-right">
                   Don't need a particular feature in the service selected? No
                   problem. Our plans are designed to be adaptable to match your
                   requests accordingly.
@@ -142,7 +146,7 @@ function HowItWorks({ loading }) {
                 </>
               ) : (
                 <>
-                  <div className="check-item ant-row">
+                  <div className="check-item ant-row" data-aos="fade-right">
                     <div className="check-icon__container">
                       <div className="check-icon check-icon--yellow">
                         <img src={CheckIcon} alt="" />
@@ -150,7 +154,7 @@ function HowItWorks({ loading }) {
                     </div>
                     <div className="c-p-subtitle">Talent acquisition</div>
                   </div>
-                  <div className="check-item ant-row">
+                  <div className="check-item ant-row" data-aos="fade-right">
                     <div className="check-icon__container">
                       <div className="check-icon check-icon--yellow">
                         <img src={CheckIcon} alt="" />
@@ -158,7 +162,7 @@ function HowItWorks({ loading }) {
                     </div>
                     <div className="c-p-subtitle">Services management</div>
                   </div>
-                  <div className="check-item ant-row">
+                  <div className="check-item ant-row" data-aos="fade-right">
                     <div className="check-icon__container">
                       <div className="check-icon check-icon--yellow">
                         <img src={CheckIcon} alt="" />
@@ -166,7 +170,7 @@ function HowItWorks({ loading }) {
                     </div>
                     <div className="c-p-subtitle">Payroll and compliances</div>
                   </div>
-                  <div className="check-item ant-row">
+                  <div className="check-item ant-row" data-aos="fade-right">
                     <div className="check-icon__container">
                       <div className="check-icon check-icon--yellow">
                         <img src={CheckIcon} alt="" />

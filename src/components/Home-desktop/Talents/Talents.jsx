@@ -91,18 +91,18 @@ function Talents({ loading }) {
     <div className="talents-container">
       <div className="talents__inner">
         <div className="talents__map">
-          <div className="talents__map__content" data-aos="fade-down">
+          <div className="talents__map__content">
             {loading ? (
               <Skeleton variant="circle" width="96px" height="96px" />
             ) : (
-              <div className="star-holder">
+              <div className="star-holder"  data-aos="zoom-in">
                 <img src={Star} alt="" />
               </div>
             )}
             {loading ? (
               <Skeleton variant="text" className="c-title c-h1-title" />
             ) : (
-              <div className="c-h1-title talents__map__content__title">
+              <div className="c-h1-title talents__map__content__title"  data-aos="zoom-in">
                 {"Get the best talents in Vietnam with us"}
               </div>
             )}
@@ -129,15 +129,15 @@ function Talents({ loading }) {
                 />
               </div>
             ) : (
-              <div className="c-h6-title talents__map__content__text">
+              <div className="c-h6-title talents__map__content__text"  data-aos="zoom-in">
                 Whether you're looking for a software developer, tester or
                 designer, we got you covered.
               </div>
             )}
             {loading ? (
-              <Skeleton variant="rect" className="skeleton--button" />
+              <Skeleton variant="rect" className="skeleton--button"  />
             ) : (
-              <div className="c-large-button" role="button">
+              <div className="c-large-button" role="button"  data-aos="zoom-in">
                 Find out more
               </div>
             )}

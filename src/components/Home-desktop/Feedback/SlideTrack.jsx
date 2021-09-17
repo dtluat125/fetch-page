@@ -112,7 +112,7 @@ function SlideTrack({loading}) {
     ],
   };
   return (
-    <div className="slide-track-container">
+    <div className="slide-track-container" data-aos="flip-up" data-aos-offset="300">
       <div className="slide-track__inner">
         <Carousel {...settings}>
           <Slide

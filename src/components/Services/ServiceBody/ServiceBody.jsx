@@ -253,6 +253,7 @@ function ServiceBody(props) {
                   key={index}
                   id={"a" + index}
                   loading={props.loading}
+                  index={index}
                 />
               );
             })}

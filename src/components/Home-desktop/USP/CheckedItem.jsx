@@ -3,7 +3,7 @@ import React from "react";
 import CheckIcon from "../../../assets/img/CheckIcon.png";
 function CheckedItem(props) {
   return (
-    <div>
+    <div data-aos={props.animation}>
      {props.loading?<Skeleton active/> :<div className="usp__text-group">
         <div className="check-icon__container">
           <div className="check-icon check-icon--yellow">

@@ -2,10 +2,10 @@ import { Skeleton } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Feature({ icon, title, backgroundColor, color, destination, loading }) {
+function Feature({ icon, title, backgroundColor, color, destination, loading, animation }) {
   return (
     <div
-      className="how-it-works__feature"
+      className="how-it-works__feature" data-aos={animation}
       style={{ backgroundColor: backgroundColor, marginBottom: 27 }}
     >
       {loading?<Skeleton></Skeleton>:<>
