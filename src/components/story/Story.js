@@ -30,7 +30,7 @@ const Story = () => {
                                 <img src={bookIcon} alt="book icon" />
                             </div>
                             <AnimationWrap
-                                ratio={0.4} 
+                                ratio={-0.5}
                                 render={(ref, animate) => 
                                     <h1 
                                         ref={ref} 

@@ -124,6 +124,7 @@
                     @include Responsive(sm) { padding: 21px 12px; }
                     @include Responsive(md) { padding: 24px 24px; }
                     @include Responsive(lg) { padding: 28px 19px; }
+                    animation: flipInY 0.6s linear;
 
                     .icon-wrap {
                         margin-left: auto;
@@ -229,6 +230,22 @@
 
                 .col-expertise-type-opt:last-child {
                     .expertise-type-opt { margin-bottom: 0; }
+                }
+
+                .col-expertise-type-opt:nth-child(1) {
+                    .expertise-type-opt { animation: slideInRight 0.5s ease-out; }
+                }
+                .col-expertise-type-opt:nth-child(2) {
+                    .expertise-type-opt { animation: slideInRight 0.9s ease-out; }
+                }
+                .col-expertise-type-opt:nth-child(3) {
+                    .expertise-type-opt { animation: slideInRight 1.3s ease-out; }
+                }
+                .col-expertise-type-opt:nth-child(4) {
+                    .expertise-type-opt { animation: slideInRight 1.7s ease-out; }
+                }
+                .col-expertise-type-opt:nth-child(5) {
+                    .expertise-type-opt { animation: slideInRight 2.1s ease-out; }
                 }
 
                 .expertise-type-opt {
@@ -376,6 +393,17 @@
                 @include Responsive(xl) { margin-bottom: 38px; }
 
                 .row-calc-type {
+
+                    .col-calc-type:nth-child(1) {
+                        .calc-type-opt { animation: waves 0.5s ease-out; }
+                    }
+                    .col-calc-type:nth-child(2) {
+                        .calc-type-opt { animation: waves 0.9s ease-out; }
+                    }
+                    .col-calc-type:nth-child(3) {
+                        .calc-type-opt { animation: waves 1.3s ease-out; }
+                    }
+                    
                     
                     .calc-type-opt {
                         display: flex;
@@ -853,6 +881,8 @@
             border: 1.8px solid #BAC9D7;
             box-sizing: border-box;
             border-radius: 10px;
+
+            &:hover { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
         }
         
         .sal-opt-wrap-active {
@@ -977,3 +1007,17 @@
 
 }
 
+@keyframes flipInY {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(-10%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes waves {
+    0% { transform: translateY(-15%); }
+    100% { transform: translateY(0%); }
+}

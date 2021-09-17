@@ -14,6 +14,12 @@ import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import AnimationWrap from '../animation/AnimationWrap';
 
+const careerData = [
+    {id: 1, title: "Greater opportunities", subtitle: "Work in various organisations that allow you to learn and cultivate your skills."},
+    {id: 2, title: "Attractive stipend", subtitle: "Be compensated fairly – enjoy a remuneration that reflects your talents."},
+    {id: 3, title: "Professional growth", subtitle: "Our employees are highly sought after and enjoy career prospects spanning multiple levels."}
+]
+
 const Employees = () => {
     
     return (
@@ -27,85 +33,85 @@ const Employees = () => {
                     render={(setLoading) => (
                         <div className="cus-container-fluid banner-wrap">
                             <img 
+                                
                                 onLoad={() => setLoading(false)}
                                 src={bannerEmployees} 
                                 alt="banner-employees"
                             />
                         </div>
                     )}
-                />
+                />      
             </section>
+
             <section className="employees-header">
                 <div className="cus-container">
                     <Row gutter={[{xs: 21, sm: 24, xl:30}, 0]} justify="center">
                         <Col xs={24} sm={24} lg={16} xl={16} className="reach-further">
-                            <AnimationWrap
-                                render={(ref, animate) => (
-                                    <div ref={ref} className={animate && "animate__animated animate__zoomIn"}>
+                            <AnimationWrap 
+                                ratio={0.25}
+                                ratioBack={-0.25}
+                                render={(ref, animate) =>
+                                    <div ref={ref} className={`animate__animated ${animate ? "animate__zoomIn" : ""}`}>
                                         <h1>Work globally, stay locally</h1>
-                                        <h6>
+                                        <h6 >
                                             Experience the world without stepping out of Vietnam. Get unrestricted international exposure while applying your expertise from the comforts of home with Fetch.
                                         </h6>
                                         <button className="btn-learn-more">Learn More</button>
-                                    </div>
-                                )}
+                                    </div>     
+                                }
                             />
                         </Col>
                     </Row>
                 </div>
             </section>
+             
             <section className="employees-career-fetch">
                 <div className="cus-container">
                     <Row className="career-row" gutter={[{xs: 21, sm: 24, xl:30}, 0]} align="middle">
                         <Col xs={24} sm={24} lg={12} xl={12}>
-                            <AnimationWrap
-                                render={(ref, animate) => (
-                                    <div ref={ref} className={`left-wrap animate__animated ${animate && "animate__slideInLeft"}`}>
-                                        <h1>Why build your career with Fetch?</h1>
-                                        <p>It's simple, Fetch cares. We are committed to nurturing every employee to be the best developer they can be. To provide you with the right tools and opportunities to a global audience, expanding their horizons beyond Vietnam.</p>
-                                    </div>
-                                )}
-                            />
+                            <div className="left-wrap">
+                                <AnimationWrap 
+                                    render={(ref, animate) => (
+                                        <h1 ref={ref} className={`animate__animated animate__faster ${animate ? "animate__lightSpeedInLeft" : ""}`} >Why build your career with Fetch?</h1>
+                                    )}
+                                />
+                                <AnimationWrap 
+                                    render={(ref, animate) => (
+                                        <p ref={ref} className={`animate__animated animate__fast ${animate ? "animate__lightSpeedInLeft" : ""}`} >It's simple, Fetch cares. We are committed to nurturing every employee to be the best developer they can be. To provide you with the right tools and opportunities to a global audience, expanding their horizons beyond Vietnam.</p>
+                                    )}
+                                />
+                             </div>
                         </Col>
                         <Col xs={24} sm={24} lg={12} xl={12}>
-                            <AnimationWrap
-                                render={(ref, animate) => (
-                                    <ul ref={ref} className={`list-wrap animate__animated ${animate && "animate__slideInDown"}`}>
-                                        <li>
-                                            <div className="head">
-                                                <span>1</span>
-                                            </div>
-                                            <div className="content">
-                                                <h5>Greater opportunities</h5>
-                                                <p>Work in various organisations that allow you to learn and cultivate your skills.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="head">
-                                                <span>2</span>
-                                            </div>
-                                            <div className="content">
-                                                <h5>Attractive stipend</h5>
-                                                <p>Be compensated fairly – enjoy a remuneration that reflects your talents.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="head">
-                                                <span>3</span>
-                                            </div>
-                                            <div className="content">
-                                                <h5>Professional growth </h5>
-                                                <p>Our employees are highly sought after and enjoy career prospects spanning multiple levels.</p>
-                                            </div>
-                                        </li>
-                                        <div className="horizontal-line"></div>
-                                    </ul>
-                                )}
-                            />
+                            <ul className={`list-wrap`}>
+                                {careerData?.map(career => (
+                                    <AnimationWrap 
+                                        render={(ref, animate) => (
+                                            <li ref={ref} className={`animate__animated animate__fast ${animate ? "animate__lightSpeedInRight" : ""}`} >
+                                                <div className="head">
+                                                    <span>{career?.id}</span>
+                                                </div>
+                                                <div className="content">
+                                                    <h5>{career?.title}</h5>
+                                                    <p>{career?.subtitle}</p>
+                                                </div>
+                                            </li>
+                                        )}
+                                    />
+                                ))}
+                                <AnimationWrap 
+                                    ratio={1.1}
+                                    render={(ref, animate) => (
+                                        <div ref={ref} className={`horizontal-line animate__animated animate__slower ${animate ? "animate__flipInX" : ""}`}></div>
+                                    )}
+                                />
+                            </ul>
+                            
                         </Col>
                     </Row>
                 </div>
             </section>
+            
             <section className="employees-usp usp-top">
                 <div className="cus-container">
                     <Row className="row-top" gutter={[{xs: 21, sm: 24, xl:30}, 0]}>
@@ -153,6 +159,8 @@ const Employees = () => {
                         <Col className="usp-col-top-right" xs={24} sm={24} md={12} >
                             <div className="col-6-wrap">
                                 <AnimationWrap
+                                    ratio={0.5}
+                                    ratioBack={0.4}
                                     render={(ref, animate) => 
                                         <img 
                                             ref={ref} 
@@ -252,7 +260,7 @@ const Employees = () => {
                                     render={(ref, animate) => (
                                         <img 
                                             ref={ref}
-                                            className={animate && "animate__animated animate__lightSpeedInRight"}
+                                            className={animate && "animate__animated animate__fadeInDown"}
                                             src={findMore} 
                                             alt="find more" 
                                         />
@@ -289,7 +297,7 @@ const Employees = () => {
                                 render={(ref, animate) => (
                                     <div 
                                         ref={ref} 
-                                        className={`cmt-wrap ${animate && "animate__animated animate__fadeInDown"}`}
+                                        className={`cmt-wrap ${animate && "animate__animated animate__bounceIn"}`}
                                     >
                                         <img src={avt1} alt="avt"/>
                                         <div className="cmt">
@@ -308,7 +316,7 @@ const Employees = () => {
                                 render={(ref, animate) => (
                                     <div
                                         ref={ref} 
-                                        className={`cmt-wrap ${animate && "animate__animated animate__fadeInUp"}`}
+                                        className={`cmt-wrap ${animate && "animate__animated animate__bounceIn"}`}
                                     >
                                         <img src={avt2} alt="avt"/>
                                         <div className="cmt">
@@ -344,6 +352,7 @@ const Employees = () => {
 
                 </div>
             </section>
+            
             <Footer />
         </div>
     )
