@@ -90,6 +90,10 @@
   }
 }
 
+.company-header-container .MuiSkeleton-root{
+  height: 422px;
+}
+
 @media(max-width: 400px){
   .company-header-container{
     display: flex;
@@ -99,4 +103,8 @@
     height: 286px;
     text-align: center;
   }
+  .company-header-container .MuiSkeleton-root{
+    height: 286px;
+  }
+  
 }

@@ -10,6 +10,7 @@ import FetchHelp from "./Fetch Help/FetchHelp";
 import Available from "./Available";
 import RedTheme from "../RedTheme";
 import { Skeleton } from "antd";
+import AOS from "aos"
 function Company({}) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -28,6 +29,7 @@ function Company({}) {
         if (count === imagesArr.length) {
           setTimeout(() => {
             setLoading(false);
+            AOS.refresh();
           }, 800);
         }
       }
@@ -39,6 +41,7 @@ function Company({}) {
     return () => {
       window.removeEventListener("load", () => {
         setLoading(true);
+        
       });
     };
   });

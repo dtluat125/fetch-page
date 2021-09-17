@@ -14,6 +14,7 @@ import Usp3Theme from "./../../assets/img/Usp3Theme.png";
 import Usp3MobileTheme from "./../../assets/img/Usp3MobileTheme.png";
 import Footer from "../Footer/Footer";
 import RedTheme from "../RedTheme";
+import AOS from "aos";
 function Homepage({}) {
   const [loading, setLoading] = useState(true);
 
@@ -33,6 +34,7 @@ function Homepage({}) {
         if (count === imagesArr.length) {
           setTimeout(() => {
             setLoading(false);
+            AOS.refresh();
           }, 800);
         }
       }
