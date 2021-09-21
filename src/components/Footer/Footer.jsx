@@ -71,14 +71,23 @@ function Footer() {
           {bigIcon ? (
             <div className="col-md-4 footer__social">
               <img src={BigInstagram} className="big-icon" alt="" />
-              <img src={BigFacebook} className="big-icon" lt="" />
-              <img src={BigLinkedin} className="big-icon" alt="" />
+              <a
+                target="_blank"
+                href="https://www.facebook.com/Fetch.Technology"
+                className=""
+              >
+                <img src={BigFacebook} className="big-icon" lt="" />
+              </a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/company/fetchtechnology/"
+              >
+                {" "}
+                <img src={BigLinkedin} className="big-icon" alt="" />
+              </a>
             </div>
           ) : (
             <div className="col-md-4 footer__social">
-              <Link></Link>
-              <Link></Link>
-
               <div className="footer__platform">
                 <div className="footer__icon">
                   <img src={Instagram} alt="" />
@@ -91,7 +100,11 @@ function Footer() {
                 <div className="footer__icon">
                   <img src={Facebook} alt="" />
                 </div>
-                <a target="_blank" href="https://www.facebook.com/Fetch.Technology" className="">
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/Fetch.Technology"
+                  className=""
+                >
                   <div className="footer__platform-name">Facebook</div>
                 </a>
               </div>
@@ -99,7 +112,10 @@ function Footer() {
                 <div className="footer__icon">
                   <img src={Linkedin} alt="" />
                 </div>
-                <a target="_blank" href="https://www.linkedin.com/company/fetchtechnology/">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/fetchtechnology/"
+                >
                   {" "}
                   <div className="footer__platform-name">Linkedin</div>
                 </a>

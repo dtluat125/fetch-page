@@ -56,7 +56,8 @@ function HowItWorks({ loading }) {
               {loading ? (
                 <Skeleton />
               ) : (
-                <span className="c-h5-title ant-col">Client services</span>
+                <span className="c-h5-title ant-col" style={{color: "#17274e",
+              fontFamily: "Gilroy-SemiBold"}}>Client services</span>
               )}{" "}
             </div>
             <Row gutter={[27, 27]}>

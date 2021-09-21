@@ -163,7 +163,7 @@ a {
   }
 
   .c-h5-title {
-    font-family: "Gilroy-Regular" !important;
+    font-family: "Gilroy-Regular";
     font-size: 19px !important;
     line-height: 145% !important;
     color: #a4b7c8;
