@@ -690,13 +690,25 @@
 
                     .ant-descriptions-row {
                         .ant-descriptions-item {
-                            // padding-bottom: 24px;
-                            padding-bottom: 0;
+                            padding-bottom: 22px;
+                            // padding-bottom: 0;
+                            
+                            .ant-descriptions-item-container {
+                                @include Responsive(xs) {
+                                    flex-wrap: wrap;
+                                    .ant-descriptions-item-label { flex: 0 0 100%; }
+                                    .ant-descriptions-item-content { flex: 0 0 100%; }
+                                }
+                            }
+
+                            .ant-descriptions-item-container { align-items: center; }
+                            .ant-descriptions-item-label { height: fit-content; }
+                            .ant-statistic-content { display: inline-flex; }
                         }
 
                         &:last-child {
                             .ant-descriptions-item {
-                                @include Responsive(lg) { padding-bottom: 35px; }
+                                @include Responsive(lg) { padding-bottom: 0; }
                                 
                             }
                         }

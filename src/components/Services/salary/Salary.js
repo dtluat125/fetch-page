@@ -25,221 +25,100 @@ import LogoWhite from "../../../assets/img/LogoWhite.png";
 import LogoMobileWhite from "../../../assets/img/LogoMobileWhite.png";
 import {convertExchangeRate, salaryCaculator} from "./utils";
 
-const EXCHANGE_RATE_VND = 1;
-const EXCHANGE_RATE_USD = 23296;
-const EXCHANGE_RATE_SGD = 16798;
-
-const taxData = {
-    si: 17.5, hi: 3, ui: 1, tu: 2, pvi: 250000,
-    taxDeductions: {
-        self: 11000000,
-        dependent: 4400000,
-        si: 8,
-        hi: 1.5,
-        ui: 1
-    }
-}
-
-const billData = {
+const UI_Data = {
     employmentTypes: [
         { id: 1, title: 'full time', icon: iconFulltime },
         { id: 2, title: 'contract', icon: iconContract },
         { id: 3, title: 'freelance', icon: iconFreelance }
     ],
     areaExpertises: [
-        { id: 1, title: 'fontend developer', description: 'implements designs for users and debugging', icon: IconFontEnd, gross: 4000000, currency: "VND"},
-        { id: 2, title: 'backend developer', description: 'integrates and ensures smooth-running of app', icon: IconBackEnd, gross: 5000000, currency: "VND" },
-        { id: 3, title: 'full stack developer', description: 'covers both frontend and backend activities', icon: IconFullstack, gross: 6000000, currency: "VND" },
-        { id: 4, title: 'project Manager', description: 'oversees an entire project scope', icon: IconManager, gross: 7000000, currency: "VND" },
-        { id: 5, title: 'designer', description: 'creates a relatable concept with attractive visuals', icon: IconDesigner, gross: 8000000, currency: "VND" }
+        { id: 1, title: 'fontend developer', description: 'implements designs for users and debugging', icon: IconFontEnd, },
+        { id: 2, title: 'backend developer', description: 'integrates and ensures smooth-running of app', icon: IconBackEnd, },
+        { id: 3, title: 'full stack developer', description: 'covers both frontend and backend activities', icon: IconFullstack, },
+        { id: 4, title: 'project manager', description: 'oversees an entire project scope', icon: IconManager, },
+        { id: 5, title: 'designer', description: 'creates a relatable concept with attractive visuals', icon: IconDesigner, }
     ],
-    calTypes: [
+    calcTypes: [
         { id: 1, title: 'net pay', },
         { id: 2, title: 'gross pay', },
         { id: 3, title: 'total', }
     ],
     amountTypes: [
-        { id: 1, title: 'VND', icon: ensignVN2, defaultIcon: ensignVN1, },
-        { id: 2, title: 'USD', icon: ensignUSA2, defaultIcon: ensignVN1 },
-        { id: 3, title: 'SGD', icon: ensignSGD2, defaultIcon: ensignSGD1 }
+        { id: 1, title: 'VND', activeIcon: ensignVN2, defaultIcon: ensignVN1, },
+        { id: 2, title: 'USD', activeIcon: ensignUSA2, defaultIcon: ensignVN1 },
+        { id: 3, title: 'SGD', activeIcon: ensignSGD2, defaultIcon: ensignSGD1 }
     ],
     forTypes: ["for employer", "for employee"],
-    taxDeductions: {
-        seft: 11000000,
-        dependent: 4400000,
-        siPercent: 8,
-        hiPercent: 1.5,
-        uiPercent: 1,
-    },
-    billDetail: {
-        overview: [
-            { id: 1, title: 'gross salary' },
-            { id: 2, title: 'social insurance', percent: 17.5, },
-            { id: 3, title: 'health insurance', percent: 3, },
-            { id: 4, title: 'unemployed insurance', percent: 1, },
-            { id: 5, title: 'union tax', percent: 2 },
-            { id: 6, title: 'PVI healthcare',},
-        ]
-    }
 }
 
-const overviewData = {
-    forEmployer: [
-        { id: 1, title: 'Gross salary',},
-        { id: 2, title: "Social insurance", percent: 17.5,},
-        { id: 3, title: "Health insurance", percent: 3 },
-        { id: 4, title: "Unemployed insurance", percent: 1 },
-        { id: 5, title: "Union tax", percent: 2},
-        { id: 6, title: "PVI healthcare"},
-        { id: 7, title: "NET"},
-        { id: 8, title: "Total Expenses"}
-    ],
-    forEmployee: [
-        { id: 1, title: 'Gross salary',},
-        { id: 2, title: "Social insurance", percent: 8},
-        { id: 3, title: "Health insurance", percent: 1.5 },
-        { id: 4, title: "Unemployed insurance", percent: 1 },
-        { id: 5, title: "PIT",},
-        { id: 6, title: "Tax deductions"},
-        { id: 7, title: "NET"}
-    ]
-}
+const responseData = [
+    { id: 1, role: 'fontend developer', employmentTypes: [
+        {id: 1, employmentType: "full time", gross: 10*10**6},
+        {id: 2, employmentType: "contract", gross: 8*10**6},
+        {id: 3, employmentType: "freelance", gross: 5*10**6}
+    ]},
+    { id: 2, role: 'backend developer', employmentTypes: [
+        {id: 1, employmentType: "full time", gross: 11*10**6},
+        {id: 2, employmentType: "contract", gross: 9*10**6},
+        {id: 3, employmentType: "freelance", gross: 6*10**6}
+    ]},
+    { id: 3, role: 'full stack developer', employmentTypes: [
+        {id: 1, employmentType: "full time", gross: 12*10**6},
+        {id: 2, employmentType: "contract", gross: 10*10**6},
+        {id: 3, employmentType: "freelance", gross: 7*10**6}
+    ]},
+    { id: 4, role: 'project manager', employmentTypes: [
+        {id: 1, employmentType: "full time", gross: 13*10**6},
+        {id: 2, employmentType: "contract", gross: 11*10**6},
+        {id: 3, employmentType: "freelance", gross: 8*10**6}
+    ]},
+    { id: 5, role: 'designer', employmentTypes: [
+        {id: 1, employmentType: "full time", gross: 14*10**6},
+        {id: 2, employmentType: "contract", gross: 12*10**6},
+        {id: 3, employmentType: "freelance", gross: 9*10**6}
+    ]}
+]
 
 const Salary = () => {
-    const [bill, setBill] = useState({
+    const [salaryState, setSalaryState] = useState({
         employmentType: "full time",
         areaExpertise: "fontend developer",
-        calType: "gross pay",
-        forType: "for employer",
-        currency: "VND",
-        total: 4000000,
-        amountTotal: 4000000,
-        rightTotal: 400000,
-        overview: [...overviewData.forEmployer]
+        gross: 0,
     })
 
-    const handleChangeCalcType = (value) => {
-        let salaryData = salaryCaculator(bill.total, taxData);
+    const findGross = (eType, aExType, data) => {
+        let gross = 0;
 
-        if(value === "net pay") {
-            setBill({
-                ...bill,
-                calType: value,
-                amountTotal: salaryData.forEmployee.NET,
-            })
-        } else if(value === "gross pay") {
-            setBill({
-                ...bill,
-                calType: value,
-                amountTotal: bill.total,
-            })
-        } else if(value === "total") {
-            setBill({
-                ...bill,
-                calType: value,
-                amountTotal: salaryData.forEmployer.totalExpenses,
-            })
-        }
-    }
-
-    const handleChangeCurrencyRight = (value) => {
-        console.log("before: ", bill.overview);
-
-        let temp = bill.overview.map(item => {
-            if(value === "USD" && bill.currency === "VND") {
-                return {...item, amount: 1.0*item.amount/EXCHANGE_RATE_USD}
+        for(const item of data) {
+            if(item.role === aExType) {
+                let result = item.employmentTypes.find(val => val.employmentType === eType);
+                return result.gross;
             }
-            else if(value === "SGD" && bill.currency === "VND") {
-                return {...item, amount: 1.0*item.amount/EXCHANGE_RATE_SGD}
-            }
-            else if(value === "VND" && bill.currency === "USD") {
-                return {...item, amount: 1.0*item.amount*EXCHANGE_RATE_USD}
-            }
-            else if(value === "SGD" && bill.currency === "USD") {
-                return {...item, amount: 1.0*item.amount*EXCHANGE_RATE_USD/EXCHANGE_RATE_SGD}
-            }
-            else if(value === "VND" && bill.currency === "SGD") {
-                return {...item, amount: 1.0*item.amount*EXCHANGE_RATE_SGD}
-            }
-            else if(value === "USD" && bill.currency === "SGD") {
-                return {...item, amount: 1.0*item.amount*EXCHANGE_RATE_SGD/EXCHANGE_RATE_USD}
-            }
-        })
-
-        console.log("after: ", temp);
-
-        setBill({
-            ...bill,
-            currency: value,
-            rightTotal: convertExchangeRate(value, bill.total),
-            overview: [...temp]
-        })
-    }
-
-    const handleChangeForType = (value) => {
-        
-
-        if(value === "for employee") {
-
-            let temp = overviewData.forEmployee;
-            let salary = salaryCaculator(bill.rightTotal, taxData);
-            temp[0]["amount"] = bill.rightTotal;
-            temp[1]["amount"] = salary.forEmployee.SI;
-            temp[2]["amount"] = salary.forEmployee.HI;
-            temp[3]["amount"] = salary.forEmployee.UI;
-            temp[4]["amount"] = salary.forEmployee.PIT;
-            temp[5]["amount"] = salary.forEmployee.taxDeductions;
-            temp[6]["amount"] = salary.forEmployer.NET;
-
-            setBill({
-                ...bill,
-                forType: value,
-                overview: [...temp]
-            })
-
-        } else if (value === "for employer") {
-            let temp = overviewData.forEmployer;
-
-            let salary = salaryCaculator(bill.rightTotal, taxData);
-            temp[0]["amount"] = bill.rightTotal;
-            temp[1]["amount"] = salary.forEmployer.SI;
-            temp[2]["amount"] = salary.forEmployer.HI;
-            temp[3]["amount"] = salary.forEmployer.UI;
-            temp[4]["amount"] = salary.forEmployer.TU;
-            temp[5]["amount"] = 250000;
-            temp[6]["amount"] = salary.forEmployer.NET;
-            temp[7]["amount"] = salary.forEmployer.totalExpenses;
-
-            setBill({
-                ...bill,
-                forType: value,
-                overview: [...temp]
-            })
         }
 
-        
+        return gross;
+    }
 
+    const handleEmploymentType = (eType) => {
+        let gross = findGross(eType, salaryState.areaExpertise, responseData);
+        
+        setSalaryState({ ...salaryState, employmentType: eType, gross: gross, });
+    }
+
+    const handleAreaExpertise = (aExType) => {
+        let gross = findGross(salaryState.employmentType, aExType, responseData);
+        
+        setSalaryState({ ...salaryState, areaExpertise: aExType, gross: gross,  });
     }
 
     useEffect(() => {
-        let temp = overviewData.forEmployer;
+        let data = responseData;
+        let gross = findGross(salaryState.employmentType, salaryState.areaExpertise, data);
+        
+        console.log("gross: ", gross);
+        setSalaryState({ ...salaryState, gross: gross });
+        console.log("bill in effect: ", salaryState);
 
-        let salary = salaryCaculator(4000000, taxData);
-        temp[0]["amount"] = 4000000;
-        temp[1]["amount"] = salary.forEmployer.SI;
-        temp[2]["amount"] = salary.forEmployer.HI;
-        temp[3]["amount"] = salary.forEmployer.UI;
-        temp[4]["amount"] = salary.forEmployer.TU;
-        temp[5]["amount"] = 250000;
-        temp[6]["amount"] = salary.forEmployer.NET;
-        temp[7]["amount"] = salary.forEmployer.totalExpenses;
-
-        setBill({
-            ...bill,
-            overview: [...temp]
-        })
-
-        console.log("bill 1: ", bill);
     }, [])
 
     return (
@@ -269,15 +148,15 @@ const Salary = () => {
                             <div className="left-wrap employment-type-wrap">
                                 <label>Employment type</label>
                                 <Row className="row-employment-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
-                                    {billData?.employmentTypes?.map((eType, index) => (
+                                    {UI_Data?.employmentTypes?.map((eType, index) => (
                                         <Col key={index} span={8}>
                                             <div
                                                 role="button"
-                                                className={`sal-opt-wrap ${bill.employmentType === eType?.title && "sal-opt-wrap-active"} e-type-opt`}
-                                                onClick={() => setBill({ ...bill, employmentType: eType?.title })}
+                                                className={`sal-opt-wrap ${salaryState.employmentType === eType?.title && "sal-opt-wrap-active"} e-type-opt`}
+                                                onClick={() => handleEmploymentType(eType?.title)}
                                             >
                                                 <div
-                                                    className={`icon-wrap ${bill.employmentType === eType?.title && "icon-wrap-active"}`}
+                                                    className={`icon-wrap ${salaryState.employmentType === eType?.title && "icon-wrap-active"}`}
                                                 >
                                                     <img src={eType?.icon} alt="icon employment type" />
                                                 </div>
@@ -293,16 +172,16 @@ const Salary = () => {
                                     <MoreInfoModal />
                                 </div>
                                 <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, { xs: 17, sm: 17, md: 22, lg: 24 }]}>
-                                    {billData?.areaExpertises?.map((aE, index) => (
+                                    {UI_Data?.areaExpertises?.map((aE, index) => (
                                         <Col key={index} className="col-expertise-type-opt" xs={12} sm={12} md={8} lg={24}>
                                             <div
                                                 role="button"
-                                                className={`sal-opt-wrap ${bill.areaExpertise === aE?.title && "sal-opt-wrap-active"} expertise-type-opt`}
-                                                onClick={() => setBill({ ...bill, areaExpertise: aE?.title })}
+                                                className={`sal-opt-wrap ${salaryState.areaExpertise === aE?.title && "sal-opt-wrap-active"} expertise-type-opt`}
+                                                onClick={() => handleAreaExpertise(aE?.title)}
                                             >
                                                 <div className="expertise-type-opt-inner">
                                                     <div
-                                                        className={`exp-icon-wrap ${bill.areaExpertise === aE?.title && "exp-icon-wrap-active"}`}
+                                                        className={`exp-icon-wrap ${salaryState.areaExpertise === aE?.title && "exp-icon-wrap-active"}`}
                                                     >
                                                         <img src={aE?.icon} alt="expertise icon" />
                                                     </div>
@@ -316,91 +195,14 @@ const Salary = () => {
 
                                     ))}
                                 </Row>
-
                             </div>
-                            <div className="left-wrap calculation-type-wrap">
-                                <label>Calculation type</label>
-                                <Row className="row-calc-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
-                                    {billData?.calTypes?.map((calType, index) => (
-                                        <Col className="col-calc-type" key={index} span={8}>
-                                            <div
-                                                role="button"
-                                                className={`sal-opt-wrap ${bill.calType === calType?.title && "sal-opt-wrap-active"} calc-type-opt`}
-                                                onClick={() => handleChangeCalcType(calType?.title)}
-                                            >
-                                                <span>{calType?.title}</span>
-                                            </div>
-                                        </Col>
-                                    ))}
-                                </Row>
-                            </div>
-                            <div className="left-wrap amount-wrap">
-                                <label>Amount</label>
-                                <Row className="row-amount" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
-                                    <AmountWrapper optData={billData.amountTypes} salary={bill.amountTotal} />
-                                </Row>
-                            </div>
+                            <SummarySalaryWrap gross={salaryState.gross} />
+                            
                         </Col>
                         <Col className="col-right" xs={24} sm={24} lg={12}>
                             <div className="col-inner">
                                 <label className="label-pedal">&nbsp;</label>
-                                <div className="right-wrap right-bill-wrap">
-                                    <Row className="row-for-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
-                                        {billData?.forTypes?.map((opt, index) => (
-                                            <Col key={index} xs={12} sm={10}>
-                                                <div
-                                                    role="button"
-                                                    className={`sal-opt-wrap ${bill?.forType === opt && 'sal-opt-wrap-active'} for-type-wrap`}
-                                                    onClick={() => handleChangeForType(opt)}
-                                                >
-                                                    <span>{opt}</span>
-                                                </div>
-                                            </Col>
-                                        ))}
-                                    </Row>
-                                    <div className="currency-wrap">
-                                        <label>Currency</label>
-                                        <Row className="currency-opt-wrap" gutter={[{ xs: 16, sm: 24, xl: 30 }, 0]}>
-                                            {billData?.amountTypes?.map((aType, index) => (
-                                                <Col key={index} className="col-currency-opt" span={8}>
-                                                    <div
-                                                        role="button"
-                                                        className={`sal-opt-wrap ${bill?.currency === aType?.title && 'sal-opt-wrap-active'} currency-opt`}
-                                                        onClick={() => handleChangeCurrencyRight(aType?.title)}
-                                                    >
-                                                        {bill?.currency === aType?.title
-                                                            ? <img src={aType?.icon} alt="ensign" />
-                                                            : <img src={aType?.defaultIcon} alt="ensign" />
-                                                        }
-                                                        <span>{aType?.title}</span>
-                                                    </div>
-                                                </Col>
-                                            ))}
-                                        </Row>
-                                    </div>
-                                    <Divider className="divider-under-currency" />
-                                    <div className="breakdown-wrap">
-                                        <p>Breakdown for</p>
-                                        <div className="wrap-value">
-                                            <span>{bill?.currency}&nbsp;</span>
-                                            <Statistic value={bill?.rightTotal} precision={2} />
-                                        </div>
-                                    </div>
-                                    <div className="overview-wrap">
-                                        <h5>Overview</h5>
-                                        <Descriptions column={1} colon={false}>
-                                            {bill.overview.map((item, index) => (
-                                                <Descriptions.Item
-                                                    key={index}
-                                                    label={<LabelOverview data={item} />}
-                                                >
-                                                    {bill?.currency}&nbsp;
-                                                    <Statistic value={item.amount} precision={2} />
-                                                </Descriptions.Item>
-                                            ))}
-                                        </Descriptions>
-                                    </div>
-                                </div>
+                                <RightBillWrap gross={salaryState.gross}/>
                                 <div className="right-wrap hr-card-wrap">
                                     <div className="card-top-wrap">
                                         <img src={hrAvt} alt="hr-avt" />
@@ -481,7 +283,7 @@ const MoreInfoModal = () => {
 }
 
 const LabelOverview = ({ data }) => {
-    console.log("in label: ", data);
+    
     return (
         <React.Fragment>
             <span>{data?.title}&nbsp;</span>
@@ -490,56 +292,228 @@ const LabelOverview = ({ data }) => {
     )
 }
 
-const AmountWrapper = ({ optData, salary }) => {
-    const [amount, setAmount] = useState({
+const SummarySalaryWrap = ({gross}) => {
+    console.log("in summary: ", gross);
+
+    const [summarySate, setSummaryState] = useState({
+        calcType: "gross pay",
         currency: "VND",
-        money: salary ? salary : 0,
-        icon: ensignVN2
+        amount: 0,
+        iconCurrency: null
     });
 
-    console.log("bill: ", salary);
+    const handleCalcType = (calcType) => {
+        let amount = caculateAmount(gross, calcType);
 
-    const handleSelectChange = (value) => {
-        console.log(value);
-        let element = optData.find(x => x.title === value);
+        setSummaryState({
+            ...summarySate,
+            calcType: calcType,
+            amount: convertExchangeRate(summarySate.currency, amount),
+        })
+    }
 
-        setAmount({
-            ...amount,
+    const handleChangeCurrency = (value) => {
+        let element = UI_Data.amountTypes.find(item => item.title === value);
+        let amount = convertExchangeRate(value, gross);
+
+        setSummaryState({
+            ...summarySate,
             currency: value,
-            money: convertExchangeRate(value, salary),
-            icon: element.icon,
+            amount: amount,
+            iconCurrency: element.activeIcon
         })
         
-        console.log("amount: ", amount);
     }
-    
+
+    const caculateAmount = (gross, calcType) => {
+        let caculateData = salaryCaculator(gross);
+
+        let amount = 0;
+        if(calcType === "net pay") {
+            amount = caculateData.forEmployee.find(item => item.title === "NET").amount;
+        } else if(calcType === "gross pay") {
+            amount = gross;
+        } else if(calcType === "total") {
+            amount =  caculateData.forEmployer.find(item => item.title === "Total Expenses").amount;
+        }
+
+        return amount;
+    }
+
     useEffect(() => {
-        setAmount({...amount, money: convertExchangeRate(amount.currency, salary)})
-    }, [salary])
+        let element = UI_Data.amountTypes.find(item => item.title === summarySate.currency);
+        let amount = caculateAmount(gross, summarySate.calcType);
+
+        setSummaryState({
+            ...summarySate, 
+            amount: amount, 
+            iconCurrency: element.activeIcon
+        })
+    }, [gross])
 
     return (
         <>
-        <Col xs={9} sm={8}>
-            <div className="sal-opt-wrap-active money-unit">
-                <div className="select-unit">
-                    <img src={amount?.icon} alt="icon unit" />
-                    <Select
-                        className="select"
-                        value={amount?.currency}
-                        onChange={(val) => handleSelectChange(val)}
-                        suffixIcon={<ArrowDown />}
-                    >
-                        {optData?.map((opt, index) => <Select.Option key={index} value={opt?.title}>{opt?.title}</Select.Option>)}
-                    </Select>
+        <div className="left-wrap calculation-type-wrap">
+            <label>Calculation type</label>
+            <Row className="row-calc-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
+                {UI_Data.calcTypes.map((item, index) => (
+                    <Col className="col-calc-type" key={index} span={8}>
+                        <div
+                            role="button"
+                            className={`sal-opt-wrap ${summarySate.calcType === item.title && "sal-opt-wrap-active"} calc-type-opt`}
+                            onClick={() => handleCalcType(item?.title)}
+                        >
+                            <span>{item.title}</span>
+                        </div>
+                    </Col>
+                ))}
+            </Row>
+        </div>
+        <div className="left-wrap amount-wrap">
+            <label>Amount</label>
+            <Row className="row-amount" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
+                <Col xs={9} sm={8}>
+                    <div className="sal-opt-wrap-active money-unit">
+                        <div className="select-unit">
+                            <img src={summarySate.iconCurrency} alt="icon unit" />
+                            <Select
+                                className="select"
+                                value={summarySate.currency}
+                                onChange={(val) => handleChangeCurrency(val)}
+                                suffixIcon={<ArrowDown />}
+                            >
+                                {UI_Data.amountTypes.map((opt, index) => <Select.Option key={index} value={opt.title}>{opt.title}</Select.Option>)}
+                            </Select>
+                        </div>
+                    </div>
+                </Col>
+                <Col xs={15} sm={16}>
+                    <div className="money">
+                        <Statistic value={summarySate.amount} precision={2} />
+                    </div>
+                </Col>
+            </Row>
+        </div>
+        </>
+    )
+}
+
+const RightBillWrap = ({gross}) => {
+    const [billState, setBill] = useState({
+        forType: "for employer",
+        currency: "VND",
+        amount: 0,
+        caculateData: null,
+        overview: null,
+    })
+
+    const forTypeClassifier = (type, data) => {
+        if(type === "for employee") return data.forEmployee;
+        else if (type === "for employer") return data.forEmployer;
+    }
+
+    const handleChangeForType = (type) => {
+        let overview = forTypeClassifier(type, billState.caculateData).map(item => {
+            let temp = {...item};
+            temp.amount = convertExchangeRate(billState.currency, item.amount);
+            return temp;
+        });
+
+        setBill({ ...billState, forType: type, overview: overview });
+    }
+
+    const handleChangeCurrency = (type) => {
+        let overview = forTypeClassifier(billState.forType, billState.caculateData).map(item => {
+            let temp = {...item};
+            temp.amount = convertExchangeRate(type, item.amount);
+            return temp;
+        });
+        let amount = convertExchangeRate(type, gross);
+
+        setBill({ ...billState, currency: type, overview: overview, amount: amount });
+    }
+
+
+    useEffect(() => {
+        let caculateData = salaryCaculator(gross);
+
+        let overview = forTypeClassifier(billState.forType, caculateData).map(item => {
+            let temp = {...item};
+            temp.amount = convertExchangeRate(billState.currency, item.amount);
+            return temp;
+        });
+        let amount = convertExchangeRate(billState.currency, gross);
+
+        setBill({
+            ...billState,
+            amount: amount,
+            overview: overview,
+            caculateData: caculateData,
+        })
+    }, [gross])
+
+    return (
+        <div className="right-wrap right-bill-wrap">
+            <Row className="row-for-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
+                {UI_Data?.forTypes?.map((opt, index) => (
+                    <Col key={index} xs={12} sm={10}>
+                        <div
+                            role="button"
+                            className={`sal-opt-wrap ${billState?.forType === opt && 'sal-opt-wrap-active'} for-type-wrap`}
+                            onClick={() => handleChangeForType(opt)}
+                        >
+                            <span>{opt}</span>
+                        </div>
+                    </Col>
+                ))}
+            </Row>
+
+            <div className="currency-wrap">
+                <label>Currency</label>
+                <Row className="currency-opt-wrap" gutter={[{ xs: 16, sm: 24, xl: 30 }, 0]}>
+                    {UI_Data?.amountTypes?.map((aType, index) => (
+                        <Col key={index} className="col-currency-opt" span={8}>
+                            <div
+                                role="button"
+                                className={`sal-opt-wrap ${billState?.currency === aType?.title && 'sal-opt-wrap-active'} currency-opt`}
+                                onClick={() => handleChangeCurrency(aType?.title)}
+                            >
+                                {billState?.currency === aType?.title
+                                    ? <img src={aType?.activeIcon} alt="ensign" />
+                                    : <img src={aType?.defaultIcon} alt="ensign" />
+                                }
+                                <span>{aType?.title}</span>
+                            </div>
+                        </Col>
+                    ))}
+                </Row>
+            </div>
+
+            <Divider className="divider-under-currency" />
+
+            <div className="breakdown-wrap">
+                <p>Breakdown for</p>
+                <div className="wrap-value">
+                    <span>{billState?.currency}&nbsp;</span>
+                    <Statistic value={billState.amount} precision={2} />
                 </div>
             </div>
-        </Col>
-        <Col xs={15} sm={16}>
-            <div className="money">
-                <Statistic value={amount.money} precision={2} />
+
+            <div className="overview-wrap">
+                <h5>Overview</h5>
+                <Descriptions column={1} colon={false}>
+                    {billState?.overview?.map((item, index) => (
+                        <Descriptions.Item
+                            key={index}
+                            label={<LabelOverview data={item} />}
+                        >
+                            {billState?.currency}&nbsp;
+                            <Statistic value={item.amount} precision={2} />
+                        </Descriptions.Item>
+                    ))}
+                </Descriptions>
             </div>
-        </Col>
-        </>
+        </div>
     )
 }
 

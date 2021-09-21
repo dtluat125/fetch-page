@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 const AnimationWrap = ({render, ratio = 0.25, ratioBack=0.2}) => {
     const ref = useRef();
     const [animate, setAnimate] = useState(null);
-    const [change, setChange] = useState(false);
+    const [ , setChange] = useState(false);
 
     useEffect(() => {
         let node = ReactDOM.findDOMNode(ref.current);
