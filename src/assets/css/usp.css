@@ -124,6 +124,13 @@
   }
 }
 
+@media (max-width: 996px) {
+  .usp-container{
+    padding-top: 30px!important;
+    padding-bottom: 30px!important;
+  }
+}
+
 @media (max-width: 768px) {
   .usp-container__inner {
     flex-direction: column-reverse;
@@ -132,7 +139,7 @@
     padding: 0!important;
   }
   .usp-container{
-    padding-top: 30px!important;
-    padding-bottom: 30px!important;
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
   }
 }
