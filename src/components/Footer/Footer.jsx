@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../../assets/img/Logo.png";
+import Logo from "../../assets/img/Logo.svg";
 import "../../assets/css/footer.css";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -45,22 +45,46 @@ function Footer() {
           <div className="col-md-4 footer__links">
             <div className="footer__links__inner row">
               <div className="col-6 footer__link-col">
-                <span className="c-p-subtitle ">How It Works</span>
-                <span className="c-p-subtitle">For Company</span>
-                <span className="c-p-subtitle">Our Story</span>
+                <Link to="/employees" style={{ marginBottom: 24 }}>
+                  <span className="c-p-subtitle ">How It Works</span>
+                </Link>
+                <Link to="/company" style={{ marginBottom: 24 }}>
+                  <span className="c-p-subtitle">For Company</span>
+                </Link>
+                <Link to="/ourstory" style={{ marginBottom: 24 }}>
+                  <span className="c-p-subtitle">Our Story</span>
+                </Link>
               </div>
               <div className="col-6 footer__link-col">
-                <span className="c-p-subtitle">Success Stories</span>
-                <span className="c-p-subtitle">Market Report</span>
-                <span className="c-p-subtitle">FAQ</span>
+                <Link to="/successstories" style={{ marginBottom: 24 }}>
+                  <span className="c-p-subtitle">Success Stories</span>
+                </Link>
+                <Link to="/marketreport" style={{ marginBottom: 24 }}>
+                  <span className="c-p-subtitle">Market Report</span>
+                </Link>
+                <Link to="/faq" style={{ marginBottom: 24 }}>
+                  <span className="c-p-subtitle">FAQ</span>
+                </Link>
               </div>
             </div>
           </div>
           {bigIcon ? (
             <div className="col-md-4 footer__social">
               <img src={BigInstagram} className="big-icon" alt="" />
-              <img src={BigFacebook} className="big-icon" lt="" />
-              <img src={BigLinkedin} className="big-icon" alt="" />
+              <a
+                target="_blank"
+                href="https://www.facebook.com/Fetch.Technology"
+                className=""
+              >
+                <img src={BigFacebook} className="big-icon" lt="" />
+              </a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/company/fetchtechnology/"
+              >
+                {" "}
+                <img src={BigLinkedin} className="big-icon" alt="" />
+              </a>
             </div>
           ) : (
             <div className="col-md-4 footer__social">
@@ -68,19 +92,33 @@ function Footer() {
                 <div className="footer__icon">
                   <img src={Instagram} alt="" />
                 </div>
-                <div className="footer__platform-name">Instagram</div>
+                <Link to="">
+                  <div className="footer__platform-name">Instagram</div>
+                </Link>
               </div>
               <div className="footer__platform">
                 <div className="footer__icon">
                   <img src={Facebook} alt="" />
                 </div>
-                <div className="footer__platform-name">Facebook</div>
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/Fetch.Technology"
+                  className=""
+                >
+                  <div className="footer__platform-name">Facebook</div>
+                </a>
               </div>
               <div className="footer__platform">
                 <div className="footer__icon">
                   <img src={Linkedin} alt="" />
                 </div>
-                <div className="footer__platform-name">Linkedin</div>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/fetchtechnology/"
+                >
+                  {" "}
+                  <div className="footer__platform-name">Linkedin</div>
+                </a>
               </div>
             </div>
           )}
@@ -98,7 +136,7 @@ function Footer() {
             md={6}
             lg={6}
             className=" ant-col ant-col-md-6"
-            style={{ display: "flex"}}
+            style={{ display: "flex" }}
           >
             <span className="c-p-subtitle" style={{ marginRight: 20 }}>
               Privacy Policy

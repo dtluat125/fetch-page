@@ -3,6 +3,7 @@ import "../../../assets/css/homepageHeader.scss";
 import TextField from "./TextField";
 import imageGroup from "../../../assets/img/Group 5169003.png";
 import { Skeleton } from "@material-ui/lab";
+import { Link } from "react-router-dom";
 function HomepageHeader({ loading }) {
   return (
     <div className="hompage__header">
@@ -28,7 +29,7 @@ function HomepageHeader({ loading }) {
             </div>
           )}
           {loading ? (
-            <div style={{marginBottom: 24}}>
+            <div style={{ marginBottom: 24 }}>
               <Skeleton className="c-h6-title" />
               <Skeleton className="c-h6-title" />
               <Skeleton className="c-h6-title" />
@@ -40,12 +41,18 @@ function HomepageHeader({ loading }) {
               of the HR side of business.
             </div>
           )}
-         {loading?<Skeleton className="skeleton--button" height="54px"/>:<button
-            className="c-large-button homepage__header__signup-button"
-            style={{ width: 123 }}
-          >
-            <span>Learn more</span>{" "}
-          </button>}
+          {loading ? (
+            <Skeleton className="skeleton--button" height="54px" />
+          ) : (
+            <Link to="/services/1">
+              <button
+                className="c-large-button homepage__header__signup-button"
+                style={{ width: 123 }}
+              >
+                <span>Learn more</span>{" "}
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

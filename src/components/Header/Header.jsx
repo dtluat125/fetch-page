@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/header.css";
-import logo from "../../assets/img/Group 5169054.png";
-import logoMobile from "../../assets/img/LogoMobile.png";
+import logo from "../../assets/img/LogoDefault.svg";
+import logoMobile from "../../assets/img/LogoMobile.svg";
 import dropdownIcon from "../../assets/img/Vector 15.png";
 import MenuItem from "./MenuItem";
 import NavbarClose from "../../assets/img/NavbarClose.png";

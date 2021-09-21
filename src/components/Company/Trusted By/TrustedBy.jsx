@@ -1,9 +1,9 @@
 import React from "react";
-import Cus1 from "../../../assets/img/Cus1.png";
-import Cus2 from "../../../assets/img/Cus2.png";
-import Cus3 from "../../../assets/img/Cus3.png";
-import Cus4 from "../../../assets/img/Cus4.png";
-import Cus5 from "../../../assets/img/Cus5.png";
+import Cus1 from "../../../assets/img/Cus1.svg";
+import Cus2 from "../../../assets/img/Cus2.svg";
+import Cus3 from "../../../assets/img/Cus3.svg";
+import Cus4 from "../../../assets/img/Cus4.svg";
+import Cus5 from "../../../assets/img/Cus5.svg";
 import "../../../assets/css/trustedBy.css";
 import { Carousel, Col, Skeleton } from "antd";
 import SkeletonInput from "antd/lib/skeleton/Input";

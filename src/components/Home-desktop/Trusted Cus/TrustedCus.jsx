@@ -1,14 +1,15 @@
 import React from "react";
 import "../../../assets/css/trustedCus.css";
 import CusLogoHolder from "./CusLogoHolder";
-import Cus1 from "../../../assets/img/Cus1.png";
-import Cus2 from "../../../assets/img/Cus2.png";
-import Cus3 from "../../../assets/img/Cus3.png";
-import Cus4 from "../../../assets/img/Cus4.png";
-import Cus5 from "../../../assets/img/Cus5.png";
-import Cus6 from "../../../assets/img/Cus6.png";
+import Cus1 from "../../../assets/img/Cus1.svg";
+import Cus2 from "../../../assets/img/Cus2.svg";
+import Cus3 from "../../../assets/img/Cus3.svg";
+import Cus4 from "../../../assets/img/Cus4.svg";
+import Cus5 from "../../../assets/img/Cus5.svg";
+import Cus6 from "../../../assets/img/Cus6.svg";
 import { Carousel } from "antd";
 import { Skeleton } from "@material-ui/lab";
+import { Link } from "react-router-dom";
 function TrustedCus({ signUp, loading }) {
   const settings = {
     className: "slick-trusted-cus",
@@ -89,9 +90,10 @@ function TrustedCus({ signUp, loading }) {
             className=" col-md-4 trusted-cus__button-container"
           
           >{loading?<Skeleton className="skeleton--button"/>:
-            <button className="c-large-button trusted-cus__view-more-button">
-              <span>Learn more</span>
-            </button>}
+          <Link to="/contact"><button className="c-large-button trusted-cus__view-more-button">
+          <span>Learn more</span>
+        </button></Link>
+            }
           </div>
         </div>
         {!signUp && (

@@ -30,7 +30,7 @@ function Company({}) {
           setTimeout(() => {
             setLoading(false);
             AOS.refresh();
-          }, 800);
+          }, );
         }
       }
     };
@@ -91,6 +91,7 @@ function Company({}) {
         subtitle="Connect with us to find a fitting solution today."
         buttonText="Contact us"
         loading={loading}
+        to="/contact"
       />
       <Footer />
     </div>

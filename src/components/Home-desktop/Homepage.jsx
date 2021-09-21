@@ -35,7 +35,7 @@ function Homepage({}) {
           setTimeout(() => {
             setLoading(false);
             AOS.refresh();
-          }, 800);
+          },);
         }
       }
     };
@@ -97,6 +97,7 @@ function Homepage({}) {
         title="Find the perfect fit with Fetch"
         subtitle="Find the perfect fit with Fetch"
         buttonText="Sign Up"
+        to = "/contact"
         loading={loading}
       />
       <Footer />

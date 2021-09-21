@@ -3,7 +3,7 @@
 }
 
 .usp-container {
-  padding: 100px 10%;
+  padding: 50px 10%;
 }
 
 .usp-container__inner {
@@ -43,7 +43,7 @@
 }
 
 .usp__content__title {
-  font-family: "Gilroy-SemiBold";
+
   font-size: 20px;
   line-height: 20px;
   /* identical to box height, or 100% */
@@ -130,5 +130,9 @@
   }
   .row > *{
     padding: 0!important;
+  }
+  .usp-container{
+    padding-top: 30px!important;
+    padding-bottom: 30px!important;
   }
 }

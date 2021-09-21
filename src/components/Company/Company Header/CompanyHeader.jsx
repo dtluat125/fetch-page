@@ -1,7 +1,7 @@
 import { Skeleton } from "@material-ui/lab";
 import React from "react";
 import "../../../assets/css/companyHeader.css";
-import CompanyHeaderBackground from "../../../assets/img/CompanyHeaderBackground.png";
+import CompanyHeaderBackground from "../../../assets/img/CompanyHeaderBackground.svg";
 function CompanyHeader({loading}) {
   return (
     <div

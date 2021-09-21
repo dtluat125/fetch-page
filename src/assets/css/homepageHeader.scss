@@ -90,11 +90,14 @@
 .hompage__header__image-group {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .hompage__header__image-group img {
   width: 100%;
   max-width: 540px !important;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* @media (max-width: 1380px){

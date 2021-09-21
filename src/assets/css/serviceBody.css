@@ -30,7 +30,7 @@
   box-shadow: 0px 22px 29px rgba(6, 49, 115, 0.15);
   border-radius: 12px;
   padding: 50px 20px;
-  width: 100%;
+  width: calc(100% + 8px);
   min-height: 350px;
   max-width: 400px;
 }
@@ -95,6 +95,12 @@
     top: 100px;
     left: calc(10% + 12px );
     width: 25%;
+    max-width: 400px;
+  }
+  .sidebar.sidebar--bottom{
+    position: absolute;
+    bottom: 80px;
+    width: calc(100% - 18px);
     max-width: 400px;
   }
 }

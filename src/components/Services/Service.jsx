@@ -4,8 +4,8 @@ import Header from "../Header/Header";
 import ServiceHeader from "./Header/ServiceHeader";
 import ServiceTheme1 from "../../assets/img/ServiceTheme1.png";
 import ServiceBody from "./ServiceBody/ServiceBody";
-import LogoWhite from "../../assets/img/LogoWhite.png";
-import LogoMobileWhite from "../../assets/img/LogoMobileWhite.png";
+import LogoWhite from "../../assets/img/LogoWhite.svg";
+import LogoMobileWhite from "../../assets/img/LogoMobileWhite.svg";
 import AOS from "aos";
 function Service(props) {
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ function Service(props) {
           setTimeout(() => {
             setLoading(false);
             AOS.refresh();
-          }, 800);
+          }, );
         }
       }
     };
