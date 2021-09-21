@@ -26,21 +26,19 @@ const Employees = () => {
         <div className="employees">
             <Header />
             <section className="employees-banner">
-                <SkeletonHOC 
+                <div className="cus-container-fluid banner-wrap">
+                    <img 
+                        src={bannerEmployees} 
+                        alt="banner-employees"
+                    />
+                </div>
+                {/* <SkeletonHOC 
                     active
                     paragraph={{rows: 10, width: "100%"}} 
                     title={{width: "100%"}}
                     render={(setLoading) => (
-                        <div className="cus-container-fluid banner-wrap">
-                            <img 
-                                
-                                onLoad={() => setLoading(false)}
-                                src={bannerEmployees} 
-                                alt="banner-employees"
-                            />
-                        </div>
                     )}
-                />      
+                />       */}
             </section>
 
             <section className="employees-header">

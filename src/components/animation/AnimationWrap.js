@@ -27,7 +27,7 @@ const AnimationWrap = ({render, ratio = 0.25, ratioBack=0.2}) => {
             if ((top + ratio*heightElement) < window.innerHeight) {
                 setAnimate(true);
             } else if((top - window.innerHeight) > ratioBack*heightElement) {
-                setAnimate(false);
+                // setAnimate(false);
             }
             
         }
