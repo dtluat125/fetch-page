@@ -94,6 +94,13 @@ function App() {
           <Route path="*">
             <NotFound />
           </Route>
+          <Route exact path="/facebook" component={() => {
+            window.location.href = "https://www.facebook.com/Fetch.Technology";
+            return null
+          }}>
+
+          </Route>
+
         </Switch>
       </div>
     </Router>

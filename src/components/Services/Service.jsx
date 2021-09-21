@@ -26,7 +26,7 @@ function Service(props) {
           setTimeout(() => {
             setLoading(false);
             AOS.refresh();
-          }, 800);
+          }, );
         }
       }
     };

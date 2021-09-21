@@ -14,7 +14,13 @@ function HowItWorks({ loading }) {
   return (
     <div className="how-it-works">
       <div className="how-it-works__inner ">
-        <Col sm={24} lg={16} xl={16} className="ant-col c-cus-container" data-aos="fade-left">
+        <Col
+          sm={24}
+          lg={16}
+          xl={16}
+          className="ant-col c-cus-container"
+          data-aos="fade-left"
+        >
           <div className="company-pic1 ant-row ant-row-center">
             {loading ? <Skeleton /> : <img src={CompanyPic1} alt="" />}
           </div>
@@ -35,7 +41,7 @@ function HowItWorks({ loading }) {
             </div>
           )}
         </Col>
-        <Row gutter={24} className="how-it-works__features ant-row" >
+        <Row gutter={24} className="how-it-works__features ant-row">
           <Col
             xs={24}
             sm={24}
@@ -43,16 +49,19 @@ function HowItWorks({ loading }) {
             xl={16}
             className="how-it-works__features__inner"
           >
-            <div className="how-it-works__features__banner" data-aos="fade-left">
+            <div
+              className="how-it-works__features__banner"
+              data-aos="fade-left"
+            >
               {loading ? (
                 <Skeleton />
               ) : (
-                <span className="c-h5-title ant-col" >Client services</span>
+                <span className="c-h5-title ant-col">Client services</span>
               )}{" "}
             </div>
             <Row gutter={[27, 27]}>
               <Col span={12}>
-                <Row  >
+                <Row>
                   <Feature
                     animation="fade-up"
                     loading={loading}
@@ -63,7 +72,7 @@ function HowItWorks({ loading }) {
                   />
 
                   <Feature
-                  animation="fade-up"
+                    animation="fade-up"
                     loading={loading}
                     destination="/services/3"
                     icon={Feature2}
@@ -74,9 +83,9 @@ function HowItWorks({ loading }) {
                 </Row>
               </Col>
               <Col span={12}>
-                <Row  >
+                <Row>
                   <Feature
-                  animation="fade-up"
+                    animation="fade-up"
                     loading={loading}
                     destination="/services/2"
                     backgroundColor="#FF6847"
@@ -86,7 +95,7 @@ function HowItWorks({ loading }) {
                   />
 
                   <Feature
-                  animation="fade-up"
+                    animation="fade-up"
                     loading={loading}
                     destination="/services/4"
                     icon={Feature4}
@@ -112,7 +121,10 @@ function HowItWorks({ loading }) {
               <Skeleton />
             ) : (
               <div className="how-it-work__sub-group">
-                <div className="c-h5-title c-h5-title--maintain"  data-aos="fade-right">
+                <div
+                  className="c-h5-title c-h5-title--maintain"
+                  data-aos="fade-right"
+                >
                   We offer a diverse range of products
                 </div>
                 <div className="c-p-subtitle" data-aos="fade-right">
@@ -125,7 +137,10 @@ function HowItWorks({ loading }) {
               <Skeleton />
             ) : (
               <div className="how-it-work__sub-group">
-                <div className="c-h5-title c-h5-title--maintain" data-aos="fade-right">
+                <div
+                  className="c-h5-title c-h5-title--maintain"
+                  data-aos="fade-right"
+                >
                   Flexible and catered to your needs
                 </div>
                 <div className="c-p-subtitle" data-aos="fade-right">
@@ -186,13 +201,23 @@ function HowItWorks({ loading }) {
           </Col>
         </Row>
         <div className="text-group-with-button" data-aos="zoom-in">
-          {loading?<Skeleton/>:<div className="c-h6-title" style={{minWidth: "50%"}}> 
-            Find tailormade, flexible solutions, designed for your business
-            needs.
-          </div>}{loading?<SkeletonButton/>:
-          <button className="c-large-button" style={{ background: "#fff" }}>
-            Learn more
-          </button>}
+          {loading ? (
+            <Skeleton />
+          ) : (
+            <div className="c-h6-title" style={{ minWidth: "50%" }}>
+              Find tailormade, flexible solutions, designed for your business
+              needs.
+            </div>
+          )}
+          {loading ? (
+            <SkeletonButton />
+          ) : (
+            <Link to="/services/4">
+              <button className="c-large-button" style={{ background: "#fff" }}>
+                Learn more
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
