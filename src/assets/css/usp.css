@@ -3,7 +3,7 @@
 }
 
 .usp-container {
-  padding: 100px 10%;
+  padding: 50px 10%;
 }
 
 .usp-container__inner {
@@ -130,5 +130,9 @@
   }
   .row > *{
     padding: 0!important;
+  }
+  .usp-container{
+    padding-top: 30px!important;
+    padding-bottom: 30px!important;
   }
 }

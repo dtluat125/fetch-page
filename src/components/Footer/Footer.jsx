@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../../assets/img/Logo.png";
+import Logo from "../../assets/img/Logo.svg";
 import "../../assets/css/footer.css";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";

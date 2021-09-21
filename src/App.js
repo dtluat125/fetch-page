@@ -26,7 +26,9 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   useEffect(() => {
-    AOS.init({});
+    AOS.init({
+      once: true
+    });
   });
   return (
     <Router>

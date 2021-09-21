@@ -202,11 +202,20 @@ function ServiceBody(props) {
       let sidebar = document.querySelector(".sidebar");
       let bodyRect = serviceBody?.getBoundingClientRect();
       let top = bodyRect?.top;
-      if (top < 0) {
+      let bottom = bodyRect?.bottom;
+      let height = bodyRect?.height
+      console.log(bottom, window.innerHeight )
+      console.log(bottom < window.innerHeight)
+      if (top < 0 && bottom>=window.innerHeight) {
         sidebar.classList.add("sidebar--fixed");
-      } else if (top > 0) {
-        console.log(top);
+        sidebar.classList.remove("sidebar--bottom");
+      } else if (top > 0 ) {
         sidebar.classList.remove("sidebar--fixed");
+        sidebar.classList.remove("sidebar--bottom");
+      }
+      else if(bottom<window.innerHeight ){
+        sidebar.classList.remove("sidebar--fixed");
+        sidebar.classList.add("sidebar--bottom")
       }
     });
   });
