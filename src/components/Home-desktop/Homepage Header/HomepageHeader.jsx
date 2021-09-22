@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../assets/css/homepageHeader.scss";
 import TextField from "./TextField";
-import imageGroup from "../../../assets/img/Group 5169003.png";
+import imageGroup from "../../../assets/img/FetchImg2.png";
 import { Skeleton } from "@material-ui/lab";
 import { Link } from "react-router-dom";
 function HomepageHeader({ loading }) {
