@@ -490,6 +490,8 @@
                         display: flex;
                         align-items: flex-end;
                         border-bottom: 2px solid #BAC9D7;
+                        overflow: auto;
+                        
                         span {
                             font-family: Gilroy-Medium;
                             font-size: 32px;

@@ -334,7 +334,7 @@ const SummarySalaryWrap = ({gross}) => {
         } else if(calcType === "gross pay") {
             amount = gross;
         } else if(calcType === "total") {
-            amount =  caculateData.forEmployer.find(item => item.title === "Total Expenses").amount;
+            amount =  caculateData.forEmployer.find(item => item.title === "Total expenses").amount;
         }
 
         return amount;
