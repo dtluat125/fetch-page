@@ -6,11 +6,11 @@ import SkeletonImage from "antd/lib/skeleton/Image";
 import { Skeleton } from "antd";
 function USP2({ title, theme, company, backgroundColor, loading }) {
   return (
-    <div className="usp2-container"  style={{ width: "100%" }}>
+    <div className="usp2-container" style={{ width: "100%" }}>
       <div className="usp2-container__inner c-cus-container row ">
         {loading ? (
           <SkeletonImage
-            className="col-md-6 usp2__left" 
+            className="col-md-6 usp2__left"
             style={{ minWidth: 300 }}
           />
         ) : (
@@ -21,10 +21,14 @@ function USP2({ title, theme, company, backgroundColor, loading }) {
           </div>
         )}
         <div className="col-md-6 usp2__right">
-          {loading?<Skeleton paragraph="false"/>:<div data-aos="fade-left" className="usp__title  c-h3-title">
-            {title ? title : "Fetch helps businesses run more efficiently"}
-          </div>}
-          {company&&!loading && (
+          {loading ? (
+            <Skeleton paragraph="false" />
+          ) : (
+            <div data-aos="fade-left" className="usp__title  c-h3-title">
+              {title ? title : "Fetch helps businesses run more efficiently"}
+            </div>
+          )}
+          {company && !loading && (
             <div className="usp__content">
               <div className="usp__text-group" data-aos="fade-left">
                 <div className="check-icon__container">
@@ -32,11 +36,13 @@ function USP2({ title, theme, company, backgroundColor, loading }) {
                     <img src={CheckIcon} alt="" />
                   </div>
                 </div>
-                <div className="usp__text-group__content" >
-                  <div className="usp__content__title" >Fast-free Hiring </div>
-                  <div className="usp__content__small-text" >
-                    Being one of the first in the industry has allowed us to
-                    gain a strong grasp of the Vietnamese market.
+                <div className="usp__text-group__content">
+                  <div className="usp__content__title c-h5-title c-h5-title--bold">
+                    Quality talents at the right cost{" "}
+                  </div>
+                  <div className="usp__content__small-text">
+                    All specialists are vetted and guaranteed to deliver results
+                    without any additional fees.
                   </div>
                 </div>
               </div>
@@ -47,15 +53,14 @@ function USP2({ title, theme, company, backgroundColor, loading }) {
                   </div>
                 </div>
                 <div className="usp__text-group__content">
-                  <div className="usp__content__title">Full-control hiring</div>
+                  <div className="usp__content__title c-h5-title c-h5-title--bold">All-in-one service</div>
                   <div className="usp__content__small-text">
-                    Being one of the first in the industry has allowed us to
-                    gain a strong grasp of the Vietnamese market.
+                  We're always available to support you whenever you require our assistance regarding our partnership.
                   </div>
                 </div>
               </div>
             </div>
-          ) }
+          )}
         </div>
       </div>
     </div>

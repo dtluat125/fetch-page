@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../../assets/css/talents.css";
 import Map from "../../../assets/img/Map.png";
-import Vietnam from "../../../assets/img/Vietnam.png";
+import Vietnam from "../../../assets/img/Vietnam.svg";
 import Card from "./Card";
-import InterviewPic from "../../../assets/img/InterviewPic.png";
+import Pic3 from "../../../assets/img/Pic3.svg";
 import Star from "../../../assets/img/Star.png";
-import Card1 from "../../../assets/img/Card1.png";
-import Card2 from "../../../assets/img/Card2.png";
+import Card1 from "../../../assets/img/Card1.svg";
+import Card2 from "../../../assets/img/Card2.svg";
 import { Carousel } from "antd";
 import { Skeleton } from "@material-ui/lab";
 import { Link } from "react-router-dom";
@@ -174,7 +174,7 @@ function Talents({ loading }) {
             <Carousel {...settings}>
               <Card
                 loading={loading}
-                photo={InterviewPic}
+                photo={Pic3}
                 title="Interview Process"
                 content="No staff delegation – enjoy absolute control over the entire hiring process"
               />

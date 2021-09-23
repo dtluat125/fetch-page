@@ -1,12 +1,12 @@
 import React from "react";
 import "../../../assets/css/howItWorks.css";
 import Feature from "./Feature";
-import Feature1 from "../../../assets/img/Feature1.png";
-import Feature2 from "../../../assets/img/Feature2.png";
-import Feature3 from "../../../assets/img/Feature3.png";
-import Feature4 from "../../../assets/img/Feature4.png";
-import CompanyPic1 from "../../../assets/img/CompanyPic1.png";
-import CheckIcon from "../../../assets/img/CheckIcon.png";
+import Feature1 from "../../../assets/img/Feature1.svg";
+import Feature2 from "../../../assets/img/Feature2.svg";
+import Feature3 from "../../../assets/img/Feature3.svg";
+import Feature4 from "../../../assets/img/Feature4.svg";
+import CompanyPic1 from "../../../assets/img/CompanyPic1.svg";
+import CheckIcon from "../../../assets/img/CheckIcon.svg";
 import { Col, Row, Skeleton } from "antd";
 import { Link } from "react-router-dom";
 import SkeletonButton from "antd/lib/skeleton/Button";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Theme2 from "../../../assets/img/Theme2.png";
+import Theme2 from "../../../assets/img/Theme2.svg";
 import UpArrow from "../../../assets/img/UpArrow.png";
 import DownArrow from "../../../assets/img/DownArrow.png";
 import "../../../assets/css/fetchHelp.css";

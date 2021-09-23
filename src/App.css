@@ -176,6 +176,10 @@ a {
     color: #17274e;
   }
 
+  .c-h5-title--bold{
+    font-family: "Gilroy-SemiBold" !important;
+  }
+
   .c-h1-title {
     font-size: 32px !important;
     line-height: 135% !important;

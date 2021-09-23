@@ -159,9 +159,9 @@ function ServiceBody(props) {
         let bottom =
           window.innerHeight - feature.getBoundingClientRect().bottom;
         current = feature.getAttribute("id");
-        let top = window.innerHeight - rect.top;
-        let height = rect.bottom - rect.top;
-        if (top > height / 2 && bottom < 60) {
+        let top = rect.top;
+        let height = rect.height;
+        if (top <= 0 + 60  && -top <= height - 60) {
           let options = document.querySelectorAll(
             ".sidebar-option-container-wrapper"
           );

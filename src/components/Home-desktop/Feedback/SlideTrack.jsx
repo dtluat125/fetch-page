@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Slide from "./Slide";
-import feedbackPic1 from "../../../assets/img/feedbackPic1.png";
-import feedbackPic2 from "../../../assets/img/feedbackPic2.png";
-import feedbackPic3 from "../../../assets/img/feedbackPic3.png";
+import feedbackPic1 from "../../../assets/img/feedbackPic1.svg";
+import feedbackPic2 from "../../../assets/img/feedbackPic2.svg";
+import feedbackPic3 from "../../../assets/img/feedbackPic3.svg";
 import LeftArrow from "../../../assets/img/LeftArrow.png";
 import RightArrow from "../../../assets/img/RightArrow.png";
 import { Carousel } from "antd";
@@ -119,25 +119,25 @@ function SlideTrack({loading}) {
             loading={loading}
             id="aa"
             photo={feedbackPic1}
-            content="“All base UI elements are made using Nested Symbols and shared styles that are logically connected. Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”"
-            name="Name here"
-            description="des here"
+            content="“Their team was incredibly helpful in helping us find the perfect Vietnamese colleague. We couldn't have been happier with the overall experience – excellent communication and stellar work. Best of all, we didn't waste precious time and resources to set up an office in Vietnam. Fetch handled all of that for us.”"
+            name="Donald,"
+            description="Co-founder"
           />
 
           <Slide
             loading={loading}
             photo={feedbackPic2}
-            content="“All base UI elements are made using Nested Symbols and shared styles that are logically connected. Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”"
-            name="Name here"
-            description="des here"
+            content="“Fetch is amazing! We were able to recruit talented developers in a matter of weeks instead of months. The quality of their staff is extremely high as these engineers can onboard almost immediately and ramp incredibly fast.”"
+            name="Michael"
+            description="Co-founder"
           />
 
           <Slide
             loading={loading}
             photo={feedbackPic3}
-            content="“All base UI elements are made using Nested Symbols and shared styles that are logically connected. Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”Gorgeous, high-quality video sharing on desktop, mobile, tablet”"
-            name="Name here"
-            description="des here"
+            content="“Hiring is costly – a portion goes to recruitment agencies, another to the recruitment process and another to the actual interviews. We haven't got down to other expenses such as office rent as well as operational costs. Fetch eliminates a significant chunk of these expenditures and helps overcome our past hiring difficulties.”"
+            name="Qi Yu"
+            description="Founder"
           />
           <Slide
             loading={loading}

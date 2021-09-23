@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import USP2 from "../Home-desktop/USP/USP2";
 import CompanyHeader from "./Company Header/CompanyHeader";
 import HowItWorks from "./How It Works/HowItWorks";
-import Theme1 from "../../assets/img/Theme1.png";
+import Theme1 from "../../assets/img/Theme1.svg";
 import TrustedBy from "./Trusted By/TrustedBy";
 import FetchHelp from "./Fetch Help/FetchHelp";
 import Available from "./Available";
@@ -78,10 +78,10 @@ function Company({}) {
         title="What makes Fetch different?"
         theme={Theme1}
         backgroundColor="#F9FBFE"
-        subtitle1="Fast-free Hiring"
-        text1="Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market."
-        subtitle2="Full-control hiring"
-        text2="Being one of the first in the industry has allowed us to gain a strong grasp of the Vietnamese market."
+        subtitle1="Quality talents at the right cost"
+        text1="All specialists are vetted and guaranteed to deliver results without any additional fees."
+        subtitle2="All-in-one service"
+        text2="We're always available to support you whenever you require our assistance regarding our partnership."
         company={true}
       />
       <TrustedBy loading={loading} />

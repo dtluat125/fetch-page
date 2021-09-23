@@ -70,7 +70,6 @@ function Footer() {
           </div>
           {bigIcon ? (
             <div className="col-md-4 footer__social">
-              <img src={BigInstagram} className="big-icon" alt="" />
               <a
                 target="_blank"
                 href="https://www.facebook.com/Fetch.Technology"
@@ -88,14 +87,6 @@ function Footer() {
             </div>
           ) : (
             <div className="col-md-4 footer__social">
-              <div className="footer__platform">
-                <div className="footer__icon">
-                  <img src={Instagram} alt="" />
-                </div>
-                <Link to="">
-                  <div className="footer__platform-name">Instagram</div>
-                </Link>
-              </div>
               <div className="footer__platform">
                 <div className="footer__icon">
                   <img src={Facebook} alt="" />
