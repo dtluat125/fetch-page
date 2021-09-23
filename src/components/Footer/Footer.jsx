@@ -4,12 +4,11 @@ import "../../assets/css/footer.css";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import Facebook from "../../assets/img/Facebook.png";
+import Facebook from "../../assets/img/Facebook.svg";
 import Instagram from "../../assets/img/Instagram.png";
-import Linkedin from "../../assets/img/Linkedin.png";
-import BigFacebook from "../../assets/img/BigFacebook.png";
-import BigInstagram from "../../assets/img/BigInstagram.png";
-import BigLinkedin from "../../assets/img/BigLinkedin.png";
+import Linkedin from "../../assets/img/Linkedin.svg";
+import BigFacebook from "../../assets/img/BigFacebook.svg";
+import BigLinkedin from "../../assets/img/BigLinkedin.svg";
 import { Col, Row } from "antd";
 import { Link } from "react-router-dom";
 

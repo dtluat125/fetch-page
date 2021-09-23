@@ -118,7 +118,7 @@
   margin-bottom: 30px;
 }
 
-.fetch-help__collapse-toggle.collapsed > img {
+.fetch-help__collapse-toggle:not(.collapsed) > img {
   transform: rotate(180deg);
 }
 

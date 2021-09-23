@@ -25,7 +25,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
   const [showContent, setShowContent] = useState(false);
   const [collapseDropdown, setCollapseDropdown] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
-  const [inMobile, setInMobile] = useState(false)
+  const [inMobile, setInMobile] = useState(false);
   useEffect(() => {
     const changeNav = () => {
       const windowWidth = window.innerWidth;
@@ -34,8 +34,8 @@ function Header({ logoProp, theme, logoMobileProp }) {
       else setCollapse(false);
       if (windowWidth < 755) setCollapseDropdown(true);
       else setCollapseDropdown(false);
-      if(windowWidth<400) setInMobile(true);
-      else setInMobile(false)
+      if (windowWidth < 400) setInMobile(true);
+      else setInMobile(false);
     };
     changeNav();
     window.addEventListener("resize", changeNav);
@@ -50,16 +50,34 @@ function Header({ logoProp, theme, logoMobileProp }) {
   };
   // Mobile handler
   return (
-    <div className={theme?"header header--yellow":"header"} style={theme&&{backgroundColor: theme}}>
+    <div
+      className={theme ? "header header--yellow" : "header"}
+      style={theme && { backgroundColor: theme }}
+    >
       <div
         className="header__inner"
         style={
-          !showContent ? { height: 100 } : inMobile ? { minHeight: "100vh" } : {}
+          !showContent
+            ? { height: 100 }
+            : inMobile
+            ? { minHeight: "100vh" }
+            : {}
         }
       >
         <Link to="/">
           <div className="group-5169054 header__logo">
-            <img src={!inMobile?logoProp ? logoProp : logo:logoMobileProp?logoMobileProp:logoMobile} alt="" />
+            <img
+              src={
+                !inMobile
+                  ? logoProp
+                    ? logoProp
+                    : logo
+                  : logoMobileProp
+                  ? logoMobileProp
+                  : logoMobile
+              }
+              alt=""
+            />
           </div>
         </Link>
         <div
@@ -87,7 +105,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 title="Services"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
-                icon={theme?DownArrowWhite:dropdownIcon}
+                icon={theme ? DownArrowWhite : dropdownIcon}
                 id="services"
                 target={collapseDropdown && "servicesMenu"}
               />
@@ -95,7 +113,9 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 className={
                   collapseDropdown
                     ? isMobile
-                      ?inMobile? "header__dropdown-menu header__dropdown-collapse":"header__dropdown-menu "
+                      ? inMobile
+                        ? "header__dropdown-menu header__dropdown-collapse"
+                        : "header__dropdown-menu "
                       : "header__dropdown-menu collapse "
                     : "dropdown-menu header__dropdown-menu"
                 }
@@ -105,6 +125,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 {!collapseDropdown && <div className="upperArrow"></div>}
                 <Link to="/services/1">
                   <DropdownItem
+                    onClick={closeNav}
                     title="Talent Acquisition"
                     text={!collapseDropdown && "Procure talents from Vietnam"}
                     icon={!collapseDropdown && TalentAcquisition}
@@ -112,6 +133,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 </Link>
                 <Link to="/services/2">
                   <DropdownItem
+                    onClick={closeNav}
                     title="Services management"
                     text={
                       !collapseDropdown &&
@@ -122,6 +144,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 </Link>
                 <Link to="/services/3">
                   <DropdownItem
+                    onClick={closeNav}
                     title="Payroll and compliances"
                     text={
                       !collapseDropdown &&
@@ -132,6 +155,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 </Link>
                 <Link to="/services/4">
                   <DropdownItem
+                    onClick={closeNav}
                     title="Full-suite project consultancy"
                     text={
                       !collapseDropdown && "Comprehensive projects management"
@@ -146,7 +170,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 title="Resources"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
-                icon={theme?DownArrowWhite:dropdownIcon}
+                icon={theme ? DownArrowWhite : dropdownIcon}
                 target={collapseDropdown && "resourcesMenu"}
                 id="resources"
                 isMobile={isMobile}
@@ -155,10 +179,12 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 id="resourcesMenu"
                 className={
                   collapseDropdown
-                    ?  isMobile
-                    ?inMobile? "header__dropdown-menu header__dropdown-collapse":"header__dropdown-menu "
-                    : "header__dropdown-menu collapse "
-                  : "dropdown-menu header__dropdown-menu"
+                    ? isMobile
+                      ? inMobile
+                        ? "header__dropdown-menu header__dropdown-collapse"
+                        : "header__dropdown-menu "
+                      : "header__dropdown-menu collapse "
+                    : "dropdown-menu header__dropdown-menu"
                 }
                 aria-labelledby="resources"
               >
@@ -212,7 +238,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
             </div>
           ) : (
             <div className="navbar-toggler" role="button" onClick={openNav}>
-              <img src={theme?NavbarOpenWhite:NavbarOpen} />
+              <img src={theme ? NavbarOpenWhite : NavbarOpen} />
             </div>
           ))}
       </div>

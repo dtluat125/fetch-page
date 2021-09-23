@@ -206,7 +206,7 @@ function HowItWorks({ loading }) {
             <Skeleton />
           ) : (
             <div className="c-h6-title" style={{ minWidth: "50%" }}>
-              Find tailormade, flexible solutions, designed for your business
+              Enjoy tailormade, flexible solutions, designed for your business
               needs.
             </div>
           )}

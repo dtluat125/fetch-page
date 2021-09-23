@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../../assets/css/talents.css";
-import Map from "../../../assets/img/Map.png";
+import Map from "../../../assets/img/Map.svg";
 import Vietnam from "../../../assets/img/Vietnam.svg";
 import Card from "./Card";
 import Pic3 from "../../../assets/img/Pic3.svg";
-import Star from "../../../assets/img/Star.png";
+import Star from "../../../assets/img/Star.svg";
 import Card1 from "../../../assets/img/Card1.svg";
 import Card2 from "../../../assets/img/Card2.svg";
 import { Carousel } from "antd";

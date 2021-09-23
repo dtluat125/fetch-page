@@ -7,8 +7,8 @@ import HelpDetail from './help/HelpDetail';
 import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import LogoWhite from "../../assets/img/LogoWhite.png";
-import LogoMobileWhite from "../../assets/img/LogoMobileWhite.png";
+import LogoWhite from "../../assets/img/LogoWhite.svg";
+import LogoMobileWhite from "../../assets/img/LogoMobileWhite.svg";
 
 
 const data = [

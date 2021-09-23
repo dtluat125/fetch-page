@@ -1,8 +1,8 @@
 import React from "react";
 
-function DropdownItem({ icon, title, text }) {
+function DropdownItem({ icon, title, text, onClick }) {
   return (
-    <div className="header__dropdown-item" role="button">
+    <div className="header__dropdown-item" onClick={onClick} role="button">
       <div className="header__dropdown-item__inner">
         <div className="header__dropdown-item__icon-container">
           {icon&&<img

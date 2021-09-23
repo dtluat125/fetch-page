@@ -18,10 +18,10 @@ import NotFound from "./components/404/NotFound";
 import Salary from "./components/Services/salary/Salary";
 import Story from "./components/story/Story";
 import AOS from "aos";
-import ServiceTheme1 from "./assets/img/ServiceTheme1.png";
-import ServiceTheme2 from "./assets/img/ServiceTheme2.png";
-import ServiceTheme3 from "./assets/img/ServiceTheme3.png";
-import ServiceTheme4 from "./assets/img/ServiceTheme4.png";
+import ServiceTheme1 from "./assets/img/ServiceTheme1.svg";
+import ServiceTheme2 from "./assets/img/ServiceTheme2.svg";
+import ServiceTheme3 from "./assets/img/ServiceTheme3.svg";
+import ServiceTheme4 from "./assets/img/ServiceTheme4.svg";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {

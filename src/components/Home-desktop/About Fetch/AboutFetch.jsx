@@ -1,7 +1,7 @@
 import { Carousel, Col, Row, Skeleton } from "antd";
 import React, { useEffect, useState } from "react";
 import "../../../assets/css/about.css";
-import AboutTheme from "../../../assets/img/AboutTheme.png";
+import AboutTheme from "../../../assets/img/AboutTheme.svg";
 function AboutFetch({loading}) {
   const [position, setPosition] = useState(0);
   const [current, setCurrent] = useState(1);

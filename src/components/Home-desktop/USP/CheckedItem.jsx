@@ -11,7 +11,7 @@ function CheckedItem(props) {
           </div>
         </div>
         <div className="usp__text-group__content">
-          <div className="usp__content__title">
+          <div className="usp__content__title c-h5-title c-h5-title--bold">
             {props.title ? props.title : "We’re Experienced"}
           </div>
           <div className="usp__content__small-text">
