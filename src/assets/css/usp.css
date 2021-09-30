@@ -17,7 +17,7 @@
 }
 
 .usp__theme img {
-  max-width: 100%;
+  width: 100%;
 }
 /* Left */
 .usp__left {
@@ -84,7 +84,7 @@
   background: #F9FBFE;
 }
 .usp2__left {
-  padding: 80px 5%;
+  padding: 0;
   background: #F9FBFE;
 }
 
