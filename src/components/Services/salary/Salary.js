@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../../assets/scss/Salary.scss';
 import caculator from '../../../assets/img/caculator.png';
-import { Row, Col, Select, Divider, Descriptions, Modal, Statistic } from 'antd';
+import { Row, Col, Select, Divider, Descriptions, Modal, Statistic, InputNumber } from 'antd';
 import iconFulltime from '../../../assets/img/iconFulltime.png';
 import iconContract from '../../../assets/img/iconContract.png';
 import iconFreelance from '../../../assets/img/iconFreelance.png';
@@ -23,7 +23,7 @@ import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
 import LogoWhite from "../../../assets/img/LogoWhite.png";
 import LogoMobileWhite from "../../../assets/img/LogoMobileWhite.png";
-import {convertExchangeRate, salaryCaculator} from "./utils";
+import {convertExchangeRate, salaryCaculator, convertToVND} from "./utils";
 
 const UI_Data = {
     employmentTypes: [
@@ -39,6 +39,11 @@ const UI_Data = {
         { id: 5, title: 'designer', description: 'creates a relatable concept with attractive visuals', icon: IconDesigner, }
     ],
     calcTypes: [
+        { id: 1, title: 'net pay', },
+        { id: 2, title: 'gross pay', },
+        { id: 3, title: 'total', }
+    ],
+    convertTypes: [
         { id: 1, title: 'net pay', },
         { id: 2, title: 'gross pay', },
         { id: 3, title: 'total', }
@@ -82,44 +87,14 @@ const responseData = [
 const Salary = () => {
     const [salaryState, setSalaryState] = useState({
         employmentType: "full time",
-        areaExpertise: "fontend developer",
+        calcType: "gross pay",
+        convertType: "net pay",
         gross: 0,
     })
 
-    const findGross = (eType, aExType, data) => {
-        let gross = 0;
-
-        for(const item of data) {
-            if(item.role === aExType) {
-                let result = item.employmentTypes.find(val => val.employmentType === eType);
-                return result.gross;
-            }
-        }
-
-        return gross;
-    }
-
     const handleEmploymentType = (eType) => {
-        let gross = findGross(eType, salaryState.areaExpertise, responseData);
-        
-        setSalaryState({ ...salaryState, employmentType: eType, gross: gross, });
+        setSalaryState({ ...salaryState, employmentType: eType});
     }
-
-    const handleAreaExpertise = (aExType) => {
-        let gross = findGross(salaryState.employmentType, aExType, responseData);
-        
-        setSalaryState({ ...salaryState, areaExpertise: aExType, gross: gross,  });
-    }
-
-    useEffect(() => {
-        let data = responseData;
-        let gross = findGross(salaryState.employmentType, salaryState.areaExpertise, data);
-        
-        console.log("gross: ", gross);
-        setSalaryState({ ...salaryState, gross: gross });
-        console.log("bill in effect: ", salaryState);
-
-    }, [])
 
     return (
         <div className="salary-caculator">
@@ -166,43 +141,14 @@ const Salary = () => {
                                     ))}
                                 </Row>
                             </div>
-                            <div className="left-wrap expertise-wrap">
-                                <div className="more-info">
-                                    <label>Area of expertise</label>
-                                    <MoreInfoModal />
-                                </div>
-                                <Row gutter={[{ xs: 21, sm: 24, xl: 30 }, { xs: 17, sm: 17, md: 22, lg: 24 }]}>
-                                    {UI_Data?.areaExpertises?.map((aE, index) => (
-                                        <Col key={index} className="col-expertise-type-opt" xs={12} sm={12} md={8} lg={24}>
-                                            <div
-                                                role="button"
-                                                className={`sal-opt-wrap ${salaryState.areaExpertise === aE?.title && "sal-opt-wrap-active"} expertise-type-opt`}
-                                                onClick={() => handleAreaExpertise(aE?.title)}
-                                            >
-                                                <div className="expertise-type-opt-inner">
-                                                    <div
-                                                        className={`exp-icon-wrap ${salaryState.areaExpertise === aE?.title && "exp-icon-wrap-active"}`}
-                                                    >
-                                                        <img src={aE?.icon} alt="expertise icon" />
-                                                    </div>
-                                                    <div className="exp-content-wrap ">
-                                                        <h6>{aE?.title}</h6>
-                                                        <p>{aE?.description}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Col>
-
-                                    ))}
-                                </Row>
-                            </div>
-                            <SummarySalaryWrap gross={salaryState.gross} />
-                            
+                            {/* <ConvertTypeWrap salaryState={salaryState} setSalaryState={setSalaryState} /> */}
+                            <CalcTypeWrap salaryState={salaryState} setSalaryState={setSalaryState} />
+                            <AmountWrap salaryState={salaryState} setSalaryState={setSalaryState} />
                         </Col>
                         <Col className="col-right" xs={24} sm={24} lg={12}>
                             <div className="col-inner">
                                 <label className="label-pedal">&nbsp;</label>
-                                <RightBillWrap gross={salaryState.gross}/>
+                                <RightBillWrap salaryState={salaryState} setSalaryState={setSalaryState} />
                                 <div className="right-wrap hr-card-wrap">
                                     <div className="card-top-wrap">
                                         <img src={hrAvt} alt="hr-avt" />
@@ -292,67 +238,12 @@ const LabelOverview = ({ data }) => {
     )
 }
 
-const SummarySalaryWrap = ({gross}) => {
-    console.log("in summary: ", gross);
-
-    const [summarySate, setSummaryState] = useState({
-        calcType: "gross pay",
-        currency: "VND",
-        amount: 0,
-        iconCurrency: null
-    });
-
+const CalcTypeWrap = ({salaryState, setSalaryState}) => {
     const handleCalcType = (calcType) => {
-        let amount = caculateAmount(gross, calcType);
-
-        setSummaryState({
-            ...summarySate,
-            calcType: calcType,
-            amount: convertExchangeRate(summarySate.currency, amount),
-        })
+        setSalaryState(state => ({...state, calcType: calcType}))
     }
-
-    const handleChangeCurrency = (value) => {
-        let element = UI_Data.amountTypes.find(item => item.title === value);
-        let amount = convertExchangeRate(value, gross);
-
-        setSummaryState({
-            ...summarySate,
-            currency: value,
-            amount: amount,
-            iconCurrency: element.activeIcon
-        })
-        
-    }
-
-    const caculateAmount = (gross, calcType) => {
-        let caculateData = salaryCaculator(gross);
-
-        let amount = 0;
-        if(calcType === "net pay") {
-            amount = caculateData.forEmployee.find(item => item.title === "NET").amount;
-        } else if(calcType === "gross pay") {
-            amount = gross;
-        } else if(calcType === "total") {
-            amount =  caculateData.forEmployer.find(item => item.title === "Total expenses").amount;
-        }
-
-        return amount;
-    }
-
-    useEffect(() => {
-        let element = UI_Data.amountTypes.find(item => item.title === summarySate.currency);
-        let amount = caculateAmount(gross, summarySate.calcType);
-
-        setSummaryState({
-            ...summarySate, 
-            amount: amount, 
-            iconCurrency: element.activeIcon
-        })
-    }, [gross])
 
     return (
-        <>
         <div className="left-wrap calculation-type-wrap">
             <label>Calculation type</label>
             <Row className="row-calc-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
@@ -360,7 +251,7 @@ const SummarySalaryWrap = ({gross}) => {
                     <Col className="col-calc-type" key={index} span={8}>
                         <div
                             role="button"
-                            className={`sal-opt-wrap ${summarySate.calcType === item.title && "sal-opt-wrap-active"} calc-type-opt`}
+                            className={`sal-opt-wrap ${salaryState.calcType === item.title && "sal-opt-wrap-active"} calc-type-opt`}
                             onClick={() => handleCalcType(item?.title)}
                         >
                             <span>{item.title}</span>
@@ -369,16 +260,92 @@ const SummarySalaryWrap = ({gross}) => {
                 ))}
             </Row>
         </div>
+    )
+}
+
+const ConvertTypeWrap = ({salaryState, setSalaryState}) => {
+
+    const handleConvertType = (convertType) => {
+        setSalaryState(state => ({...state, convertType: convertType}))
+    }
+
+    return (
+        <>
+        <div className="left-wrap convert-type-wrap">
+            <label>Convert type</label>
+            <Row className="row-convert-type" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
+                {UI_Data.convertTypes.map((item, index) => (
+                    <Col className="col-convert-type" key={index} span={8}>
+                        <div
+                            role="button"
+                            className={`sal-opt-wrap ${salaryState.convertType === item.title && "sal-opt-wrap-active"} convert-type-opt`}
+                            onClick={() => handleConvertType(item?.title)}
+                        >
+                            <span>{item.title}</span>
+                        </div>
+                    </Col>
+                ))}
+            </Row>
+        </div>
+        </>
+    )
+}
+
+const AmountWrap = ({salaryState, setSalaryState}) => {
+
+    const [amountState, setAmountState] = useState({
+        currency: "VND",
+        iconCurrency: null,
+        amountCurrent: 0,
+    });
+
+    const handleChangeCurrency = (value) => {
+        let element = UI_Data.amountTypes.find(item => item.title === value);
+        let amount = convertToVND(value, amountState.amountCurrent);
+
+        console.log("amount in currency: ", amount)
+        setAmountState({
+            ...amountState,
+            currency: value,
+            iconCurrency: element.activeIcon
+        });
+        
+        setSalaryState((state) => ({...state, gross: amount}));
+        
+    }
+
+    const handlePressEnter = (value) => {
+        console.log(value);
+        console.log(value.replaceAll(",", ""));
+        let converted_value = parseFloat(value.replaceAll(",", ""));
+        let amount = convertToVND(amountState.currency, converted_value);
+
+        console.log("amount: ", amount);
+        setAmountState({...amountState, amountCurrent: converted_value})
+        setSalaryState((state) => ({...state, gross: amount}));
+    }
+
+    useEffect(() => {
+        let element = UI_Data.amountTypes.find(item => item.title === amountState.currency);
+        
+        setAmountState({
+            ...amountState,
+            iconCurrency: element.activeIcon
+        })
+    }, [])
+
+
+    return (
         <div className="left-wrap amount-wrap">
             <label>Amount</label>
             <Row className="row-amount" gutter={[{ xs: 21, sm: 24, xl: 30 }, 0]}>
                 <Col xs={9} sm={8}>
                     <div className="sal-opt-wrap-active money-unit">
                         <div className="select-unit">
-                            <img src={summarySate.iconCurrency} alt="icon unit" />
+                            <img src={amountState.iconCurrency} alt="icon unit" />
                             <Select
                                 className="select"
-                                value={summarySate.currency}
+                                value={amountState.currency}
                                 onChange={(val) => handleChangeCurrency(val)}
                                 suffixIcon={<ArrowDown />}
                             >
@@ -389,16 +356,23 @@ const SummarySalaryWrap = ({gross}) => {
                 </Col>
                 <Col xs={15} sm={16}>
                     <div className="money">
-                        <Statistic value={summarySate.amount} precision={2} />
+                        <InputNumber 
+                            defaultValue={0}
+                            formatter={value => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                            parser={value => value.replace(/\$\s?|(,*)/g, '')}
+                            placeholder="Enter your salary"
+                            bordered={false}
+                            onPressEnter={(e) => handlePressEnter(e.target.value)}
+                        />
+                        {/* <Statistic value={summarySate.amount} precision={2} /> */}
                     </div>
                 </Col>
             </Row>
         </div>
-        </>
     )
 }
 
-const RightBillWrap = ({gross}) => {
+const RightBillWrap = ({salaryState}) => {
     const [billState, setBill] = useState({
         forType: "for employer",
         currency: "VND",
@@ -428,29 +402,27 @@ const RightBillWrap = ({gross}) => {
             temp.amount = convertExchangeRate(type, item.amount);
             return temp;
         });
-        let amount = convertExchangeRate(type, gross);
 
-        setBill({ ...billState, currency: type, overview: overview, amount: amount });
+        setBill({ ...billState, currency: type, overview: overview, amount: overview[0].amount });
     }
 
 
     useEffect(() => {
-        let caculateData = salaryCaculator(gross);
-
+        let caculateData = salaryCaculator(salaryState.gross, salaryState.calcType, salaryState.employmentType);
+        console.log("RES: ", caculateData);
         let overview = forTypeClassifier(billState.forType, caculateData).map(item => {
             let temp = {...item};
             temp.amount = convertExchangeRate(billState.currency, item.amount);
             return temp;
         });
-        let amount = convertExchangeRate(billState.currency, gross);
 
         setBill({
             ...billState,
-            amount: amount,
+            amount: overview[0].amount,
             overview: overview,
             caculateData: caculateData,
         })
-    }, [gross])
+    }, [salaryState])
 
     return (
         <div className="right-wrap right-bill-wrap">
