@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../../../assets/scss/Salary.scss';
 import caculator from '../../../assets/img/caculator.png';
 import { Row, Col, Select, Divider, Descriptions, Modal, Statistic, InputNumber } from 'antd';
@@ -292,6 +292,7 @@ const ConvertTypeWrap = ({salaryState, setSalaryState}) => {
 }
 
 const AmountWrap = ({salaryState, setSalaryState}) => {
+    const ref_input = useRef();
 
     const [amountState, setAmountState] = useState({
         currency: "VND",
@@ -315,7 +316,7 @@ const AmountWrap = ({salaryState, setSalaryState}) => {
     }
 
     const handlePressEnter = (value) => {
-        console.log(value);
+        console.log("value for caculate: ", value);
         console.log(value.replaceAll(",", ""));
         let converted_value = parseFloat(value.replaceAll(",", ""));
         let amount = convertToVND(amountState.currency, converted_value);
@@ -363,11 +364,13 @@ const AmountWrap = ({salaryState, setSalaryState}) => {
                             placeholder="Enter your salary"
                             bordered={false}
                             onPressEnter={(e) => handlePressEnter(e.target.value)}
+                            ref={ref_input}
                         />
                         {/* <Statistic value={summarySate.amount} precision={2} /> */}
                     </div>
                 </Col>
             </Row>
+            <button className="btn-caculate" onClick={() => handlePressEnter(ref_input.current.value)}>Active</button>
         </div>
     )
 }
