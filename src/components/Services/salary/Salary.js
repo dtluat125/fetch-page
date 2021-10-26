@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import qs from 'query-string'
 import '../../../assets/scss/Salary.scss';
 import caculator from '../../../assets/img/caculator.png';
 import { Row, Col, Select, Divider, Descriptions, Modal, Statistic, InputNumber } from 'antd';
@@ -85,16 +87,54 @@ const responseData = [
 ]
 
 const Salary = () => {
+    const location = useLocation();
+    const history = useHistory();
+
     const [salaryState, setSalaryState] = useState({
         employmentType: "full time",
         calcType: "gross pay",
         convertType: "net pay",
+        forType: "for employer",
+        billCurrency: "VND",
         gross: 0,
     })
 
     const handleEmploymentType = (eType) => {
-        setSalaryState({ ...salaryState, employmentType: eType});
+        if(location.search) {
+            let params = qs.parse(location.search);
+            params["employmentType"] = eType;
+    
+            history.push({
+                pathname: '/services/salary/',
+                search: `?${qs.stringify(params)}`
+            })
+        } else setSalaryState({ ...salaryState, employmentType: eType});
     }
+
+    useEffect(() => {
+        if(location.search) {
+            let params = qs.parse(location.search);
+            console.log("params: ", params);
+
+            if(params["employmentType"] && params["calcType"] 
+                && params["amount"] && params["currency"]
+                && params["forType"] && params["billCurrency"]) {
+
+                let gross = convertToVND(params["currency"], parseFloat(params["amount"]));
+
+                setSalaryState({
+                    employmentType: params["employmentType"],
+                    calcType: params["calcType"],
+                    forType: params["forType"],
+                    billCurrency: params["billCurrency"],
+                    gross: gross
+                })
+
+            }
+
+        }
+        
+    }, [location.search])
 
     return (
         <div className="salary-caculator">
@@ -239,8 +279,20 @@ const LabelOverview = ({ data }) => {
 }
 
 const CalcTypeWrap = ({salaryState, setSalaryState}) => {
+    const location = useLocation();
+    const history = useHistory();
+
     const handleCalcType = (calcType) => {
-        setSalaryState(state => ({...state, calcType: calcType}))
+        if(location.search) {
+            let params = qs.parse(location.search);
+            params["calcType"] = calcType;
+
+            history.push({
+                pathname: '/services/salary/',
+                search: `?${qs.stringify(params)}`
+            })
+        } else setSalaryState(state => ({...state, calcType: calcType}))
+        
     }
 
     return (
@@ -293,47 +345,99 @@ const ConvertTypeWrap = ({salaryState, setSalaryState}) => {
 
 const AmountWrap = ({salaryState, setSalaryState}) => {
     const ref_input = useRef();
+    const location = useLocation();
+    const history = useHistory();
+    const [valueInput, setValueInput] = useState('0');
 
     const [amountState, setAmountState] = useState({
         currency: "VND",
-        iconCurrency: null,
+        iconCurrency: ensignVN2,
         amountCurrent: 0,
     });
 
-    const handleChangeCurrency = (value) => {
-        let element = UI_Data.amountTypes.find(item => item.title === value);
-        let amount = convertToVND(value, amountState.amountCurrent);
+    const handleTypeChange = (value) => {
+        setValueInput(value)
+    }
 
-        console.log("amount in currency: ", amount)
-        setAmountState({
-            ...amountState,
-            currency: value,
-            iconCurrency: element.activeIcon
-        });
-        
-        setSalaryState((state) => ({...state, gross: amount}));
+    const handleChangeCurrency = (value) => {
+        if(location.search) {
+            let currentParams = qs.parse(location.search);
+            // currentParams["amount"] = amountState.amountCurrent;
+            currentParams["currency"] = value;
+            // currentParams["calcType"] = salaryState.calcType;
+            // currentParams["employmentType"] = salaryState.employmentType;
+
+            history.push({
+                pathname: '/services/salary/',
+                search: `?${qs.stringify(currentParams)}`
+            })
+        } else {
+            let element = UI_Data.amountTypes.find(item => item.title === value);
+            // let amount = convertToVND(value, amountState.amountCurrent);
+
+            // console.log("amount in currency: ", amount)
+            setAmountState({
+                ...amountState,
+                currency: value,
+                iconCurrency: element.activeIcon
+            });
+            
+            // setSalaryState((state) => ({...state, gross: amount}));
+        }
         
     }
 
     const handlePressEnter = (value) => {
-        console.log("value for caculate: ", value);
-        console.log(value.replaceAll(",", ""));
         let converted_value = parseFloat(value.replaceAll(",", ""));
-        let amount = convertToVND(amountState.currency, converted_value);
 
-        console.log("amount: ", amount);
-        setAmountState({...amountState, amountCurrent: converted_value})
-        setSalaryState((state) => ({...state, gross: amount}));
+        
+            let currentParams = qs.parse(location.search);
+            currentParams["amount"] = converted_value;
+            currentParams["currency"] = amountState.currency;
+            currentParams["calcType"] = salaryState.calcType;
+            currentParams["employmentType"] = salaryState.employmentType;
+            currentParams["forType"] = salaryState.forType;
+            currentParams["billCurrency"] = salaryState.billCurrency;
+
+            history.push({
+                pathname: '/services/salary/',
+                search: `?${qs.stringify(currentParams)}`
+            })
+        
+            // console.log("value for caculate: ", value);
+            // console.log(value.replaceAll(",", ""));
+            
+            // let amount = convertToVND(amountState.currency, converted_value);
+            // console.log("amount: ", amount);
+            //setAmountState({...amountState, amountCurrent: converted_value})
+            // setSalaryState((state) => ({...state, gross: amount}));
     }
 
     useEffect(() => {
-        let element = UI_Data.amountTypes.find(item => item.title === amountState.currency);
-        
-        setAmountState({
-            ...amountState,
-            iconCurrency: element.activeIcon
-        })
-    }, [])
+        if(location.search) {
+            let params = qs.parse(location.search);
+            let element = UI_Data.amountTypes.find(item => item.title === params['currency']);
+
+            if(params['amount'] && params["currency"]) {
+
+                setValueInput(parseInt(params["amount"]))
+                setAmountState({
+                    amountCurrent: parseInt(params["amount"]),
+                    currency: params["currency"],
+                    iconCurrency: element.activeIcon
+                })
+            }
+        } 
+        // else {
+
+        //     let element = UI_Data.amountTypes.find(item => item.title === amountState.currency);
+    
+        //     setAmountState({
+        //         ...amountState,
+        //         iconCurrency: element.activeIcon
+        //     })
+        // }
+    }, [location.search])
 
 
     return (
@@ -364,6 +468,8 @@ const AmountWrap = ({salaryState, setSalaryState}) => {
                             placeholder="Enter your salary"
                             bordered={false}
                             onPressEnter={(e) => handlePressEnter(e.target.value)}
+                            onChange={(value) => handleTypeChange(value)}
+                            value={valueInput}
                             ref={ref_input}
                         />
                         {/* <Statistic value={summarySate.amount} precision={2} /> */}
@@ -375,7 +481,7 @@ const AmountWrap = ({salaryState, setSalaryState}) => {
     )
 }
 
-const RightBillWrap = ({salaryState}) => {
+const RightBillWrap = ({salaryState, setSalaryState}) => {
     const [billState, setBill] = useState({
         forType: "for employer",
         currency: "VND",
@@ -383,6 +489,10 @@ const RightBillWrap = ({salaryState}) => {
         caculateData: null,
         overview: null,
     })
+    const location = useLocation();
+    const history = useHistory();
+    
+    console.log("state: ", salaryState)
 
     const forTypeClassifier = (type, data) => {
         if(type === "for employee") return data.forEmployee;
@@ -390,42 +500,80 @@ const RightBillWrap = ({salaryState}) => {
     }
 
     const handleChangeForType = (type) => {
-        let overview = forTypeClassifier(type, billState.caculateData).map(item => {
-            let temp = {...item};
-            temp.amount = convertExchangeRate(billState.currency, item.amount);
-            return temp;
-        });
+        // let overview = forTypeClassifier(type, billState.caculateData).map(item => {
+        //     let temp = {...item};
+        //     temp.amount = convertExchangeRate(billState.currency, item.amount);
+        //     return temp;
+        // });
 
-        setBill({ ...billState, forType: type, overview: overview });
+        if(location.search) {
+            let currentParams = qs.parse(location.search);
+            currentParams["forType"] = type;
+
+            history.push({
+                pathname: '/services/salary/',
+                search: `?${qs.stringify(currentParams)}`
+            })
+
+        } else {
+            setSalaryState((salaryState) => ({ ...salaryState, forType: type}))
+            // setBill({ ...billState, forType: type, overview: overview });
+        }
+        
+        
     }
 
     const handleChangeCurrency = (type) => {
-        let overview = forTypeClassifier(billState.forType, billState.caculateData).map(item => {
-            let temp = {...item};
-            temp.amount = convertExchangeRate(type, item.amount);
-            return temp;
-        });
+        // let overview = forTypeClassifier(billState.forType, billState.caculateData).map(item => {
+        //     let temp = {...item};
+        //     temp.amount = convertExchangeRate(type, item.amount);
+        //     return temp;
+        // });
 
-        setBill({ ...billState, currency: type, overview: overview, amount: overview[0].amount });
+        // setBill({ ...billState, currency: type, overview: overview, amount: overview[0].amount });
+
+        if(location.search) {
+            let currentParams = qs.parse(location.search);
+            currentParams["billCurrency"] = type;
+
+            history.push({
+                pathname: '/services/salary/',
+                search: `?${qs.stringify(currentParams)}`
+            })
+
+        } else {
+            setSalaryState((salaryState) => ({ ...salaryState, billCurrency: type}))
+            // setBill({ ...billState, forType: type, overview: overview });
+        }
     }
 
 
     useEffect(() => {
-        let caculateData = salaryCaculator(salaryState.gross, salaryState.calcType, salaryState.employmentType);
-        console.log("RES: ", caculateData);
-        let overview = forTypeClassifier(billState.forType, caculateData).map(item => {
-            let temp = {...item};
-            temp.amount = convertExchangeRate(billState.currency, item.amount);
-            return temp;
-        });
+        if(location.search) {
+            let params = qs.parse(location.search);
+            let gross = convertToVND(params["currency"], parseFloat(params["amount"]));
+            let caculateData = salaryCaculator(gross, params["calcType"], params["employmentType"]);
 
-        setBill({
-            ...billState,
-            amount: overview[0].amount,
-            overview: overview,
-            caculateData: caculateData,
-        })
-    }, [salaryState])
+            console.log("RES: ", caculateData);
+
+            let overview = forTypeClassifier(params["forType"], caculateData).map(item => {
+                let temp = {...item};
+                temp.amount = convertExchangeRate(params["billCurrency"], item.amount);
+                return temp;
+            });
+
+            // console.log("overview", overview);
+    
+            setBill((billState) => ({
+                ...billState,
+                forType: params["forType"],
+                currency: params["billCurrency"],
+                amount: overview[0].amount,
+                overview: overview,
+                caculateData: caculateData,
+            }))
+        }
+    }, [location.search])
 
     return (
         <div className="right-wrap right-bill-wrap">
@@ -434,7 +582,7 @@ const RightBillWrap = ({salaryState}) => {
                     <Col key={index} xs={12} sm={10}>
                         <div
                             role="button"
-                            className={`sal-opt-wrap ${billState?.forType === opt && 'sal-opt-wrap-active'} for-type-wrap`}
+                            className={`sal-opt-wrap ${salaryState?.forType === opt && 'sal-opt-wrap-active'} for-type-wrap`}
                             onClick={() => handleChangeForType(opt)}
                         >
                             <span>{opt}</span>
@@ -453,7 +601,7 @@ const RightBillWrap = ({salaryState}) => {
                                 className={`sal-opt-wrap ${billState?.currency === aType?.title && 'sal-opt-wrap-active'} currency-opt`}
                                 onClick={() => handleChangeCurrency(aType?.title)}
                             >
-                                {billState?.currency === aType?.title
+                                {salaryState?.billCurrency === aType?.title
                                     ? <img src={aType?.activeIcon} alt="ensign" />
                                     : <img src={aType?.defaultIcon} alt="ensign" />
                                 }
@@ -469,7 +617,7 @@ const RightBillWrap = ({salaryState}) => {
             <div className="breakdown-wrap">
                 <p>Breakdown for</p>
                 <div className="wrap-value">
-                    <span>{billState?.currency}&nbsp;</span>
+                    <span>{salaryState?.billCurrency}&nbsp;</span>
                     <Statistic value={billState.amount} precision={2} />
                 </div>
             </div>
@@ -482,7 +630,7 @@ const RightBillWrap = ({salaryState}) => {
                             key={index}
                             label={<LabelOverview data={item} />}
                         >
-                            {billState?.currency}&nbsp;
+                            {salaryState.billCurrency}&nbsp;
                             <Statistic value={item.amount} precision={2} />
                         </Descriptions.Item>
                     ))}
