@@ -23,8 +23,8 @@ import hrAvt from '../../../assets/img/hrAvt.png';
 import SlickSalary from './SlickSalary';
 import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
-import LogoWhite from "../../../assets/img/LogoWhite.png";
-import LogoMobileWhite from "../../../assets/img/LogoMobileWhite.png";
+import LogoWhite from "../../../assets/img/LogoWhite.svg";
+import LogoMobileWhite from "../../../assets/img/LogoMobileWhite.svg";
 import {convertExchangeRate, salaryCaculator, convertToVND} from "./utils";
 
 const UI_Data = {
@@ -135,7 +135,7 @@ const Salary = () => {
         }
         
     }, [location.search])
-
+ 
     return (
         <div className="salary-caculator">
             <Header theme="#FFBE16" logoProp={LogoWhite} logoMobileProp={LogoMobileWhite} />
