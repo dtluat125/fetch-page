@@ -92,15 +92,16 @@ function Header({ logoProp, theme, logoMobileProp }) {
           <div className="header__menu-group">
             <div className="header__menu-first-group">
               <Link to="/company">
-                <MenuItem title="For Companies" />
+                <MenuItem theme={theme} title="For Companies" />
               </Link>
               <Link to="/employees">
-                <MenuItem title="For Jobseekers" />
+                <MenuItem theme={theme} title="For Jobseekers" />
               </Link>
             </div>
 
             <div className="dropdown">
               <MenuItem
+                theme={theme}
                 isMobile={isMobile}
                 title="Services"
                 dropdownToggle={!collapseDropdown}
@@ -167,6 +168,7 @@ function Header({ logoProp, theme, logoMobileProp }) {
             </div>
             <div className="dropdown">
               <MenuItem
+                theme={theme}
                 title="Resources"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
