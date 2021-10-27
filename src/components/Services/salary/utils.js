@@ -186,9 +186,9 @@ export const salaryCaculator = (salary, calcType, emplType) => {
 
     if(salary <= 0) return convertFromGross(0 , emplType);
 
-    if(calcType === "gross pay") {
+    if(calcType === "gross") {
         return convertFromGross(salary, emplType);
-    } else if (calcType === "net pay") {
+    } else if (calcType === "net") {
         // < 29.8;
         let percentTax = 0.01*(taxData.taxDeductions.si + taxData.taxDeductions.hi + taxData.taxDeductions.ui);
         let percentTax_2 = 0.01*(taxData.taxDeductions.si + taxData.taxDeductions.hi);

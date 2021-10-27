@@ -30,7 +30,7 @@ import {convertExchangeRate, salaryCaculator, convertToVND} from "./utils";
 const UI_Data = {
     employmentTypes: [
         { id: 1, title: 'full time', icon: iconFulltime },
-        { id: 2, title: 'contract', icon: iconContract },
+        // { id: 2, title: 'contract', icon: iconContract },
         { id: 3, title: 'freelance', icon: iconFreelance }
     ],
     areaExpertises: [
@@ -41,8 +41,8 @@ const UI_Data = {
         { id: 5, title: 'designer', description: 'creates a relatable concept with attractive visuals', icon: IconDesigner, }
     ],
     calcTypes: [
-        { id: 1, title: 'net pay', },
-        { id: 2, title: 'gross pay', },
+        { id: 1, title: 'net', },
+        { id: 2, title: 'gross', },
         { id: 3, title: 'total', }
     ],
     convertTypes: [
@@ -92,8 +92,8 @@ const Salary = () => {
 
     const [salaryState, setSalaryState] = useState({
         employmentType: "full time",
-        calcType: "gross pay",
-        convertType: "net pay",
+        calcType: "gross",
+        convertType: "net",
         forType: "for employer",
         billCurrency: "VND",
         gross: 0,
@@ -488,6 +488,7 @@ const RightBillWrap = ({salaryState, setSalaryState}) => {
         amount: 0,
         caculateData: null,
         overview: null,
+        input: 0,
     })
     const location = useLocation();
     const history = useHistory();
@@ -571,6 +572,7 @@ const RightBillWrap = ({salaryState, setSalaryState}) => {
                 amount: overview[0].amount,
                 overview: overview,
                 caculateData: caculateData,
+                input: params["amount"]
             }))
         }
     }, [location.search])
@@ -615,10 +617,10 @@ const RightBillWrap = ({salaryState, setSalaryState}) => {
             <Divider className="divider-under-currency" />
 
             <div className="breakdown-wrap">
-                <p>Breakdown for</p>
+                <p>{`Breakdown for ${salaryState?.calcType}`}</p>
                 <div className="wrap-value">
                     <span>{salaryState?.billCurrency}&nbsp;</span>
-                    <Statistic value={billState.amount} precision={2} />
+                    <Statistic value={billState.input} precision={2} />
                 </div>
             </div>
 
