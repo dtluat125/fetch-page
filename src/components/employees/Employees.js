@@ -3,8 +3,8 @@ import '../../assets/scss/Employees.scss';
 import FrameUsp from '../../assets/img/FrameUsp.png';
 import {ReactComponent as Tick15 } from '../../assets/img/tick15.svg';
 import uspBLbanner from '../../assets/img/Group 5169.png'
-import avt1 from '../../assets/img/avt1.png';
-import avt2 from '../../assets/img/avt2.png';
+import avt1 from '../../assets/img/avt1.jpg';
+import avt2 from '../../assets/img/avt2.jpg';
 import bannerEmployees from '../../assets/img/bannerEmployees.png';
 import findMore from '../../assets/img/findMore.png';
 import heart from '../../assets/img/heart.png';
@@ -297,12 +297,13 @@ const Employees = () => {
                                         ref={ref} 
                                         className={`cmt-wrap ${animate && "animate__animated animate__bounceIn"}`}
                                     >
-                                        <img src={avt1} alt="avt"/>
+                                        <div className="employee-img"><img id="i1" src={avt1} alt="avt"/></div>
+                                        
                                         <div className="cmt">
                                             <p>“I’ve been working at Fetch for some years. Not only do I tackle meaningful challenges and projects, I also get to enjoy valuable team-bonding sessions through company dinners and activities that allow me to exchange and learn new skills with my coworkers.”</p>
                                             <p className="signal">
-                                                David Edelson,<br/>
-                                                Front-End Developer
+                                                Tran Bao Tram,<br/>
+                                                Marketer
                                             </p>
                                         </div>
                                     </div>
@@ -316,12 +317,12 @@ const Employees = () => {
                                         ref={ref} 
                                         className={`cmt-wrap ${animate && "animate__animated animate__bounceIn"}`}
                                     >
-                                        <img src={avt2} alt="avt"/>
+                                        <div className="employee-img"><img id="i2" src={avt2} alt="avt"/></div>
                                         <div className="cmt">
                                             <p>“I just graduated from college and I’m glad to be able to begin my employment with Fetch. I get the opportunity of working with a global team while still living in Vietnam. This allows me to broaden my horizon without having to making additional expenses such as rent in a foreign country.”</p>
                                             <p className="signal">
-                                                Alison Harrington,<br/>
-                                                Ruby On Rails Developer
+                                                Duc Tran,<br/>
+                                                Front-end Developer
                                             </p>
                                         </div>
                                     </div>

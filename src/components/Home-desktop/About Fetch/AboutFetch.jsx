@@ -69,7 +69,6 @@ function AboutFetch({loading}) {
         <Row
           className="feature__track"
           id="c"
-          style={{ transform: `translateX(${position + "px"})` }}
         >
           {<Col id="cc" md={6} offset={6} className="about__feature">{loading?<Skeleton active/>:<>
             <div className="feature-num" data-aos="scale-bounce" >500+</div>

@@ -1,6 +1,6 @@
-.trusted-cus {
+/* .trusted-cus {
   padding: 90px 10%;
-}
+} */
 
 .trusted-cus__inner {
   display: flex;
@@ -90,9 +90,8 @@
 
 /* cus logo */
 .cus-logo-holder {
-  width: 160px;
   min-width: 160px;
-  height: 90px;
+  min-height: 90px;
   background: #f5f8fa;
   border-radius: 10px;
   display: flex;

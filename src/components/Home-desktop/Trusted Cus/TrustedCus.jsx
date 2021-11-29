@@ -17,7 +17,7 @@ function TrustedCus({ signUp, loading }) {
     slidesToShow: 5,
     slidesToScroll: 3,
     dots: false,
-    centerMode: false,
+    centerMode: true,
     autoplay: true,
     autoplaySpeed: 3000,
     draggable: true,
@@ -26,10 +26,10 @@ function TrustedCus({ signUp, loading }) {
         breakpoint: 1500,
         settings: {
           slidesToShow: 6,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           dots: true,
           autoplay: true,
-          centerMode: false,
+          centerMode: true,
         },
       },
       {

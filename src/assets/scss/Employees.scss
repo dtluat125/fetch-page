@@ -859,9 +859,21 @@
                 margin-left: auto;
                 margin-right: auto;
 
-                img {
-                    max-width: 100%;
+                .employee-img{
+                    max-height: 210px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    border-radius: 14px 14px 0px 0px;
+                    img {
+                        max-width: 100%;
+                        &#i1{
+                        padding-bottom: 15%;}
+                    }
                 }
+
+                
             }
 
             .cmt {

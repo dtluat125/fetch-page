@@ -364,6 +364,12 @@
   }
 
   .header__inner {
+    height: 70px!important;
+    padding-top: 10px;
+  }
+
+  .header__inner .navbar-toggler{
+      top: 15px
   }
 }
 @media (max-width: 400px) {

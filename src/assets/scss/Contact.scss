@@ -1,7 +1,6 @@
 @import "../../App.scss";
 
 .contact {
-    background-color: #F3F5F7;
     @include Responsive(xs) { --padding-x: 10.5px; }
     @include Responsive(sm) { --padding-x: 12px; }
     @include Responsive(xl) { --padding-x: 15px; }
@@ -15,7 +14,9 @@
             background-origin: border-box;
             width: 100%;
             background-size: cover;
+            background-color: #FFFFFF;
         }
+        background-color: #F3F5F7;
 
         .cus-container {
             padding-left: var(--padding-x);
@@ -47,7 +48,7 @@
             }
 
             @include Responsive(xl) {
-                padding-top: 96px;
+                padding-top: 0px;
             }
 
             form {
