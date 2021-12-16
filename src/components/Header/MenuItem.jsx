@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 function MenuItem({
   title,
@@ -13,23 +14,21 @@ function MenuItem({
   isMobile,
   theme,
 }) {
+  const [toggle, setToggle] = useState(true);
   return (
     <div
       role={"button"}
+      onClick={() => setTimeout(setToggle(!toggle), 1000)}
       id={id}
       className={
-        dropdownCollapse
-          ? isMobile
-            ? "menu-item menu-collapse-toggle"
-            : "menu-item menu-collapse-toggle collapsed"
-          : "menu-item"
+        dropdownCollapse ? "menu-item menu-collapse-toggle" : "menu-item"
       }
       data-bs-toggle={
-        dropdownToggle ? "dropdown" : dropdownCollapse && "collapse"
+        dropdownToggle ? "dropdown" : dropdownCollapse ? "" : ""
       }
       data-bs-target={"#" + target}
-      aria-expanded="false"
-      aria-controls={target}
+      aria-expanded={dropdownCollapse ? 'true' : "false"}
+      // aria-controls={target}
       style={theme ? { fontFamily: "Gilroy-Medium" } : {}}
     >
       {title}

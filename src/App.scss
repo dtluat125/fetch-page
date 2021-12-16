@@ -210,3 +210,8 @@ $max-width-xxl: 1140px;
   margin-right: auto;
   margin-left: auto;
 }
+
+.app-container.nav-open {
+  height: 100vh;
+  overflow-y: hidden;
+}

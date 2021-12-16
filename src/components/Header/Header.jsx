@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../assets/css/header.css";
+import "../../assets/css/header.scss";
 import logo from "../../assets/img/LogoDefault.svg";
 import logoMobile from "../../assets/img/LogoMobile.svg";
 import dropdownIcon from "../../assets/img/Vector 15.png";
@@ -39,7 +39,15 @@ function Header({ logoProp, theme, logoMobileProp }) {
     };
     changeNav();
     window.addEventListener("resize", changeNav);
-  });
+    console.log(collapseDropdown);
+  }, [collapseDropdown, inMobile]);
+
+  useEffect(() => {
+    const appContainer = document.querySelector(".app-container");
+    if (inMobile && showContent) {
+      appContainer?.classList?.add("nav-open");
+    } else appContainer?.classList?.remove("nav-open");
+  }, [inMobile, showContent]);
   // Handle nav toggle
   const openNav = () => {
     setShowContent(true);
@@ -55,12 +63,20 @@ function Header({ logoProp, theme, logoMobileProp }) {
       style={theme && { backgroundColor: theme }}
     >
       <div
-        className="header__inner"
+        className={
+          collapse && !showContent
+            ? "header__inner head-collapse"
+            : collapse && showContent
+            ? "header__inner head-collapse show"
+            : "header__inner"
+        }
         style={
           !showContent
-            ? { height: 100 }
+            ? inMobile
+              ? { height: 70 }
+              : { height: 100 }
             : inMobile
-            ? { minHeight: "100vh" }
+            ? { minHeight: "100vh", height: "100vh" }
             : {}
         }
       >
@@ -89,7 +105,12 @@ function Header({ logoProp, theme, logoMobileProp }) {
               : "header__left"
           }
         >
-          <div className="header__menu-group">
+          <div
+            className={
+              "header__menu-group" +
+              (inMobile && showContent ? " nav-open" : "")
+            }
+          >
             <div className="header__menu-first-group">
               <Link to="/company">
                 <MenuItem theme={theme} title="For Companies" />
@@ -106,9 +127,11 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 title="Services"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
-                icon={theme ? DownArrowWhite : dropdownIcon}
+                icon={
+                  !inMobile ? (theme ? DownArrowWhite : dropdownIcon) : false
+                }
                 id="services"
-                target={collapseDropdown && "servicesMenu"}
+                target="servicesMenu"
               />
               <div
                 className={
@@ -123,47 +146,53 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 id="servicesMenu"
                 aria-labelledby="services"
               >
-                {!collapseDropdown && <div className="upperArrow"></div>}
-                <Link to="/services/1">
-                  <DropdownItem
-                    onClick={closeNav}
-                    title="Talent Acquisition"
-                    text={!collapseDropdown && "Procure talents from Vietnam"}
-                    icon={!collapseDropdown && TalentAcquisition}
-                  />
-                </Link>
-                <Link to="/services/2">
-                  <DropdownItem
-                    onClick={closeNav}
-                    title="Services management"
-                    text={
-                      !collapseDropdown &&
-                      "Employee directives and administration"
-                    }
-                    icon={!collapseDropdown && ServiceManagement}
-                  />
-                </Link>
-                <Link to="/services/3">
-                  <DropdownItem
-                    onClick={closeNav}
-                    title="Payroll and compliances"
-                    text={
-                      !collapseDropdown &&
-                      "Streamlined contracting and payroll process"
-                    }
-                    icon={!collapseDropdown && Payroll}
-                  />
-                </Link>
-                <Link to="/services/4">
-                  <DropdownItem
-                    onClick={closeNav}
-                    title="Full-suite project consultancy"
-                    text={
-                      !collapseDropdown && "Comprehensive projects management"
-                    }
-                    icon={!collapseDropdown && FullSuite}
-                  />
-                </Link>
+                <div className="dropdown-menu-container">
+                  <Link to="/services/1">
+                    <DropdownItem
+                      onClick={closeNav}
+                      title="Talent Acquisition"
+                      text={!collapseDropdown && "Procure talents from Vietnam"}
+                      icon={!collapseDropdown && TalentAcquisition}
+                    />
+                  </Link>
+                  <Link to="/services/2">
+                    <DropdownItem
+                      onClick={closeNav}
+                      title="Services management"
+                      text={
+                        !collapseDropdown &&
+                        "Employee directives and administration"
+                      }
+                      icon={!collapseDropdown && ServiceManagement}
+                    />
+                  </Link>
+                  <Link to="/services/3">
+                    <DropdownItem
+                      onClick={closeNav}
+                      title="Payroll and compliances"
+                      text={
+                        !collapseDropdown &&
+                        "Streamlined contracting and payroll process"
+                      }
+                      icon={!collapseDropdown && Payroll}
+                    />
+                  </Link>
+                  <Link to="/services/4">
+                    <DropdownItem
+                      onClick={closeNav}
+                      title="Full-suite project consultancy"
+                      text={
+                        !collapseDropdown && "Comprehensive projects management"
+                      }
+                      icon={!collapseDropdown && FullSuite}
+                    />
+                  </Link>
+                </div>
+                {!collapseDropdown && (
+                  <div>
+                    <div className="upperArrow"></div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="dropdown">
@@ -172,8 +201,10 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 title="Resources"
                 dropdownToggle={!collapseDropdown}
                 dropdownCollapse={collapseDropdown}
-                icon={theme ? DownArrowWhite : dropdownIcon}
-                target={collapseDropdown && "resourcesMenu"}
+                icon={
+                  !inMobile ? (theme ? DownArrowWhite : dropdownIcon) : false
+                }
+                target="resourcesMenu"
                 id="resources"
                 isMobile={isMobile}
               />
@@ -191,41 +222,49 @@ function Header({ logoProp, theme, logoMobileProp }) {
                 aria-labelledby="resources"
               >
                 {!collapseDropdown && <div className="upperArrow"></div>}
-                <Link to="/ourstory">
-                  <DropdownItem
-                    title="Our story"
-                    text={!collapseDropdown && "Learn more about us"}
-                    icon={!collapseDropdown && OurStory}
-                  />
-                </Link>
-                <Link to="/404">
-                  <DropdownItem
-                    title="Market Report"
-                    text={!collapseDropdown && "Reports and downloads too"}
-                    icon={!collapseDropdown && MarketReport}
-                  />
-                </Link>
-                {/* <Link to="/faq">
+                <div className="dropdown-menu-container">
+                  <Link to="/ourstory">
+                    <DropdownItem
+                      title="Our story"
+                      text={!collapseDropdown && "Learn more about us"}
+                      icon={!collapseDropdown && OurStory}
+                    />
+                  </Link>
+                  <Link to="/404">
+                    <DropdownItem
+                      title="Market Report"
+                      text={!collapseDropdown && "Reports and downloads too"}
+                      icon={!collapseDropdown && MarketReport}
+                    />
+                  </Link>
+                  {/* <Link to="/faq">
                   <DropdownItem
                     title="FAQs"
                     text={!collapseDropdown && "Questions & Answers"}
                     icon={!collapseDropdown && FAQs}
                   />
                 </Link> */}
-                <Link to="/services/salary">
-                  <DropdownItem
-                    title="Vietnam Calculator"
-                    text={!collapseDropdown && "Assess estimated costs"}
-                    icon={!collapseDropdown && Calculator}
-                  />
-                </Link>
+                  <Link to="/services/salary">
+                    <DropdownItem
+                      title="Vietnam Calculator"
+                      text={!collapseDropdown && "Assess estimated costs"}
+                      icon={!collapseDropdown && Calculator}
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="header__contact-button-container">
             <Link to="/contact">
-              <div role="button" className="header__contact-button">
+              <div
+                role="button"
+                className="header__contact-button"
+                onClick={() => {
+                  if (inMobile) closeNav();
+                }}
+              >
                 <span className="header__contact-button__content">
                   Contact Us
                 </span>
@@ -236,11 +275,11 @@ function Header({ logoProp, theme, logoMobileProp }) {
         {collapse &&
           (showContent ? (
             <div className="navbar-toggler" role="button" onClick={closeNav}>
-              <img src={NavbarClose} alt="toggler"/>
+              <img src={NavbarClose} alt="toggler" />
             </div>
           ) : (
             <div className="navbar-toggler" role="button" onClick={openNav}>
-              <img src={theme ? NavbarOpenWhite : NavbarOpen} alt="toggler"/>
+              <img src={theme ? NavbarOpenWhite : NavbarOpen} alt="toggler" />
             </div>
           ))}
       </div>

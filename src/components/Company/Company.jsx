@@ -7,11 +7,10 @@ import HowItWorks from "./How It Works/HowItWorks";
 import Theme1 from "../../assets/img/Theme1.svg";
 import TrustedBy from "./Trusted By/TrustedBy";
 import FetchHelp from "./Fetch Help/FetchHelp";
-import Available from "./Available";
 import RedTheme from "../RedTheme";
 import { Skeleton } from "antd";
 import AOS from "aos"
-function Company({}) {
+function Company() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const checkImg = () => {

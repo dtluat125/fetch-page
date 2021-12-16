@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Theme2 from "../../../assets/img/Theme2.svg";
-import UpArrow from "../../../assets/img/UpArrow.png";
 import DownArrow from "../../../assets/img/DownArrow.svg";
 import "../../../assets/css/fetchHelp.css";
 import CheckedItem from "../../Home-desktop/USP/CheckedItem";
-import { Col, Row, Skeleton } from "antd";
-import SkeletonImage from "antd/lib/skeleton/Image";
+import { Col, Skeleton } from "antd";
 
 function FetchHelp({ loading }) {
   const [collapseDropdown, setCollapseDropdown] = useState(false);
