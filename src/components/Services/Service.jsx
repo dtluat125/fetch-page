@@ -13,7 +13,7 @@ function Service(props) {
     const checkImg = () => {
       var images = service.querySelectorAll("img");
       var imagesArr = Array.from(images);
-      console.log(imagesArr.length);
+      //console.log(imagesArr.length);
       let count = 0;
       imagesArr.forEach((img) => {
         if (img.complete) incrementCounter();
@@ -21,7 +21,7 @@ function Service(props) {
       });
       function incrementCounter() {
         count++;
-        console.log(loading);
+        //console.log(loading);
         if (count === imagesArr.length) {
           setTimeout(() => {
             setLoading(false);

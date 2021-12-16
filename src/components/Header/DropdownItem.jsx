@@ -8,6 +8,7 @@ function DropdownItem({ icon, title, text, onClick }) {
           {icon&&<img
             className="header__dropdown-item__icon"
             src={icon}
+            alt=""
           ></img>}
         </div>
         <div className="header__dropdown-item__content">

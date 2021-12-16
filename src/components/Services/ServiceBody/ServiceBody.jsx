@@ -19,7 +19,7 @@ import ServiceFeatureTheme16 from "../../../assets/img/ServiceFeatureTheme16.svg
 import ServiceFeatureTheme17 from "../../../assets/img/ServiceFeatureTheme17.svg";
 import ServiceFeatureTheme18 from "../../../assets/img/ServiceFeatureTheme18.svg";
 import "../../../assets/css/serviceBody.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Skeleton } from "antd";
 function ServiceBody(props) {
   const featuresArr = [
@@ -182,7 +182,7 @@ function ServiceBody(props) {
           currentOptions
             ?.querySelector(".sidebar-option-container")
             .classList.add("active");
-          console.log(current + " active");
+          //console.log(current + " active");
           optionsArr.forEach((option) => {
             if (option.getAttribute("option") !== current) {
               option
@@ -204,8 +204,8 @@ function ServiceBody(props) {
       let top = bodyRect?.top;
       let bottom = bodyRect?.bottom;
       let height = bodyRect?.height
-      console.log(bottom, window.innerHeight )
-      console.log(bottom < window.innerHeight)
+      //console.log(bottom, window.innerHeight )
+      //console.log(bottom < window.innerHeight)
       if (top < 0 && bottom>=window.innerHeight) {
         sidebar.classList.add("sidebar--fixed");
         sidebar.classList.remove("sidebar--bottom");

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Slide from "./Slide";
 import feedbackPic1 from "../../../assets/img/feedbackPic1.svg";
 import feedbackPic2 from "../../../assets/img/feedbackPic2.svg";
 import feedbackPic3 from "../../../assets/img/feedbackPic3.svg";
-import LeftArrow from "../../../assets/img/LeftArrow.png";
-import RightArrow from "../../../assets/img/RightArrow.png";
 import { Carousel } from "antd";
 function SlideTrack({loading}) {
   // const [position, setPosition] = useState(0);
@@ -30,8 +28,8 @@ function SlideTrack({loading}) {
   // const switchSlide = (num) => {
   //   moveLeft(current-num);
   //   setCurrent(num)
-  //   console.log(num)
-  //   console.log(position)
+  //   //console.log(num)
+  //   //console.log(position)
   // }
   // useEffect(() => {
   //   const slide = document.querySelector("#aa");
@@ -43,7 +41,7 @@ function SlideTrack({loading}) {
   //     setRightDisable(true);
   //   }
   //   else{
-  //       console.log("ALO")
+  //       //console.log("ALO")
   //       setLeftDisable(false);
   //       setRightDisable(false)
   //   }

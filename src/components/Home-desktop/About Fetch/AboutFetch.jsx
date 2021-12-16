@@ -1,17 +1,15 @@
 import { Carousel, Col, Row, Skeleton } from "antd";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../../assets/css/about.css";
 import AboutTheme from "../../../assets/img/AboutTheme.svg";
 function AboutFetch({loading}) {
-  const [position, setPosition] = useState(0);
-  const [current, setCurrent] = useState(1);
 
   // const moveLeft = (num) => {
   //   let step = num == 0 ? 0 : num ? num : 1;
   //   const slide = document.querySelector("#cc");
   //   const slideWidth = slide.clientWidth;
   //   const windowWidth = window.innerWidth;
-  //   console.log(slideWidth + (windowWidth <= 320 ? 60 : 120));
+  //   //console.log(slideWidth + (windowWidth <= 320 ? 60 : 120));
   //   setPosition(
   //     position + step * (slideWidth + (windowWidth <= 320 ? 60 : 120))
   //   );

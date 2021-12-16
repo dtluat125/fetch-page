@@ -10,7 +10,7 @@ const AnimationWrap = ({render, ratio = 0.25, ratioBack=0.2}) => {
 
         const resizeObserver = new ResizeObserver(entries => {
             setChange(true);
-            console.log("change");
+            //console.log("change");
         });
 
         resizeObserver.observe(node);
@@ -21,9 +21,9 @@ const AnimationWrap = ({render, ratio = 0.25, ratioBack=0.2}) => {
             const current = window.scrollY;
             const heightElement = bottom - top;
         
-            console.log("p: ", current);
-            console.log("top: ", top);
-            console.log("ratio: ", ratio);
+            //console.log("p: ", current);
+            //console.log("top: ", top);
+            //console.log("ratio: ", ratio);
             if ((top + ratio*heightElement) < window.innerHeight) {
                 setAnimate(true);
             } else if((top - window.innerHeight) > ratioBack*heightElement) {

@@ -17,7 +17,7 @@ function Company({}) {
     const checkImg = () => {
       var images = company.querySelectorAll("img");
       var imagesArr = Array.from(images);
-      console.log(imagesArr.length);
+      //console.log(imagesArr.length);
       let count = 0;
       imagesArr.forEach((img) => {
         if (img.complete) incrementCounter();
@@ -25,7 +25,7 @@ function Company({}) {
       });
       function incrementCounter() {
         count++;
-        console.log(loading);
+        //console.log(loading);
         if (count === imagesArr.length) {
           setTimeout(() => {
             setLoading(false);

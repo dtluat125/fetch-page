@@ -7,7 +7,6 @@ import HomepageHeader from "./Homepage Header/HomepageHeader";
 import Talents from "./Talents/Talents";
 import TrustedCus from "./Trusted Cus/TrustedCus";
 import USP1 from "./USP/USP1";
-import USP2 from "./USP/USP2";
 import Usp1Theme from "./../../assets/img/Usp1Theme.svg";
 import Usp2Theme from "./../../assets/img/Usp2Theme.svg";
 import Usp3Theme from "./../../assets/img/Usp3Theme.svg";
@@ -15,14 +14,14 @@ import Usp3MobileTheme from "./../../assets/img/Usp3MobileTheme.svg";
 import Footer from "../Footer/Footer";
 import RedTheme from "../RedTheme";
 import AOS from "aos";
-function Homepage({}) {
+function Homepage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const checkImg = () => {
       var images = homepage.querySelectorAll("img");
       var imagesArr = Array.from(images);
-      console.log(imagesArr.length);
+      //console.log(imagesArr.length);
       let count = 0;
       imagesArr.forEach((img) => {
         if (img.complete) incrementCounter();
@@ -30,7 +29,7 @@ function Homepage({}) {
       });
       function incrementCounter() {
         count++;
-        console.log(loading);
+        //console.log(loading);
         if (count === imagesArr.length) {
           setTimeout(() => {
             setLoading(false);

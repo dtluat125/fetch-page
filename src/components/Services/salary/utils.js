@@ -39,7 +39,7 @@ const checkFromGross = (gross, netCheck) => {
 
     let bringHome = gross - PIT - SI_TD - HI_TD - UI_TD;
 
-    // console.log(`${netCheck} - ${bringHome} = ${netCheck - bringHome}`);
+    // //console.log(`${netCheck} - ${bringHome} = ${netCheck - bringHome}`);
     return Math.abs(netCheck - bringHome);
 }
 
@@ -52,14 +52,14 @@ const checkTotalFromGross = (gross, totalCheck) => {
 
     let totalExpenses = gross + SI + HI + UI + TU + PVI;
 
-    // console.log(`${totalCheck} - ${totalExpenses} = ${totalCheck - totalExpenses}`);
+    // //console.log(`${totalCheck} - ${totalExpenses} = ${totalCheck - totalExpenses}`);
     return Math.abs(totalCheck - totalExpenses);
 }
 
 const convertFromGross = (gross, emplType) => {
     
     if(emplType !== "freelance") {
-        // console.log("in 1")
+        // //console.log("in 1")
         if(gross === 0) {
             return {
                 forEmployer: [
@@ -134,7 +134,7 @@ const convertFromGross = (gross, emplType) => {
             ]
         }
     } else {
-        // console.log("in 2")
+        // //console.log("in 2")
         if(gross === 0) {
             return {
                 forEmployer: [
@@ -217,7 +217,7 @@ export const salaryCaculator = (salary, calcType, emplType) => {
         let temp_2 = cor.map(item => (1.0*salary - item.A*11*10**6 - item.B - (item.A - 1)*29.8*10**6 * percentTax_2) / (1 - item.A + (item.A - 1)*percentTax_3))
         
         let result = [gross1_0, ...temp_1, gross2_0, ...temp_2];
-        // console.log("ARR: ", result.map(i => checkFromGross(i, salary)));
+        // //console.log("ARR: ", result.map(i => checkFromGross(i, salary)));
 
         let index = 0;
         for(let i = 1; i < result.length; i += 1) {
@@ -225,7 +225,7 @@ export const salaryCaculator = (salary, calcType, emplType) => {
                 index = i;
             }
         }
-        // console.log("index: ", index);
+        // //console.log("index: ", index);
 
         return convertFromGross(result[index], emplType);
 
@@ -246,7 +246,7 @@ export const salaryCaculator = (salary, calcType, emplType) => {
 
         let result = [gross1_0, gross2_0, gross2_1];
 
-        // console.log("ARR: ", result.map(i => checkTotalFromGross(i, salary)));
+        // //console.log("ARR: ", result.map(i => checkTotalFromGross(i, salary)));
 
         let index = 0;
         for(let i = 1; i < result.length; i += 1) {
@@ -254,7 +254,7 @@ export const salaryCaculator = (salary, calcType, emplType) => {
                 index = i;
             }
         }
-        // console.log("index: ", index);
+        // //console.log("index: ", index);
 
         return convertFromGross(result[index], emplType);
     }

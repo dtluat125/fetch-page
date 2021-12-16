@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../../assets/img/Logo.svg";
 import "../../assets/css/footer.css";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
 import Facebook from "../../assets/img/Facebook.svg";
-import Instagram from "../../assets/img/Instagram.png";
 import Linkedin from "../../assets/img/Linkedin.svg";
 import BigFacebook from "../../assets/img/BigFacebook.svg";
 import BigLinkedin from "../../assets/img/BigLinkedin.svg";
@@ -16,11 +12,11 @@ function Footer() {
   const [bigIcon, setBigIcon] = useState(false);
   useEffect(() => {
     const windowWidth = window.innerWidth;
-    console.log(windowWidth);
+    //console.log(windowWidth);
     if (windowWidth < 768) {
       setBigIcon(true);
     } else setBigIcon(false);
-  });
+  }, []);
   return (
     <div className="footer">
       <div className="footer__inner">
@@ -71,13 +67,15 @@ function Footer() {
             <div className="col-md-4 footer__social">
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.facebook.com/Fetch.Technology"
                 className=""
               >
-                <img src={BigFacebook} className="big-icon" lt="" />
+                <img src={BigFacebook} className="big-icon" alt="" />
               </a>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.linkedin.com/company/fetchtechnology/"
               >
                 {" "}
@@ -92,6 +90,7 @@ function Footer() {
                 </div>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.facebook.com/Fetch.Technology"
                   className=""
                 >
@@ -104,6 +103,7 @@ function Footer() {
                 </div>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.linkedin.com/company/fetchtechnology/"
                 >
                   {" "}

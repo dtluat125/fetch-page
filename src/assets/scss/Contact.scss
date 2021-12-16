@@ -1,317 +1,329 @@
 @import "../../App.scss";
 
 .contact {
-    @include Responsive(xs) { --padding-x: 10.5px; }
-    @include Responsive(sm) { --padding-x: 12px; }
-    @include Responsive(xl) { --padding-x: 15px; }
+  @include Responsive(xs) {
+    --padding-x: 10.5px;
+  }
+  @include Responsive(sm) {
+    --padding-x: 12px;
+  }
+  @include Responsive(xl) {
+    --padding-x: 15px;
+  }
 
-    // background-color: #F3F5F7;
-    .contact-body {
+  // background-color: #F3F5F7;
+  .contact-body {
+    @include Responsive(md) {
+      background-image: url("../../assets/img/contactBG1.png");
+      background-repeat: no-repeat;
+      background-origin: border-box;
+      width: 100%;
+      background-size: cover;
+      background-color: #ffffff;
+    }
+    background-color: #f3f5f7;
 
-        @include Responsive(md) {
-            background-image: url("../../assets/img/contactBG1.png");
-            background-repeat: no-repeat;
-            background-origin: border-box;
+    .cus-container {
+      padding-left: var(--padding-x);
+      padding-right: var(--padding-x);
+
+      @include Responsive(xs) {
+        padding-top: 72px;
+        padding-bottom: 163px;
+      }
+
+      @include Responsive(sm) {
+        padding-top: 72px;
+        padding-bottom: 163px;
+      }
+
+      @include Responsive(md) {
+        padding-top: 72px;
+      }
+    }
+
+    .col-form {
+      @include Responsive(xs) {
+        padding-top: 0;
+      }
+
+      @include Responsive(sm) {
+        padding-top: 0;
+      }
+
+      @include Responsive(xl) {
+        padding-top: 0px;
+      }
+
+      form {
+        background: #ffffff;
+        border: 1px solid #dee7f0;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 8px rgba(39, 58, 95, 0.08);
+        border-radius: 8px;
+
+        @include Responsive(xs) {
+          padding: 16px;
+        }
+
+        @include Responsive(sm) {
+          padding: 16px;
+        }
+
+        @include Responsive(xl) {
+          padding: 32px;
+        }
+
+        h1 {
+          font-family: Gilroy-SemiBold;
+          text-align: left;
+          color: #273a5f;
+
+          @include Responsive(xs) {
+            font-size: 36px;
+            margin-top: 39px;
+            line-height: 45px;
+            letter-spacing: -1px;
+            margin-bottom: 41px;
+          }
+
+          @include Responsive(sm) {
+            font-size: 36px;
+            margin-top: 39px;
+            line-height: 45px;
+            letter-spacing: -1px;
+            margin-bottom: 41px;
+          }
+
+          @include Responsive(md) {
+            font-size: 24px;
+            margin-top: 39px;
+            line-height: 45px;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+          }
+
+          @include Responsive(lg) {
+            font-size: 36px;
+            margin-top: 6px;
+            line-height: 60px;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+          }
+        }
+
+        p {
+          font-family: Gilroy-Regular;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0px;
+          text-align: left;
+          color: #273a5f;
+
+          @include Responsive(xs) {
+            margin-bottom: 47px;
+          }
+
+          @include Responsive(sm) {
+            margin-bottom: 47px;
+          }
+
+          @include Responsive(xl) {
+            margin-bottom: 57px;
+          }
+        }
+
+        .form-inner-item {
+          text-align: left;
+          margin-bottom: 22px;
+
+          .select-purpose {
             width: 100%;
-            background-size: cover;
-            background-color: #FFFFFF;
-        }
-        background-color: #F3F5F7;
 
-        .cus-container {
-            padding-left: var(--padding-x);
-            padding-right: var(--padding-x);
-            
+            .ant-select-selector {
+              padding: 12px 16px;
+              height: 100%;
+              background: #ffffff;
+              border: 1px solid #d0d4ea;
+              box-sizing: border-box;
+              border-radius: 6px;
+              outline: none;
+
+              font-family: Gilroy-Regular;
+              font-size: 16px;
+              line-height: 22px;
+              display: flex;
+              align-items: center;
+              color: #273a5f;
+
+              &::placeholder {
+                color: #abb2d9;
+              }
+
+              &:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+                --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+                --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
+                --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+                box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+                  var(--tw-shadow, 0 0 transparent);
+              }
+            }
+          }
+
+          label {
+            font-family: Gilroy-Medium;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: -0.25px;
+            text-align: left;
+            color: #001c63;
+            margin-bottom: 8px;
+          }
+
+          input {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #d0d4ea;
+            box-sizing: border-box;
+            border-radius: 6px;
+            outline: none;
+            padding: 12px 16px;
+
+            font-family: Gilroy-Regular;
+            font-size: 16px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            color: #273a5f;
+
+            &::placeholder {
+              color: #abb2d9;
+            }
+
+            &:focus {
+              outline: 2px solid transparent;
+              outline-offset: 2px;
+              --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+              --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
+              --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+              box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+                var(--tw-shadow, 0 0 transparent);
+            }
+          }
+        }
+
+        .form-footer {
+          display: flex;
+
+          @include Responsive(xs) {
+            padding-top: 11px;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            row-gap: 25px;
+          }
+
+          @include Responsive(sm) {
+            padding-top: 11px;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            row-gap: 25px;
+          }
+
+          @include Responsive(md) {
+            padding-top: 11px;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            row-gap: 25px;
+          }
+
+          @include Responsive(xl) {
+            padding-top: 36px;
+          }
+
+          p {
+            margin-bottom: 0;
+            font-family: Gilroy-Regular;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0px;
+            color: #afc0cf;
 
             @include Responsive(xs) {
-                padding-top: 72px;
-                padding-bottom: 163px;
+              flex: 0 0 100%;
+              max-width: 100%;
+              text-align: center;
             }
 
             @include Responsive(sm) {
-                padding-top: 72px;
-                padding-bottom: 163px;
-            }
-
-            @include Responsive(md) {
-                padding-top: 72px;
-            }
-        }
-
-        .col-form {
-            @include Responsive(xs) {
-                padding-top: 0;
-            }
-
-            @include Responsive(sm) {
-                padding-top: 0;
+              flex: 0 0 100%;
+              max-width: 100%;
+              text-align: center;
             }
 
             @include Responsive(xl) {
-                padding-top: 0px;
+              flex: 1;
+              margin-right: 45px;
+              text-align: left;
             }
+          }
 
-            form {
-                background: #FFFFFF;
-                border: 1px solid #DEE7F0;
-                box-sizing: border-box;
-                box-shadow: 0px 4px 8px rgba(39, 58, 95, 0.08);
-                border-radius: 8px;
-
-                
-                @include Responsive(xs) {
-                    padding: 16px;
-                }
-
-                @include Responsive(sm) {
-                    padding: 16px;
-                }
-    
-                @include Responsive(xl) {
-                    padding: 32px;
-                }
-
-                h1 {
-                    font-family: Gilroy-SemiBold;
-                    text-align: left;
-                    color: #273A5F;
-
-                    @include Responsive(xs) {
-                        font-size: 36px;
-                        margin-top: 39px;
-                        line-height: 45px;
-                        letter-spacing: -1px;
-                        margin-bottom: 41px;
-
-                    }
-
-                    @include Responsive(sm) {
-                        font-size: 36px;
-                        margin-top: 39px;
-                        line-height: 45px;
-                        letter-spacing: -1px;
-                        margin-bottom: 41px;
-
-                    }
-
-                    @include Responsive(md) {
-                        font-size: 24px;
-                        margin-top: 39px;
-                        line-height: 45px;
-                        letter-spacing: -1px;
-                        margin-bottom: 30px;
-
-                    }
-        
-                    @include Responsive(lg) {
-                        font-size: 36px;
-                        margin-top: 6px;
-                        line-height: 60px;
-                        letter-spacing: -0.5px;
-                        margin-bottom: 14px;
-                    }
-                }
-
-                p {
-                    font-family: Gilroy-Regular;
-                    font-size: 16px;
-                    line-height: 24px;
-                    letter-spacing: 0px;
-                    text-align: left;
-                    color: #273A5F;
-                    
-
-                    @include Responsive(xs) {
-                        margin-bottom: 47px;
-                    }
-
-                    @include Responsive(sm) {
-                        margin-bottom: 47px;
-                    }
-        
-                    @include Responsive(xl) {
-                        margin-bottom: 57px;
-                    }
-
-
-                }
-
-                .form-inner-item {
-                    text-align: left;
-                    margin-bottom: 22px;
-
-                    .select-purpose {
-                        width: 100%;
-
-                        .ant-select-selector {
-                            padding: 12px 16px;
-                            height: 100%;
-                            background: #FFFFFF;
-                            border: 1px solid #D0D4EA;
-                            box-sizing: border-box;
-                            border-radius: 6px;
-                            outline: none;
-                            
-    
-                            font-family: Gilroy-Regular;
-                            font-size: 16px;
-                            line-height: 22px;
-                            display: flex;
-                            align-items: center;
-                            color: #273A5F;
-    
-                            &::placeholder {
-                                color: #ABB2D9;
-                            }
-    
-                            &:focus {
-                                outline: 2px solid transparent;
-                                outline-offset: 2px;
-                                --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
-                                --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
-                                --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-                                box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 transparent);
-                            }
-                        }
-                    }
-
-                    label {
-                        font-family: Gilroy-Medium;
-                        font-size: 16px;
-                        line-height: 22px;
-                        letter-spacing: -0.25px;
-                        text-align: left;
-                        color: #001C63;
-                        margin-bottom: 8px;
-                    }
-
-                    input {
-                        width: 100%;
-                        background: #FFFFFF;
-                        border: 1px solid #D0D4EA;
-                        box-sizing: border-box;
-                        border-radius: 6px;
-                        outline: none;
-                        padding: 12px 16px;
-
-                        font-family: Gilroy-Regular;
-                        font-size: 16px;
-                        line-height: 22px;
-                        display: flex;
-                        align-items: center;
-                        color: #273A5F;
-
-                        &::placeholder {
-                            color: #ABB2D9;
-                        }
-
-                        &:focus {
-                            outline: 2px solid transparent;
-                            outline-offset: 2px;
-                            --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
-                            --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
-                            --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-                            box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 transparent);
-                        }
-                    }
-                }
-
-                .form-footer {
-                    display: flex;
-
-                    @include Responsive(xs) {
-                        padding-top: 11px;
-                        flex-wrap: wrap-reverse;
-                        justify-content: center;
-                        row-gap: 25px;
-
-                    }
-
-                    @include Responsive(sm) {
-                        padding-top: 11px;
-                        flex-wrap: wrap-reverse;
-                        justify-content: center;
-                        row-gap: 25px;
-
-                    }
-
-                    @include Responsive(md) {
-                        padding-top: 11px;
-                        flex-wrap: wrap-reverse;
-                        justify-content: center;
-                        row-gap: 25px;
-
-                    }
-        
-                    @include Responsive(xl) {
-                        padding-top: 36px;
-                    }
-
-                    p {
-                        margin-bottom: 0;
-                        font-family: Gilroy-Regular;
-                        font-size: 14px;
-                        line-height: 22px;
-                        letter-spacing: 0px;
-                        color: #AFC0CF;
-                        
-                        @include Responsive(xs) {
-                            flex: 0 0 100%;
-                            max-width: 100%;
-                            text-align: center;
-                        }
-
-                        @include Responsive(sm) {
-                            flex: 0 0 100%;
-                            max-width: 100%;
-                            text-align: center;
-                        }
-
-                        @include Responsive(xl) {
-                            flex: 1;
-                            margin-right: 45px;
-                            text-align: left;
-                        }
-            
-                    }
-
-                    input[type="submit"] {
-                        padding: 17px 32px;
-                        background: #273A5F;
-                        box-shadow: 0px 6px 10px #D2E2ED;
-                        border-radius: 8px;
-                        border: none;
-                        font-family: Gilroy-SemiBold;
-                        font-size: 18px;
-                        line-height: 20px;
-                        letter-spacing: 0px;
-                        text-align: center;
-                        color: #FFFFFF;
-                        max-width: 123px;
-
-                        &:hover {
-                            outline: 2px solid transparent;
-                            outline-offset: 2px;
-                            --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
-                            --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
-                            --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-                            box-shadow: var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 transparent);
-                        }
-                    }
-                }
+          .form-footer-button {
+            display: flex;
+            align-items: center;
+            position: relative;
+            .loading-icon {
+              position: absolute !important;
+              right: 5px;
+              z-index: 200;
+              color: white
             }
-        }
-
-        .col-img {
-            padding-bottom: 46px;
-        }
-
-        .col-img-wrap {
-            text-align: left;
-
-            img {
-                max-width: 100%;
+            input[type="submit"] {
+              padding: 17px 32px;
+              background: #273a5f;
+              box-shadow: 0px 6px 10px #d2e2ed;
+              border-radius: 8px;
+              border: none;
+              font-family: Gilroy-SemiBold;
+              font-size: 18px;
+              line-height: 20px;
+              letter-spacing: 0px;
+              text-align: center;
+              color: #ffffff;
+              max-width: 123px;
+              &:not(:disabled, [disabled]):hover {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+                --tw-ring-offset-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+                --tw-ring-shadow: rgba(59, 130, 246, 0.5) 0px 0px 0px 3px;
+                --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+                box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+                  var(--tw-shadow, 0 0 transparent);
+              }
+              &:disabled,
+              &[disabled] {
+                opacity: 0.8;
+                outline: none;
+                outline-offset: none;
+                box-shadow: none;
+              }
             }
+          }
         }
+      }
     }
+
+    .col-img {
+      padding-bottom: 46px;
+    }
+
+    .col-img-wrap {
+      text-align: left;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
 }

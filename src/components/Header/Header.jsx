@@ -9,16 +9,16 @@ import NavbarOpen from "../../assets/img/NavbarOpen.png";
 import DropdownItem from "./DropdownItem";
 import OurStory from "../../assets/img/OurStory.png";
 import MarketReport from "../../assets/img/MarketReport.png";
-import FAQs from "../../assets/img/FAQs.png";
+// import FAQs from "../../assets/img/FAQs.png";
 import TalentAcquisition from "../../assets/img/TalentAcquisition.png";
 import ServiceManagement from "../../assets/img/ServiceManageMent.png";
 import Payroll from "../../assets/img/Payroll.png";
 import FullSuite from "../../assets/img/FullSuite.png";
-import UpperArrow from "../../assets/img/UpperArrow.png";
+// import UpperArrow from "../../assets/img/UpperArrow.png";
 import DownArrowWhite from "../../assets/img/DownArrowWhite.png";
 import NavbarOpenWhite from "../../assets/img/NavbarOpenWhite.png";
 import Calculator from "../../assets/img/Calculator.png";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header({ logoProp, theme, logoMobileProp }) {
   const [collapse, setCollapse] = useState(false);
@@ -236,11 +236,11 @@ function Header({ logoProp, theme, logoMobileProp }) {
         {collapse &&
           (showContent ? (
             <div className="navbar-toggler" role="button" onClick={closeNav}>
-              <img src={NavbarClose} />
+              <img src={NavbarClose} alt="toggler"/>
             </div>
           ) : (
             <div className="navbar-toggler" role="button" onClick={openNav}>
-              <img src={theme ? NavbarOpenWhite : NavbarOpen} />
+              <img src={theme ? NavbarOpenWhite : NavbarOpen} alt="toggler"/>
             </div>
           ))}
       </div>

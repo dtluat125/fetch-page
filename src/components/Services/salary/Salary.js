@@ -5,7 +5,6 @@ import '../../../assets/scss/Salary.scss';
 import caculator from '../../../assets/img/caculator.png';
 import { Row, Col, Select, Divider, Descriptions, Modal, Statistic, InputNumber } from 'antd';
 import iconFulltime from '../../../assets/img/iconFulltime.png';
-import iconContract from '../../../assets/img/iconContract.png';
 import iconFreelance from '../../../assets/img/iconFreelance.png';
 import IconFontEnd from '../../../assets/img/iconFontEnd.svg';
 import IconBackEnd from '../../../assets/img/iconBackEnd.svg';
@@ -114,7 +113,7 @@ const Salary = () => {
     useEffect(() => {
         if(location.search) {
             let params = qs.parse(location.search);
-            console.log("params: ", params);
+            //console.log("params: ", params);
 
             if(params["employmentType"] && params["calcType"] 
                 && params["amount"] && params["currency"]
@@ -375,7 +374,7 @@ const AmountWrap = ({salaryState, setSalaryState}) => {
             let element = UI_Data.amountTypes.find(item => item.title === value);
             // let amount = convertToVND(value, amountState.amountCurrent);
 
-            // console.log("amount in currency: ", amount)
+            // //console.log("amount in currency: ", amount)
             setAmountState({
                 ...amountState,
                 currency: value,
@@ -404,11 +403,11 @@ const AmountWrap = ({salaryState, setSalaryState}) => {
                 search: `?${qs.stringify(currentParams)}`
             })
         
-            // console.log("value for caculate: ", value);
-            // console.log(value.replaceAll(",", ""));
+            // //console.log("value for caculate: ", value);
+            // //console.log(value.replaceAll(",", ""));
             
             // let amount = convertToVND(amountState.currency, converted_value);
-            // console.log("amount: ", amount);
+            // //console.log("amount: ", amount);
             //setAmountState({...amountState, amountCurrent: converted_value})
             // setSalaryState((state) => ({...state, gross: amount}));
     }
@@ -493,7 +492,7 @@ const RightBillWrap = ({salaryState, setSalaryState}) => {
     const location = useLocation();
     const history = useHistory();
     
-    console.log("state: ", salaryState)
+    //console.log("state: ", salaryState)
 
     const forTypeClassifier = (type, data) => {
         if(type === "for employee") return data.forEmployee;
@@ -555,7 +554,7 @@ const RightBillWrap = ({salaryState, setSalaryState}) => {
             let gross = convertToVND(params["currency"], parseFloat(params["amount"]));
             let caculateData = salaryCaculator(gross, params["calcType"], params["employmentType"]);
 
-            console.log("RES: ", caculateData);
+            //console.log("RES: ", caculateData);
 
             let overview = forTypeClassifier(params["forType"], caculateData).map(item => {
                 let temp = {...item};
@@ -563,7 +562,7 @@ const RightBillWrap = ({salaryState, setSalaryState}) => {
                 return temp;
             });
 
-            // console.log("overview", overview);
+            // //console.log("overview", overview);
     
             setBill((billState) => ({
                 ...billState,
