@@ -205,13 +205,13 @@ function Header({ logoProp, theme, logoMobileProp }) {
                     icon={!collapseDropdown && MarketReport}
                   />
                 </Link>
-                <Link to="/faq">
+                {/* <Link to="/faq">
                   <DropdownItem
                     title="FAQs"
                     text={!collapseDropdown && "Questions & Answers"}
                     icon={!collapseDropdown && FAQs}
                   />
-                </Link>
+                </Link> */}
                 <Link to="/services/salary">
                   <DropdownItem
                     title="Vietnam Calculator"
